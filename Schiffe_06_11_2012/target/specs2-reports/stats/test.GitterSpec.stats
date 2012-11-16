@@ -1,0 +1,367 @@
+<test.GitterSpec-results timestamp="1352313506994"><result location="test.GitterSpec (GitterSpec.scala:17)" id="-1455682748"><stats expectations="1" examples="1" failures="1" time="24"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352313507001"><stats expectations="1" examples="1" failures="1" time="12"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352313548593"><result location="test.GitterSpec (GitterSpec.scala:17)" id="-1455682748"><stats expectations="1" examples="1" failures="1" time="21"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352313548602"><stats expectations="1" examples="1" failures="1" time="12"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352313569966"><result location="test.GitterSpec (GitterSpec.scala:17)" id="-1455682748"><stats expectations="1" examples="1" failures="1" time="23"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352313569977"><stats expectations="1" examples="1" failures="1" time="12"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352313805241"><stats expectations="1" examples="1" successes="1" time="12"><trend><stats failures="-1" successes="1" time="12"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352313888670"><stats expectations="2" examples="2" successes="2" time="15"><trend><stats expectations="1" examples="1" successes="1" time="15"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352313899114"><stats expectations="2" examples="2" successes="2" time="14"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352314452207"><stats expectations="2" examples="2" successes="2" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352314457638"><stats expectations="2" examples="2" successes="2" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352314716479"><stats expectations="3" examples="3" successes="3" time="13"><trend><stats expectations="1" examples="1" successes="1" time="13"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352314734595"><stats expectations="3" examples="3" successes="3" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352314757521"><result location="test.GitterSpec (GitterSpec.scala:28)" id="33985111"><stats expectations="1" examples="1" failures="1" time="19"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352314757542"><stats expectations="3" successes="2" examples="3" failures="1" time="17"><trend><stats failures="1" successes="-1" time="17"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352314776670"><stats expectations="3" examples="3" successes="3" time="13"><trend><stats failures="-1" successes="1" time="13"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352314786995"><stats expectations="3" examples="3" successes="3" time="12"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352314820450"><stats expectations="3" examples="3" successes="3" time="14"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352314826944"><stats expectations="3" examples="3" successes="3" time="14"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315152694"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="21"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315152724"><stats expectations="4" successes="3" examples="4" failures="1" time="17"><trend><stats expectations="1" examples="1" failures="1" time="17"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315173765"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="14"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315173797"><stats expectations="4" successes="3" examples="4" failures="1" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315204244"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="19"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315204281"><stats expectations="4" successes="3" examples="4" failures="1" time="12"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315260366"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="21"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315260405"><stats expectations="4" successes="3" examples="4" failures="1" time="14"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315279261"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="17"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315279304"><stats expectations="4" successes="3" examples="4" failures="1" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315480336"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="10"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315480377"><stats expectations="4" successes="3" examples="4" failures="1" time="14"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315499345"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="11"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315499387"><stats expectations="4" successes="3" examples="4" failures="1" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315515430"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315515473"><stats expectations="4" successes="3" examples="4" failures="1" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315529891"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="20"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315529933"><stats expectations="4" successes="3" examples="4" failures="1" time="15"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315542328"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="18"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315542370"><stats expectations="4" successes="3" examples="4" failures="1" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315656648"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="25"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315656693"><stats expectations="4" successes="3" examples="4" failures="1" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352315669235"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="17"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352315669277"><stats expectations="4" successes="3" examples="4" failures="1" time="12"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352483953546"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" errors="1" time="152"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352483953622"><stats expectations="4" successes="3" examples="4" errors="1" time="172"><trend><stats failures="-1" errors="1" time="172"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352483972689"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="44"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352483972735"><stats expectations="4" successes="3" examples="4" failures="1" time="13"><trend><stats failures="1" errors="-1" time="13"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484040983"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="24"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484041029"><stats expectations="4" successes="3" examples="4" failures="1" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484123480"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="22"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484123521"><stats expectations="4" successes="3" examples="4" failures="1" time="15"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484214536"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="47"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484214573"><stats expectations="4" successes="3" examples="4" failures="1" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484239743"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="56"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484239773"><stats expectations="4" successes="3" examples="4" failures="1" time="15"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484416576"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484416593"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484443410"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484443425"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484460573"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="14"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484460588"><stats failures="1" examples="4" successes="3" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484487103"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484487119"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484504597"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="14"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484504614"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484527911"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484527928"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484670769"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" errors="1" time="3"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484670786"><stats expectations="4" successes="3" examples="4" errors="1" time="1"><trend><stats failures="-1" errors="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484691137"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="15"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484691154"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" errors="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484707353"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484707374"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484772327"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="15"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484772345"><stats failures="1" examples="4" successes="3" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484803410"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484803428"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352484869486"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484881698"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484881717"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484905489"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484905509"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484920693"><result location="test.GitterSpec (GitterSpec.scala:28)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484920713"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484953442"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="11"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484953470"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352484972454"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352484972475"><stats failures="1" examples="4" successes="3" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485007753"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="14"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485007774"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485027935"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485027960"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485045611"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485045634"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485077948"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" errors="1" time="6"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485077969"><stats expectations="4" successes="3" examples="4" errors="1" time="1"><trend><stats failures="-1" errors="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485109938"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="15"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485109960"><stats failures="1" examples="4" successes="3" expectations="4"><trend><stats errors="-1" failures="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485296155"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485296180"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485308082"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="15"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485308105"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352485338750"><stats expectations="4" examples="4" successes="4" time="14"><trend><stats failures="-1" successes="1" time="14"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485354826"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="15"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485354848"><stats failures="1" examples="4" successes="3" expectations="4"><trend><stats successes="-1" failures="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485370463"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="19"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485370505"><stats expectations="4" successes="3" examples="4" failures="1" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485385827"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="26"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485385875"><stats expectations="4" successes="3" examples="4" failures="1" time="15"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485400920"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="15"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485400969"><stats expectations="4" successes="3" examples="4" failures="1" time="12"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485426879"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" errors="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485426922"><stats expectations="4" successes="3" examples="4" errors="1" time="13"><trend><stats failures="-1" errors="1" time="13"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485444919"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="25"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485444964"><stats expectations="4" successes="3" examples="4" failures="1" time="13"><trend><stats failures="1" errors="-1" time="13"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352485527359"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485540017"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="15"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485540042"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485596548"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485596569"><stats expectations="4" successes="3" examples="4" failures="1" time="3"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485619345"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" errors="1" time="6"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485619365"><stats expectations="4" successes="3" examples="4" errors="1" time="1"><trend><stats failures="-1" errors="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485627928"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" errors="1" time="8"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485627949"><stats expectations="4" successes="3" examples="4" errors="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352485646619"><stats successes="4" examples="4" expectations="4"><trend><stats successes="1" errors="-1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485656616"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="14"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485656638"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485763817"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="27"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485763863"><stats expectations="4" successes="3" examples="4" failures="1" time="13"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485774771"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485774792"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485784796"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485784819"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352485896285"><stats expectations="4" examples="4" successes="4" time="2"><trend><stats failures="-1" successes="1" time="2"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485907057"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485907079"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485914795"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485914819"><stats failures="1" examples="4" successes="3" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352485941242"><stats successes="4" examples="4" expectations="4"><trend><stats successes="1" failures="-1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352485948547"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352485957086"><stats successes="4" examples="4" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352485973230"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="9"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352485973255"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486001891"><result location="test.GitterSpec (GitterSpec.scala:29)" id="-178201818"><stats expectations="1" examples="1" failures="1" time="7"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486001916"><stats failures="1" examples="4" successes="3" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486020784"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486027533"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486140721"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="6"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486140744"><stats expectations="4" successes="3" examples="4" failures="1" time="3"><trend><stats failures="1" successes="-1" time="3"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486149340"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="7"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486149364"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486188163"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486188187"><stats failures="1" examples="4" successes="3" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486204254"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="16"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486204279"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486220452"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486220477"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486240082"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="17"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486240107"><stats expectations="4" successes="3" examples="4" failures="1" time="3"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486272817"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486272842"><stats failures="1" examples="4" successes="3" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486333369"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486333394"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486354840"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="9"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486354866"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486382198"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="8"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486382225"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486403439"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="9"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486403465"><stats expectations="4" successes="3" examples="4" failures="1" time="2"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486444026"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="9"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486444051"><stats expectations="4" successes="3" examples="4" failures="1" time="3"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486524803"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="8"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486524829"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486551212"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="8"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486551240"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486570759"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="8"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486570785"><stats failures="1" examples="4" successes="3" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486591998"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486601363"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="8"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486601390"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486624085"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486634174"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="9"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486634202"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486806138"><result location="test.GitterSpec (GitterSpec.scala:29)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="6"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486806165"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486873216"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486905795"><stats successes="4" examples="4" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486913484"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486921053"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486927965"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="7"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486927993"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486936350"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486942667"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352486949082"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486984924"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="14"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486984952"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486994817"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486994844"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352486998968"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352486998997"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487022576"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487027043"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487103184"><stats successes="4" examples="4" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487108557"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487147366"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352487152844"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="11"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352487152872"><stats failures="1" examples="4" successes="3" expectations="4"><trend><stats successes="-1" failures="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487188841"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352487194591"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="13"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352487194621"><stats failures="1" examples="4" successes="3" expectations="4"><trend><stats successes="-1" failures="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352487220820"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="27"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352487220862"><stats expectations="4" successes="3" examples="4" failures="1" time="15"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352487228530"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="21"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352487228575"><stats expectations="4" successes="3" examples="4" failures="1" time="14"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352487241748"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="20"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352487241790"><stats expectations="4" successes="3" examples="4" failures="1" time="19"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487253511"><stats successes="4" examples="4" expectations="4"><trend><stats successes="1" failures="-1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487266680"><stats successes="4" examples="4" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487323943"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487330086"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487360526"><stats expectations="4" examples="4" successes="4" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352487364943"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="11"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352487364973"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487373219"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352487377573"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="16"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352487377611"><stats expectations="4" successes="3" examples="4" failures="1" time="2"><trend><stats failures="1" successes="-1" time="2"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352487380774"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="15"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352487380810"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487384342"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487391869"><stats successes="4" examples="4" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352487395633"><stats expectations="4" examples="4" successes="4" time="3"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488242003"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="8"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488242032"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488255232"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="7"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488255261"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488265357"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="8"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488265386"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352488291871"><stats successes="4" examples="4" expectations="4"><trend><stats successes="1" failures="-1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488299843"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488299872"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488303844"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="12"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488303873"><stats failures="1" examples="4" successes="3" expectations="4"></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352488306072"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488329471"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="11"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488329510"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352488335859"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488343063"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="15"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488343095"><stats failures="1" examples="4" successes="3" expectations="4"><trend><stats successes="-1" failures="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-stats timestamp="1352488349262"><stats expectations="4" examples="4" successes="4" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488385949"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="9"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488385980"><stats expectations="4" successes="3" examples="4" failures="1" time="1"><trend><stats failures="1" successes="-1" time="1"></stats></trend></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488397008"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="10"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488397038"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488404660"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="8"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488404691"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488421149"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="9"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488421180"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488442526"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="9"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488442557"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>
+<test.GitterSpec-results timestamp="1352488449333"><result location="test.GitterSpec (GitterSpec.scala:25)" id="1745026216"><stats expectations="1" examples="1" failures="1" time="7"></stats></result>
+</test.GitterSpec-results>
+<test.GitterSpec-stats timestamp="1352488449364"><stats expectations="4" successes="3" examples="4" failures="1" time="1"></stats></test.GitterSpec-stats>

@@ -1,0 +1,201 @@
+<test.AusgabeSpec-stats timestamp="1352198051890"><stats expectations="1" examples="1" successes="1" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352198064963"><result location="test.AusgabeSpec (AusgabeSpec.scala:14)" id="-1217673558"><stats expectations="1" examples="1" failures="1" time="20"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352198064970"><stats expectations="1" examples="1" failures="1" time="16"><trend><stats failures="1" successes="-1" time="16"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352278720853"><stats expectations="1" examples="1" successes="1" time="14"><trend><stats failures="-1" successes="1" time="14"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352278859435"><stats expectations="1" examples="1" successes="1" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352279186622"><result location="test.AusgabeSpec (AusgabeSpec.scala:20)" id="-1192587093"><stats expectations="1" examples="1" failures="1" time="23"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352279186635"><stats expectations="2" successes="1" examples="2" failures="1" time="20"><trend><stats expectations="1" examples="1" failures="1" time="20"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352279450452"><result location="test.AusgabeSpec (AusgabeSpec.scala:20)" id="-1192587093"><stats expectations="1" examples="1" failures="1" time="19"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352279450467"><stats expectations="2" successes="1" examples="2" failures="1" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352279619086"><stats expectations="2" examples="2" successes="2" time="12"><trend><stats failures="-1" successes="1" time="12"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352279623943"><stats expectations="2" examples="2" successes="2" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352279728801"><stats expectations="2" examples="2" successes="2" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352279784821"><stats expectations="2" examples="2" successes="2" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352279789882"><stats expectations="2" examples="2" successes="2" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352279802197"><stats expectations="2" examples="2" successes="2" time="12"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352279869069"><stats expectations="2" examples="2" successes="2" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352279884958"><stats expectations="2" examples="2" successes="2" time="11"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352279909519"><result location="test.AusgabeSpec (AusgabeSpec.scala:20)" id="-1192587093"><stats expectations="1" examples="1" failures="1" time="24"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352279909546"><stats expectations="2" successes="1" examples="2" failures="1" time="14"><trend><stats failures="1" successes="-1" time="14"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352279915235"><result location="test.AusgabeSpec (AusgabeSpec.scala:20)" id="-1192587093"><stats expectations="1" examples="1" failures="1" time="22"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352279915264"><stats expectations="2" successes="1" examples="2" failures="1" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352279924206"><result location="test.AusgabeSpec (AusgabeSpec.scala:20)" id="-1192587093"><stats expectations="1" examples="1" failures="1" time="20"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352279924240"><stats expectations="2" successes="1" examples="2" failures="1" time="12"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352279956726"><stats expectations="2" examples="2" successes="2" time="15"><trend><stats failures="-1" successes="1" time="15"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352279960491"><stats expectations="2" examples="2" successes="2" time="17"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352280774323"><stats expectations="3" examples="3" successes="3" time="13"><trend><stats expectations="1" examples="1" successes="1" time="13"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352280789678"><stats expectations="3" examples="3" successes="3" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352281561647"><stats expectations="3" examples="3" successes="3" time="12"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352281592201"><result location="test.AusgabeSpec (AusgabeSpec.scala:25)" id="1022709354"><stats expectations="1" examples="1" failures="1" time="14"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352281592243"><stats expectations="4" successes="3" examples="4" failures="1" time="21"><trend><stats expectations="1" examples="1" failures="1" time="21"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352281711826"><result location="test.AusgabeSpec (AusgabeSpec.scala:25)" id="1022709354"><stats expectations="1" examples="1" failures="1" time="21"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352281711868"><stats expectations="4" successes="3" examples="4" failures="1" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352281798227"><result location="test.AusgabeSpec (AusgabeSpec.scala:34)" id="1022709354"><stats expectations="1" examples="1" failures="1" time="19"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352281798270"><stats expectations="4" successes="3" examples="4" failures="1" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352281852756"><stats expectations="4" examples="4" successes="4" time="15"><trend><stats failures="-1" successes="1" time="15"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352281861944"><stats expectations="4" examples="4" successes="4" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352311872379"><stats expectations="5" examples="5" successes="5" time="25"><trend><stats expectations="1" examples="1" successes="1" time="25"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352311882479"><result location="test.AusgabeSpec (AusgabeSpec.scala:44)" id="1462502121"><stats expectations="1" examples="1" failures="1" time="23"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352311882523"><stats expectations="5" successes="4" examples="5" failures="1" time="14"><trend><stats failures="1" successes="-1" time="14"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352311902390"><result location="test.AusgabeSpec (AusgabeSpec.scala:44)" id="1462502121"><stats expectations="1" examples="1" failures="1" time="14"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352311902432"><stats expectations="5" successes="4" examples="5" failures="1" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352311948244"><stats expectations="5" examples="5" successes="5" time="13"><trend><stats failures="-1" successes="1" time="13"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352311952671"><stats expectations="5" examples="5" successes="5" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352312052347"><result location="test.AusgabeSpec (AusgabeSpec.scala:44)" id="1462502121"><stats expectations="1" examples="1" failures="1" time="34"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352312052394"><stats expectations="6" successes="5" examples="6" failures="1" time="14"><trend><stats expectations="1" examples="1" failures="1" time="14"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352312075836"><result location="test.AusgabeSpec (AusgabeSpec.scala:44)" id="1462502121"><stats expectations="1" examples="1" failures="1" time="23"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352312075885"><stats expectations="6" successes="5" examples="6" failures="1" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352312130679"><stats expectations="6" examples="6" successes="6" time="13"><trend><stats failures="-1" successes="1" time="13"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352312137825"><stats expectations="6" examples="6" successes="6" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352312621291"><stats expectations="8" examples="8" successes="8" time="16"><trend><stats expectations="2" examples="2" successes="2" time="16"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352312668893"><result location="test.AusgabeSpec (AusgabeSpec.scala:74)" id="-20927644"><stats expectations="1" examples="1" failures="1" time="10"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352312668927"><stats expectations="8" successes="7" examples="8" failures="1" time="16"><trend><stats failures="1" successes="-1" time="16"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352312681488"><stats expectations="8" examples="8" successes="8" time="17"><trend><stats failures="-1" successes="1" time="17"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352312687770"><stats expectations="8" examples="8" successes="8" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352314452166"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352314457596"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484416495"><stats expectations="8" examples="8" successes="8" time="17"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484443327"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484460491"><stats expectations="8" examples="8" successes="8" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484487014"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484504511"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484527819"><stats expectations="8" examples="8" successes="8" time="20"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484670693"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484691046"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484707265"><stats expectations="8" examples="8" successes="8" time="19"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484772236"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484803319"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484869402"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484881608"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484905402"><stats expectations="8" examples="8" successes="8" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484920602"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484953353"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352484972360"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485007663"><stats expectations="8" examples="8" successes="8" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485027845"><stats expectations="8" examples="8" successes="8" time="23"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485045518"><stats expectations="8" examples="8" successes="8" time="12"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485077864"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485109845"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485296063"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485307981"><stats expectations="8" examples="8" successes="8" time="20"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485354726"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485527266"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485539897"><stats expectations="8" examples="8" successes="8" time="19"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485596447"><stats expectations="8" examples="8" successes="8" time="12"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485619255"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485627834"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485646516"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485656515"><stats expectations="8" examples="8" successes="8" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352485774659"><result location="test.AusgabeSpec (AusgabeSpec.scala:32)" id="1022709354"><stats expectations="1" examples="1" failures="1" time="19"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352485774696"><stats expectations="8" successes="7" examples="8" failures="1" time="13"><trend><stats failures="1" successes="-1" time="13"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485784691"><stats expectations="8" examples="8" successes="8" time="18"><trend><stats failures="-1" successes="1" time="18"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485896184"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485906952"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485914693"><stats expectations="8" examples="8" successes="8" time="17"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485941128"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485948438"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485956977"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352485973123"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486001774"><stats expectations="8" examples="8" successes="8" time="12"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486020684"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486027432"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486140622"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486149237"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486188054"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486204138"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486220347"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486239969"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486272703"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486333261"><stats expectations="8" examples="8" successes="8" time="12"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486354731"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486382088"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486403324"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486443920"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486524696"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486551104"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486570652"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486591888"><stats expectations="8" examples="8" successes="8" time="22"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486601259"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486623977"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486634064"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486677404"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486806032"><stats expectations="8" examples="8" successes="8" time="19"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352486873088"><result location="test.AusgabeSpec (AusgabeSpec.scala:51)" id="663294539"><stats expectations="1" examples="1" failures="1" time="21"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352486873122"><stats expectations="8" successes="7" examples="8" failures="1" time="16"><trend><stats failures="1" successes="-1" time="16"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486905683"><stats expectations="8" examples="8" successes="8" time="15"><trend><stats failures="-1" successes="1" time="15"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486913371"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486920936"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486927851"><stats expectations="8" examples="8" successes="8" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486936239"><stats expectations="8" examples="8" successes="8" time="20"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486942556"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486948968"><stats expectations="8" examples="8" successes="8" time="19"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486984785"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486994701"><stats expectations="8" examples="8" successes="8" time="22"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352486998842"><stats expectations="8" examples="8" successes="8" time="17"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487022460"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352487026895"><result location="test.AusgabeSpec (AusgabeSpec.scala:41)" id="1462502121"><stats expectations="1" examples="1" failures="1" time="24"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352487026932"><stats expectations="8" successes="7" examples="8" failures="1" time="18"><trend><stats failures="1" successes="-1" time="18"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487103072"><stats expectations="8" examples="8" successes="8" time="16"><trend><stats failures="-1" successes="1" time="16"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352487108418"><result location="test.AusgabeSpec (AusgabeSpec.scala:41)" id="1462502121"><stats expectations="1" examples="1" failures="1" time="25"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352487108455"><stats expectations="8" successes="7" examples="8" failures="1" time="13"><trend><stats failures="1" successes="-1" time="13"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487147252"><stats expectations="8" examples="8" successes="8" time="18"><trend><stats failures="-1" successes="1" time="18"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352487152725"><result location="test.AusgabeSpec (AusgabeSpec.scala:32)" id="1022709354"><stats expectations="1" examples="1" failures="1" time="27"></stats></result>
+<result location="test.AusgabeSpec (AusgabeSpec.scala:41)" id="1462502121"><stats expectations="1" examples="1" failures="1" time="27"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352487152763"><stats expectations="8" successes="6" examples="8" failures="2" time="13"><trend><stats failures="2" successes="-2" time="13"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487188730"><stats expectations="8" examples="8" successes="8" time="20"><trend><stats failures="-2" successes="2" time="20"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487194467"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487236528"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487253392"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352487266529"><result location="test.AusgabeSpec (AusgabeSpec.scala:41)" id="1462502121"><stats expectations="1" examples="1" failures="1" time="23"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352487266574"><stats expectations="8" successes="7" examples="8" failures="1" time="12"><trend><stats failures="1" successes="-1" time="12"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487323833"><stats expectations="8" examples="8" successes="8" time="16"><trend><stats failures="-1" successes="1" time="16"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487329972"><stats expectations="8" examples="8" successes="8" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487360412"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487364825"><stats expectations="8" examples="8" successes="8" time="12"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-results timestamp="1352487373075"><result location="test.AusgabeSpec (AusgabeSpec.scala:41)" id="1462502121"><stats expectations="1" examples="1" failures="1" time="25"></stats></result>
+</test.AusgabeSpec-results>
+<test.AusgabeSpec-stats timestamp="1352487373115"><stats expectations="8" successes="7" examples="8" failures="1" time="13"><trend><stats failures="1" successes="-1" time="13"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487377398"><stats expectations="8" examples="8" successes="8" time="33"><trend><stats failures="-1" successes="1" time="33"></stats></trend></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487380633"><stats expectations="8" examples="8" successes="8" time="18"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487384185"><stats expectations="8" examples="8" successes="8" time="24"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487391717"><stats expectations="8" examples="8" successes="8" time="34"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352487395467"><stats expectations="8" examples="8" successes="8" time="18"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488241897"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488255131"><stats expectations="8" examples="8" successes="8" time="19"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488265241"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488291748"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488299733"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488303723"><stats expectations="8" examples="8" successes="8" time="17"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488305954"><stats expectations="8" examples="8" successes="8" time="20"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488329363"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488335738"><stats expectations="8" examples="8" successes="8" time="18"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488342949"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488349142"><stats expectations="8" examples="8" successes="8" time="13"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488385841"><stats expectations="8" examples="8" successes="8" time="21"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488396901"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488404556"><stats expectations="8" examples="8" successes="8" time="23"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488421043"><stats expectations="8" examples="8" successes="8" time="18"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488442413"><stats expectations="8" examples="8" successes="8" time="15"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488449222"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488632008"><stats expectations="8" examples="8" successes="8" time="16"></stats></test.AusgabeSpec-stats>
+<test.AusgabeSpec-stats timestamp="1352488760297"><stats expectations="8" examples="8" successes="8" time="14"></stats></test.AusgabeSpec-stats>
