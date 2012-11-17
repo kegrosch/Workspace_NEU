@@ -1,11 +1,7 @@
 package test
-
+import scala.math.sqrt
 object Test extends App{
-
-  
-  var a = 1
-  var b = 5
- 
-  println(a+b)
-  
+	
+   var direction = scala.util.Random.nextInt(5-0)+0
+   println("AUSGABE: " + direction)
 }

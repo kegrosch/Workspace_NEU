@@ -1,6 +1,8 @@
 package schiffe.Controller
-import schiffe.Model._
+import schiffe.Model.Feld
 import schiffe.util._
+import schiffe.Model.Schiff
+import schiffe.Model.Zelle
 
 class Controller (var feld: Feld) extends Observable{
   
@@ -22,9 +24,11 @@ class Controller (var feld: Feld) extends Observable{
     feld = new Feld(newSize)
     notifyObservers
   }
-  def set(row: Int, col: Int, value: Int) = {
-    feld = feld.set(row, col, value)
+  def set(row: Int, col: Int) = {
+    feld.set(row, col)
     notifyObservers
+    
+    println("SChiff gesetzt")
   }
 //  def solve = {
 //    val (success, g) = feld.solve
