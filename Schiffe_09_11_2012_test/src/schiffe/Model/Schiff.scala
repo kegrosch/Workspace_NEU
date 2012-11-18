@@ -1,6 +1,6 @@
 package schiffe.Model
 
-class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Zelle]) {
+class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zelle]]) {
  
   def setzen = {
      
@@ -12,23 +12,20 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Zelle]) {
     richtung match{
         //nach oben
         case 0 =>
-          if ((startZelle.reihe - laenge) >= 0){
-            for(i <- 0 until zellen.length){
-            	if(zellen(i).getReihe == (startZelle.reihe-laenge)){
-            		if(zellen(i).getSpalte==startZelle.spalte){
-            		  zellen(i).setzen(true)
-            		}
-            	}
-            }
+          if (((startZelle.reihe - laenge)+1) >= 0){
             
-    	  for(i <- 0 until laenge-1){
-    	    for(i <- 0 until zellen.length){
-            	if(zellen(i).getReihe == (startZelle.reihe-i)){
-            		if(zellen(i).getSpalte==startZelle.spalte){
-            		  zellen(i).setzen(true)
-            		}
-            	}
-            }
+            			//End Zelle auf true setzen
+            		  zellen(startZelle.reihe-laenge+1)(startZelle.spalte).setzen(true)
+            		
+            	
+            
+            
+    	  for(i <- 0 to laenge-1){
+    	 
+            	
+            		  zellen(startZelle.reihe-i)(startZelle.spalte).setzen(true)
+            	
+            
     	    
     	  }
     	  gesetzt = true

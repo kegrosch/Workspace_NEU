@@ -19,6 +19,6 @@ class Zelle (row: Int, col: Int){
 //  def equals(that:Zelle) = this.value == that.value
 //  def ==(v: Int) = if (value == v) true else false
 //  def isSet = value != 0
-//  override def toString = gesetzt.toString.replace('0', ' ')
+ override def toString = gesetzt.toString.replace('0', ' ')
 
 }
