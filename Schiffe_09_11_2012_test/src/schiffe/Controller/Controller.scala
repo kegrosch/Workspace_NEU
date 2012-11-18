@@ -24,8 +24,10 @@ class Controller (var feld: Feld) extends Observable{
     feld = new Feld(newSize)
     notifyObservers
   }
-  def set(row: Int, col: Int) = {
-    feld.set(row, col)
+  def set(laenge: Int, row: Int, col: Int) = {
+    var startZelle = feld.zellen(row-1)(col-1)
+    var schiff = new Schiff(laenge, startZelle, feld.zellen)
+    schiff.setzen
     notifyObservers
     
     println("SChiff gesetzt")

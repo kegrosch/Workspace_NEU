@@ -12,7 +12,11 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
     richtung match{
         //nach oben
         case 0 =>
-          if (((startZelle.reihe - laenge)+1) >= 0){
+          if(laenge == 1){
+            zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
+            gesetzt = true
+          }else{
+          if ((((startZelle.reihe) - laenge)+1) >= 0){
             
             			//End Zelle auf true setzen
             		  zellen(startZelle.reihe-laenge+1)(startZelle.spalte).setzen(true)
@@ -23,17 +27,17 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
     	  for(i <- 0 to laenge-1){
     	 
             	
-            		  zellen(startZelle.reihe-i)(startZelle.spalte).setzen(true)
+            		  zellen((startZelle.reihe-i))(startZelle.spalte).setzen(true)
             	
             
     	    
     	  }
     	  gesetzt = true
-    	  println("Schiff von "+ startZelle.getReihe +" / " + startZelle.getSpalte + " gesetzt!!!!")
+    	  println("Schiff von "+ (startZelle.getReihe.toInt+1) +" / " + (startZelle.getSpalte.toInt+1) + " gesetzt!!!!")
           }else{
             gesetzt = false
           }
-          
+      }
         //nach unten  
         case 1 =>
           

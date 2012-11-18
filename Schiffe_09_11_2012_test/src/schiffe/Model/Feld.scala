@@ -30,7 +30,7 @@ val size = sqrt(zellen.size).toInt
 //        println("REIHEEEEEEEEEEEEEEEEEE")
         if(zellen(i)(j).getSpalte==spalte){
       
-        var zell = zellen(i)(j)
+        var zell = zellen(2)(2)
         var schiff = new Schiff(2, zell, zellen) 
         schiff.setzen
 //        println("NNNNNNNNNNNN")
@@ -63,16 +63,21 @@ val size = sqrt(zellen.size).toInt
   }
 
   override def toString = {
-    val lineseparator = ("+-" + ("-" * (size/2))) *size + "+\n"
-    val line = ("| " + "x ") * size + "|\n"
-    var box = "\n" + (lineseparator + (line)) * size + lineseparator
-    for (reihe <- 0 until size; spalte <- 0 until size) {
+    val lineseparator = ("+-" + ("-" * (anzahl))) *anzahl + "+\n"
+    val line = ("| " + "x ") * anzahl + "|\n"
+    var box = "\n" + (lineseparator + (line)) * anzahl + lineseparator
+    for (reihe <- 0 to anzahl-1) {
+      for(spalte <- 0 to anzahl-1){
+//        if(zellen(reihe)(spalte).gesetzt == true){
+//          box = box.replace()
+//        }
       (box = box.replaceFirst("x ", zellen(reihe)(spalte).gesetzt.toString()))
-      (box = box.replaceAll("x ", zellen(reihe)(spalte).gesetzt.toString))
-      (box = box.replaceFirst("false", "  "))
-      (box = box.replaceAll("false", "  "))
-      (box = box.replaceFirst("true", " X "))
-      (box = box.replaceAll("true", " X "))
+//      (box = box.replaceAll("x ", zellen(reihe)(spalte).gesetzt.toString()))
+      (box = box.replaceFirst("false", "     "))
+//      (box = box.replaceAll("false", "  "))
+      (box = box.replaceFirst("true", "  X  "))
+//      (box = box.replaceAll("true", " X "))
+    }
     }
     box
   }

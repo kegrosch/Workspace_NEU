@@ -7,8 +7,9 @@ import schiffe.Model._
 object Schiffe {
   
   def main(args: Array[String]) {
-    val tui=new Tui(new Controller(new Feld(5)))
-    while((tui.readInput(readLine()))){}
+    val userTui=new Tui(new Controller(new Feld(5)))    
+    while((userTui.readInput(readLine()))){}
+   
       
       }
 
