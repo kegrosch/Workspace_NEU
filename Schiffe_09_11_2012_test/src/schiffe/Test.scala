@@ -13,7 +13,7 @@ object Test {
      val feld = new Feld(5)
      val startZelle = feld.zellen(4)(3)
      val schiff = new Schiff(2, startZelle, feld.zellen)
-     schiff.setzen
+//     schiff.setzen
      
      println("0-0: "+ feld.zellen(0)(0).gesetzt.toString())
      println("0-1: "+ feld.zellen(0)(1).gesetzt)
