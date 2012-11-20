@@ -29,7 +29,7 @@ class Tui(var controller: Controller) extends Observer {
               case row :: column :: richtung :: Nil => {
 
                 controller.set(2, row, column, richtung, (size-1))
-                println("1.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
+                println("Zerstörer wurde bei " + row + " / " + column + " gesetzt")
 
               }
 
@@ -63,9 +63,36 @@ class Tui(var controller: Controller) extends Observer {
             println(pcFeld.toString())
 
           case 5 =>
-            println("Geben Sie die das 1.te Feld Ihres 1.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Geben Sie die das 1.te Feld Ihres Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
             println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
             var pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(4, row, column, richtung, (size-1))
+                println("Kreuzer wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+            println("Geben Sie die das 1.te Feld Ihres 2.ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(3, row, column, richtung, (size-1))
+                println("2.tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+            
+            println("Geben Sie die das 1.te Feld Ihres 1.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
 
             pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
               case row :: column :: richtung :: Nil => {
@@ -92,66 +119,43 @@ class Tui(var controller: Controller) extends Observer {
               case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
             }
 
-            println("Geben Sie die das 1.te Feld Ihres 3.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(2, row, column, richtung, (size-1))
-                println("3.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
-            }
-            
-            println("Geben Sie die das 1.te Feld Ihres 1.ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(3, row, column, richtung, (size-1))
-                println("2.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
-            }
-            println("Geben Sie die das 1.te Feld Ihres 2.ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(3, row, column, richtung, (size-1))
-                println("2.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
-            }
-            
-            println("Geben Sie die das 1.te Feld Ihres Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(4, row, column, richtung, (size-1))
-                println("2.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
-            }
            
             var pcFeld = new Feld(size)
             var pcController = new Controller(pcFeld)
             //Schiffe für Computer setzen
             var schiffGesetzt = false
-            for (k <- 1 to 3) {
+            while (schiffGesetzt == false) {
+                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
+                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+                var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+                if (ersteZelle.gesetzt == true) {
+                  schiffGesetzt = false
+                } else {
+
+                  pcController.set(4, startReihe, startSpalte, 5, (size-1))
+                  schiffGesetzt = true
+
+                }
+              }
+              schiffGesetzt = false
+              
+              while (schiffGesetzt == false) {
+                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
+                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+                var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+                if (ersteZelle.gesetzt == true) {
+                  schiffGesetzt = false
+                } else {
+
+                  pcController.set(3, startReihe, startSpalte, 5, (size-1))
+                  schiffGesetzt = true
+
+                }
+              }
+              schiffGesetzt = false
+            
+           
+            for (k <- 1 to 2) {
 
               while (schiffGesetzt == false) {
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
@@ -168,7 +172,190 @@ class Tui(var controller: Controller) extends Observer {
               }
               schiffGesetzt = false
             }
-            for (k <- 1 to 2) {
+            
+
+              
+            
+            
+
+            println("Die Schiffe des Computers wurden gesetzt")
+            println("IHR EIGENES SPIELFELD:")
+            printTui
+            println("DAS SPIELFELD DES COMPUTERS:")
+            println(pcFeld.toString())
+            
+          case 10 =>
+            println("Geben Sie die das 1.te Feld Ihres Schlachtschiffes und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            var pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(5, row, column, richtung, (size-1))
+                println("Schlachtschiff wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+            println("Geben Sie die das 1.te Feld Ihres 1.ten Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(4, row, column, richtung, (size-1))
+                println("1.ter Kreuzer wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+            println("Geben Sie die das 1.te Feld Ihres 2.ten Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(4, row, column, richtung, (size-1))
+                println("2.ter Kreuzer wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+            println("Geben Sie die das 1.te Feld Ihres 1.ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(3, row, column, richtung, (size-1))
+                println("1.tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+            println("Geben Sie die das 1.te Feld Ihres 2.ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(3, row, column, richtung, (size-1))
+                println("2.tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+            println("Geben Sie die das 1.te Feld Ihres 3.ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(3, row, column, richtung, (size-1))
+                println("3.tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+            
+            println("Geben Sie die das 1.te Feld Ihres 1.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
+
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(2, row, column, richtung, (size-1))
+                println("1.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55r) ein")
+            }
+
+            println("Geben Sie die das 1.te Feld Ihres 2.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(2, row, column, richtung, (size-1))
+                println("2.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+            println("Geben Sie die das 1.te Feld Ihres 3.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(2, row, column, richtung, (size-1))
+                println("3.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+            println("Geben Sie die das 1.te Feld Ihres 4.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
+            pos = readLine()
+            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+              case row :: column :: richtung :: Nil => {
+
+                controller.set(2, row, column, richtung, (size-1))
+                println("4.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
+
+              }
+
+              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+            }
+
+           
+            var pcFeld = new Feld(size)
+            var pcController = new Controller(pcFeld)
+            //Schiffe für Computer setzen
+            var schiffGesetzt = false
+            while (schiffGesetzt == false) {
+                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
+                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+                var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+                if (ersteZelle.gesetzt == true) {
+                  schiffGesetzt = false
+                } else {
+
+                  pcController.set(5, startReihe, startSpalte, 5, (size-1))
+                  schiffGesetzt = true
+
+                }
+              }
+              schiffGesetzt = false
+              for (k <- 1 to 2) {
+              while (schiffGesetzt == false) {
+                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
+                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+                var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+                if (ersteZelle.gesetzt == true) {
+                  schiffGesetzt = false
+                } else {
+
+                  pcController.set(4, startReihe, startSpalte, 5, (size-1))
+                  schiffGesetzt = true
+
+                }
+              }
+              schiffGesetzt = false
+              }
+              
+            for (k <- 1 to 3) {
 
               while (schiffGesetzt == false) {
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
@@ -185,7 +372,9 @@ class Tui(var controller: Controller) extends Observer {
               }
               schiffGesetzt = false
             }
-            while (schiffGesetzt == false) {
+            for (k <- 1 to 4) {
+
+              while (schiffGesetzt == false) {
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
                 var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
@@ -193,12 +382,14 @@ class Tui(var controller: Controller) extends Observer {
                   schiffGesetzt = false
                 } else {
 
-                  pcController.set(4, startReihe, startSpalte, 5, (size-1))
+                  pcController.set(2, startReihe, startSpalte, 5, (size-1))
                   schiffGesetzt = true
 
                 }
               }
               schiffGesetzt = false
+            }
+            
             
 
             println("Die Schiffe des Computers wurden gesetzt")
