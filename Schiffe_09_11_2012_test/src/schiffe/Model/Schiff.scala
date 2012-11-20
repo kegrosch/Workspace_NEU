@@ -3,7 +3,7 @@ package schiffe.Model
 class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zelle]]) {
 
   def setzen(richtung: Int, groesse: Int) = {
-	  var direction = richtung
+    var direction = richtung
     var gesetzt = false
     while (gesetzt == false) {
 
@@ -25,7 +25,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
               }
               gesetzt = true
-//              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
+              //              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
             } else {
               gesetzt = false
             }
@@ -47,7 +47,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
               }
               gesetzt = true
-//              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
+              //              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
             } else {
               gesetzt = false
             }
@@ -70,7 +70,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
               }
               gesetzt = true
-//              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
+              //              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
             } else {
               gesetzt = false
             }
@@ -93,7 +93,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
               }
               gesetzt = true
-//              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
+              //              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
             } else {
               gesetzt = false
             }
@@ -109,11 +109,10 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
       }
     }
 
-	  def umfeldKontrolle:Boolean = {
-	    
-	    
-	    return true
-	  }
+    def umfeldKontrolle: Boolean = {
+
+      return true
+    }
     //  def zelle(index: Int) = cs(index)
     //  def toIntSet:Set[Int] = cs.filterNot(_.value=="X").map(_.value).toSet
     //  def toIntList:List[Int] = cs.filterNot(_.value=="X").map(_.value).toList
