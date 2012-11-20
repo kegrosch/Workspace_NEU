@@ -325,8 +325,8 @@ class Tui(var controller: Controller) extends Observer {
             //Schiffe für Computer setzen
             var schiffGesetzt = false
             while (schiffGesetzt == false) {
-                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
-                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+                var startReihe = scala.util.Random.nextInt(10 - 1) + 1
+                var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
                 var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
                 if (ersteZelle.gesetzt == true) {
                   schiffGesetzt = false
@@ -340,8 +340,8 @@ class Tui(var controller: Controller) extends Observer {
               schiffGesetzt = false
               for (k <- 1 to 2) {
               while (schiffGesetzt == false) {
-                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
-                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+                var startReihe = scala.util.Random.nextInt(10 - 1) + 1
+                var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
                 var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
                 if (ersteZelle.gesetzt == true) {
                   schiffGesetzt = false
@@ -358,8 +358,8 @@ class Tui(var controller: Controller) extends Observer {
             for (k <- 1 to 3) {
 
               while (schiffGesetzt == false) {
-                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
-                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+                var startReihe = scala.util.Random.nextInt(10 - 1) + 1
+                var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
                 var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
                 if (ersteZelle.gesetzt == true) {
                   schiffGesetzt = false
@@ -375,8 +375,8 @@ class Tui(var controller: Controller) extends Observer {
             for (k <- 1 to 4) {
 
               while (schiffGesetzt == false) {
-                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
-                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+                var startReihe = scala.util.Random.nextInt(10 - 1) + 1
+                var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
                 var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
                 if (ersteZelle.gesetzt == true) {
                   schiffGesetzt = false
