@@ -5,6 +5,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
   def setzen(richtung: Int, groesse: Int): Boolean = {
     var direction = richtung
     var gesetzt = false
+    var zaehler = 0;
     while (gesetzt == false) {
 
       direction match {
@@ -28,10 +29,12 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                 return true
               }else{
                 gesetzt = false
+                zaehler = zaehler+1
               }
 
             } else {
               gesetzt = false
+              zaehler = zaehler+1
             }
           }
         //nach unten  
@@ -53,10 +56,12 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                 return true
               } else {
                 gesetzt = false
+                zaehler = zaehler+1
               }
 
             } else {
               gesetzt = false
+              zaehler = zaehler+1
             }
           }
 
@@ -79,10 +84,12 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                 return true
               } else {
                 gesetzt = false
+                zaehler = zaehler+1
               }
 
             } else {
               gesetzt = false
+              zaehler = zaehler+1
             }
           }
 
@@ -104,11 +111,13 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
             	  return true
             	}else{
             	  gesetzt = false
+            	  zaehler = zaehler+1
             	}
               
 
             } else {
               gesetzt = false
+              zaehler = zaehler+1
             }
           }
 
@@ -118,6 +127,9 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           gesetzt = false
       }
       if (gesetzt == false) {
+        if(zaehler >=15){
+          return false
+        }
         direction = scala.util.Random.nextInt(3 - 0) + 0
       }
       
