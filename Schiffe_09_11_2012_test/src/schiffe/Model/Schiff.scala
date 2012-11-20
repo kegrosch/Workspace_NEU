@@ -2,7 +2,7 @@ package schiffe.Model
 
 class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zelle]]) {
 
-  def setzen(richtung: Int, groesse: Int) = {
+  def setzen(richtung: Int, groesse: Int):Boolean = {
     var direction = richtung
     var gesetzt = false
     while (gesetzt == false) {
@@ -11,16 +11,25 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
         //nach oben
         case 0 =>
           if (laenge == 1) {
+            if(zellen(startZelle.reihe)(startZelle.spalte).getGesetzt==true){
+              return false
+            }else{
             zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
             gesetzt = true
+            return gesetzt
+            }
+            
           } else {
             if ((((startZelle.reihe) - laenge) + 1) >= 0) {
 
-
-
               for (i <- 0 to laenge - 1) {
-
+            	  
+                if(zellen((startZelle.reihe - i))(startZelle.spalte).getGesetzt==true){
+                  return false
+                }else{
                 zellen((startZelle.reihe - i))(startZelle.spalte).setzen(true)
+                
+                }
 
               }
               gesetzt = true
@@ -32,16 +41,25 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
         //nach unten  
         case 1 =>
           if (laenge == 1) {
+            if(zellen(startZelle.reihe)(startZelle.spalte).getGesetzt==true){
+              return false
+            }else{
             zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
             gesetzt = true
+            return gesetzt
+          }
           } else {
             if ((((startZelle.reihe) + laenge) - 1) <= groesse) {
 
 
 
               for (i <- 0 to laenge - 1) {
+                if(zellen((startZelle.reihe + i))(startZelle.spalte).getGesetzt==true){
+                  return false
+                }else{
 
                 zellen((startZelle.reihe + i))(startZelle.spalte).setzen(true)
+                }
 
               }
               gesetzt = true
@@ -54,8 +72,13 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
         //nach rechts
         case 2 =>
           if (laenge == 1) {
+            if(zellen(startZelle.reihe)(startZelle.spalte).getGesetzt==true){
+              return false
+            }else{
             zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
             gesetzt = true
+            return gesetzt
+          }
           } else {
             if ((((startZelle.spalte) + laenge) - 1) <= groesse) {
 
@@ -63,7 +86,11 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
               for (i <- 0 to laenge - 1) {
 
+                if( zellen((startZelle.reihe))(startZelle.spalte + i).getGesetzt==true){
+                  return false
+                }else{
                 zellen((startZelle.reihe))(startZelle.spalte + i).setzen(true)
+                }
 
               }
               gesetzt = true
@@ -76,14 +103,22 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
         //nach links
         case 3 =>
           if (laenge == 1) {
+            if(zellen(startZelle.reihe)(startZelle.spalte).getGesetzt==true){
+              return false
+            }else{
             zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
             gesetzt = true
+            }
           } else {
             if ((((startZelle.spalte) - laenge) + 1) >= 0) {
 
               for (i <- 0 to laenge - 1) {
 
+                if(zellen((startZelle.reihe))(startZelle.spalte - i).getGesetzt==true){
+                  return false
+                }else{
                 zellen((startZelle.reihe))(startZelle.spalte - i).setzen(true)
+                }
 
               }
               gesetzt = true
@@ -101,7 +136,10 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
       if (gesetzt == false) {
         direction = scala.util.Random.nextInt(3 - 0) + 0
       }
+      
     }
+    return gesetzt
+  }
 
     def umfeldKontrolle: Boolean = {
 
@@ -112,5 +150,5 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
     //  def toIntList:List[Int] = cs.filterNot(_.value=="X").map(_.value).toList
     //  def valid = this.toIntList == this.toIntSet.toList 
 
-  }
+  
 }

@@ -8,7 +8,7 @@ object Schiffe {
   
   def main(args: Array[String]) {
     val userTui=new Tui(new Controller(new Feld(5)))    
-    while((userTui.readInput(readLine()))){}
+    while((userTui.readInput(readLine()))==true){}
    
       
       }
