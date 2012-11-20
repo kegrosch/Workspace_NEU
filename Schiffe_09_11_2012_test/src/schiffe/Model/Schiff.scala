@@ -2,7 +2,7 @@ package schiffe.Model
 
 class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zelle]]) {
 
-  def setzen(richtung: Int, groesse: Int):Boolean = {
+  def setzen(richtung: Int, groesse: Int): Boolean = {
     var direction = richtung
     var gesetzt = false
     while (gesetzt == false) {
@@ -11,28 +11,24 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
         //nach oben
         case 0 =>
           if (laenge == 1) {
-            if(zellen(startZelle.reihe)(startZelle.spalte).getGesetzt==true){
+            if (schiffLaengeKurz == true) {
+              return true
+            } else {
               return false
-            }else{
-            zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
-            gesetzt = true
-            return gesetzt
             }
-            
+
           } else {
             if ((((startZelle.reihe) - laenge) + 1) >= 0) {
 
-              for (i <- 0 to laenge - 1) {
-            	  
-                if(zellen((startZelle.reihe - i))(startZelle.spalte).getGesetzt==true){
-                  return false
-                }else{
-                zellen((startZelle.reihe - i))(startZelle.spalte).setzen(true)
-                
+              if (schiffKontrolleOben == true) {
+                for (i <- 0 to laenge - 1) {
+                  zellen((startZelle.reihe - i))(startZelle.spalte).setzen(true)
+                  
                 }
-
+                return true
+              }else{
+                gesetzt = false
               }
-              gesetzt = true
 
             } else {
               gesetzt = false
@@ -41,28 +37,23 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
         //nach unten  
         case 1 =>
           if (laenge == 1) {
-            if(zellen(startZelle.reihe)(startZelle.spalte).getGesetzt==true){
+            if (schiffLaengeKurz == true) {
+              return true
+            } else {
               return false
-            }else{
-            zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
-            gesetzt = true
-            return gesetzt
-          }
+            }
           } else {
             if ((((startZelle.reihe) + laenge) - 1) <= groesse) {
 
-
-
-              for (i <- 0 to laenge - 1) {
-                if(zellen((startZelle.reihe + i))(startZelle.spalte).getGesetzt==true){
-                  return false
-                }else{
-
-                zellen((startZelle.reihe + i))(startZelle.spalte).setzen(true)
+              if (schiffKontrolleUnten == true) {
+                for (i <- 0 to laenge - 1) {
+                  zellen((startZelle.reihe + i))(startZelle.spalte).setzen(true)
+                  
                 }
-
+                return true
+              } else {
+                gesetzt = false
               }
-              gesetzt = true
 
             } else {
               gesetzt = false
@@ -72,28 +63,23 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
         //nach rechts
         case 2 =>
           if (laenge == 1) {
-            if(zellen(startZelle.reihe)(startZelle.spalte).getGesetzt==true){
-              return false
+            if(schiffLaengeKurz == true){
+              return true
             }else{
-            zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
-            gesetzt = true
-            return gesetzt
-          }
+              return false
+            }
           } else {
             if ((((startZelle.spalte) + laenge) - 1) <= groesse) {
 
-
-
-              for (i <- 0 to laenge - 1) {
-
-                if( zellen((startZelle.reihe))(startZelle.spalte + i).getGesetzt==true){
-                  return false
-                }else{
-                zellen((startZelle.reihe))(startZelle.spalte + i).setzen(true)
+              if (schiffKontrolleRechts == true) {
+                for (i <- 0 to laenge - 1) {
+                  zellen((startZelle.reihe))(startZelle.spalte + i).setzen(true)
+                  
                 }
-
+                return true
+              } else {
+                gesetzt = false
               }
-              gesetzt = true
 
             } else {
               gesetzt = false
@@ -103,25 +89,23 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
         //nach links
         case 3 =>
           if (laenge == 1) {
-            if(zellen(startZelle.reihe)(startZelle.spalte).getGesetzt==true){
-              return false
+            if(schiffLaengeKurz == true){
+              return true
             }else{
-            zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
-            gesetzt = true
+              return false
             }
           } else {
             if ((((startZelle.spalte) - laenge) + 1) >= 0) {
-
-              for (i <- 0 to laenge - 1) {
-
-                if(zellen((startZelle.reihe))(startZelle.spalte - i).getGesetzt==true){
-                  return false
-                }else{
-                zellen((startZelle.reihe))(startZelle.spalte - i).setzen(true)
-                }
-
-              }
-              gesetzt = true
+            	if(schiffKontrolleLinks==true){
+            	  for (i <- 0 to laenge - 1) {
+            	      zellen((startZelle.reihe))(startZelle.spalte - i).setzen(true)
+            	      
+            	  }
+            	  return true
+            	}else{
+            	  gesetzt = false
+            	}
+              
 
             } else {
               gesetzt = false
@@ -140,7 +124,79 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
     }
     return gesetzt
   }
+  
+  def schiffLaengeKurz: Boolean ={
+    if(zellen(startZelle.reihe)(startZelle.spalte).getGesetzt==true){
+              return false
+            }else{
+            zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
+            return true
+            }
+            
+  }
 
+  def schiffKontrolleOben: Boolean = {
+    var frei = true
+    for (i <- 0 to laenge - 1) {
+
+      if (zellen((startZelle.reihe - i))(startZelle.spalte).getGesetzt == true) {
+        frei = false
+        return frei
+      } else {
+        
+        frei = true
+
+      }
+
+    }
+    return frei
+
+  }
+  def schiffKontrolleUnten: Boolean = {
+    var frei = true
+    for (i <- 0 to laenge - 1) {
+      if (zellen((startZelle.reihe + i))(startZelle.spalte).getGesetzt == true) {
+        frei = false
+        return frei
+      } else {
+
+        
+        frei = true
+      }
+
+    }
+    return frei
+  }
+  def schiffKontrolleRechts: Boolean = {
+    var frei = true
+    for (i <- 0 to laenge - 1) {
+
+      if (zellen((startZelle.reihe))(startZelle.spalte + i).getGesetzt == true) {
+        frei = false
+        return frei
+      } else {
+        
+        frei = true
+      }
+
+    }
+    return frei
+  }
+  def schiffKontrolleLinks: Boolean = {
+    var frei = true
+    for (i <- 0 to laenge - 1) {
+
+      if (zellen((startZelle.reihe))(startZelle.spalte - i).getGesetzt == true) {
+        frei = false
+        return frei
+      } else {
+
+        frei = true
+      }
+
+    }
+    return frei
+  }
     def umfeldKontrolle: Boolean = {
 
       return true
