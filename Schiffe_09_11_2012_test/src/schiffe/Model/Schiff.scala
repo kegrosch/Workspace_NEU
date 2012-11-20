@@ -209,7 +209,73 @@ return true
     }
     return frei
   }
-    def umfeldKontrolle: Boolean = {
+    def umfeldKontrolle(groesse: Int, richtung: Int): Boolean = {
+      var okay = true
+      
+      startZelle.getReihe match{
+        case 0 => //Reihe = erste Reihe
+          startZelle.getSpalte match{
+            case 0 => //Spalte = erste Spalte & Reihe = erste Reihe
+              richtung match{
+                case 1 => //Schiff geht nach unten
+                case 2 => //Schiff geht nach rechts
+              }
+            case groesse => //Spalte = letzte Spalte & Reihe = erste Reihe
+              richtung match{
+                case 1 => //Schiff geht nach unten
+                case 3 => //Schiff geht nach links
+              }
+            case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe
+              richtung match{
+                case 1 => // Schiff geht nach unten
+                case 2 => // Schiff geht nach rechts
+                case 3 => // Schiff geht links
+              }
+          }
+        case groesse => // Reihe = letzte Reihe
+           startZelle.getSpalte match{
+            case 0 => //Spalte = erste Spalte & Reihe = letzte Reihe
+              richtung match{
+                case 0 => //Schiff geht nach oben
+                case 2 => //Schiff geht nach rechts
+              }
+            case groesse => //Spalte = letzte Spalte & Reihe = letzte Reihe
+              richtung match{
+                case 0 => //Schiff geht nach oben
+                case 3 => //Schiff geht nach links
+              }
+            case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe
+              richtung match{
+                case 0 => // Schiff geht nach oben
+                case 2 => // Schiff geht nach rechts
+                case 3 => // Schiff geht links
+              }
+          }
+        case _ => // Reihe != erste Reihe & Reihe != letzte Reihe
+          startZelle.getSpalte match{
+            case 0 => //Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
+              richtung match{
+                case 0 => //Schiff geht nach oben
+                case 1 => // Schiff geht nach unten
+                case 2 => //Schiff geht nach rechts
+              }
+            case groesse => //Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
+              richtung match{
+                case 0 => //Schiff geht nach oben
+                case 1 => // Schiff geht nach unten
+                case 3 => //Schiff geht nach links
+              }
+            case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
+              richtung match{
+                case 0 => // Schiff geht nach oben
+                case 1 => // SChiff geht nach unten
+                case 2 => // Schiff geht nach rechts
+                case 3 => // Schiff geht links
+              }
+          }
+      }
+      
+
 
       return true
     }
