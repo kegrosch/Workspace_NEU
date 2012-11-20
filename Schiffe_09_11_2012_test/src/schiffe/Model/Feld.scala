@@ -63,20 +63,20 @@ val size = sqrt(zellen.size).toInt
 //  }
 
   override def toString = {
-    val lineseparator = ("+-" + ("-" * (anzahl))) *anzahl + "+\n"
-    val line = ("| " + "x ") * anzahl + "|\n"
+    val lineseparator = ("+-" + ("--" * (anzahl/2))) *anzahl + "+\n"
+    val line = ("|" + (" " * (anzahl/2))+("x"+(" " * (anzahl/2) ))) * anzahl + "|\n"
     var box = "\n" + (lineseparator + (line)) * anzahl + lineseparator
     for (reihe <- 0 to anzahl-1) {
       for(spalte <- 0 to anzahl-1){
 //        if(zellen(reihe)(spalte).gesetzt == true){
 //          box = box.replace()
 //        }
-      (box = box.replaceFirst("x ", zellen(reihe)(spalte).gesetzt.toString()))
+      (box = box.replaceFirst("x", zellen(reihe)(spalte).gesetzt.toString()))
 //      (box = box.replaceAll("x ", zellen(reihe)(spalte).gesetzt.toString()))
-      (box = box.replaceFirst("false", "     "))
+      (box = box.replaceFirst("false", " "))
 //      (box = box.replaceAll("false", "  "))
-      (box = box.replaceFirst("true", "  X  "))
-//      (box = box.replaceAll("true", " X "))
+      (box = box.replaceFirst("true", "X"))
+//      (box = box.replaceAll("true", "X "))
     }
     }
     box
