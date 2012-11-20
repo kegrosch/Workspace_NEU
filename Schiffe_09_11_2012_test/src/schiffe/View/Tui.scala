@@ -23,6 +23,7 @@ class Tui(var controller: Controller) extends Observer {
 
         size match {
           case 2 =>
+            size = controller.feld.zellen.length
             var gesetzt = false
             while (gesetzt == false) {
               println("Geben Sie die das 1.te Feld Ihres Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
@@ -52,17 +53,14 @@ class Tui(var controller: Controller) extends Observer {
               var startReihe = scala.util.Random.nextInt(2 - 1) + 1
               var startSpalte = scala.util.Random.nextInt(2 - 1) + 1
               var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
-              if (ersteZelle.gesetzt == true) {
-                schiffGesetzt = false
-              } else {
-
-                if (pcController.set(2, startReihe, startSpalte, 5, (size - 1))) {
+             
+                if (pcController.set(2, startReihe, startSpalte, 5, (size - 1))==true) {
                   schiffGesetzt = true
                 } else {
                   schiffGesetzt = false
                 }
 
-              }
+              
             }
             schiffGesetzt = false
 
@@ -146,17 +144,14 @@ class Tui(var controller: Controller) extends Observer {
           var startReihe = scala.util.Random.nextInt(5 - 1) + 1
           var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
           var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
-          if (ersteZelle.gesetzt == true) {
-            schiffGesetzt = false
-          } else {
-
-            if (pcController.set(4, startReihe, startSpalte, 5, (size - 1))) {
+         
+            if (pcController.set(4, startReihe, startSpalte, 5, (size - 1))==true) {
               schiffGesetzt = true
             } else {
               schiffGesetzt = false
             }
 
-          }
+          
         }
         
         schiffGesetzt = false
@@ -165,16 +160,13 @@ class Tui(var controller: Controller) extends Observer {
           var startReihe = scala.util.Random.nextInt(5 - 1) + 1
           var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
           var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
-          if (ersteZelle.gesetzt == true) {
-            schiffGesetzt = false
-          } else {
-
-            if (pcController.set(3, startReihe, startSpalte, 5, (size - 1))) {
+         
+            if (pcController.set(3, startReihe, startSpalte, 5, (size - 1))==true) {
               schiffGesetzt = true
 
             } else {
               schiffGesetzt = false
-            }
+            
           }
         }
         schiffGesetzt = false
@@ -185,16 +177,13 @@ class Tui(var controller: Controller) extends Observer {
             var startReihe = scala.util.Random.nextInt(5 - 1) + 1
             var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
             var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
-            if (ersteZelle.gesetzt == true) {
-              schiffGesetzt = false
-            } else {
-
-              if (pcController.set(2, startReihe, startSpalte, 5, (size - 1))) {
+            
+              if (pcController.set(2, startReihe, startSpalte, 5, (size - 1))==true) {
                 schiffGesetzt = true
 
               } else {
                 schiffGesetzt = false
-              }
+              
             }
           }
           schiffGesetzt = false
@@ -304,16 +293,13 @@ class Tui(var controller: Controller) extends Observer {
             var startReihe = scala.util.Random.nextInt(10 - 1) + 1
             var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
             var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
-            if (ersteZelle.gesetzt == true) {
-              schiffGesetzt = false
-            } else {
-
-              if (pcController.set(5, startReihe, startSpalte, 5, (size - 1))) {
+           
+              if (pcController.set(5, startReihe, startSpalte, 5, (size - 1))==true) {
                 schiffGesetzt = true
 
               } else {
                 schiffGesetzt = false
-              }
+              
             }
           }
           schiffGesetzt = false
@@ -322,15 +308,13 @@ class Tui(var controller: Controller) extends Observer {
               var startReihe = scala.util.Random.nextInt(10 - 1) + 1
               var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
               var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
-              if (ersteZelle.gesetzt == true) {
-                schiffGesetzt = false
-              } else {
+              
 
-                if (pcController.set(4, startReihe, startSpalte, 5, (size - 1))) {
+                if (pcController.set(4, startReihe, startSpalte, 5, (size - 1))==true) {
                   schiffGesetzt = true
                 } else {
                   schiffGesetzt = false
-                }
+                
 
               }
             }
@@ -343,17 +327,15 @@ class Tui(var controller: Controller) extends Observer {
               var startReihe = scala.util.Random.nextInt(10 - 1) + 1
               var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
               var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
-              if (ersteZelle.gesetzt == true) {
-                schiffGesetzt = false
-              } else {
+             
 
-                if (pcController.set(3, startReihe, startSpalte, 5, (size - 1))) {
+                if (pcController.set(3, startReihe, startSpalte, 5, (size - 1))==true) {
                   schiffGesetzt = true
                 } else {
                   schiffGesetzt = false
                 }
 
-              }
+              
             }
             schiffGesetzt = false
           }
@@ -363,18 +345,16 @@ class Tui(var controller: Controller) extends Observer {
               var startReihe = scala.util.Random.nextInt(10 - 1) + 1
               var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
               var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
-              if (ersteZelle.gesetzt == true) {
-                schiffGesetzt = false
-              } else {
+             
 
-                if (pcController.set(2, startReihe, startSpalte, 5, (size - 1))) {
+                if (pcController.set(2, startReihe, startSpalte, 5, (size - 1))==true) {
 
                   schiffGesetzt = true
                 } else {
                   schiffGesetzt = false
                 }
 
-              }
+              
             }
             schiffGesetzt = false
           }

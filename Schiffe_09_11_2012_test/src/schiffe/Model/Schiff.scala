@@ -46,7 +46,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
             if ((((startZelle.reihe) + laenge) - 1) <= groesse) {
 
               if (schiffKontrolleUnten == true) {
-                for (i <- 0 to laenge - 1) {
+                for (i <- 0 to (laenge - 1)) {
                   zellen((startZelle.reihe + i))(startZelle.spalte).setzen(true)
                   
                 }
@@ -122,7 +122,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
       }
       
     }
-    return gesetzt
+return true
   }
   
   def schiffLaengeKurz: Boolean ={
@@ -154,7 +154,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
   }
   def schiffKontrolleUnten: Boolean = {
     var frei = true
-    for (i <- 0 to laenge - 1) {
+    for (i <- 0 to (laenge - 1)) {
       if (zellen((startZelle.reihe + i))(startZelle.spalte).getGesetzt == true) {
         frei = false
         return frei
