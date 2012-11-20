@@ -16,8 +16,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           } else {
             if ((((startZelle.reihe) - laenge) + 1) >= 0) {
 
-              //End Zelle auf true setzen
-              zellen(startZelle.reihe - laenge + 1)(startZelle.spalte).setzen(true)
+
 
               for (i <- 0 to laenge - 1) {
 
@@ -25,7 +24,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
               }
               gesetzt = true
-              //              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
+
             } else {
               gesetzt = false
             }
@@ -38,8 +37,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           } else {
             if ((((startZelle.reihe) + laenge) - 1) <= groesse) {
 
-              //End Zelle auf true setzen
-              zellen(startZelle.reihe + laenge - 1)(startZelle.spalte).setzen(true)
+
 
               for (i <- 0 to laenge - 1) {
 
@@ -47,7 +45,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
               }
               gesetzt = true
-              //              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
+
             } else {
               gesetzt = false
             }
@@ -61,8 +59,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           } else {
             if ((((startZelle.spalte) + laenge) - 1) <= groesse) {
 
-              //End Zelle auf true setzen
-              zellen(startZelle.reihe)(startZelle.spalte + laenge - 1).setzen(true)
+
 
               for (i <- 0 to laenge - 1) {
 
@@ -70,7 +67,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
               }
               gesetzt = true
-              //              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
+
             } else {
               gesetzt = false
             }
@@ -84,16 +81,13 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           } else {
             if ((((startZelle.spalte) - laenge) + 1) >= 0) {
 
-              //End Zelle auf true setzen
-              zellen(startZelle.reihe)(startZelle.spalte - laenge + 1).setzen(true)
-
               for (i <- 0 to laenge - 1) {
 
                 zellen((startZelle.reihe))(startZelle.spalte - i).setzen(true)
 
               }
               gesetzt = true
-              //              println("Schiff von " + (startZelle.getReihe.toInt + 1) + " / " + (startZelle.getSpalte.toInt + 1) + " gesetzt!!!!")
+
             } else {
               gesetzt = false
             }

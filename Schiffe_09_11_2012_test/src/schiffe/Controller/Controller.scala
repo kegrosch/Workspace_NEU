@@ -7,7 +7,7 @@ import schiffe.Model.Zelle
 class Controller (var feld: Feld) extends Observable{
   
 //  def available(row: Int, col: Int) = feld.available(row, col)
-  def zelle(row: Int, col: Int) = feld.zelle(row, col)
+//  def zelle(row: Int, col: Int) = feld.zelle(row, col)
 //  def createRandom={
 //    feld = feld.createRandom(grid.size)
 //    notifyObservers

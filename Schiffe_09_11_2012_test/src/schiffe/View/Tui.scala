@@ -76,21 +76,22 @@ class Tui(var controller: Controller) extends Observer {
 
               case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
             }
-            println("Geben Sie die das 1.te Feld Ihres 2.ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            println("Geben Sie die das 1.te Feld Ihres U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
             println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
             pos = readLine()
             pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
               case row :: column :: richtung :: Nil => {
 
                 controller.set(3, row, column, richtung, (size-1))
-                println("2.tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
+                println("U-Boot wurde bei " + row + " / " + column + " gesetzt")
 
               }
 
               case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
             }
             
-            println("Geben Sie die das 1.te Feld Ihres 1.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            for(i <- 1 to 2){
+            println("Geben Sie die das 1.te Feld Ihres " + i + ".ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
             println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
             pos = readLine()
 
@@ -98,28 +99,14 @@ class Tui(var controller: Controller) extends Observer {
               case row :: column :: richtung :: Nil => {
 
                 controller.set(2, row, column, richtung, (size-1))
-                println("1.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
+                println(i + ".ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
 
               }
 
               case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55r) ein")
             }
-
-            println("Geben Sie die das 1.te Feld Ihres 2.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(2, row, column, richtung, (size-1))
-                println("2.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
             }
 
-           
             var pcFeld = new Feld(size)
             var pcController = new Controller(pcFeld)
             //Schiffe für Computer setzen
@@ -198,73 +185,39 @@ class Tui(var controller: Controller) extends Observer {
 
               case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
             }
-            println("Geben Sie die das 1.te Feld Ihres 1.ten Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            for(i <- 1 to 2){
+            println("Geben Sie die das 1.te Feld Ihres " + i +".ten Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
             println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
             pos = readLine()
             pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
               case row :: column :: richtung :: Nil => {
 
                 controller.set(4, row, column, richtung, (size-1))
-                println("1.ter Kreuzer wurde bei " + row + " / " + column + " gesetzt")
+                println(i + ".ter Kreuzer wurde bei " + row + " / " + column + " gesetzt")
 
               }
 
               case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
             }
-            println("Geben Sie die das 1.te Feld Ihres 2.ten Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(4, row, column, richtung, (size-1))
-                println("2.ter Kreuzer wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
             }
-            println("Geben Sie die das 1.te Feld Ihres 1.ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            for(i <- 1 to 3){
+            println("Geben Sie die das 1.te Feld Ihres " + i +".ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
             println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
             pos = readLine()
             pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
               case row :: column :: richtung :: Nil => {
 
                 controller.set(3, row, column, richtung, (size-1))
-                println("1.tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
-            }
-            println("Geben Sie die das 1.te Feld Ihres 2.ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(3, row, column, richtung, (size-1))
-                println("2.tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
-            }
-            println("Geben Sie die das 1.te Feld Ihres 3.ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(3, row, column, richtung, (size-1))
-                println("3.tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
+                println(i + ".tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
 
               }
 
               case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
             }
             
-            println("Geben Sie die das 1.te Feld Ihres 1.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+            }
+            for(i <- 1 to 4){
+            println("Geben Sie die das 1.te Feld Ihres " + i +".ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
             println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
             pos = readLine()
 
@@ -272,52 +225,15 @@ class Tui(var controller: Controller) extends Observer {
               case row :: column :: richtung :: Nil => {
 
                 controller.set(2, row, column, richtung, (size-1))
-                println("1.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
+                println(i + ".ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
 
               }
 
               case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55r) ein")
             }
 
-            println("Geben Sie die das 1.te Feld Ihres 2.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(2, row, column, richtung, (size-1))
-                println("2.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
             }
-            println("Geben Sie die das 1.te Feld Ihres 3.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(2, row, column, richtung, (size-1))
-                println("3.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
-            }
-            println("Geben Sie die das 1.te Feld Ihres 4.ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
-            println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
-            pos = readLine()
-            pos.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
-              case row :: column :: richtung :: Nil => {
-
-                controller.set(2, row, column, richtung, (size-1))
-                println("4.ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
-
-              }
-
-              case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
-            }
+            
 
            
             var pcFeld = new Feld(size)
