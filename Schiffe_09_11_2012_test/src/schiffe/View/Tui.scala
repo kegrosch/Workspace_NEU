@@ -194,12 +194,44 @@ class Tui(var controller: Controller) extends Observer {
             println(pcFeld.toString())
 
           case 10 =>
+            val temp = 10
+            val temp1 = temp.toString()
             var gesetzt = false
             while (gesetzt == false) {
               println("Geben Sie die das 1.te Feld Ihres Schlachtschiffes und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
               println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
               var pos = readLine()
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
+                case "1" :: "0" :: "," :: column :: "," :: richtung :: Nil => {
+
+                  if (controller.set(5, 10, column.toInt, richtung.toInt, (size - 1))) {
+                    println("Schlachtschiff wurde bei " + 10 + " / " + column + " gesetzt")
+                    gesetzt = true
+                  } else {
+                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                    gesetzt = false
+                  }
+                }
+                case row :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
+
+                  if (controller.set(5, row.toInt, 10, richtung.toInt, (size - 1))) {
+                    println("Schlachtschiff wurde bei " + row + " / " + 10 + " gesetzt")
+                    gesetzt = true
+                  } else {
+                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                    gesetzt = false
+                  }
+                }
+                case "1" :: "0" :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
+
+                  if (controller.set(5, 10, 10, richtung.toInt, (size - 1))) {
+                    println("Schlachtschiff wurde bei " + 10 + " / " + 10 + " gesetzt")
+                    gesetzt = true
+                  } else {
+                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                    gesetzt = false
+                  }
+                }
                 case row :: "," :: column :: "," :: richtung :: Nil => {
 
                   if (controller.set(5, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
@@ -221,6 +253,39 @@ class Tui(var controller: Controller) extends Observer {
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
                 pos.toList.filter(c => c != ' ').map(c => c.toString) match {
+                  case "1" :: "0" :: "," :: column :: "," :: richtung :: Nil => {
+
+                    if (controller.set(4, 10, column.toInt, richtung.toInt, (size - 1))) {
+                      println(i + ".ter Kreuzer wurde bei " + 10 + " / " + column + " gesetzt")
+                      gesetzt = true
+                    } else {
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      gesetzt = false
+                    }
+
+                  }
+                  case row :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
+
+                    if (controller.set(4, row.toInt, 10, richtung.toInt, (size - 1))) {
+                      println(i + ".ter Kreuzer wurde bei " + row + " / " + 10 + " gesetzt")
+                      gesetzt = true
+                    } else {
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      gesetzt = false
+                    }
+
+                  }
+                  case "1" :: "0" :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
+
+                    if (controller.set(4, 10, 10, richtung.toInt, (size - 1))) {
+                      println(i + ".ter Kreuzer wurde bei " + 10 + " / " + 10 + " gesetzt")
+                      gesetzt = true
+                    } else {
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      gesetzt = false
+                    }
+
+                  }
                   case row :: "," :: column :: "," :: richtung :: Nil => {
 
                     if (controller.set(4, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
@@ -244,6 +309,36 @@ class Tui(var controller: Controller) extends Observer {
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
                 pos.toList.filter(c => c != ' ').map(c => c.toString) match {
+                   case "1" :: "0" :: "," :: column :: "," :: richtung :: Nil => {
+
+                    if (controller.set(3, 10, column.toInt, richtung.toInt, (size - 1))) {
+                      println(i + ".tes U-Boot wurde bei " + 10 + " / " + column + " gesetzt")
+                      gesetzt = true
+                    } else {
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      gesetzt = false
+                    }
+                  }
+                    case row :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
+
+                    if (controller.set(3, row.toInt, 10, richtung.toInt, (size - 1))) {
+                      println(i + ".tes U-Boot wurde bei " + row + " / " + 10 + " gesetzt")
+                      gesetzt = true
+                    } else {
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      gesetzt = false
+                    }
+                  }
+                    case "1" :: "0" :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
+
+                    if (controller.set(3, 10, 10, richtung.toInt, (size - 1))) {
+                      println(i + ".tes U-Boot wurde bei " + 10 + " / " + 10 + " gesetzt")
+                      gesetzt = true
+                    } else {
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      gesetzt = false
+                    }
+                  }
                   case row :: "," :: column :: "," :: richtung :: Nil => {
 
                     if (controller.set(3, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
@@ -267,6 +362,39 @@ class Tui(var controller: Controller) extends Observer {
                 var pos = readLine()
 
                 pos.toList.filter(c => c != ' ').map(c => c.toString) match {
+                  case "1" :: "0" :: "," :: column :: "," :: richtung :: Nil => {
+
+                    if (controller.set(2, 10, column.toInt, richtung.toInt, (size - 1))) {
+                      println(i + ".ter Zerstörer wurde bei " + 10 + " / " + column + " gesetzt")
+                      gesetzt = true
+                    } else {
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      gesetzt = false
+                    }
+
+                  }
+                  case row :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
+
+                    if (controller.set(2, row.toInt, 10, richtung.toInt, (size - 1))) {
+                      println(i + ".ter Zerstörer wurde bei " + row.toInt + " / " + 10 + " gesetzt")
+                      gesetzt = true
+                    } else {
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      gesetzt = false
+                    }
+
+                  }
+                  case "1" :: "0" :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
+
+                    if (controller.set(2, 10, 10, richtung.toInt, (size - 1))) {
+                      println(i + ".ter Zerstörer wurde bei " + 10 + " / " + 10 + " gesetzt")
+                      gesetzt = true
+                    } else {
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      gesetzt = false
+                    }
+
+                  }
                   case row :: "," :: column :: "," :: richtung :: Nil => {
 
                     if (controller.set(2, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
@@ -278,6 +406,8 @@ class Tui(var controller: Controller) extends Observer {
                     }
 
                   }
+                  
+
 
                   case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55r) ein")
                 }
