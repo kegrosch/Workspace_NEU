@@ -24,17 +24,17 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
               if (schiffKontrolleOben == true) {
                 for (i <- 0 to laenge - 1) {
                   zellen((startZelle.reihe - i))(startZelle.spalte).setzen(true)
-                  
+
                 }
                 return true
-              }else{
+              } else {
                 gesetzt = false
-                zaehler = zaehler+1
+                zaehler = zaehler + 1
               }
 
             } else {
               gesetzt = false
-              zaehler = zaehler+1
+              zaehler = zaehler + 1
             }
           }
         //nach unten  
@@ -49,28 +49,37 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
             if ((((startZelle.reihe) + laenge) - 1) <= groesse) {
 
               if (schiffKontrolleUnten == true) {
+                
+                
+                if(umfeldKontrolle(groesse, direction)==true){
+                
+                
                 for (i <- 0 to (laenge - 1)) {
                   zellen((startZelle.reihe + i))(startZelle.spalte).setzen(true)
-                  
+
                 }
                 return true
+              }else {
+                gesetzt = false
+                zaehler = zaehler + 1
+              }
               } else {
                 gesetzt = false
-                zaehler = zaehler+1
+                zaehler = zaehler + 1
               }
 
             } else {
               gesetzt = false
-              zaehler = zaehler+1
+              zaehler = zaehler + 1
             }
           }
 
         //nach rechts
         case 2 =>
           if (laenge == 1) {
-            if(schiffLaengeKurz == true){
+            if (schiffLaengeKurz == true) {
               return true
-            }else{
+            } else {
               return false
             }
           } else {
@@ -79,45 +88,44 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
               if (schiffKontrolleRechts == true) {
                 for (i <- 0 to laenge - 1) {
                   zellen((startZelle.reihe))(startZelle.spalte + i).setzen(true)
-                  
+
                 }
                 return true
               } else {
                 gesetzt = false
-                zaehler = zaehler+1
+                zaehler = zaehler + 1
               }
 
             } else {
               gesetzt = false
-              zaehler = zaehler+1
+              zaehler = zaehler + 1
             }
           }
 
         //nach links
         case 3 =>
           if (laenge == 1) {
-            if(schiffLaengeKurz == true){
+            if (schiffLaengeKurz == true) {
               return true
-            }else{
+            } else {
               return false
             }
           } else {
             if ((((startZelle.spalte) - laenge) + 1) >= 0) {
-            	if(schiffKontrolleLinks==true){
-            	  for (i <- 0 to laenge - 1) {
-            	      zellen((startZelle.reihe))(startZelle.spalte - i).setzen(true)
-            	      
-            	  }
-            	  return true
-            	}else{
-            	  gesetzt = false
-            	  zaehler = zaehler+1
-            	}
-              
+              if (schiffKontrolleLinks == true) {
+                for (i <- 0 to laenge - 1) {
+                  zellen((startZelle.reihe))(startZelle.spalte - i).setzen(true)
+
+                }
+                return true
+              } else {
+                gesetzt = false
+                zaehler = zaehler + 1
+              }
 
             } else {
               gesetzt = false
-              zaehler = zaehler+1
+              zaehler = zaehler + 1
             }
           }
 
@@ -127,24 +135,24 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           gesetzt = false
       }
       if (gesetzt == false) {
-        if(zaehler >=15){
+        if (zaehler >= 15) {
           return false
         }
         direction = scala.util.Random.nextInt(3 - 0) + 0
       }
-      
+
     }
-return true
+    return true
   }
-  
-  def schiffLaengeKurz: Boolean ={
-    if(zellen(startZelle.reihe)(startZelle.spalte).getGesetzt==true){
-              return false
-            }else{
-            zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
-            return true
-            }
-            
+
+  def schiffLaengeKurz: Boolean = {
+    if (zellen(startZelle.reihe)(startZelle.spalte).getGesetzt == true) {
+      return false
+    } else {
+      zellen(startZelle.reihe)(startZelle.spalte).setzen(true)
+      return true
+    }
+
   }
 
   def schiffKontrolleOben: Boolean = {
@@ -155,7 +163,7 @@ return true
         frei = false
         return frei
       } else {
-        
+
         frei = true
 
       }
@@ -172,7 +180,6 @@ return true
         return frei
       } else {
 
-        
         frei = true
       }
 
@@ -187,7 +194,7 @@ return true
         frei = false
         return frei
       } else {
-        
+
         frei = true
       }
 
@@ -209,80 +216,94 @@ return true
     }
     return frei
   }
-    def umfeldKontrolle(groesse: Int, richtung: Int): Boolean = {
-      var okay = true
-      
-      startZelle.getReihe match{
-        case 0 => //Reihe = erste Reihe
-          startZelle.getSpalte match{
-            case 0 => //Spalte = erste Spalte & Reihe = erste Reihe
-              richtung match{
-                case 1 => //Schiff geht nach unten
-                case 2 => //Schiff geht nach rechts
-              }
-            case `groesse` => //Spalte = letzte Spalte & Reihe = erste Reihe
-              richtung match{
-                case 1 => //Schiff geht nach unten
-                case 3 => //Schiff geht nach links
-              }
-            case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe
-              richtung match{
-                case 1 => // Schiff geht nach unten
-                case 2 => // Schiff geht nach rechts
-                case 3 => // Schiff geht links
-              }
-          }
-        case `groesse` => // Reihe = letzte Reihe
-           startZelle.getSpalte match{
-            case 0 => //Spalte = erste Spalte & Reihe = letzte Reihe
-              richtung match{
-                case 0 => //Schiff geht nach oben
-                case 2 => //Schiff geht nach rechts
-              }
-            case `groesse` => //Spalte = letzte Spalte & Reihe = letzte Reihe
-              richtung match{
-                case 0 => //Schiff geht nach oben
-                case 3 => //Schiff geht nach links
-              }
-            case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe
-              richtung match{
-                case 0 => // Schiff geht nach oben
-                case 2 => // Schiff geht nach rechts
-                case 3 => // Schiff geht links
-              }
-          }
-        case _ => // Reihe != erste Reihe & Reihe != letzte Reihe
-          startZelle.getSpalte match{
-            case 0 => //Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
-              richtung match{
-                case 0 => //Schiff geht nach oben
-                case 1 => // Schiff geht nach unten
-                case 2 => //Schiff geht nach rechts
-              }
-            case `groesse` => //Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
-              richtung match{
-                case 0 => //Schiff geht nach oben
-                case 1 => // Schiff geht nach unten
-                case 3 => //Schiff geht nach links
-              }
-            case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
-              richtung match{
-                case 0 => // Schiff geht nach oben
-                case 1 => // SChiff geht nach unten
-                case 2 => // Schiff geht nach rechts
-                case 3 => // Schiff geht links
-              }
-          }
-      }
-      
+  def umfeldKontrolle(groesse: Int, richtung: Int): Boolean = {
+    var okay = true
 
-
-      return true
+    startZelle.getReihe match {
+      case 0 => //Reihe = erste Reihe
+        startZelle.getSpalte match {
+          case 0 => //Spalte = erste Spalte & Reihe = erste Reihe
+            richtung match {
+              case 1 => //Schiff geht nach unten
+                for (i <- 0 to laenge) {
+                  if((zellen(startZelle.getReihe+i)(startZelle.getSpalte+1).getGesetzt)==true){
+                    return false
+                  }else{
+                    okay = true
+                  }
+                }
+                if(((zellen(startZelle.getReihe+laenge)(startZelle.getSpalte).getGesetzt)==true)){
+                  return false
+                }else{
+                  if((zellen(startZelle.getReihe+laenge)(startZelle.getSpalte+1).getGesetzt)==true){
+                	  return false
+                  }else{
+                    return okay
+                  }
+                }
+              case 2 => //Schiff geht nach rechts
+                
+            }
+          case `groesse` => //Spalte = letzte Spalte & Reihe = erste Reihe
+            richtung match {
+              case 1 => //Schiff geht nach unten
+              case 3 => //Schiff geht nach links
+            }
+          case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe
+            richtung match {
+              case 1 => // Schiff geht nach unten
+              case 2 => // Schiff geht nach rechts
+              case 3 => // Schiff geht links
+            }
+        }
+      case `groesse` => // Reihe = letzte Reihe
+        startZelle.getSpalte match {
+          case 0 => //Spalte = erste Spalte & Reihe = letzte Reihe
+            richtung match {
+              case 0 => //Schiff geht nach oben
+              case 2 => //Schiff geht nach rechts
+            }
+          case `groesse` => //Spalte = letzte Spalte & Reihe = letzte Reihe
+            richtung match {
+              case 0 => //Schiff geht nach oben
+              case 3 => //Schiff geht nach links
+            }
+          case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe
+            richtung match {
+              case 0 => // Schiff geht nach oben
+              case 2 => // Schiff geht nach rechts
+              case 3 => // Schiff geht links
+            }
+        }
+      case _ => // Reihe != erste Reihe & Reihe != letzte Reihe
+        startZelle.getSpalte match {
+          case 0 => //Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
+            richtung match {
+              case 0 => //Schiff geht nach oben
+              case 1 => // Schiff geht nach unten
+              case 2 => //Schiff geht nach rechts
+            }
+          case `groesse` => //Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
+            richtung match {
+              case 0 => //Schiff geht nach oben
+              case 1 => // Schiff geht nach unten
+              case 3 => //Schiff geht nach links
+            }
+          case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
+            richtung match {
+              case 0 => // Schiff geht nach oben
+              case 1 => // SChiff geht nach unten
+              case 2 => // Schiff geht nach rechts
+              case 3 => // Schiff geht links
+            }
+        }
     }
-    //  def zelle(index: Int) = cs(index)
-    //  def toIntSet:Set[Int] = cs.filterNot(_.value=="X").map(_.value).toSet
-    //  def toIntList:List[Int] = cs.filterNot(_.value=="X").map(_.value).toList
-    //  def valid = this.toIntList == this.toIntSet.toList 
 
-  
+    return true
+  }
+  //  def zelle(index: Int) = cs(index)
+  //  def toIntSet:Set[Int] = cs.filterNot(_.value=="X").map(_.value).toSet
+  //  def toIntList:List[Int] = cs.filterNot(_.value=="X").map(_.value).toList
+  //  def valid = this.toIntList == this.toIntSet.toList 
+
 }
