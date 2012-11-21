@@ -220,7 +220,7 @@ return true
                 case 1 => //Schiff geht nach unten
                 case 2 => //Schiff geht nach rechts
               }
-            case groesse => //Spalte = letzte Spalte & Reihe = erste Reihe
+            case `groesse` => //Spalte = letzte Spalte & Reihe = erste Reihe
               richtung match{
                 case 1 => //Schiff geht nach unten
                 case 3 => //Schiff geht nach links
@@ -232,14 +232,14 @@ return true
                 case 3 => // Schiff geht links
               }
           }
-        case groesse => // Reihe = letzte Reihe
+        case `groesse` => // Reihe = letzte Reihe
            startZelle.getSpalte match{
             case 0 => //Spalte = erste Spalte & Reihe = letzte Reihe
               richtung match{
                 case 0 => //Schiff geht nach oben
                 case 2 => //Schiff geht nach rechts
               }
-            case groesse => //Spalte = letzte Spalte & Reihe = letzte Reihe
+            case `groesse` => //Spalte = letzte Spalte & Reihe = letzte Reihe
               richtung match{
                 case 0 => //Schiff geht nach oben
                 case 3 => //Schiff geht nach links
@@ -259,7 +259,7 @@ return true
                 case 1 => // Schiff geht nach unten
                 case 2 => //Schiff geht nach rechts
               }
-            case groesse => //Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
+            case `groesse` => //Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
               richtung match{
                 case 0 => //Schiff geht nach oben
                 case 1 => // Schiff geht nach unten
