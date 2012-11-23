@@ -253,7 +253,9 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
             richtung match {
               case 1 => // Schiff geht nach unten
               case 2 => // Schiff geht nach rechts
+                //überprüfen ob rechts anstößt
               case 3 => // Schiff geht links
+                //überprüfen ob links anstößt
             }
         }
       case `groesse` => // Reihe = letzte Reihe
@@ -280,21 +282,36 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           case 0 => //Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
             richtung match {
               case 0 => //Schiff geht nach oben
+                //überprüfen ob oben oder unten anstößt
+                
               case 1 => // Schiff geht nach unten
+                //überprüfen ob oben oder unten anstößt
+                
               case 2 => //Schiff geht nach rechts
             }
           case `groesse` => //Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
             richtung match {
               case 0 => //Schiff geht nach oben
+                // überprüfen ob oben anstößt
+                
               case 1 => // Schiff geht nach unten
+                //überprüfen ob unten anstößt
+                
               case 3 => //Schiff geht nach links
             }
           case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
             richtung match {
               case 0 => // Schiff geht nach oben
+                //überprüfen ob oben anstößt
+                
               case 1 => // SChiff geht nach unten
+                //überprüfen ob unten anstößt
+                
               case 2 => // Schiff geht nach rechts
+                //überprüfen ob rechts anstößt
+                
               case 3 => // Schiff geht links
+                //überprüfen ob links anstößt
             }
         }
     }
