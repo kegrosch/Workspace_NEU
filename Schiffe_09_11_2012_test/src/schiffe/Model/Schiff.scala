@@ -274,7 +274,10 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
             richtung match {
               case 0 => // Schiff geht nach oben
               case 2 => // Schiff geht nach rechts
+                //überprüfen ob rechts anstößt
+                
               case 3 => // Schiff geht links
+                //überprüfen ob links anstößt
             }
         }
       case _ => // Reihe != erste Reihe & Reihe != letzte Reihe
@@ -282,10 +285,10 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           case 0 => //Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
             richtung match {
               case 0 => //Schiff geht nach oben
-                //überprüfen ob oben oder unten anstößt
+                //überprüfen ob oben anstößt
                 
               case 1 => // Schiff geht nach unten
-                //überprüfen ob oben oder unten anstößt
+                //überprüfen ob unten anstößt
                 
               case 2 => //Schiff geht nach rechts
             }
