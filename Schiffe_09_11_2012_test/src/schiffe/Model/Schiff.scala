@@ -239,6 +239,24 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           case 0 => //Spalte = erste Spalte & Reihe = erste Reihe
             richtung match {
               case 1 => //Schiff geht nach unten
+                if(groesse == (startZelle.getReihe+laenge-1)){
+                  for (i <- 0 to laenge-1) {
+                  if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                    return false
+                  } else {
+                    okay = true
+                  }
+                }
+                if (((zellen(startZelle.getReihe + laenge-1)(startZelle.getSpalte).getGesetzt) == true)) {
+                  return false
+                } else {
+                  if ((zellen(startZelle.getReihe + laenge-1)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                    return false
+                  } else {
+                    return okay
+                  }
+                }
+                }else{
                 for (i <- 0 to laenge) {
                   if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                     return false
@@ -255,7 +273,27 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                     return okay
                   }
                 }
+                }
               case 2 => //Schiff geht nach rechts
+                if(groesse == (startZelle.getSpalte+laenge-1)){
+                  for (i <- 0 to laenge-1) {
+                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + i).getGesetzt) == true) {
+                    return false
+                  } else {
+                    okay = true
+                  }
+
+                }
+                if (((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge-1).getGesetzt) == true)) {
+                  return false
+                } else {
+                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + laenge-1).getGesetzt) == true) {
+                    return false
+                  } else {
+                    return okay
+                  }
+                }
+                }else{
                 for (i <- 0 to laenge) {
                   if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + i).getGesetzt) == true) {
                     return false
@@ -273,11 +311,29 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                     return okay
                   }
                 }
-
+                }
             }
           case `groesse` => //Spalte = letzte Spalte & Reihe = erste Reihe
             richtung match {
               case 1 => //Schiff geht nach unten
+                if(groesse == (startZelle.getReihe+laenge-1)){
+                  for (i <- 0 to laenge-1) {
+                  if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                    return false
+                  } else {
+                    okay = true
+                  }
+                }
+                if (((zellen(startZelle.getReihe + laenge-1)(startZelle.getSpalte).getGesetzt) == true)) {
+                  return false
+                } else {
+                  if ((zellen(startZelle.getReihe + laenge-1)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                    return false
+                  } else {
+                    return okay
+                  }
+                }
+                }else{
                 for (i <- 0 to laenge) {
                   if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                     return false
@@ -294,8 +350,27 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                     return okay
                   }
                 }
-
+                }
               case 3 => //Schiff geht nach links
+                if(0 == (startZelle.getSpalte-laenge+1)){
+                  for (i <- groesse to (groesse - laenge+1)) {
+                  if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
+                    return false
+                  } else {
+                    okay = true
+                  }
+
+                }
+                if (((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge+1).getGesetzt) == true)) {
+                  return false
+                } else {
+                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte - laenge+1).getGesetzt) == true) {
+                    return false
+                  } else {
+                    return okay
+                  }
+                }
+                }else{
                 for (i <- groesse to (groesse - laenge)) {
                   if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
                     return false
@@ -313,7 +388,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                     return okay
                   }
                 }
-
+                }
             }
           case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe
             richtung match {
@@ -635,7 +710,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                   }
                 }else{//stößt nicht unten an
                   for(i <- (startZelle.getReihe-1) to (startZelle.getReihe+laenge)){
-                    if((zellen(i)(startZelle.getReihe+1).getGesetzt)==true){
+                    if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
                       return false
                     }else{
                       okay = true
@@ -714,22 +789,247 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
               case 1 => // Schiff geht nach unten
               //überprüfen ob unten anstößt
+                 if( groesse == (startZelle.getReihe+laenge-1)){
+                  for(i <- (startZelle.getReihe-1) to groesse){
+                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                    }
+                  }
+                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                    return false
+                  }else{
+                    return okay
+                  }
+                }else{//stößt nicht unten an
+                  for(i <- (startZelle.getReihe-1) to (startZelle.getReihe+laenge)){
+                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                    }
+                  }
+                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                    return false
+                  }else{
+                    if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                      return false
+                    }else{
+                      return okay
+                    }
+                  }
+                }
 
               case 3 => //Schiff geht nach links
+                for (i <- groesse to (groesse - laenge)) {
+                  if ((zellen(startZelle.getReihe-1)(i).getGesetzt) == true) {
+                    return false
+                  } else {
+                    if ((zellen(startZelle.getReihe+1)(i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+
+                  }
+                }
+                if (((zellen(startZelle.getReihe)(startZelle.getSpalte-laenge).getGesetzt) == true)) {
+                  return false
+                } else {
+
+                  return okay
+
+                }
+                
             }
           case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
             richtung match {
               case 0 => // Schiff geht nach oben
               //überprüfen ob oben anstößt
+                if(0 == (startZelle.getReihe-laenge+1)){
+                  for(i <- (startZelle.getReihe-1) to 0){
+                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                      if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                        return false
+                      }else{
+                        okay = true
+                      }
+                    }
+                  }
+                  if((zellen(startZelle.getReihe+1)(startZelle.getReihe).getGesetzt)==true){
+                    return false
+                  }else{
+                    return okay
+                  }
+                  
+                }else{//stößt nicht oben an
+                  for(i <- (startZelle.getReihe+1) to (startZelle.getReihe-laenge)){
+                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                      if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                        return false
+                      }else{
+                        okay = true
+                      }
+                    }
+                  }
+                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                    return false
+                  }else{
+                    if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                      return false
+                    }else{
+                      return okay
+                    
+                    }
+                  }
+                }
 
               case 1 => // SChiff geht nach unten
               //überprüfen ob unten anstößt
+                if(groesse == (startZelle.getReihe+laenge-1)){
+                  for(i <- (startZelle.getReihe-1) to groesse){
+                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                      if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                        return false
+                      }else{
+                        okay = true
+                      }
+                    }
+                  }
+                  
+                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                    return false
+                  }else{
+                    return okay
+                  }
+                  
+                }else{//stößt nicht oben an
+                  for(i <- (startZelle.getReihe-1) to (startZelle.getReihe+laenge)){
+                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                      if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                        return false
+                      }else{
+                        okay = true
+                      }
+                    }
+                  }
+                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                    return false
+                  }else{
+                    if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                      return false
+                    }else{
+                      return okay
+                    }
+                  }
+                }
 
               case 2 => // Schiff geht nach rechts
               //überprüfen ob rechts anstößt
+                if(groesse ==(startZelle.getSpalte+laenge-1)){
+                  for(i <- (startZelle.getSpalte-1) to groesse){
+                    if((zellen(startZelle.getReihe-1)(i).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                      if((zellen(startZelle.getReihe+1)(i).getGesetzt)==true){
+                        return false
+                      }else{
+                        okay = true
+                      }
+                    }
+                  }
+                  if((zellen(startZelle.getReihe)(startZelle.getSpalte-1).getGesetzt)==true){
+                    return false
+                  }else{
+                    return okay
+                    
+                  }
+                }else{//stößt nicht rechts an
+                  for(i <- (startZelle.getSpalte-1) to (startZelle.getSpalte+laenge)){
+                    if((zellen(startZelle.getReihe-1)(i).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                      if((zellen(startZelle.getReihe+1)(i).getGesetzt)==true){
+                        return false
+                      }else{
+                        okay = true
+                      }
+                    }
+                  }
+                  if((zellen(startZelle.getReihe)(startZelle.getSpalte-1).getGesetzt)==true){
+                    return false
+                  }else{
+                    okay = true
+                    if((zellen(startZelle.getReihe)(startZelle.getSpalte+laenge).getGesetzt)==true){
+                      return false
+                    }else{
+                      return okay
+                    }
+                    
+                  }
+                }
 
               case 3 => // Schiff geht links
               //überprüfen ob links anstößt
+                if(0 ==(startZelle.getSpalte-laenge+1)){
+                  for(i <- (startZelle.getSpalte+1) to 0){
+                    if((zellen(startZelle.getReihe-1)(i).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                      if((zellen(startZelle.getReihe+1)(i).getGesetzt)==true){
+                        return false
+                      }else{
+                        okay = true
+                      }
+                    }
+                  }
+                  if((zellen(startZelle.getReihe)(startZelle.getSpalte+1).getGesetzt)==true){
+                    return false
+                  }else{
+                    return okay
+                    
+                  }
+                }else{//stößt nicht links an
+                  for(i <- (startZelle.getSpalte+1) to (startZelle.getSpalte-laenge)){
+                    if((zellen(startZelle.getReihe-1)(i).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                      if((zellen(startZelle.getReihe+1)(i).getGesetzt)==true){
+                        return false
+                      }else{
+                        okay = true
+                      }
+                    }
+                  }
+                  if((zellen(startZelle.getReihe)(startZelle.getSpalte+1).getGesetzt)==true){
+                    return false
+                  }else{
+                    okay = true
+                    if((zellen(startZelle.getReihe)(startZelle.getSpalte-laenge).getGesetzt)==true){
+                      return false
+                    }else{
+                      return okay
+                    }
+                    
+                  }
+                }
             }
         }
     }
