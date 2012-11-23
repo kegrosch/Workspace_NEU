@@ -488,7 +488,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                   if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                     return false
                   } else {
-                    if ((zellen(i)(startZelle.getSpalte + 11).getGesetzt) == true) {
+                    if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                       return false
                     } else {
                       okay = true
@@ -583,12 +583,96 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           case 0 => //Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
             richtung match {
               case 0 => //Schiff geht nach oben
-              //überprüfen ob oben anstößt
+                //überprüfen ob oben anstößt
+                if(0 == (startZelle.getReihe-laenge+1)){
+                  for(i <- (startZelle.getReihe+1) to 0){
+                    if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                    }
+                  }
+                  if((zellen(startZelle.getReihe+1)(startZelle.getReihe).getGesetzt) == true){
+                    return false
+                  }else{
+                    return okay
+                  }
+                }else{//stößt nicht oben an
+                  for(i <- (startZelle.getReihe+1) to (startZelle.getReihe-1)){
+                    if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                    }
+                  }
+                  if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                    return false
+                  }else{
+                    if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                      return false
+                      
+                    }else{
+                      return okay
+                    }
+                  }
+                  
+                }
 
               case 1 => // Schiff geht nach unten
               //überprüfen ob unten anstößt
+                if( groesse == (startZelle.getReihe+laenge-1)){
+                  for(i <- (startZelle.getReihe-1) to groesse){
+                    if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                    }
+                  }
+                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                    return false
+                  }else{
+                    return okay
+                  }
+                }else{//stößt nicht unten an
+                  for(i <- (startZelle.getReihe-1) to (startZelle.getReihe+laenge)){
+                    if((zellen(i)(startZelle.getReihe+1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                    }
+                  }
+                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                    return false
+                  }else{
+                    if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                      return false
+                    }else{
+                      return okay
+                    }
+                  }
+                }
 
               case 2 => //Schiff geht nach rechts
+                 for (i <- 0 to (startZelle.getSpalte + laenge)) {
+                  if ((zellen(startZelle.getReihe-1)(i).getGesetzt) == true) {
+                    return false
+                  } else {
+                    if ((zellen(startZelle.getReihe+1)(i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+
+                  }
+                }
+                if (((zellen(startZelle.getReihe)(startZelle.getSpalte+1).getGesetzt) == true)) {
+                  return false
+                } else {
+
+                  return okay
+
+                }
+                
             }
           case `groesse` => //Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
             richtung match {
