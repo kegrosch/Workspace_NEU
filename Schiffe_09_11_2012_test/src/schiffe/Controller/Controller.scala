@@ -16,10 +16,10 @@ class Controller (var feld: Feld) extends Observable{
 //    feld = feld.parseFromString(s)
 //    notifyObservers
 //  }
-//  def reset = {
-//    feld = feld.reset
-//    notifyObservers
-//  }
+  def reset = {
+    feld = feld.reset
+    notifyObservers
+  }
   def setSize(newSize: Int) = {
     feld = new Feld(newSize)
     notifyObservers

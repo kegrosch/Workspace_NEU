@@ -18,7 +18,7 @@ class Tui(var controller: Controller) extends Observer {
     eingabe match {
       case "q" => continue = false
       case "s" => //Controller.solve
-      case "r" => // Controller.reset
+      case "r" => controller.reset
       case "set" =>
         size = controller.feld.zellen.length
         size match {
@@ -137,6 +137,7 @@ class Tui(var controller: Controller) extends Observer {
             }
             var pcFeld = new Feld(size)
             var pcController = new Controller(pcFeld)
+            
             //Schiffe für Computer setzen
             var schiffGesetzt = false
             while (schiffGesetzt == false) {

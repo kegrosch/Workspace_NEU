@@ -673,7 +673,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                     return okay
                   }
                 }else{//stößt nicht oben an
-                  for(i <- (startZelle.getReihe+1) to (startZelle.getReihe-1)){
+                  for(i <- (startZelle.getReihe+1) to (startZelle.getReihe-laenge)){
                     if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
                       return false
                     }else{
@@ -847,7 +847,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
             richtung match {
               case 0 => // Schiff geht nach oben
               //überprüfen ob oben anstößt
-                if(0 == (startZelle.getReihe-laenge+1)){
+                if(0 == (startZelle.getReihe-laenge)){
                   for(i <- (startZelle.getReihe-1) to 0){
                     if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
                       return false
@@ -913,7 +913,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                     return okay
                   }
                   
-                }else{//stößt nicht oben an
+                }else{//stößt nicht unten an
                   for(i <- (startZelle.getReihe-1) to (startZelle.getReihe+laenge)){
                     if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
                       return false
@@ -1034,7 +1034,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
         }
     }
 
-    return true
+    return false
   }
   //  def zelle(index: Int) = cs(index)
   //  def toIntSet:Set[Int] = cs.filterNot(_.value=="X").map(_.value).toSet

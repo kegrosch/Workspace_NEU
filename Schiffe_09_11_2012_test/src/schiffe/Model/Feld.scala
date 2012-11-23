@@ -16,7 +16,7 @@ class Feld(anzahl: Int) {
       
     }
   }
-  
+ def reset = new Feld(size); 
 
 val size = sqrt(zellen.size).toInt
 
