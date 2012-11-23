@@ -592,7 +592,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                       okay = true
                     }
                   }
-                  if((zellen(startZelle.getReihe+1)(startZelle.getReihe).getGesetzt) == true){
+                  if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt) == true){
                     return false
                   }else{
                     return okay
@@ -678,6 +678,39 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
             richtung match {
               case 0 => //Schiff geht nach oben
               // überprüfen ob oben anstößt
+                if(0 == (startZelle.getReihe-laenge+1)){
+                  for(i <- (startZelle.getReihe+1) to 0){
+                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                    }
+                  }
+                  if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt) == true){
+                    return false
+                  }else{
+                    return okay
+                  }
+                }else{//stößt nicht oben an
+                  for(i <- (startZelle.getReihe+1) to (startZelle.getReihe-1)){
+                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                    }
+                  }
+                  if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                    return false
+                  }else{
+                    if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                      return false
+                      
+                    }else{
+                      return okay
+                    }
+                  }
+                  
+                }
 
               case 1 => // Schiff geht nach unten
               //überprüfen ob unten anstößt
