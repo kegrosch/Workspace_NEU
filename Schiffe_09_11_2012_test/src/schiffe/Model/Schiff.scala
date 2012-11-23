@@ -330,7 +330,38 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                   }
                   }
               case 2 => // Schiff geht nach rechts
-                //überprüfen ob rechts anstößt
+                
+                if(groesse == (startZelle.getSpalte+laenge-1)){//überprüfen ob rechts anstößt
+                  //Schiff stößt rechts an
+                  for(i <- (startZelle.getSpalte-1) to groesse){
+                    if((zellen(startZelle.getReihe+1)(i).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                    }
+                  }
+                  if((zellen(startZelle.getReihe)(startZelle.getSpalte-1).getGesetzt)==true){
+                    return false
+                  }else{
+                    return okay
+                  }
+                  
+                }else{//Schiff stößt nicht rechts an
+                for(i <- (startZelle.getSpalte-1) to (startZelle.getSpalte+laenge)){
+                  if((zellen(startZelle.getReihe+1)(i).getGesetzt)==true){
+                      return false
+                    }else{
+                      okay = true
+                    }
+                }
+                if((zellen(startZelle.getReihe)(startZelle.getSpalte-1).getGesetzt)==true){
+                    return false
+                  }else{
+                    if((zellen(startZelle.getReihe)(startZelle.getSpalte+1).getGesetzt)==true){
+                    return okay
+                    }
+                  }
+                }
               case 3 => // Schiff geht links
                 //überprüfen ob links anstößt
             }
