@@ -11,10 +11,11 @@ class Zelle (row: Int, col: Int){
   gesetzt = inhalt
   
   }
-  
+ 
   def getReihe: Int = reihe
   def getSpalte: Int = spalte
   def getGesetzt: Boolean = gesetzt
+  def getOpen: Boolean = open
   
   
 //  def equals(that:Zelle) = this.value == that.value

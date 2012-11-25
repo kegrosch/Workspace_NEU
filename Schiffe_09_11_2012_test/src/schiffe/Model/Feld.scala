@@ -4,9 +4,12 @@ import scala.math.sqrt
 import scala.util.Random
 
 class Feld(anzahl: Int) {
+  require(List(2, 5, 10).contains(anzahl))
   var zellen = Array.ofDim[Zelle](anzahl, anzahl)
   
   var anzahlZellen = anzahl*anzahl-1
+  var spielfertig = false
+  var zaehlerhit =0 
 
  //Zellen generieren
  
@@ -27,8 +30,23 @@ for(i <- 0 to anzahl-1){
 }
 val size = sqrt(zellen.size).toInt
 
-  def zelle(reihe: Int, spalte: Int) = (reihe, spalte)
+def zelle(reihe: Int, spalte: Int) = (reihe, spalte)
 
+def hit(reihe: Int, spalte: Int):Boolean = {
+  if(zellen(reihe-1)(spalte-1).getOpen==false & reihe <=anzahl-1 & spalte <= anzahl -1){
+    zellen(reihe-1)(spalte-1).open=true
+    if(zellen(reihe-1)(spalte-1).getGesetzt==true )
+      zaehlerhit = zaehlerhit +1 
+    return true
+  }
+  else
+    return false
+}
+def zellegetroffen(reihe: Int, spalte: Int): Boolean={
+  if(zellen(reihe-1)(spalte-1).getOpen==true & zellen(reihe-1)(spalte-1).getGesetzt==true)
+    return true
+    else return false
+    }
 
   override def toString = {
     val lineseparator = ("+-" + ("--" * (anzahl/2))) *anzahl + "+\n"

@@ -20,6 +20,18 @@ class Controller (var feld: Feld) extends Observable{
     feld = feld.reset
     notifyObservers
   }
+  def solve ={
+    field=field.solve
+    notifyObservers
+  }
+  def hit ={
+    field=field.hit
+    notifyObservers
+  }
+  def zellegetroffen={
+    field=field.zellegetroffen
+    notifyObservers
+  }
   def setSize(newSize: Int) = {
     feld = new Feld(newSize)
     notifyObservers

@@ -17,7 +17,7 @@ class Tui(var controller: Controller) extends Observer {
     var continue = true
     eingabe match {
       case "q" => continue = false
-      case "s" => //Controller.solve
+      case "s" => controller.solve
       case "r" => controller.reset
       case "set" =>
         size = controller.feld.zellen.length
