@@ -112,10 +112,10 @@ class Tui(var controller: Controller) extends Observer {
               }
             }
 
-            for (i <- 1 to 2) {
-              var gesetzt = false
+            
+              gesetzt = false
               while (gesetzt == false) {
-                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+                println("Geben Sie die das 1.te Feld Ihres Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
 
@@ -123,7 +123,7 @@ class Tui(var controller: Controller) extends Observer {
                   case row :: "," :: column :: "," :: richtung :: Nil => {
 
                     if (controller.set(2, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
-                      println(i + ".ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
+                      println("Zerstörer wurde bei " + row + " / " + column + " gesetzt")
                       gesetzt = true
                     } else {
                       println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
@@ -134,13 +134,17 @@ class Tui(var controller: Controller) extends Observer {
                   case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55r) ein")
                 }
               }
-            }
-            var pcFeld = new Feld(size)
-            var pcController = new Controller(pcFeld)
+            
+           var  pcFeld =new Feld(size)
+           var pcController = new Controller(pcFeld)
             var alleGesetzt = false
+            while (alleGesetzt == false) {
+            
+            
+            
             var zaehlerAlleGesetzt = 0
             var zaehlerGesetzt = 0
-            while (alleGesetzt == false) {
+           
 zaehlerAlleGesetzt = 0
 zaehlerGesetzt = 0
               //Schiffe für Computer setzen
@@ -167,7 +171,7 @@ zaehlerGesetzt = 0
               zaehlerGesetzt = 0
 
               while (schiffGesetzt == false) {
-                if (zaehlerGesetzt >= 10) {
+                if (zaehlerGesetzt >= 50) {
                   schiffGesetzt = true
                 }
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
@@ -188,10 +192,10 @@ zaehlerGesetzt = 0
               schiffGesetzt = false
               zaehlerGesetzt = 0
 
-//              for (k <- 1 to 2) {
+ 
 zaehlerGesetzt = 0
                 while (schiffGesetzt == false) {
-                  if (zaehlerGesetzt >= 10) {
+                  if (zaehlerGesetzt >= 50) {
                     schiffGesetzt = true
                   }else{
                   var startReihe = scala.util.Random.nextInt(5 - 1) + 1
@@ -206,17 +210,17 @@ zaehlerGesetzt = 0
                     schiffGesetzt = false
                     zaehlerGesetzt = zaehlerGesetzt + 1
 //                    println("nichtGesetzt")
-println(zaehlerGesetzt)
+//println(zaehlerGesetzt)
                   }
                   }
                 }
                 schiffGesetzt = false
-//             }
-              if (zaehlerAlleGesetzt == 4) {
-                println("ALLE GESETZT")
+             
+              if (zaehlerAlleGesetzt == 3) {
+//                println("ALLE GESETZT")
                 alleGesetzt = true
               }else{
-                println("RESET")
+//                println("RESET")
                 pcFeld = new Feld(size)
            pcController = new Controller(pcFeld)
                

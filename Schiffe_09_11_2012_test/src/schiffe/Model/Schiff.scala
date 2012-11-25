@@ -740,7 +740,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
                   }
                 }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte+1).getGesetzt) == true)) {
+                if (((zellen(startZelle.getReihe)(startZelle.getSpalte+laenge).getGesetzt) == true)) {
                   return false
                 } else {
 
