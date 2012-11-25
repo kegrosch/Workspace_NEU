@@ -19,14 +19,16 @@ class Feld(anzahl: Int) {
       
     }
   }
+
 def reset = new Feld(size); 
-def solve = {
+def solve: Feld = {
 for(i <- 0 to anzahl-1){
     for(j <- 0 to anzahl-1){
       zellen(i)(j).open = true
       
     }
   }
+return this
 }
 val size = sqrt(zellen.size).toInt
 
@@ -47,18 +49,18 @@ def zellegetroffen(reihe: Int, spalte: Int): Boolean={
     return true
     else return false
     }
-def spielfertig{
-  if(anzahl==2 & zaehlerhit==2){
-    spielfertig= true
-  }
-  if(anzahl==5 & zaehlerhit==9){
-    spielfertig= true
-  }
-  if(anzahl==10 & zaehlerhit==30){
-    spielfertig= true
-  }
-    
-}
+//def spielfertig{
+//  if(anzahl==2 & zaehlerhit==2){
+//    spielfertig= true
+//  }
+//  if(anzahl==5 & zaehlerhit==9){
+//    spielfertig= true
+//  }
+//  if(anzahl==10 & zaehlerhit==30){
+//    spielfertig= true
+//  }
+//    
+//}
 
   override def toString = {
     val lineseparator = ("+-" + ("--" * (anzahl/2))) *anzahl + "+\n"

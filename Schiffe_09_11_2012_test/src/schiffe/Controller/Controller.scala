@@ -21,25 +21,25 @@ class Controller (var feld: Feld) extends Observable{
     notifyObservers
   }
   def solve ={
-    field=field.solve
+    feld= feld.solve
     notifyObservers
   }
-  def hit:Boolean ={
-    field=field.hit
-    notifyObservers
-  }
-  def zellegetroffen: Boolean={
-    field=field.zellegetroffen
-    notifyObservers
-  }
+//  def hit:Boolean ={
+//    feld=feld.hit
+//    notifyObservers
+//  }
+//  def zellegetroffen: Boolean={
+//    feld=feld.zellegetroffen
+//    notifyObservers
+//  }
   def setSize(newSize: Int) = {
     feld = new Feld(newSize)
     notifyObservers
   }
-   def spielfertig: Boolean= {
-    feld = field.spielfertig
-    notifyObservers
-  }
+//   def spielfertig: Boolean= {
+//    feld = feld.spielfertig
+//    notifyObservers
+//  }
   def set(laenge: Int, row: Int, col: Int, richtung: Int, groesse: Int):Boolean = {
     var startZelle = feld.zellen(row-1)(col-1)
     var schiff = new Schiff(laenge, startZelle, feld.zellen)
