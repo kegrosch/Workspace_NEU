@@ -47,6 +47,18 @@ def zellegetroffen(reihe: Int, spalte: Int): Boolean={
     return true
     else return false
     }
+def spielfertig{
+  if(anzahl==2 & zaehlerhit==2){
+    spielfertig= true
+  }
+  if(anzahl==5 & zaehlerhit==9){
+    spielfertig= true
+  }
+  if(anzahl==10 & zaehlerhit==30){
+    spielfertig= true
+  }
+    
+}
 
   override def toString = {
     val lineseparator = ("+-" + ("--" * (anzahl/2))) *anzahl + "+\n"

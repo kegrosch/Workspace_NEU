@@ -24,16 +24,20 @@ class Controller (var feld: Feld) extends Observable{
     field=field.solve
     notifyObservers
   }
-  def hit ={
+  def hit:Boolean ={
     field=field.hit
     notifyObservers
   }
-  def zellegetroffen={
+  def zellegetroffen: Boolean={
     field=field.zellegetroffen
     notifyObservers
   }
   def setSize(newSize: Int) = {
     feld = new Feld(newSize)
+    notifyObservers
+  }
+   def spielfertig: Boolean= {
+    feld = field.spielfertig
     notifyObservers
   }
   def set(laenge: Int, row: Int, col: Int, richtung: Int, groesse: Int):Boolean = {
