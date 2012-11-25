@@ -860,7 +860,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                       }
                     }
                   }
-                  if((zellen(startZelle.getReihe+1)(startZelle.getReihe).getGesetzt)==true){
+                  if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
                     return false
                   }else{
                     return okay

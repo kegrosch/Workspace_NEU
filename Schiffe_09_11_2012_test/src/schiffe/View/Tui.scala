@@ -145,8 +145,7 @@ class Tui(var controller: Controller) extends Observer {
             var zaehlerAlleGesetzt = 0
             var zaehlerGesetzt = 0
            
-zaehlerAlleGesetzt = 0
-zaehlerGesetzt = 0
+
               //Schiffe für Computer setzen
               var schiffGesetzt = false
               while (schiffGesetzt == false) {
@@ -194,6 +193,7 @@ zaehlerGesetzt = 0
 
  
 zaehlerGesetzt = 0
+
                 while (schiffGesetzt == false) {
                   if (zaehlerGesetzt >= 50) {
                     schiffGesetzt = true
@@ -235,8 +235,7 @@ zaehlerGesetzt = 0
             println(pcFeld.toString())
 
           case 10 =>
-            val temp = 10
-            val temp1 = temp.toString()
+            
             var gesetzt = false
             while (gesetzt == false) {
               println("Geben Sie die das 1.te Feld Ihres Schlachtschiffes und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
@@ -456,56 +455,104 @@ zaehlerGesetzt = 0
             var pcFeld = new Feld(size)
             var pcController = new Controller(pcFeld)
             //Schiffe für Computer setzen
+         
+            var alleGesetzt = false
+            while (alleGesetzt == false) {
+            
+            
+            
+            var zaehlerAlleGesetzt = 0
+            var zaehlerGesetzt = 0
             var schiffGesetzt = false
             while (schiffGesetzt == false) {
+              if (zaehlerGesetzt >= 10) {
+                  schiffGesetzt = true
+                }
               var startReihe = scala.util.Random.nextInt(10 - 1) + 1
               var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
               var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
 
               if (pcController.set(5, startReihe, startSpalte, 5, (size - 1)) == true) {
                 schiffGesetzt = true
+                zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+                println("SCHIFF-5-OKAY")
 
               } else {
                 schiffGesetzt = false
+                zaehlerGesetzt = zaehlerGesetzt + 1
 
+                println("SCHIFF-5-SCHLECHT")
+                println(zaehlerGesetzt)
               }
             }
+            zaehlerGesetzt = 0
             schiffGesetzt = false
             for (k <- 1 to 2) {
+              
               while (schiffGesetzt == false) {
+                if (zaehlerGesetzt >= 50) {
+                  schiffGesetzt = true
+                }else{
                 var startReihe = scala.util.Random.nextInt(10 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
                 var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
 
                 if (pcController.set(4, startReihe, startSpalte, 5, (size - 1)) == true) {
                   schiffGesetzt = true
+                  zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+                  println("SCHIFF-4-OKAY")
                 } else {
                   schiffGesetzt = false
+                  zaehlerGesetzt = zaehlerGesetzt + 1
+                  println("SCHIFF-4-SCHLECHT")
+                println(zaehlerGesetzt)
 
                 }
+              
+              
+                }
               }
+              zaehlerGesetzt = 0
               schiffGesetzt = false
             }
-
+zaehlerGesetzt = 0
             for (k <- 1 to 3) {
 
               while (schiffGesetzt == false) {
+                if (zaehlerGesetzt >= 50) {
+                  schiffGesetzt = true
+                }else{
                 var startReihe = scala.util.Random.nextInt(10 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
                 var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
 
                 if (pcController.set(3, startReihe, startSpalte, 5, (size - 1)) == true) {
                   schiffGesetzt = true
+                  zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+                  println("SCHIFF-3-OKAY")
                 } else {
                   schiffGesetzt = false
+                  zaehlerGesetzt = zaehlerGesetzt + 1
+                  println("SCHIFF-3-SCHLECHT")
+                println(zaehlerGesetzt)
                 }
 
+              
+              
+              
+                }
               }
               schiffGesetzt = false
+              
+              zaehlerGesetzt = 0
             }
+zaehlerGesetzt = 0
             for (k <- 1 to 4) {
 
               while (schiffGesetzt == false) {
+                if (zaehlerGesetzt >= 50) {
+                  schiffGesetzt = true
+                }else{
                 var startReihe = scala.util.Random.nextInt(10 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
                 var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
@@ -513,14 +560,31 @@ zaehlerGesetzt = 0
                 if (pcController.set(2, startReihe, startSpalte, 5, (size - 1)) == true) {
 
                   schiffGesetzt = true
+                  zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
                 } else {
                   schiffGesetzt = false
+                  zaehlerGesetzt = zaehlerGesetzt + 1
                 }
 
               }
+              
+              }
+              zaehlerGesetzt = 0
               schiffGesetzt = false
             }
-
+zaehlerGesetzt = 0
+if (zaehlerAlleGesetzt == 10) {
+                println("ALLE GESETZT")
+                alleGesetzt = true
+              }else{
+                println("RESET")
+                pcFeld = new Feld(size)
+           pcController = new Controller(pcFeld)
+               
+               alleGesetzt = false
+               
+              }
+            }
             println("Die Schiffe des Computers wurden gesetzt")
             println("IHR EIGENES SPIELFELD:")
             printTui
