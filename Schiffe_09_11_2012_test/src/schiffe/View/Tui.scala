@@ -137,57 +137,93 @@ class Tui(var controller: Controller) extends Observer {
             }
             var pcFeld = new Feld(size)
             var pcController = new Controller(pcFeld)
-            
-            //Schiffe für Computer setzen
-            var schiffGesetzt = false
-            while (schiffGesetzt == false) {
-              var startReihe = scala.util.Random.nextInt(5 - 1) + 1
-              var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-              var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
-
-              if (pcController.set(4, startReihe, startSpalte, 5, (size - 1)) == true) {
-                schiffGesetzt = true
-              } else {
-                schiffGesetzt = false
-              }
-
-            }
-
-            schiffGesetzt = false
-
-            while (schiffGesetzt == false) {
-              var startReihe = scala.util.Random.nextInt(5 - 1) + 1
-              var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-              var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
-
-              if (pcController.set(3, startReihe, startSpalte, 5, (size - 1)) == true) {
-                schiffGesetzt = true
-
-              } else {
-                schiffGesetzt = false
-
-              }
-            }
-            schiffGesetzt = false
-
-            for (k <- 1 to 2) {
-
+            var alleGesetzt = false
+            var zaehlerAlleGesetzt = 0
+            var zaehlerGesetzt = 0
+            while (alleGesetzt == false) {
+zaehlerAlleGesetzt = 0
+zaehlerGesetzt = 0
+              //Schiffe für Computer setzen
+              var schiffGesetzt = false
               while (schiffGesetzt == false) {
+                if (zaehlerGesetzt >= 10) {
+                  schiffGesetzt = true
+                }
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
                 var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
 
-                if (pcController.set(2, startReihe, startSpalte, 5, (size - 1)) == true) {
+                if (pcController.set(4, startReihe, startSpalte, 5, (size - 1)) == true) {
                   schiffGesetzt = true
+                  zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+                } else {
+                  schiffGesetzt = false
+                  zaehlerGesetzt = zaehlerGesetzt + 1
+                }
+                
+              }
+
+              schiffGesetzt = false
+              zaehlerGesetzt = 0
+
+              while (schiffGesetzt == false) {
+                if (zaehlerGesetzt >= 10) {
+                  schiffGesetzt = true
+                }
+                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
+                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+                var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+
+                if (pcController.set(3, startReihe, startSpalte, 5, (size - 1)) == true) {
+                  schiffGesetzt = true
+                  zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
 
                 } else {
                   schiffGesetzt = false
+                  zaehlerGesetzt = zaehlerGesetzt + 1
 
                 }
+                
               }
               schiffGesetzt = false
-            }
+              zaehlerGesetzt = 0
 
+//              for (k <- 1 to 2) {
+zaehlerGesetzt = 0
+                while (schiffGesetzt == false) {
+                  if (zaehlerGesetzt >= 10) {
+                    schiffGesetzt = true
+                  }else{
+                  var startReihe = scala.util.Random.nextInt(5 - 1) + 1
+                  var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+                  var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+
+                  if (pcController.set(2, startReihe, startSpalte, 5, (size - 1)) == true) {
+                    schiffGesetzt = true
+                    zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+
+                  } else {
+                    schiffGesetzt = false
+                    zaehlerGesetzt = zaehlerGesetzt + 1
+//                    println("nichtGesetzt")
+println(zaehlerGesetzt)
+                  }
+                  }
+                }
+                schiffGesetzt = false
+//             }
+              if (zaehlerAlleGesetzt == 4) {
+                println("ALLE GESETZT")
+                alleGesetzt = true
+              }else{
+                println("RESET")
+                pcFeld = new Feld(size)
+           pcController = new Controller(pcFeld)
+               
+               alleGesetzt = false
+               
+              }
+            }
             println("Die Schiffe des Computers wurden gesetzt")
             println("IHR EIGENES SPIELFELD:")
             printTui
@@ -310,7 +346,7 @@ class Tui(var controller: Controller) extends Observer {
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
                 pos.toList.filter(c => c != ' ').map(c => c.toString) match {
-                   case "1" :: "0" :: "," :: column :: "," :: richtung :: Nil => {
+                  case "1" :: "0" :: "," :: column :: "," :: richtung :: Nil => {
 
                     if (controller.set(3, 10, column.toInt, richtung.toInt, (size - 1))) {
                       println(i + ".tes U-Boot wurde bei " + 10 + " / " + column + " gesetzt")
@@ -320,7 +356,7 @@ class Tui(var controller: Controller) extends Observer {
                       gesetzt = false
                     }
                   }
-                    case row :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
+                  case row :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
 
                     if (controller.set(3, row.toInt, 10, richtung.toInt, (size - 1))) {
                       println(i + ".tes U-Boot wurde bei " + row + " / " + 10 + " gesetzt")
@@ -330,7 +366,7 @@ class Tui(var controller: Controller) extends Observer {
                       gesetzt = false
                     }
                   }
-                    case "1" :: "0" :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
+                  case "1" :: "0" :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
 
                     if (controller.set(3, 10, 10, richtung.toInt, (size - 1))) {
                       println(i + ".tes U-Boot wurde bei " + 10 + " / " + 10 + " gesetzt")
@@ -407,8 +443,6 @@ class Tui(var controller: Controller) extends Observer {
                     }
 
                   }
-                  
-
 
                   case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55r) ein")
                 }

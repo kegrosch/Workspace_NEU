@@ -45,7 +45,7 @@ class Controller (var feld: Feld) extends Observable{
     var schiff = new Schiff(laenge, startZelle, feld.zellen)
     var freiGesetzt = schiff.setzen(richtung, groesse)
     notifyObservers
-    freiGesetzt
+    return freiGesetzt
     
 //    println("Schiff gesetzt")
   }
@@ -58,6 +58,8 @@ class Controller (var feld: Feld) extends Observable{
 //  def valid = feld.valid
 
 //  	def set
-  
+  def updateFeld(feld: Feld){
+    this.feld = feld
+  }
 
 }
