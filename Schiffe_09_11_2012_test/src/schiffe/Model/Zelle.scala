@@ -5,6 +5,7 @@ class Zelle (row: Int, col: Int){
   var gesetzt= false
   var reihe = row
   var spalte = col
+  var open = false
   
  def setzen (inhalt: Boolean){
   gesetzt = inhalt

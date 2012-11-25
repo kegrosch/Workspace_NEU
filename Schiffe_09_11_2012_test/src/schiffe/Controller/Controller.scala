@@ -31,7 +31,7 @@ class Controller (var feld: Feld) extends Observable{
     notifyObservers
     freiGesetzt
     
-//    println("SChiff gesetzt")
+//    println("Schiff gesetzt")
   }
 //  def solve = {
 //    val (success, g) = feld.solve

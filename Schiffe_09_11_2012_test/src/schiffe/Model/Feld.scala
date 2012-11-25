@@ -16,8 +16,15 @@ class Feld(anzahl: Int) {
       
     }
   }
- def reset = new Feld(size); 
-
+def reset = new Feld(size); 
+def solve = {
+for(i <- 0 to anzahl-1){
+    for(j <- 0 to anzahl-1){
+      zellen(i)(j).open = true
+      
+    }
+  }
+}
 val size = sqrt(zellen.size).toInt
 
   def zelle(reihe: Int, spalte: Int) = (reihe, spalte)
