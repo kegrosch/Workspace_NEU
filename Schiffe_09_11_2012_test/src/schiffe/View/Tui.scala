@@ -6,18 +6,22 @@ import schiffe.Model.Schiff
 
 class Tui(var controller: Controller) extends Observer {
   controller.add(this)
+   
   printTui
   def update = printTui
   def printTui = {
     println(controller.feld.toString())
 
   }
+ 
   var size = controller.feld.zellen.length
+  var pcFeld = new Feld(size)
+            var pcController = new Controller(pcFeld)
   def readInput(eingabe: String) = {
     var continue = true
     eingabe match {
       case "q" => continue = false
-      case "s" => controller.solve
+      case "s" => println(pcController.feld.toString())
       case "r" => controller.reset
       case "set" =>
         size = controller.feld.zellen.length
@@ -44,8 +48,8 @@ class Tui(var controller: Controller) extends Observer {
                 case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55r) ein")
               }
             }
-            var pcFeld = new Feld(size)
-            var pcController = new Controller(pcFeld)
+            pcFeld = new Feld(size)
+            pcController = new Controller(pcFeld)
             //Schiffe für Computer setzen
             var schiffGesetzt = false
 
@@ -67,7 +71,7 @@ class Tui(var controller: Controller) extends Observer {
             println("IHR EIGENES SPIELFELD:")
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
-            println(pcFeld.toString())
+           println(pcController.feld.pcToString)
 
           case 5 =>
             var gesetzt = false
@@ -135,8 +139,9 @@ class Tui(var controller: Controller) extends Observer {
                 }
               }
             
-           var  pcFeld =new Feld(size)
-           var pcController = new Controller(pcFeld)
+           pcFeld =new Feld(size)
+           
+           pcController = new Controller(pcFeld)
             var alleGesetzt = false
             while (alleGesetzt == false) {
             
@@ -232,7 +237,7 @@ zaehlerGesetzt = 0
             println("IHR EIGENES SPIELFELD:")
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
-            println(pcFeld.toString())
+            println(pcController.feld.pcToString)
 
           case 10 =>
             
@@ -452,8 +457,8 @@ zaehlerGesetzt = 0
               }
             }
 
-            var pcFeld = new Feld(size)
-            var pcController = new Controller(pcFeld)
+            pcFeld = new Feld(size)
+            pcController = new Controller(pcFeld)
             //Schiffe für Computer setzen
          
             var alleGesetzt = false
@@ -589,7 +594,7 @@ if (zaehlerAlleGesetzt == 10) {
             println("IHR EIGENES SPIELFELD:")
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
-            println(pcFeld.toString())
+            println(pcController.feld.pcToString)
 
         }
 
