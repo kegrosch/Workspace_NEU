@@ -18,6 +18,7 @@ class Tui(var controller: Controller) extends Observer {
   var pcFeld = new Feld(size)
             var pcController = new Controller(pcFeld)
   def readInput(eingabe: String) = {
+    var feldGesetzt = false
     var continue = true
     eingabe match {
       case "q" => continue = false
@@ -72,6 +73,7 @@ class Tui(var controller: Controller) extends Observer {
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
            println(pcController.feld.pcToString)
+           feldGesetzt = true
 
           case 5 =>
             var gesetzt = false
@@ -233,12 +235,14 @@ zaehlerGesetzt = 0
                
               }
             }
+           feldGesetzt = true
             println("Die Schiffe des Computers wurden gesetzt")
             println("IHR EIGENES SPIELFELD:")
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
             println(pcController.feld.pcToString)
 
+            
           case 10 =>
             
             var gesetzt = false
@@ -595,12 +599,19 @@ if (zaehlerAlleGesetzt == 10) {
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
             println(pcController.feld.pcToString)
+            feldGesetzt = true
 
         }
 
       case "10" => controller.setSize(10)
       case "5" => controller.setSize(5)
       case "2" => controller.setSize(2)
+      case "hit" => 
+        if(feldGesetzt == false){
+          println("Sie müssen zunächst Ihre Schiffe setzen um das Spiel starten zu können (set)")
+        }else{
+          println("Geben Sie die Zelle ein (Reihe, Spalte)")
+        }
       case _ => //Controller.falseInput
     }
     continue
