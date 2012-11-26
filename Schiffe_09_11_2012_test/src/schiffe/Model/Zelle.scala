@@ -5,17 +5,20 @@ class Zelle (row: Int, col: Int){
   var gesetzt= false
   var reihe = row
   var spalte = col
-  var open = false
+  var getroffen = false
   
  def setzen (inhalt: Boolean){
   gesetzt = inhalt
   
   }
+def hit = {getroffen = true
+//  println("TREFFER")
+}
  
   def getReihe: Int = reihe
   def getSpalte: Int = spalte
   def getGesetzt: Boolean = gesetzt
-  def getOpen: Boolean = open
+  def getGetroffen: Boolean = getroffen
   
   
 //  def equals(that:Zelle) = this.value == that.value
