@@ -28,6 +28,7 @@ class Tui(var controller: Controller) extends Observer {
       }
       case "r" => {controller.reset
       pcController.reset
+      feldGesetzt = false
       }
       case "set" =>
         size = controller.feld.zellen.length
