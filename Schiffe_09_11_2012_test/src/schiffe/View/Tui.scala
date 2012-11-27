@@ -80,6 +80,7 @@ class Tui(var controller: Controller) extends Observer {
             println("DAS SPIELFELD DES COMPUTERS:")
            println(pcController.feld.pcToString)
            feldGesetzt = true
+           println("Sie haben folgende Auswahlmöglichkeiten: q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen")
 
           case 5 =>
             var gesetzt = false
@@ -247,7 +248,7 @@ zaehlerGesetzt = 0
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
             println(pcController.feld.pcToString)
-            println("Sie haben folgende Auswahlmöglichkeiten: Grösse dies Spielfelds verändern (2,5 oder 10 eingeben), q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen")
+            println("Sie haben folgende Auswahlmöglichkeiten: q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen")
             
           case 10 =>
             
@@ -606,12 +607,12 @@ if (zaehlerAlleGesetzt == 10) {
             println("DAS SPIELFELD DES COMPUTERS:")
             println(pcController.feld.pcToString)
             feldGesetzt = true
-
+            println("Sie haben folgende Auswahlmöglichkeiten: q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen") 
         }
 
-      case "10" => controller.setSize(10)
-      case "5" => controller.setSize(5)
-      case "2" => controller.setSize(2)
+      case "10" => if(feldGesetzt==false){controller.setSize(10)} else println("Sie haben die Zellen schon gesetzt. Sie dürfen das Spielfeld nicht ändern")
+      case "5" => if(feldGesetzt==false) {controller.setSize(5)} else println("Sie haben die Zellen schon gesetzt. Sie dürfen das Spielfeld nicht ändern")
+      case "2" =>if(feldGesetzt==false) {controller.setSize(2)} else println("Sie haben die Zellen schon gesetzt. Sie dürfen das Spielfeld nicht ändern")
       case "hit" => {
         var quit = false
       while(controller.spielfertig == false & pcController.spielfertig == false & quit == false){
