@@ -606,8 +606,9 @@ if (zaehlerAlleGesetzt == 10) {
       case "10" => controller.setSize(10)
       case "5" => controller.setSize(5)
       case "2" => controller.setSize(2)
-      case "hit" => 
-      while(controller.spielfertig == false & pcController.spielfertig == false){
+      case "hit" => {
+        var quit = false
+      while(controller.spielfertig == false & pcController.spielfertig == false & quit == false){
           
         if(feldGesetzt == false){
           println("Sie müssen zunächst Ihre Schiffe setzen um das Spiel starten zu können (set)")
@@ -641,14 +642,12 @@ if (zaehlerAlleGesetzt == 10) {
             
                 }
                 
-                
-                //case beenden einfügen
-                
-                //case solve einfügen
-                
-                
-                
-                case _ => println("Sie haben eine Falsche Eingabe gemacht (bsp.: 1,3)")
+               case "s" ::Nil =>{
+                println(pcController.feld.toString())
+                quit = true
+                  }
+               case "q" ::Nil => quit = true
+               case _ => println("Sie haben eine Falsche Eingabe gemacht (bsp.: 1,3)")
           }
         }
     }
@@ -657,8 +656,14 @@ if (zaehlerAlleGesetzt == 10) {
           println("Der Computer hat gewonnen!")
           
         }else{
-         println("SIE haben gewonnen!") 
+          if (quit==true){
+            println("Sie haben das Spiel abgebrochen")
+          }
+          else
+            if (pcController.spielfertig==true)
+          println("SIE haben gewonnen!") 
         }
+      }
       case _ => //Controller.falseInput
     }
     continue
