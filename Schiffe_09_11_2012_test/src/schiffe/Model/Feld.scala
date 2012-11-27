@@ -84,14 +84,28 @@ def spielFertig: Boolean = {
     var box = "\n" + (lineseparator + (line)) * anzahl + lineseparator
     for (reihe <- 0 to anzahl-1) {
       for(spalte <- 0 to anzahl-1){
-        
+         if(zellen(reihe)(spalte).getGetroffen == true){
+          if(zellen(reihe)(spalte).getGesetzt == true){
+            (box = box.replaceFirst("x", "getroffen"))
+//      (box = box.replaceFirst("false", " "))
+//      (box = box.replaceFirst("getroffen", "x"))
+          }else{
+            (box = box.replaceFirst("x", "keinTreffer"))
+//      (box = box.replaceFirst("keinTreffer", "O"))
+//      (box = box.replaceFirst("keinTreffer", "O"))
+          }
+        }else{
 
       (box = box.replaceFirst("x", zellen(reihe)(spalte).gesetzt.toString()))
       (box = box.replaceFirst("false", " "))
       (box = box.replaceFirst("true", "X"))
+      
 
+        }
     }
     }
+    (box = box.replaceAll("getroffen", "#"))
+      (box = box.replaceAll("keinTreffer", "O"))
     box
   }
   def pcToString = {

@@ -24,9 +24,10 @@ class Controller (var feld: Feld) extends Observable{
     feld= feld.solve
     notifyObservers
   }
-  def hit(reihe: Int, spalte: Int) ={
-    feld.hit(reihe-1, spalte-1)
-    notifyObservers
+  def hit(reihe: Int, spalte: Int): Boolean ={
+    println("REIHE: " + reihe + " Spalte: " + spalte) 
+    return feld.hit(reihe-1, spalte-1)
+//    notifyObservers
   }
 //  def zellegetroffen: Boolean={
 //    feld=feld.zellegetroffen
@@ -36,6 +37,7 @@ class Controller (var feld: Feld) extends Observable{
     feld = new Feld(newSize)
     notifyObservers
   }
+  def getSize: Int = feld.size.toInt
    def spielfertig: Boolean= {
     if(feld.spielFertig == true){
       return true

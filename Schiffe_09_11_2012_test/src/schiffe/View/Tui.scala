@@ -484,13 +484,13 @@ zaehlerGesetzt = 0
               if (pcController.set(5, startReihe, startSpalte, 5, (size - 1)) == true) {
                 schiffGesetzt = true
                 zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
-                println("SCHIFF-5-OKAY")
+//                println("SCHIFF-5-OKAY")
 
               } else {
                 schiffGesetzt = false
                 zaehlerGesetzt = zaehlerGesetzt + 1
 
-                println("SCHIFF-5-SCHLECHT")
+//                println("SCHIFF-5-SCHLECHT")
                 println(zaehlerGesetzt)
               }
             }
@@ -509,11 +509,11 @@ zaehlerGesetzt = 0
                 if (pcController.set(4, startReihe, startSpalte, 5, (size - 1)) == true) {
                   schiffGesetzt = true
                   zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
-                  println("SCHIFF-4-OKAY")
+//                  println("SCHIFF-4-OKAY")
                 } else {
                   schiffGesetzt = false
                   zaehlerGesetzt = zaehlerGesetzt + 1
-                  println("SCHIFF-4-SCHLECHT")
+//                  println("SCHIFF-4-SCHLECHT")
                 println(zaehlerGesetzt)
 
                 }
@@ -538,11 +538,11 @@ zaehlerGesetzt = 0
                 if (pcController.set(3, startReihe, startSpalte, 5, (size - 1)) == true) {
                   schiffGesetzt = true
                   zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
-                  println("SCHIFF-3-OKAY")
+//                  println("SCHIFF-3-OKAY")
                 } else {
                   schiffGesetzt = false
                   zaehlerGesetzt = zaehlerGesetzt + 1
-                  println("SCHIFF-3-SCHLECHT")
+//                  println("SCHIFF-3-SCHLECHT")
                 println(zaehlerGesetzt)
                 }
 
@@ -564,7 +564,7 @@ zaehlerGesetzt = 0
                 }else{
                 var startReihe = scala.util.Random.nextInt(10 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-                var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+                
 
                 if (pcController.set(2, startReihe, startSpalte, 5, (size - 1)) == true) {
 
@@ -583,10 +583,10 @@ zaehlerGesetzt = 0
             }
 zaehlerGesetzt = 0
 if (zaehlerAlleGesetzt == 10) {
-                println("ALLE GESETZT")
+//                println("ALLE GESETZT")
                 alleGesetzt = true
               }else{
-                println("RESET")
+//                println("RESET")
                 pcFeld = new Feld(size)
            pcController = new Controller(pcFeld)
                
@@ -617,8 +617,28 @@ if (zaehlerAlleGesetzt == 10) {
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
                 case reihe :: "," :: spalte :: Nil => {
                   pcController.hit(reihe.toInt, spalte.toInt)
+                  if(pcController.spielfertig == false){
+                  var pcHit = false
+                  while (pcHit == false){
+                    
+                    var startReihe = scala.util.Random.nextInt(controller.feld.zellen.length) + 1
+                  var startSpalte = scala.util.Random.nextInt(controller.feld.zellen.length) + 1
+                  if(controller.feld.zellen(startReihe-1)(startSpalte-1).getGetroffen == false){
+                  controller.hit(startReihe,startSpalte)
+                    pcHit = true
+                  
+                  }else{
+                    pcHit = false
+                  }
+                   
+                  
+                  }
+                  }
                   println("DAS SPIELFELD DES COMPUTERS:")
             println(pcController.feld.pcToString)
+             println("IHR EIGENES SPIELFELD:")
+            printTui
+            
                 }
                 
                 //case beenden einfügen
@@ -631,7 +651,13 @@ if (zaehlerAlleGesetzt == 10) {
           }
         }
     }
-        println("SPIEL BEENDET1")
+        println("SPIEL BEENDET!")
+        if(controller.spielfertig ==true){
+          println("Der Computer hat gewonnen!")
+          
+        }else{
+         println("SIE haben gewonnen!") 
+        }
       case _ => //Controller.falseInput
     }
     continue
