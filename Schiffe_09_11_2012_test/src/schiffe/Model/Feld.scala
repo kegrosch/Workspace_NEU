@@ -20,7 +20,7 @@ class Feld(anzahl: Int) {
     }
   }
 
-def reset: Feld = new Feld(size); 
+def reset: Feld = new Feld(anzahl); 
 def solve: Feld = {
 for(i <- 0 to anzahl-1){
     for(j <- 0 to anzahl-1){

@@ -12,6 +12,11 @@ class FeldSpec extends SpecificationWithJUnit{
       var anzahl = feld.zellen.length
       anzahl must be_==(2)
     }
+    "return a new Feld with 2 Cells when reset" in{
+      var feldNeu = feld.reset
+//      var anzahlNeu = feldNeu.zellen.length+1
+      feldNeu must beEqualTo(feld)
+    }
    }
 
 }
