@@ -14,8 +14,15 @@ class FeldSpec extends SpecificationWithJUnit{
     }
     "return a new Feld with 2 Cells when reset" in{
       var feldNeu = feld.reset
-//      var anzahlNeu = feldNeu.zellen.length+1
-      feldNeu must beEqualTo(feld)
+      var anzahlNeu = feldNeu.zellen.length
+      anzahlNeu must be_==(2)
+    }
+    "all Fields must be hit when solved" in{
+      var solvedFeld = feld.solve
+      for(i <- 0 to 1){
+      var hitCell = solvedFeld.zellen(i)(i).getGetroffen
+      hitCell must be_==(true)
+      }
     }
    }
 

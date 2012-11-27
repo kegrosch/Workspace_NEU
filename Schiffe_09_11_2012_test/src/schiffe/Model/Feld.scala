@@ -32,26 +32,20 @@ return this
 }
 val size = sqrt(zellen.size).toInt
 
-def zelle(reihe: Int, spalte: Int) = (reihe, spalte)
 
 def hit(reihe: Int, spalte: Int):Boolean = {
-//  println("HHHHHH: " + zellen(reihe)(spalte).getGesetzt)
-  
+
   if(zellen(reihe)(spalte).getGetroffen==false){
     zellen(reihe)(spalte).hit
     if(zellen(reihe)(spalte).gesetzt==true )
       zaehlerhit = zaehlerhit +1 
-//   println("ZÄHLER: " + zaehlerhit)
+
     return true
   }
   else
     return false
 }
-//def zellegetroffen(reihe: Int, spalte: Int): Boolean={
-//  if(zellen(reihe-1)(spalte-1).getGetroffen==true & zellen(reihe-1)(spalte-1).getGesetzt==true)
-//    return true
-//    else return false
-//    }
+
 def spielFertig: Boolean = {
   if(anzahl==2){
     if(zaehlerhit==2){
@@ -87,12 +81,10 @@ def spielFertig: Boolean = {
          if(zellen(reihe)(spalte).getGetroffen == true){
           if(zellen(reihe)(spalte).getGesetzt == true){
             (box = box.replaceFirst("x", "getroffen"))
-//      (box = box.replaceFirst("false", " "))
-//      (box = box.replaceFirst("getroffen", "x"))
+
           }else{
             (box = box.replaceFirst("x", "keinTreffer"))
-//      (box = box.replaceFirst("keinTreffer", "O"))
-//      (box = box.replaceFirst("keinTreffer", "O"))
+
           }
         }else{
 
