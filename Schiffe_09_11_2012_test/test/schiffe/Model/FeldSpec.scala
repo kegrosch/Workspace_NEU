@@ -72,6 +72,12 @@ class FeldSpec extends SpecificationWithJUnit{
       var isFertig = bigFeld.spielFertig
       isFertig must be_==(true)
     }
+    "must return box from toString-method" in{
+      var newFeld = feld.reset
+      var hbox = "\n+---+---+\n|   |   |\n+---+---+\n|   |   |\n+---+---+\n"
+      var feldBox = newFeld.toString()
+      feldBox must beEqualTo(hbox)
+    }
    }
 
 }
