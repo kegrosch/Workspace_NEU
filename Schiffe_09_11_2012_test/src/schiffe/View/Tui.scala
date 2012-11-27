@@ -607,12 +607,12 @@ if (zaehlerAlleGesetzt == 10) {
       case "5" => controller.setSize(5)
       case "2" => controller.setSize(2)
       case "hit" => 
-        while(controller.spielfertig == false & pcController.spielfertig == false){
+      while(controller.spielfertig == false & pcController.spielfertig == false){
           
         if(feldGesetzt == false){
           println("Sie müssen zunächst Ihre Schiffe setzen um das Spiel starten zu können (set)")
         }else{
-          println("Geben Sie die Zelle ein (Reihe, Spalte)")
+          println("Geben Sie die Zelle ein (Reihe, Spalte) um Zelle zu setzen, s um das Spielfeld des Computers zu lösen und q um das Spiel zu beenden")
           var pos = readLine()
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
                 case reihe :: "," :: spalte :: Nil => {
@@ -640,6 +640,7 @@ if (zaehlerAlleGesetzt == 10) {
             printTui
             
                 }
+                
                 
                 //case beenden einfügen
                 
