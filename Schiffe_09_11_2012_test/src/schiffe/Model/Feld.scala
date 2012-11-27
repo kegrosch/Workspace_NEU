@@ -20,7 +20,15 @@ class Feld(anzahl: Int) {
     }
   }
 
-def reset: Feld = new Feld(anzahl); 
+def reset: Feld ={
+  for(i <- 0 to anzahl-1){
+    for(j <- 0 to anzahl-1){
+      zellen(0)(0).reset
+    }
+  }
+  this
+} 
+ 
 def solve: Feld = {
 for(i <- 0 to anzahl-1){
     for(j <- 0 to anzahl-1){

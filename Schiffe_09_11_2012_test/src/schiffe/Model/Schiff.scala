@@ -149,7 +149,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           gesetzt = false
       }
       if (gesetzt == false) {
-        if (zaehler >= 15) {
+        if (zaehler >= 50) {
           return false
         }
         direction = scala.util.Random.nextInt(3 - 0) + 0
@@ -1036,9 +1036,6 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
     return false
   }
-  //  def zelle(index: Int) = cs(index)
-  //  def toIntSet:Set[Int] = cs.filterNot(_.value=="X").map(_.value).toSet
-  //  def toIntList:List[Int] = cs.filterNot(_.value=="X").map(_.value).toList
-  //  def valid = this.toIntList == this.toIntSet.toList 
+
 
 }

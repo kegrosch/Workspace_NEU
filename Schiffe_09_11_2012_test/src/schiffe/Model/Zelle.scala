@@ -14,7 +14,10 @@ class Zelle (row: Int, col: Int){
 def hit = {getroffen = true
 
 }
- 
+  def reset ={
+    gesetzt = false
+    getroffen = false
+  }
   def getReihe: Int = reihe
   def getSpalte: Int = spalte
   def getGesetzt: Boolean = gesetzt
