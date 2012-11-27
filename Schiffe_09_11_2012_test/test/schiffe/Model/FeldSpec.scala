@@ -72,10 +72,64 @@ class FeldSpec extends SpecificationWithJUnit{
       var isFertig = bigFeld.spielFertig
       isFertig must be_==(true)
     }
+    "must return false if != Spielfertig (10)" in{
+      var bigFeld = new Feld(10)
+      bigFeld.zaehlerhit=29
+      var isFertig = bigFeld.spielFertig
+      isFertig must be_==(false)
+    }
     "must return box from toString-method" in{
       var newFeld = feld.reset
       var hbox = "\n+---+---+\n|   |   |\n+---+---+\n|   |   |\n+---+---+\n"
       var feldBox = newFeld.toString()
+      feldBox must beEqualTo(hbox)
+    }
+    "must return box with a ship from toString-method when a ship is set" in{
+      var newFeld = feld.reset
+      newFeld.zellen(0)(0).setzen(true)
+      newFeld.zellen(1)(0).setzen(true)
+      newFeld.zellen(0)(0).hit
+      var hbox = "\n+---+---+\n| # |   |\n+---+---+\n| X |   |\n+---+---+\n"
+      var feldBox = newFeld.toString()
+      feldBox must beEqualTo(hbox)
+    }
+    "must return box with a ship from toString-method when a ship is set and an o when hit" in{
+      var newFeld = feld.reset
+      newFeld.zellen(0)(0).setzen(true)
+      newFeld.zellen(1)(0).setzen(true)
+      newFeld.zellen(0)(0).hit
+      newFeld.zellen(0)(1).hit
+      var hbox = "\n+---+---+\n| # | O |\n+---+---+\n| X |   |\n+---+---+\n"
+      var feldBox = newFeld.toString()
+      feldBox must beEqualTo(hbox)
+    }
+    "must return a empty box when a ship is set (method pcToString)" in{
+      var newFeld = feld.reset
+      newFeld.zellen(0)(0).setzen(true)
+      newFeld.zellen(1)(0).setzen(true)
+      
+      var hbox = "\n+---+---+\n|   |   |\n+---+---+\n|   |   |\n+---+---+\n"
+      var feldBox = newFeld.pcToString
+      feldBox must beEqualTo(hbox)
+    }
+    "must return a box with O when hit and theres no ship (method pcToString)" in{
+      var newFeld = feld.reset
+      newFeld.zellen(0)(0).setzen(true)
+      newFeld.zellen(1)(0).setzen(true)
+      newFeld.zellen(0)(1).hit
+      
+      var hbox = "\n+---+---+\n|   | O |\n+---+---+\n|   |   |\n+---+---+\n"
+      var feldBox = newFeld.pcToString
+      feldBox must beEqualTo(hbox)
+    }
+    "must return a box with # when hit and theres a ship (method pcToString)" in{
+      var newFeld = feld.reset
+      newFeld.zellen(0)(0).setzen(true)
+      newFeld.zellen(1)(0).setzen(true)
+      newFeld.zellen(0)(0).hit
+      
+      var hbox = "\n+---+---+\n| # |   |\n+---+---+\n|   |   |\n+---+---+\n"
+      var feldBox = newFeld.pcToString
       feldBox must beEqualTo(hbox)
     }
    }
