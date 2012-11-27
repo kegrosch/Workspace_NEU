@@ -27,30 +27,50 @@ class FeldSpec extends SpecificationWithJUnit{
     
     
     "could not be hit if already hit" in{
-      feld.reset
-      feld.hit(0,0)
-      var couldHit = feld.hit(0,0)
+      var newFeld = feld.reset
+      newFeld.hit(0,0)
+      var couldHit = newFeld.hit(0,0)
       couldHit must be_==(false)
     }
     
     "could be hit if not hit before" in{
-      feld.reset
-     var couldHit = feld.hit(0,0)
+      var newFeld = feld.reset
+      newFeld.reset
+     var couldHit = newFeld.hit(0,0)
      couldHit must be_==(true)
     }
     
     "could be hit if not hit before and a ship is set" in{
-      feld.reset
-      feld.zellen(0)(0).setzen(true)
-      var couldHit = feld.hit(0,0)
+      var newFeld = feld.reset
+      newFeld.reset
+      newFeld.zellen(0)(0).setzen(true)
+      var couldHit = newFeld.hit(0,0)
       couldHit must be_==(true)
     }
     
     "the variable hit must be set when hit" in{
-      feld.reset
-      feld.hit(0,0)
-      var isHit = feld.zellen(0)(0).getGetroffen
+      var newFeld = feld.reset
+      newFeld.reset
+      newFeld.hit(0,0)
+      var isHit = newFeld.zellen(0)(0).getGetroffen
       isHit must be_==(true)
+    }
+    "must return true if Spielfertig (2)" in{
+      feld.zaehlerhit=2
+      var isFertig = feld.spielFertig
+      isFertig must be_==(true)
+    }
+    "must return true if Spielfertig (5)" in{
+      var middleFeld = new Feld(5)
+      middleFeld.zaehlerhit=9
+      var isFertig = middleFeld.spielFertig
+      isFertig must be_==(true)
+    }
+    "must return true if Spielfertig (10)" in{
+      var bigFeld = new Feld(10)
+      bigFeld.zaehlerhit=30
+      var isFertig = bigFeld.spielFertig
+      isFertig must be_==(true)
     }
    }
 
