@@ -17,7 +17,7 @@ class Tui(var controller: Controller) extends Observer {
   var size = controller.feld.zellen.length
   var pcFeld = new Feld(size)
   var pcController = new Controller(pcFeld)
- println("Sie haben folgende Auswahlmöglichkeiten: Grösse dies Spielfelds verändern (2,5 oder 10 eingeben), q- Spiel verlassen, s -Spielfeld des COmputers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen")
+ println("Sie haben folgende Auswahlmöglichkeiten: Grösse dies Spielfelds verändern (2,5 oder 10 eingeben),set- Schiffe setzen, q- Spiel verlassen, s -Spielfeld des COmputers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen")
   def readInput(eingabe: String) = {
     
     var continue = true
@@ -26,7 +26,9 @@ class Tui(var controller: Controller) extends Observer {
       case "s" => { println(pcController.feld.toString()) 
       continue = false  
       }
-      case "r" => controller.reset
+      case "r" => {controller.reset
+      pcController.reset
+      }
       case "set" =>
         size = controller.feld.zellen.length
         size match {
@@ -34,7 +36,7 @@ class Tui(var controller: Controller) extends Observer {
 
             var gesetzt = false
             while (gesetzt == false) {
-              println("Geben Sie die das 1.te Feld Ihres Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+              println("Geben Sie die das 1.te Feld Ihres Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
               println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
               var pos = readLine()
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
@@ -44,12 +46,12 @@ class Tui(var controller: Controller) extends Observer {
                     println("Zerstörer wurde bei " + row + " / " + column + " gesetzt")
                     gesetzt = true
                   } else {
-                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                     gesetzt = false
                   }
                 }
 
-                case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55r) ein")
+                case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
               }
             }
             pcFeld = new Feld(size)
@@ -81,7 +83,7 @@ class Tui(var controller: Controller) extends Observer {
           case 5 =>
             var gesetzt = false
             while (gesetzt == false) {
-              println("Geben Sie die das 1.te Feld Ihres Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+              println("Geben Sie die das 1.te Feld Ihres Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
               println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
               var pos = readLine()
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
@@ -91,7 +93,7 @@ class Tui(var controller: Controller) extends Observer {
                     println("Kreuzer wurde bei " + row + " / " + column + " gesetzt")
                     gesetzt = true
                   } else {
-                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                     gesetzt = false
                   }
 
@@ -102,7 +104,7 @@ class Tui(var controller: Controller) extends Observer {
             }
             gesetzt = false
             while (gesetzt == false) {
-              println("Geben Sie die das 1.te Feld Ihres U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+              println("Geben Sie die das 1.te Feld Ihres U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
               println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
               var pos = readLine()
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
@@ -112,19 +114,19 @@ class Tui(var controller: Controller) extends Observer {
                     println("U-Boot wurde bei " + row + " / " + column + " gesetzt")
                     gesetzt = true
                   } else {
-                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                     gesetzt = false
                   }
                 }
 
-                case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+                case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
               }
             }
 
             
               gesetzt = false
               while (gesetzt == false) {
-                println("Geben Sie die das 1.te Feld Ihres Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+                println("Geben Sie die das 1.te Feld Ihres Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
 
@@ -135,12 +137,12 @@ class Tui(var controller: Controller) extends Observer {
                       println("Zerstörer wurde bei " + row + " / " + column + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
                   }
 
-                  case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55r) ein")
+                  case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
                 }
               }
             
@@ -244,13 +246,13 @@ zaehlerGesetzt = 0
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
             println(pcController.feld.pcToString)
-
+            println("Sie haben folgende Auswahlmöglichkeiten: Grösse dies Spielfelds verändern (2,5 oder 10 eingeben), q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen")
             
           case 10 =>
             
             var gesetzt = false
             while (gesetzt == false) {
-              println("Geben Sie die das 1.te Feld Ihres Schlachtschiffes und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+              println("Geben Sie die das 1.te Feld Ihres Schlachtschiffes und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
               println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
               var pos = readLine()
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
@@ -260,7 +262,7 @@ zaehlerGesetzt = 0
                     println("Schlachtschiff wurde bei " + 10 + " / " + column + " gesetzt")
                     gesetzt = true
                   } else {
-                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                     gesetzt = false
                   }
                 }
@@ -270,7 +272,7 @@ zaehlerGesetzt = 0
                     println("Schlachtschiff wurde bei " + row + " / " + 10 + " gesetzt")
                     gesetzt = true
                   } else {
-                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                     gesetzt = false
                   }
                 }
@@ -280,7 +282,7 @@ zaehlerGesetzt = 0
                     println("Schlachtschiff wurde bei " + 10 + " / " + 10 + " gesetzt")
                     gesetzt = true
                   } else {
-                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                     gesetzt = false
                   }
                 }
@@ -290,18 +292,18 @@ zaehlerGesetzt = 0
                     println("Schlachtschiff wurde bei " + row + " / " + column + " gesetzt")
                     gesetzt = true
                   } else {
-                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                    println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                     gesetzt = false
                   }
                 }
 
-                case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+                case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
               }
             }
             for (i <- 1 to 2) {
               var gesetzt = false
               while (gesetzt == false) {
-                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
                 pos.toList.filter(c => c != ' ').map(c => c.toString) match {
@@ -311,7 +313,7 @@ zaehlerGesetzt = 0
                       println(i + ".ter Kreuzer wurde bei " + 10 + " / " + column + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
 
@@ -322,7 +324,7 @@ zaehlerGesetzt = 0
                       println(i + ".ter Kreuzer wurde bei " + row + " / " + 10 + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
 
@@ -333,7 +335,7 @@ zaehlerGesetzt = 0
                       println(i + ".ter Kreuzer wurde bei " + 10 + " / " + 10 + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
 
@@ -344,20 +346,20 @@ zaehlerGesetzt = 0
                       println(i + ".ter Kreuzer wurde bei " + row + " / " + column + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
 
                   }
 
-                  case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+                  case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
                 }
               }
             }
             for (i <- 1 to 3) {
               var gesetzt = false
               while (gesetzt == false) {
-                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
                 pos.toList.filter(c => c != ' ').map(c => c.toString) match {
@@ -367,7 +369,7 @@ zaehlerGesetzt = 0
                       println(i + ".tes U-Boot wurde bei " + 10 + " / " + column + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
                   }
@@ -377,7 +379,7 @@ zaehlerGesetzt = 0
                       println(i + ".tes U-Boot wurde bei " + row + " / " + 10 + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
                   }
@@ -387,7 +389,7 @@ zaehlerGesetzt = 0
                       println(i + ".tes U-Boot wurde bei " + 10 + " / " + 10 + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
                   }
@@ -397,19 +399,19 @@ zaehlerGesetzt = 0
                       println(i + ".tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
                   }
 
-                  case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+                  case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
                 }
               }
             }
             for (i <- 1 to 4) {
               var gesetzt = false
               while (gesetzt == false) {
-                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 131))")
+                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
 
@@ -420,7 +422,7 @@ zaehlerGesetzt = 0
                       println(i + ".ter Zerstörer wurde bei " + 10 + " / " + column + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
 
@@ -431,7 +433,7 @@ zaehlerGesetzt = 0
                       println(i + ".ter Zerstörer wurde bei " + row.toInt + " / " + 10 + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
 
@@ -442,7 +444,7 @@ zaehlerGesetzt = 0
                       println(i + ".ter Zerstörer wurde bei " + 10 + " / " + 10 + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
 
@@ -453,13 +455,13 @@ zaehlerGesetzt = 0
                       println(i + ".ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
                       gesetzt = true
                     } else {
-                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzte werden")
+                      println("Falsche eingabe der Position (es darf im umfeld von bereits gesetzten Schiffen kein weiteres gesetzt werden")
                       gesetzt = false
                     }
 
                   }
 
-                  case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55r) ein")
+                  case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
                 }
               }
             }
