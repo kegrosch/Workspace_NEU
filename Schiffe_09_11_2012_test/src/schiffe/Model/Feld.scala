@@ -119,7 +119,7 @@ def spielFertig: Boolean = {
           if(zellen(reihe)(spalte).getGesetzt == true){
             (box = box.replaceFirst("x", zellen(reihe)(spalte).gesetzt.toString()))
       (box = box.replaceFirst("false", " "))
-      (box = box.replaceFirst("true", "X"))
+      (box = box.replaceFirst("true", "#"))
           }else{
             (box = box.replaceFirst("x", zellen(reihe)(spalte).gesetzt.toString()))
       (box = box.replaceFirst("false", "O"))
