@@ -12,7 +12,7 @@ class Zelle (row: Int, col: Int){
   
   }
 def hit = {getroffen = true
-//  println("TREFFER")
+
 }
  
   def getReihe: Int = reihe
@@ -20,10 +20,5 @@ def hit = {getroffen = true
   def getGesetzt: Boolean = gesetzt
   def getGetroffen: Boolean = getroffen
   
-  
-//  def equals(that:Zelle) = this.value == that.value
-//  def ==(v: Int) = if (value == v) true else false
-//  def isSet = value != 0
-// override def toString = gesetzt.toString.replace('0', ' ')
 
 }
