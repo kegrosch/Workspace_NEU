@@ -104,3 +104,4 @@
 <schiffe.Model.FeldSpec-stats timestamp="1354032483935"><stats expectations="17" successes="16" examples="17" failures="1" time="81"></stats></schiffe.Model.FeldSpec-stats>
 <schiffe.Model.FeldSpec-stats timestamp="1354032526803"><stats expectations="17" examples="17" successes="17" time="50"><trend><stats failures="-1" successes="1" time="50"></stats></trend></stats></schiffe.Model.FeldSpec-stats>
 <schiffe.Model.FeldSpec-stats timestamp="1354032534404"><stats expectations="17" examples="17" successes="17" time="51"></stats></schiffe.Model.FeldSpec-stats>
+<schiffe.Model.FeldSpec-stats timestamp="1354033586896"><stats expectations="17" examples="17" successes="17" time="5"></stats></schiffe.Model.FeldSpec-stats>
