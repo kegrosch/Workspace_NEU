@@ -3,8 +3,9 @@ import schiffe.Model.Feld
 import schiffe.util._
 import schiffe.Model.Schiff
 import schiffe.Model.Zelle
+import scala.swing.Publisher
 
-class Controller (var feld: Feld) extends Observable{
+class Controller (var feld: Feld) extends Publisher{
   
 //  def available(row: Int, col: Int) = feld.available(row, col)
 //  def zelle(row: Int, col: Int) = feld.zelle(row, col)
@@ -18,11 +19,11 @@ class Controller (var feld: Feld) extends Observable{
 //  }
   def reset = {
     feld = feld.reset
-    notifyObservers
+//    notifyObservers
   }
   def solve ={
     feld= feld.solve
-    notifyObservers
+//    notifyObservers
   }
   def hit(reihe: Int, spalte: Int): Boolean ={
     println("REIHE: " + reihe + " Spalte: " + spalte) 
@@ -35,7 +36,7 @@ class Controller (var feld: Feld) extends Observable{
 //  }
   def setSize(newSize: Int) = {
     feld = new Feld(newSize)
-    notifyObservers
+//    notifyObservers
   }
   def getSize: Int = feld.size.toInt
    def spielfertig: Boolean= {
@@ -50,7 +51,7 @@ class Controller (var feld: Feld) extends Observable{
     var startZelle = feld.zellen(row-1)(col-1)
     var schiff = new Schiff(laenge, startZelle, feld.zellen)
     var freiGesetzt = schiff.setzen(richtung, groesse)
-    notifyObservers
+//    notifyObservers
     return freiGesetzt
     
 //    println("Schiff gesetzt")

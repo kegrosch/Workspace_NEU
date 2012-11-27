@@ -3,9 +3,10 @@ import schiffe.Controller._
 import schiffe.Model.Feld
 import schiffe.util._
 import schiffe.Model.Schiff
+import scala.swing.Reactor
 
-class Tui(var controller: Controller) extends Observer {
-  controller.add(this)
+class Tui(var controller: Controller) extends Reactor {
+  listenTo(controller)
    
   printTui
   def update = printTui

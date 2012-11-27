@@ -37,3 +37,10 @@
 </schiffe.Model.ZelleSpec-results>
 <schiffe.Model.ZelleSpec-stats timestamp="1354044898933"><stats expectations="6" successes="5" examples="6" failures="1" time="48"><trend><stats failures="1" successes="-1" time="48"></stats></trend></stats></schiffe.Model.ZelleSpec-stats>
 <schiffe.Model.ZelleSpec-stats timestamp="1354044906210"><stats expectations="6" examples="6" successes="6" time="44"><trend><stats failures="-1" successes="1" time="44"></stats></trend></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1354051804072"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1354051824844"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1354051932298"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1354051963116"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1354052020232"><stats expectations="6" examples="6" successes="6" time="2"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1354052025514"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1354052345643"><stats expectations="6" examples="6" successes="6" time="2"></stats></schiffe.Model.ZelleSpec-stats>

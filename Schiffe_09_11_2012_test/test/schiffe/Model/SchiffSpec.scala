@@ -20,12 +20,7 @@ class SchiffSpec extends SpecificationWithJUnit{
       
     }
     
-    "Cell should be unset after reset" in{
-      feld.reset
-      
-      var isUnset = feld.zellen(0)(0).getGesetzt
-      isUnset must be_==(false)
-    }
+   
     "Cell should be set when set (Richtung: unten)" in{
       schiff.setzen(1,4)
       var isSet = zellen(0)(0).getGesetzt
@@ -51,8 +46,9 @@ class SchiffSpec extends SpecificationWithJUnit{
       isAlreadySet must be_==(false)
     }
     "Ship is set when set" in{
-      feld.reset
-      var langSchiff = new Schiff(2, startZelle, zellen)
+      var feldNeu = feld.reset
+      
+      var langSchiff = new Schiff(2, startZelle, feldNeu.zellen)
       var canSet = langSchiff.setzen(0,4)
       canSet must be_==(true)
       

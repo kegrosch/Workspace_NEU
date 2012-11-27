@@ -7,7 +7,10 @@ import schiffe.Model._
 object Schiffe {
   
   def main(args: Array[String]) {
-    val userTui=new Tui(new Controller(new Feld(5)))    
+    val controller = new Controller(new Feld(5))
+    val userTui=new Tui(controller)
+    val userGui = new GUI(controller)
+    
     while((userTui.readInput(readLine()))==true){}
    
       
