@@ -16,7 +16,8 @@ class Tui(var controller: Controller) extends Observer {
  var feldGesetzt = false
   var size = controller.feld.zellen.length
   var pcFeld = new Feld(size)
-            var pcController = new Controller(pcFeld)
+  var pcController = new Controller(pcFeld)
+ println("Sie haben folgende Auswahlmöglichkeiten: Grösse dies Spielfelds verändern (2,5 oder 10 eingeben), q- Spiel verlassen, s -Spielfeld des COmputers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen")
   def readInput(eingabe: String) = {
     
     var continue = true
