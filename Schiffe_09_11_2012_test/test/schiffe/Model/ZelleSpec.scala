@@ -19,6 +19,8 @@ class ZelleSpec extends SpecificationWithJUnit{
       getroffen must be_==(false)
     }
     
+    
+    
     "set when set" in{
       zelle.setzen(true)
       var gesetzt = zelle.getGesetzt
