@@ -3,13 +3,20 @@ import schiffe.Controller.Controller
 import scala.swing._
 import scala.swing.Swing.LineBorder
 import scala.swing.event._
+import schiffe.Controller.FeldResize
 
 class GUI(controller: Controller) extends Frame {
 
   listenTo(controller)
+  reactions += {
+    case e: FeldResize => resize(e.newSize)
+//    case e: CellChanged => redraw
+  }
   title = "Schiffe Versenken"
   var spielGroesse = controller.feld.zellen.length
-  contents = new BorderPanel {
+  def spiel(spielSize: Int) = {
+    contents = new BorderPanel {
+  
     add(new FlowPanel{
       contents += new Button("Spiel neu Starten")
     contents += new Button("Spielgrösse 2")
@@ -17,9 +24,9 @@ class GUI(controller: Controller) extends Frame {
     contents += new Button("Spielgrösse 10")
       
     }, BorderPanel.Position.North)
-    add(new GridPanel(spielGroesse, spielGroesse) {
-      for (i <- 1 to (spielGroesse)) {
-        for (j <- 1 to (spielGroesse)) {
+    add(new GridPanel(spielSize, spielSize) {
+      for (i <- 1 to (spielSize)) {
+        for (j <- 1 to (spielSize)) {
           var button = new Button("")
           button.background_=(java.awt.Color.BLUE)
           button.preferredSize_=(new Dimension(60,60))
@@ -29,9 +36,9 @@ class GUI(controller: Controller) extends Frame {
 
     }, BorderPanel.Position.West)
     add(new FlowPanel(), BorderPanel.Position.Center)
-    add(new GridPanel(spielGroesse, spielGroesse){
-      for (i <- 1 to (spielGroesse)) {
-        for (j <- 1 to (spielGroesse)) {
+    add(new GridPanel(spielSize, spielSize){
+      for (i <- 1 to (spielSize)) {
+        for (j <- 1 to (spielSize)) {
           var button = new Button("")
           button.background_=(java.awt.Color.BLACK)
           button.preferredSize_=(new Dimension(60,60))
@@ -39,6 +46,10 @@ class GUI(controller: Controller) extends Frame {
         }
       }
     }, BorderPanel.Position.East)
+  }
+  }
+  def resize(newSize: Int){
+    spiel(newSize)
   }
 //  var zellen = controller.feld.zellen
 //  

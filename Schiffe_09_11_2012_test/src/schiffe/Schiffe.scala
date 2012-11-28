@@ -9,8 +9,9 @@ object Schiffe {
   def main(args: Array[String]) {
     val controller = new Controller(new Feld(5))
     val userTui=new Tui(controller)
-//    val userGui = new GUI(controller)
-//    userGui.visible = true
+    val userGui = new GUI(controller)
+    userGui.spiel(5)
+    userGui.visible = true
     
     while((userTui.readInput(readLine()))==true){}
    

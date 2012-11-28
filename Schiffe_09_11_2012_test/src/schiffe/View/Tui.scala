@@ -9,6 +9,10 @@ class Tui(var controller: Controller) extends Reactor {
   listenTo(controller)
    
   printTui
+  reactions += {
+    case e: FeldResize => printTui
+//    case e: CellChanged => printTui
+  }
   def update = printTui
   def printTui = {
     println(controller.feld.toString())
