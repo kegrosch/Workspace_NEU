@@ -2,6 +2,8 @@ package schiffe
 import schiffe.Model.Schiff
 import schiffe.Model.Zelle
 import schiffe.Model.Feld
+import schiffe.View.GUI
+import schiffe.Controller.Controller
 
 object Test {
 
@@ -37,13 +39,20 @@ object Test {
 //     println("3-4: "+ feld.zellen(3)(4).gesetzt)
 //     
 //     println(feld.toString())
-     println("eingeben")
-     var test = readLine()
-     test.toList.filter(c => c != ' ').map(c => c.toString) match{
-       case "10" :: "," :: "5" :: Nil => println("zehn")
-       case "8":: "," :: "5" :: Nil => println("acht")
-       case _ => println("gmischt")
-       
-     }
-   }
+//     println("eingeben")
+//     var test = readLine()
+//     test.toList.filter(c => c != ' ').map(c => c.toString) match{
+//       case "10" :: "," :: "5" :: Nil => println("zehn")
+//       case "8":: "," :: "5" :: Nil => println("acht")
+//       case _ => println("gmischt")
+//       
+//     }
+     
+     //GUI TESTS
+     val userGui =new GUI(new Controller(new Feld(5)))
+     userGui.top.visible = true
+
+     
+}
+//   }
 }
