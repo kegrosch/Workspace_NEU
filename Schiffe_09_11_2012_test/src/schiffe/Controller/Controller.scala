@@ -32,10 +32,7 @@ class Controller (var feld: Feld) extends Publisher{
     return feld.hit(reihe-1, spalte-1)
 //    notifyObservers
   }
-//  def zellegetroffen: Boolean={
-//    feld=feld.zellegetroffen
-//    notifyObservers
-//  }
+
   def setSize(newSize: Int) = {
     feld = new Feld(newSize)
     publish(new FeldResize(newSize))

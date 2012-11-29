@@ -22,7 +22,7 @@ class Tui(var controller: Controller) extends Reactor {
   var size = controller.feld.zellen.length
   var pcFeld = new Feld(size)
   var pcController = new Controller(pcFeld)
- println("Sie haben folgende Auswahlmöglichkeiten: Grösse dies Spielfelds verändern (2,5 oder 10 eingeben),set- Schiffe setzen, q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, r -Feld neu setzen")
+ println("Sie haben folgende Auswahlmöglichkeiten: Grösse dies Spielfelds verändern (2,5 oder 10 eingeben),set- Schiffe setzen, q- Spiel verlassen")
   def readInput(eingabe: String) = {
     
     var continue = true
@@ -110,7 +110,7 @@ class Tui(var controller: Controller) extends Reactor {
 
                 }
 
-                case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 55) ein")
+                case _ => println("Falsche Eingabe - Geben Sie Zeile Spalte und Richtung  (bsp. 5,5,1) ein")
               }
             }
             gesetzt = false
