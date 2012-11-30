@@ -17,22 +17,25 @@ class GUI(controller: Controller) extends Frame {
   def spiel(spielSize: Int) = {
   val InitialfarbeSpieler = new Color(200, 200, 255)
   val InitialfarbeComputer = new Color(224, 224, 255)
-  val SchiffgesetztSpieler = new Color(192, 255, 192)
-  val SchiffgetroffenSpieler = new Color(190, 245, 170)
-  val SchiffNichtgetroffenSpieler = new Color(150, 160, 162)
-  val SchiffgetroffenComputer = new Color(40, 160, 145)
-  val SchiffNichtgetroffenComputer = new Color(120, 190, 110)
-  val SchiffgesetztComputerwennsolved= new Color(105, 101, 130)
+  val Schiffgesetzt = new Color(192, 255, 192)
+  val Schiffgetroffen = new Color(190, 245, 170)
+  val SchiffNichtgetroffen = new Color(150, 160, 162)
   val labelcomp = new Label { text = "Spielfeld des Computers" }
   val labelsp = new Label { text = "Ihr Spielfeld" }
+  val neustarten = new Button("Spiel neu Starten")
+  val spiel2 = new Button("Spielgrösse 2")
+  val spiel5 = new Button("Spielgrösse 5")
+  val spiel10 = new Button("Spielgrösse 10")
+  val loesen = new Button("Spiel lösen")
     contents = new BorderPanel {
   
     add(new FlowPanel{
-    contents += new Button("Spiel neu Starten")
-    contents += new Button("Spielgrösse 2")
-    contents += new Button("Spielgrösse 5")
-    contents += new Button("Spielgrösse 10")
-    contents += new Button("Spiel lösen")
+    
+    contents += neustarten
+    contents += spiel2
+    contents += spiel5
+    contents += spiel10
+    contents += loesen
     
     }, BorderPanel.Position.North)
     add(new GridPanel(spielSize, spielSize) {
