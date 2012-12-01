@@ -27,6 +27,7 @@ class GUI(controller: Controller) extends Frame {
   val spiel5 = new Button("Spielgrösse 5")
   val spiel10 = new Button("Spielgrösse 10")
   val loesen = new Button("Spiel lösen")
+  val statusline = new Label{text =controller.statusText}
     contents = new BorderPanel {
   
     add(new FlowPanel{
@@ -36,7 +37,8 @@ class GUI(controller: Controller) extends Frame {
     contents += spiel5
     contents += spiel10
     contents += loesen
-    
+    contents += statusline
+     
     }, BorderPanel.Position.North)
     add(new GridPanel(spielSize, spielSize) {
       for (i <- 1 to (spielSize)) {
@@ -62,7 +64,19 @@ class GUI(controller: Controller) extends Frame {
       }
       
     }, BorderPanel.Position.East)
-  }
+ listenTo(neustarten)
+ listenTo(loesen)
+ reactions += {
+ case ButtonClicked(neustarten) => {controller.reset
+    statusline.text = controller.statusText}
+    }
+    reactions += {
+ case ButtonClicked(loesen) => {controller.solve
+    statusline.text = controller.statusText}
+    }
+ }
+
+  
   }
   def resize(newSize: Int){
     spiel(newSize)

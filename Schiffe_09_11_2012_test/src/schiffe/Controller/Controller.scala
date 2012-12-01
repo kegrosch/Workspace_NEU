@@ -19,13 +19,16 @@ class Controller (var feld: Feld) extends Publisher{
 //    feld = feld.parseFromString(s)
 //    notifyObservers
 //  }
+  var statusText="Bitte setzen Sie Schiffe"
   def reset = {
     feld = feld.reset
+    statusText="Spiel zurückgesetzt"
 //    notifyObservers
   }
   def solve ={
     feld= feld.solve
 //    notifyObservers
+    statusText="Spiel beendet"
   }
   def hit(reihe: Int, spalte: Int): Boolean ={
     println("REIHE: " + reihe + " Spalte: " + spalte) 
