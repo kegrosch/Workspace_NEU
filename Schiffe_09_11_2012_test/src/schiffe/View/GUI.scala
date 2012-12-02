@@ -29,6 +29,7 @@ class GUI(controller: Controller) extends Frame {
   val loesen = new Button("Spiel lösen")
   var statusline = new Label{text =controller.statusText}
   //var cells = Array.ofDim[SpielerPanel](controller.getSize, controller.getSize)
+  //var computercells = Array.ofDim[PCPanel](pccontroller.getSize, pccontroller.getSize)
     contents = new BorderPanel {
   
     add(new FlowPanel{
@@ -48,6 +49,10 @@ class GUI(controller: Controller) extends Frame {
           button.background_=(java.awt.Color.BLUE)
           button.preferredSize_=(new Dimension(60,60))
           contents += button
+           // var spielerPanel = new SpielerPanel(i,j, controller)
+         // cells(i)(j) = spielerPanel
+        //  contents += spielerPanel
+
         }
         
       }
