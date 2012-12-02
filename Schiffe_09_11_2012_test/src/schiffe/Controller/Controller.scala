@@ -71,5 +71,5 @@ class Controller (var feld: Feld) extends Publisher{
   def updateFeld(feld: Feld){
     this.feld = feld
   }
-
+def cell(row:Int, col:Int)=feld.cell(row,col)
 }

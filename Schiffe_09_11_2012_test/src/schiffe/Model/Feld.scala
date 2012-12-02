@@ -71,7 +71,7 @@ def spielFertig: Boolean = {
   }
     return false
 }
-
+def cell (r:Int, c:Int)=zellen(r)(c)
   override def toString = {
     val lineseparator = ("+-" + ("--" * (anzahl/2))) *anzahl + "+\n"
     val line = ("|" + (" " * (anzahl/2))+("x"+(" " * (anzahl/2) ))) * anzahl + "|\n"
