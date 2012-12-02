@@ -41,8 +41,8 @@ class Controller (var feld: Feld) extends Publisher{
     publish(new FeldResize(newSize))
 //    notifyObservers
   }
-  def getSize: Int = feld.size.toInt
-   def spielfertig: Boolean= {
+ def getSize: Int = feld.size.toInt
+  def spielfertig: Boolean= {
     if(feld.spielFertig == true){
       return true
     }else{

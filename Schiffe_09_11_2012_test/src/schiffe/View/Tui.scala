@@ -34,6 +34,7 @@ class Tui(var controller: Controller) extends Reactor {
       case "r" => {controller.reset
       pcController.reset
       feldGesetzt = false
+      println("Die Spielfelder wurden zurückgesetzt")
       }
       case "set" =>
         size = controller.feld.zellen.length
@@ -42,12 +43,15 @@ class Tui(var controller: Controller) extends Reactor {
 
             var gesetzt = false
             while (gesetzt == false) {
-              println("Geben Sie die das 1.te Feld Ihres Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
+              println("Geben Sie die das 1.te Feld Ihres Zerstörers und deren Richtung ein (Reihe,Spalte,Richtung(z.B. 1,3,1))")
               println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
               var pos = readLine()
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
                 case row :: "," :: column :: "," :: richtung :: Nil => {
-
+                   if(row.toInt>controller.feld.zellen.length | column.toInt >controller.feld.zellen.length | row.toInt<1| column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                   if (controller.set(2, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
                     println("Zerstörer wurde bei " + row + " / " + column + " gesetzt")
                     printTui
@@ -57,6 +61,7 @@ class Tui(var controller: Controller) extends Reactor {
                     printTui
                     gesetzt = false
                   }
+                }
                 }
 
                 case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
@@ -92,12 +97,15 @@ class Tui(var controller: Controller) extends Reactor {
           case 5 =>
             var gesetzt = false
             while (gesetzt == false) {
-              println("Geben Sie die das 1.te Feld Ihres Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
+              println("Geben Sie die das 1.te Feld Ihres Kreuzers und deren Richtung ein (Reihe,Spalte,Richtung(z.B. 1,3,1))")
               println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
               var pos = readLine()
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
                 case row :: "," :: column :: "," :: richtung :: Nil => {
-
+               if(row.toInt>controller.feld.zellen.length | column.toInt >controller.feld.zellen.length | row.toInt<1| column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                   if (controller.set(4, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
                     println("Kreuzer wurde bei " + row + " / " + column + " gesetzt")
                     printTui
@@ -107,7 +115,7 @@ class Tui(var controller: Controller) extends Reactor {
                     printTui
                     gesetzt = false
                   }
-
+                   }
                 }
 
                 case _ => println("Falsche Eingabe - Geben Sie Zeile Spalte und Richtung  (bsp. 5,5,1) ein")
@@ -120,7 +128,10 @@ class Tui(var controller: Controller) extends Reactor {
               var pos = readLine()
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
                 case row :: "," :: column :: "," :: richtung :: Nil => {
-
+              if(row.toInt>controller.feld.zellen.length | column.toInt >controller.feld.zellen.length | row.toInt<1| column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                   if (controller.set(3, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
                     println("U-Boot wurde bei " + row + " / " + column + " gesetzt")
                     printTui
@@ -131,6 +142,7 @@ class Tui(var controller: Controller) extends Reactor {
                     gesetzt = false
                   }
                 }
+                }
 
                 case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
               }
@@ -139,13 +151,16 @@ class Tui(var controller: Controller) extends Reactor {
             
               gesetzt = false
               while (gesetzt == false) {
-                println("Geben Sie die das 1.te Feld Ihres Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
+                println("Geben Sie die das 1.te Feld Ihres Zerstörers und deren Richtung ein (Reihe,Spalte,Richtung(z.B. 1,3,1))")
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
 
                 pos.toList.filter(c => c != ' ').map(c => c.toString) match {
                   case row :: "," :: column :: "," :: richtung :: Nil => {
-
+                 if(row.toInt>controller.feld.zellen.length | column.toInt >controller.feld.zellen.length | row.toInt<1| column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(2, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
                       println("Zerstörer wurde bei " + row + " / " + column + " gesetzt")
                       printTui
@@ -155,6 +170,7 @@ class Tui(var controller: Controller) extends Reactor {
                       printTui
                       gesetzt = false
                     }
+                  }
                   }
 
                   case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
@@ -265,14 +281,17 @@ zaehlerGesetzt = 0
             
           case 10 =>
             
-            var gesetzt = false
+           var gesetzt = false
             while (gesetzt == false) {
-              println("Geben Sie die das 1.te Feld Ihres Schlachtschiffes und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
+              println("Geben Sie die das 1.te Feld Ihres Schlachtschiffes und deren Richtung ein (Reihe,Spalte,Richtung(z.B. 1,3,1))")
               println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
               var pos = readLine()
               pos.toList.filter(c => c != ' ').map(c => c.toString) match {
                 case "1" :: "0" :: "," :: column :: "," :: richtung :: Nil => {
-
+    if( column.toInt >controller.feld.zellen.length | column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                   if (controller.set(5, 10, column.toInt, richtung.toInt, (size - 1))) {
                     println("Schlachtschiff wurde bei " + 10 + " / " + column + " gesetzt")
                     printTui
@@ -283,8 +302,12 @@ zaehlerGesetzt = 0
                     gesetzt = false
                   }
                 }
+                }
                 case row :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
-
+ if(row.toInt>controller.feld.zellen.length |  row.toInt<1|  richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                   if (controller.set(5, row.toInt, 10, richtung.toInt, (size - 1))) {
                     println("Schlachtschiff wurde bei " + row + " / " + 10 + " gesetzt")
                     printTui
@@ -295,8 +318,12 @@ zaehlerGesetzt = 0
                     gesetzt = false
                   }
                 }
+                }
                 case "1" :: "0" :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
-
+              if( richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                   if (controller.set(5, 10, 10, richtung.toInt, (size - 1))) {
                     println("Schlachtschiff wurde bei " + 10 + " / " + 10 + " gesetzt")
                     printTui
@@ -307,8 +334,12 @@ zaehlerGesetzt = 0
                     gesetzt = false
                   }
                 }
+                }
                 case row :: "," :: column :: "," :: richtung :: Nil => {
-
+            if(row.toInt>controller.feld.zellen.length | column.toInt >controller.feld.zellen.length | row.toInt<1| column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                   if (controller.set(5, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
                     println("Schlachtschiff wurde bei " + row + " / " + column + " gesetzt")
                     printTui
@@ -319,6 +350,7 @@ zaehlerGesetzt = 0
                     gesetzt = false
                   }
                 }
+                }
 
                 case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
               }
@@ -326,12 +358,15 @@ zaehlerGesetzt = 0
             for (i <- 1 to 2) {
               var gesetzt = false
               while (gesetzt == false) {
-                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten Kreuzers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
+                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten Kreuzers und deren Richtung ein (Reihe,Spalte,Richtung(z.B. 1,3,1))")
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
                 pos.toList.filter(c => c != ' ').map(c => c.toString) match {
                   case "1" :: "0" :: "," :: column :: "," :: richtung :: Nil => {
-
+                   if(column.toInt >controller.feld.zellen.length | column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(4, 10, column.toInt, richtung.toInt, (size - 1))) {
                       println(i + ".ter Kreuzer wurde bei " + 10 + " / " + column + " gesetzt")
                       printTui
@@ -341,10 +376,13 @@ zaehlerGesetzt = 0
                       printTui
                       gesetzt = false
                     }
-
+                   }
                   }
                   case row :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
-
+              if(row.toInt>controller.feld.zellen.length |row.toInt<1|  richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(4, row.toInt, 10, richtung.toInt, (size - 1))) {
                       println(i + ".ter Kreuzer wurde bei " + row + " / " + 10 + " gesetzt")
                       printTui
@@ -354,10 +392,13 @@ zaehlerGesetzt = 0
                       printTui
                       gesetzt = false
                     }
-
+                   }
                   }
                   case "1" :: "0" :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
-
+                  if(richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(4, 10, 10, richtung.toInt, (size - 1))) {
                       println(i + ".ter Kreuzer wurde bei " + 10 + " / " + 10 + " gesetzt")
                       printTui
@@ -367,10 +408,13 @@ zaehlerGesetzt = 0
                       printTui
                       gesetzt = false
                     }
-
+                   }
                   }
                   case row :: "," :: column :: "," :: richtung :: Nil => {
-
+                 if(row.toInt>controller.feld.zellen.length | column.toInt >controller.feld.zellen.length | row.toInt<1| column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(4, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
                       println(i + ".ter Kreuzer wurde bei " + row + " / " + column + " gesetzt")
                       printTui
@@ -380,7 +424,7 @@ zaehlerGesetzt = 0
                       printTui
                       gesetzt = false
                     }
-
+                   }
                   }
 
                   case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
@@ -390,12 +434,15 @@ zaehlerGesetzt = 0
             for (i <- 1 to 3) {
               var gesetzt = false
               while (gesetzt == false) {
-                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten U-Boots und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
+                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten U-Boots und deren Richtung ein (Reihe,Spalte,Richtung(z.B. 1,3,1))")
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
                 pos.toList.filter(c => c != ' ').map(c => c.toString) match {
                   case "1" :: "0" :: "," :: column :: "," :: richtung :: Nil => {
-
+                    if(column.toInt >controller.feld.zellen.length |  column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(3, 10, column.toInt, richtung.toInt, (size - 1))) {
                       println(i + ".tes U-Boot wurde bei " + 10 + " / " + column + " gesetzt")
                       printTui
@@ -406,8 +453,12 @@ zaehlerGesetzt = 0
                       gesetzt = false
                     }
                   }
+                  }
                   case row :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
-
+                 if(row.toInt>controller.feld.zellen.length | row.toInt<1|  richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(3, row.toInt, 10, richtung.toInt, (size - 1))) {
                       println(i + ".tes U-Boot wurde bei " + row + " / " + 10 + " gesetzt")
                       printTui
@@ -418,8 +469,12 @@ zaehlerGesetzt = 0
                       gesetzt = false
                     }
                   }
+                  }
                   case "1" :: "0" :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
-
+                    if( richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(3, 10, 10, richtung.toInt, (size - 1))) {
                       println(i + ".tes U-Boot wurde bei " + 10 + " / " + 10 + " gesetzt")
                       printTui
@@ -429,9 +484,13 @@ zaehlerGesetzt = 0
                       printTui
                       gesetzt = false
                     }
+                   }
                   }
                   case row :: "," :: column :: "," :: richtung :: Nil => {
-
+                  if(row.toInt>controller.feld.zellen.length | column.toInt >controller.feld.zellen.length | row.toInt<1| column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(3, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
                       println(i + ".tes U-Boot wurde bei " + row + " / " + column + " gesetzt")
                       printTui
@@ -442,6 +501,7 @@ zaehlerGesetzt = 0
                       gesetzt = false
                     }
                   }
+                  }
 
                   case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
                 }
@@ -450,13 +510,16 @@ zaehlerGesetzt = 0
             for (i <- 1 to 4) {
               var gesetzt = false
               while (gesetzt == false) {
-                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten Zerstörers und deren Richtung ein (Reihe/Spalte/Richtung(z.B. 1,3,1))")
+                println("Geben Sie die das 1.te Feld Ihres " + i + ".ten Zerstörers und deren Richtung ein (Reihe,Spalte,Richtung(z.B. 1,3,1))")
                 println("Richtungen: 0-Oben; 1-Unten; 2-Rechts; 3-Links")
                 var pos = readLine()
 
                 pos.toList.filter(c => c != ' ').map(c => c.toString) match {
                   case "1" :: "0" :: "," :: column :: "," :: richtung :: Nil => {
-
+                  if( column.toInt >controller.feld.zellen.length |  column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(2, 10, column.toInt, richtung.toInt, (size - 1))) {
                       println(i + ".ter Zerstörer wurde bei " + 10 + " / " + column + " gesetzt")
                       printTui
@@ -466,10 +529,13 @@ zaehlerGesetzt = 0
                       printTui
                       gesetzt = false
                     }
-
+                   }
                   }
                   case row :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
-
+                   if(row.toInt>controller.feld.zellen.length | row.toInt<1|  richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(2, row.toInt, 10, richtung.toInt, (size - 1))) {
                       println(i + ".ter Zerstörer wurde bei " + row.toInt + " / " + 10 + " gesetzt")
                       printTui
@@ -479,10 +545,13 @@ zaehlerGesetzt = 0
                       printTui
                       gesetzt = false
                     }
-
+                   }
                   }
                   case "1" :: "0" :: "," :: "1" :: "0" :: "," :: richtung :: Nil => {
-
+                    if(richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(2, 10, 10, richtung.toInt, (size - 1))) {
                       println(i + ".ter Zerstörer wurde bei " + 10 + " / " + 10 + " gesetzt")
                       printTui
@@ -492,10 +561,13 @@ zaehlerGesetzt = 0
                       printTui
                       gesetzt = false
                     }
-
+                   }
                   }
                   case row :: "," :: column :: "," :: richtung :: Nil => {
-
+  if(row.toInt>controller.feld.zellen.length | column.toInt >controller.feld.zellen.length | row.toInt<1| column.toInt<1 | richtung.toInt<0 |richtung.toInt>3){
+                    println("falsche Eingabe. Bitte Koordinate im gültigen Bereich (Reihen/Spalten 1 bis Spielfeldgrösse und Richtung 0-3)")
+                  }
+                   else{
                     if (controller.set(2, row.toInt, column.toInt, richtung.toInt, (size - 1))) {
                       println(i + ".ter Zerstörer wurde bei " + row + " / " + column + " gesetzt")
                       printTui
@@ -505,7 +577,7 @@ zaehlerGesetzt = 0
                       printTui
                       gesetzt = false
                     }
-
+                   }
                   }
 
                   case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")

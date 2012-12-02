@@ -27,7 +27,7 @@ class GUI(controller: Controller) extends Frame {
   val spiel5 = new Button("Spielgrösse 5")
   val spiel10 = new Button("Spielgrösse 10")
   val loesen = new Button("Spiel lösen")
-  val statusline = new Label{text =controller.statusText}
+  var statusline = new Label{text =controller.statusText}
     contents = new BorderPanel {
   
     add(new FlowPanel{
