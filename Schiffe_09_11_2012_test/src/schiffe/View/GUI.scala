@@ -14,6 +14,7 @@ class GUI(controller: Controller) extends Frame {
   }
   title = "Schiffe Versenken"
   var spielGroesse = controller.feld.zellen.length
+  
   def spiel(spielSize: Int) = {
   val InitialfarbeSpieler = new Color(200, 200, 255)
   val InitialfarbeComputer = new Color(224, 224, 255)
@@ -28,6 +29,7 @@ class GUI(controller: Controller) extends Frame {
   val spiel10 = new Button("Spielgrösse 10")
   val loesen = new Button("Spiel lösen")
   var statusline = new Label{text =controller.statusText}
+ // var cells = Array.ofDim[SpielerPanel](controller.getSize, controller.getSize)
     contents = new BorderPanel {
   
     add(new FlowPanel{
@@ -43,10 +45,13 @@ class GUI(controller: Controller) extends Frame {
     add(new GridPanel(spielSize, spielSize) {
       for (i <- 1 to (spielSize)) {
         for (j <- 1 to (spielSize)) {
-          var button = new Button("")
+           var button = new Button("")
           button.background_=(java.awt.Color.BLUE)
           button.preferredSize_=(new Dimension(60,60))
           contents += button
+         // var spielerPanel = new SpielerPanel(i,j, controller)
+         // cells(i)(j) = spielerPanel
+        //  contents += spielerPanel
         }
         
       }

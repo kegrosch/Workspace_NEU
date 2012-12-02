@@ -19,7 +19,7 @@ class Feld(anzahl: Int) {
       
     }
   }
-
+def cell(r: Int, c: Int) = zellen(r)(c)
 def reset: Feld = new Feld(anzahl); 
 def solve: Feld = {
 for(i <- 0 to anzahl-1){

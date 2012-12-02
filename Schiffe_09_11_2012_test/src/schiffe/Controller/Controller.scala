@@ -42,7 +42,7 @@ class Controller (var feld: Feld) extends Publisher{
 //    notifyObservers
   }
  def getSize: Int = feld.size.toInt
-  def spielfertig: Boolean= {
+ def spielfertig: Boolean= {
     if(feld.spielFertig == true){
       return true
     }else{
@@ -71,5 +71,6 @@ class Controller (var feld: Feld) extends Publisher{
   def updateFeld(feld: Feld){
     this.feld = feld
   }
+  def cell(row: Int, col: Int) = feld.cell(row, col)
 
 }
