@@ -49,8 +49,8 @@ object Test {
 //     }
      
      //GUI TESTS
-     val userGui =new GUI(new Controller(new Feld(10)))
-     userGui.visible = true
+  //   val userGui =new GUI(new Controller(new Feld(10)))
+  //   userGui.visible = true
 
      
 }

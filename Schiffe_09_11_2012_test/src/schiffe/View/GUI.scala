@@ -5,15 +5,17 @@ import scala.swing.Swing.LineBorder
 import scala.swing.event._
 import schiffe.Controller.FeldResize
 
-class GUI(controller: Controller) extends Frame {
+class GUI(controller: Controller, pccontroller:Controller) extends Frame {
 
   listenTo(controller)
+   listenTo(pccontroller)
   reactions += {
     case e: FeldResize => resize(e.newSize)
 //    case e: CellChanged => redraw
   }
   title = "Schiffe Versenken"
   var spielGroesse = controller.feld.zellen.length
+  
   def spiel(spielSize: Int) = {
   val InitialfarbeSpieler = new Color(200, 200, 255)
   val InitialfarbeComputer = new Color(224, 224, 255)
@@ -28,8 +30,8 @@ class GUI(controller: Controller) extends Frame {
   val spiel10 = new Button("Spielgrösse 10")
   val loesen = new Button("Spiel lösen")
   var statusline = new Label{text =controller.statusText}
-  //var cells = Array.ofDim[SpielerPanel](controller.getSize, controller.getSize)
-  //var computercells = Array.ofDim[PCPanel](pccontroller.getSize, pccontroller.getSize)
+  var cells = Array.ofDim[SpielerPanel](controller.getSize, controller.getSize)
+  var computercells = Array.ofDim[PCPanel](pccontroller.getSize, pccontroller.getSize)
     contents = new BorderPanel {
   
     add(new FlowPanel{
@@ -43,15 +45,15 @@ class GUI(controller: Controller) extends Frame {
      
     }, BorderPanel.Position.North)
     add(new GridPanel(spielSize, spielSize) {
-      for (i <- 1 to (spielSize)) {
-        for (j <- 1 to (spielSize)) {
+      for (i <- 0 to (spielGroesse-1)) {
+        for (j <- 0 to (spielGroesse-1)) {
           var button = new Button("")
           button.background_=(java.awt.Color.BLUE)
           button.preferredSize_=(new Dimension(60,60))
-          contents += button
-           // var spielerPanel = new SpielerPanel(i,j, controller)
-         // cells(i)(j) = spielerPanel
-        //  contents += spielerPanel
+         contents += button
+          // var spielerPanel = new SpielerPanel(i,j, controller)
+        //  cells(i)(j) = spielerPanel
+        // contents += spielerPanel
 
         }
         

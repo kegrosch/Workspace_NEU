@@ -5,9 +5,9 @@ import schiffe.util._
 import schiffe.Model.Schiff
 import scala.swing.Reactor
 
-class Tui(var controller: Controller) extends Reactor {
+class Tui(var controller: Controller, pccontroller: Controller) extends Reactor {
   listenTo(controller)
-   
+   listenTo(pccontroller)
   printTui
   reactions += {
     case e: FeldResize => printTui
@@ -20,19 +20,19 @@ class Tui(var controller: Controller) extends Reactor {
   }
  var feldGesetzt = false
   var size = controller.feld.zellen.length
-  var pcFeld = new Feld(size)
-  var pcController = new Controller(pcFeld)
+  //var pcFeld = new Feld(size)
+  //var pcController = new Controller(pcFeld)
  println("Sie haben folgende Auswahlmöglichkeiten: Grösse dies Spielfelds verändern (2,5 oder 10 eingeben),set- Schiffe setzen, q- Spiel verlassen")
   def readInput(eingabe: String) = {
     
     var continue = true
     eingabe match {
       case "q" => continue = false
-      case "s" => { println(pcController.feld.toString()) 
+      case "s" => { println(pccontroller.feld.toString()) 
       continue = false  
       }
       case "r" => {controller.reset
-      pcController.reset
+      pccontroller.reset
       feldGesetzt = false
       println("Die Spielfelder wurden zurückgesetzt")
       }
@@ -67,20 +67,20 @@ class Tui(var controller: Controller) extends Reactor {
                 case _ => println("Falsche Eingabe - Geben Sie ZeileSpalte (bsp. 5,5,1) ein")
               }
             }
-            pcFeld = new Feld(size)
-            pcController = new Controller(pcFeld)
+            
             //Schiffe für Computer setzen
             var schiffGesetzt = false
 
             while (schiffGesetzt == false) {
               var startReihe = scala.util.Random.nextInt(2 - 1) + 1
               var startSpalte = scala.util.Random.nextInt(2 - 1) + 1
-              var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+              var ersteZelle = pccontroller.cell(startReihe,startSpalte)
 
-              if (pcController.set(2, startReihe, startSpalte, 5, (size - 1)) == true) {
+              if (pccontroller.set(2, startReihe, startSpalte, 5, (size - 1)) == true) {
                 schiffGesetzt = true
               } else {
                 schiffGesetzt = false
+                pccontroller.reset
               }
 
             }
@@ -90,7 +90,7 @@ class Tui(var controller: Controller) extends Reactor {
             println("IHR EIGENES SPIELFELD:")
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
-           println(pcController.feld.pcToString)
+           println(pccontroller.feld.pcToString)
            feldGesetzt = true
            println("Sie haben folgende Auswahlmöglichkeiten: q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen")
 
@@ -177,9 +177,7 @@ class Tui(var controller: Controller) extends Reactor {
                 }
               }
             
-           pcFeld =new Feld(size)
-           
-           pcController = new Controller(pcFeld)
+          
             var alleGesetzt = false
             while (alleGesetzt == false) {
             
@@ -197,9 +195,9 @@ class Tui(var controller: Controller) extends Reactor {
                 }
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-                var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+                var ersteZelle = pccontroller.cell(startReihe, startSpalte)
 
-                if (pcController.set(4, startReihe, startSpalte, 5, (size - 1)) == true) {
+                if (pccontroller.set(4, startReihe, startSpalte, 5, (size - 1)) == true) {
                   schiffGesetzt = true
                   zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
                 } else {
@@ -218,9 +216,9 @@ class Tui(var controller: Controller) extends Reactor {
                 }
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-                var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+                var ersteZelle = pccontroller.cell(startReihe,startSpalte)
 
-                if (pcController.set(3, startReihe, startSpalte, 5, (size - 1)) == true) {
+                if (pccontroller.set(3, startReihe, startSpalte, 5, (size - 1)) == true) {
                   schiffGesetzt = true
                   zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
 
@@ -243,9 +241,9 @@ zaehlerGesetzt = 0
                   }else{
                   var startReihe = scala.util.Random.nextInt(5 - 1) + 1
                   var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-                  var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+                  var ersteZelle = pccontroller.cell(startReihe, startSpalte)
 
-                  if (pcController.set(2, startReihe, startSpalte, 5, (size - 1)) == true) {
+                  if (pccontroller.set(2, startReihe, startSpalte, 5, (size - 1)) == true) {
                     schiffGesetzt = true
                     zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
 
@@ -264,8 +262,7 @@ zaehlerGesetzt = 0
                 alleGesetzt = true
               }else{
 //                println("RESET")
-                pcFeld = new Feld(size)
-           pcController = new Controller(pcFeld)
+                pccontroller.reset
                
                alleGesetzt = false
                
@@ -276,7 +273,7 @@ zaehlerGesetzt = 0
             println("IHR EIGENES SPIELFELD:")
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
-            println(pcController.feld.pcToString)
+            println(pccontroller.feld.pcToString)
             println("Sie haben folgende Auswahlmöglichkeiten: q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen")
             
           case 10 =>
@@ -585,8 +582,7 @@ zaehlerGesetzt = 0
               }
             }
 
-            pcFeld = new Feld(size)
-            pcController = new Controller(pcFeld)
+           
             //Schiffe für Computer setzen
          
             var alleGesetzt = false
@@ -603,9 +599,9 @@ zaehlerGesetzt = 0
                 }
               var startReihe = scala.util.Random.nextInt(10 - 1) + 1
               var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-              var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+              var ersteZelle = pccontroller.cell(startReihe,startSpalte)
 
-              if (pcController.set(5, startReihe, startSpalte, 5, (size - 1)) == true) {
+              if (pccontroller.set(5, startReihe, startSpalte, 5, (size - 1)) == true) {
                 schiffGesetzt = true
                 zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
 //                println("SCHIFF-5-OKAY")
@@ -628,9 +624,9 @@ zaehlerGesetzt = 0
                 }else{
                 var startReihe = scala.util.Random.nextInt(10 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-                var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+                var ersteZelle = pccontroller.cell(startReihe, startSpalte)
 
-                if (pcController.set(4, startReihe, startSpalte, 5, (size - 1)) == true) {
+                if (pccontroller.set(4, startReihe, startSpalte, 5, (size - 1)) == true) {
                   schiffGesetzt = true
                   zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
 //                  println("SCHIFF-4-OKAY")
@@ -657,9 +653,9 @@ zaehlerGesetzt = 0
                 }else{
                 var startReihe = scala.util.Random.nextInt(10 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-                var ersteZelle = pcFeld.zellen(startReihe)(startSpalte)
+                var ersteZelle = pccontroller.cell(startReihe, startSpalte)
 
-                if (pcController.set(3, startReihe, startSpalte, 5, (size - 1)) == true) {
+                if (pccontroller.set(3, startReihe, startSpalte, 5, (size - 1)) == true) {
                   schiffGesetzt = true
                   zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
 //                  println("SCHIFF-3-OKAY")
@@ -690,7 +686,7 @@ zaehlerGesetzt = 0
                 var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
                 
 
-                if (pcController.set(2, startReihe, startSpalte, 5, (size - 1)) == true) {
+                if (pccontroller.set(2, startReihe, startSpalte, 5, (size - 1)) == true) {
 
                   schiffGesetzt = true
                   zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
@@ -711,8 +707,7 @@ if (zaehlerAlleGesetzt == 10) {
                 alleGesetzt = true
               }else{
 //                println("RESET")
-                pcFeld = new Feld(size)
-           pcController = new Controller(pcFeld)
+                pccontroller.reset
                
                alleGesetzt = false
                
@@ -722,7 +717,7 @@ if (zaehlerAlleGesetzt == 10) {
             println("IHR EIGENES SPIELFELD:")
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
-            println(pcController.feld.pcToString)
+            println(pccontroller.feld.pcToString)
             feldGesetzt = true
             println("Sie haben folgende Auswahlmöglichkeiten: q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen") 
         }
@@ -736,7 +731,7 @@ if (zaehlerAlleGesetzt == 10) {
           println("Sie müssen zunächst Ihre Schiffe setzen um das Spiel starten zu können (set)")
           
         } else{
-        while(controller.spielfertig == false & pcController.spielfertig == false & quit == false){
+        while(controller.spielfertig == false & pccontroller.spielfertig == false & quit == false){
           
        
           println("Geben Sie die Zelle ein (Reihe, Spalte) um Zelle zu setzen, s um das Spielfeld des Computers zu lösen und q um das Spiel zu beenden")
@@ -747,8 +742,8 @@ if (zaehlerAlleGesetzt == 10) {
                     println("falsche Eingabe. Bitte Koordinate der Zelle im gültigen Bereich (1 bis Spielfeldgrösse eingeben")
                   }
                   else {
-                  pcController.hit(reihe.toInt, spalte.toInt)
-                  if(pcController.spielfertig == false){
+                  pccontroller.hit(reihe.toInt, spalte.toInt)
+                  if(pccontroller.spielfertig == false){
                   var pcHit = false
                   while (pcHit == false){
                     
@@ -766,14 +761,14 @@ if (zaehlerAlleGesetzt == 10) {
                   }
                   }
                   println("DAS SPIELFELD DES COMPUTERS:")
-            println(pcController.feld.pcToString)
+            println(pccontroller.feld.pcToString)
              println("IHR EIGENES SPIELFELD:")
             printTui
                   }
                 }
                 
                case "s" ::Nil =>{
-                println(pcController.feld.toString())
+                println(pccontroller.feld.toString())
                 quit = true
                   }
                case "q" ::Nil => quit = true
@@ -792,7 +787,7 @@ if (zaehlerAlleGesetzt == 10) {
             println("Sie haben das Spiel abgebrochen")
           }
           else
-            if (pcController.spielfertig==true){
+            if (pccontroller.spielfertig==true){
           println("SPIEL BEENDET!")
           println("SIE haben gewonnen!") 
             }
