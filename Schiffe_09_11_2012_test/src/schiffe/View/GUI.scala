@@ -14,14 +14,10 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
 //    case e: CellChanged => redraw
   }
   title = "Schiffe Versenken"
-  var spielGroesse = controller.feld.zellen.length
+ 
   
   def spiel(spielSize: Int) = {
-  val InitialfarbeSpieler = new Color(200, 200, 255)
-  val InitialfarbeComputer = new Color(224, 224, 255)
-  val Schiffgesetzt = new Color(192, 255, 192)
-  val Schiffgetroffen = new Color(190, 245, 170)
-  val SchiffNichtgetroffen = new Color(150, 160, 162)
+  
   val labelcomp = new Label { text = "Spielfeld des Computers" }
   val labelsp = new Label { text = "Ihr Spielfeld" }
   val neustarten = new Button("Spiel neu Starten")
@@ -44,16 +40,16 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
     contents += statusline
      
     }, BorderPanel.Position.North)
+    
     add(new GridPanel(spielSize, spielSize) {
-      for (i <- 0 to (spielGroesse-1)) {
-        for (j <- 0 to (spielGroesse-1)) {
-          var button = new Button("")
-          button.background_=(java.awt.Color.BLUE)
-          button.preferredSize_=(new Dimension(60,60))
-         contents += button
-          // var spielerPanel = new SpielerPanel(i,j, controller)
-        //  cells(i)(j) = spielerPanel
-        // contents += spielerPanel
+      border = LineBorder(java.awt.Color.BLACK, 2)
+      for (i <- 0 to (spielSize-1)) {
+        for (j <- 0 to (spielSize-1)) {
+         var spielerPanel = new SpielerPanel(i,j, controller)
+         spielerPanel.background_=(java.awt.Color.BLUE)
+           cells(i)(j) = spielerPanel
+         contents += spielerPanel
+         listenTo(spielerPanel)
 
         }
         
@@ -62,12 +58,14 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
     }, BorderPanel.Position.West)
     add(new FlowPanel(), BorderPanel.Position.Center)
     add(new GridPanel(spielSize, spielSize){
-      for (i <- 1 to (spielSize)) {
-        for (j <- 1 to (spielSize)) {
-          var button = new Button("")
-          button.background_=(java.awt.Color.BLACK)
-          button.preferredSize_=(new Dimension(60,60))
-          contents += button
+       border = LineBorder(java.awt.Color.WHITE, 2)
+      for (k <-0 to (spielSize-1)) {
+        for (l <- 0 to (spielSize-1)) {
+         var PCPanel = new PCPanel(k,l, pccontroller)
+         PCPanel.background_=(java.awt.Color.BLACK)
+           computercells(k)(l) = PCPanel
+         contents += PCPanel
+         listenTo(PCPanel)
         }
       }
       
@@ -79,7 +77,7 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
     statusline.text = controller.statusText}
     }
     reactions += {
- case ButtonClicked(loesen) => {controller.solve
+ case ButtonClicked(loesen) => {pccontroller.solve
     statusline.text = controller.statusText}
     }
  }

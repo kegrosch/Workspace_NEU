@@ -80,7 +80,7 @@ class Tui(var controller: Controller, pccontroller: Controller) extends Reactor 
                 schiffGesetzt = true
               } else {
                 schiffGesetzt = false
-                pccontroller.reset
+                
               }
 
             }
@@ -722,9 +722,9 @@ if (zaehlerAlleGesetzt == 10) {
             println("Sie haben folgende Auswahlmöglichkeiten: q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen") 
         }
 
-      case "10" => if(feldGesetzt==false){controller.setSize(10)} else println("Sie haben die Zellen schon gesetzt. Sie dürfen das Spielfeld nicht ändern")
-      case "5" => if(feldGesetzt==false) {controller.setSize(5)} else println("Sie haben die Zellen schon gesetzt. Sie dürfen das Spielfeld nicht ändern")
-      case "2" =>if(feldGesetzt==false) {controller.setSize(2)} else println("Sie haben die Zellen schon gesetzt. Sie dürfen das Spielfeld nicht ändern")
+      case "10" => if(feldGesetzt==false){controller.setSize(10); pccontroller.setSize(10)} else println("Sie haben die Zellen schon gesetzt. Sie dürfen das Spielfeld nicht ändern")
+      case "5" => if(feldGesetzt==false) {controller.setSize(5); pccontroller.setSize(5)} else println("Sie haben die Zellen schon gesetzt. Sie dürfen das Spielfeld nicht ändern")
+      case "2" =>if(feldGesetzt==false) {controller.setSize(2); pccontroller.setSize(2)} else println("Sie haben die Zellen schon gesetzt. Sie dürfen das Spielfeld nicht ändern")
       case "hit" => {
         var quit = false
         if(feldGesetzt == false){

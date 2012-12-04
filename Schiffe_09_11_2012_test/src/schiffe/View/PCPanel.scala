@@ -20,4 +20,6 @@ val cellButton = new Button {
     
   }
 }
+ contents += cellButton
+  listenTo(cellButton)
 }

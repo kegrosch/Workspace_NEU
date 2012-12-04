@@ -30,7 +30,7 @@ for(i <- 0 to anzahl-1){
   }
 return this
 }
-val size = sqrt(zellen.size).toInt
+val size = zellen.size.toInt
 
 
 def hit(reihe: Int, spalte: Int):Boolean = {
