@@ -29,7 +29,7 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
   var cells = Array.ofDim[SpielerPanel](controller.getSize, controller.getSize)
   var computercells = Array.ofDim[PCPanel](pccontroller.getSize, pccontroller.getSize)
     contents = new BorderPanel {
-  
+    
     add(new FlowPanel{
     
     contents += neustarten
@@ -38,11 +38,17 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
     contents += spiel10
     contents += loesen
     contents += statusline
-     
+   
     }, BorderPanel.Position.North)
+    add(new FlowPanel{
     
+    contents += labelsp
+    contents += labelcomp
+     
+    }, BorderPanel.Position.South)
+   
     add(new GridPanel(spielSize, spielSize) {
-      border = LineBorder(java.awt.Color.BLACK, 2)
+      border = LineBorder(java.awt.Color.WHITE, 2)
       for (i <- 0 to (spielSize-1)) {
         for (j <- 0 to (spielSize-1)) {
          var spielerPanel = new SpielerPanel(i,j, controller)
@@ -50,6 +56,7 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
            cells(i)(j) = spielerPanel
          contents += spielerPanel
          listenTo(spielerPanel)
+         
 
         }
         
@@ -72,18 +79,51 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
     }, BorderPanel.Position.East)
  listenTo(neustarten)
  listenTo(loesen)
+  listenTo(spiel2)
+  listenTo(spiel5)
+   listenTo( spiel10)
  reactions += {
  case ButtonClicked(neustarten) => {controller.reset
+   pccontroller.reset
     statusline.text = controller.statusText}
     }
     reactions += {
  case ButtonClicked(loesen) => {pccontroller.solve
     statusline.text = controller.statusText}
     }
+   reactions += {
+     case ButtonClicked(spiel2) =>{
+       if(spielSize==2){
+         statusline.text="Spielfeld ist schon 2 Zellen gross"
+       }
+       else
+      resize(2)
+    }
+   }
+    reactions += {
+    case ButtonClicked(spiel5) =>{
+       if(spielSize==5){
+         statusline.text="Spielfeld ist schon 5 Zellen gross"
+       }
+       else
+      resize(2)
+    }
+   }
+    reactions += {
+     case ButtonClicked(spiel10) =>{
+    if(spielSize==10){
+         statusline.text="Spielfeld ist schon 10 Zellen gross"
+       }
+       else
+      resize(10)
+    }
+    }
+   }
+      
  }
 
   
-  }
+  
   def resize(newSize: Int){
     spiel(newSize)
   }
