@@ -14,8 +14,7 @@ val cellButton = new Button {
   opaque=true
   background = if (myCell.getGesetzt & myCell.getGetroffen) Schiffgetroffen
   else {
-    if(!myCell.getGesetzt & myCell.getGetroffen)
-    SchiffNichtgetroffen
+    if(!myCell.getGesetzt & myCell.getGetroffen)  SchiffNichtgetroffen
      else InitialfarbeComputer
     
   }

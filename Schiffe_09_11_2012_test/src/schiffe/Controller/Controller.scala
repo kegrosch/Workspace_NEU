@@ -84,13 +84,14 @@ class Controller (var feld: Feld) extends Publisher{
   def updateFeld(feld: Feld){
     this.feld = feld
   }
-def cell(row:Int, col:Int)=feld.cell(row,col)
+
+def cell(row: Int, col: Int) = feld.cell(row, col)
 
 def setcomputerschiff2={
   while (getFeldGesetzt == false) {
               var startReihe = scala.util.Random.nextInt(2 - 1) + 1
               var startSpalte = scala.util.Random.nextInt(2 - 1) + 1
-              var ersteZelle = cell(startReihe,startSpalte)
+              var ersteZelle = feld.cell(startReihe,startSpalte)
 
               if (set(2, startReihe, startSpalte, 5, (getSize - 1)) == true) {
                 setFeldGesetzt(true)
@@ -117,7 +118,7 @@ def setcomputerschiff2={
                 }
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-                var ersteZelle = cell(startReihe, startSpalte)
+                var ersteZelle = feld.cell(startReihe, startSpalte)
 
                 if (set(4, startReihe, startSpalte, 5, (getSize - 1)) == true) {
                   schiffGesetzt = true
@@ -138,7 +139,7 @@ def setcomputerschiff2={
                 }
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-                var ersteZelle = cell(startReihe,startSpalte)
+                var ersteZelle = feld.cell(startReihe,startSpalte)
 
                 if (set(3, startReihe, startSpalte, 5, (getSize - 1)) == true) {
                   schiffGesetzt = true
@@ -163,7 +164,7 @@ def setcomputerschiff2={
                   }else{
                   var startReihe = scala.util.Random.nextInt(5 - 1) + 1
                   var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-                  var ersteZelle = cell(startReihe, startSpalte)
+                  var ersteZelle = feld.cell(startReihe, startSpalte)
 
                   if (set(2, startReihe, startSpalte, 5, (getSize - 1)) == true) {
                     schiffGesetzt = true
@@ -200,7 +201,7 @@ def setcomputerschiff2={
                 }
               var startReihe = scala.util.Random.nextInt(10 - 1) + 1
               var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-              var ersteZelle = cell(startReihe,startSpalte)
+              var ersteZelle = feld.cell(startReihe,startSpalte)
 
               if (set(5, startReihe, startSpalte, 5, (getSize - 1)) == true) {
                 schiffGesetzt = true
@@ -225,7 +226,7 @@ def setcomputerschiff2={
                 }else{
                 var startReihe = scala.util.Random.nextInt(10 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-                var ersteZelle = cell(startReihe, startSpalte)
+                var ersteZelle = feld.cell(startReihe, startSpalte)
 
                 if (set(4, startReihe, startSpalte, 5, (getSize - 1)) == true) {
                   schiffGesetzt = true
@@ -254,7 +255,7 @@ zaehlerGesetzt = 0
                 }else{
                 var startReihe = scala.util.Random.nextInt(10 - 1) + 1
                 var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-                var ersteZelle = cell(startReihe, startSpalte)
+                var ersteZelle = feld.cell(startReihe, startSpalte)
 
                 if (set(3, startReihe, startSpalte, 5, (getSize - 1)) == true) {
                   schiffGesetzt = true

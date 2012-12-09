@@ -106,7 +106,7 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
          statusline.text="Spielfeld ist schon 5 Zellen gross"
        }
        else
-      resize(2)
+      resize(5)
     }
    }
     reactions += {
@@ -114,9 +114,16 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
     if(spielSize==10){
          statusline.text="Spielfeld ist schon 10 Zellen gross"
        }
-       else
-      resize(10)
-    }
+       else{
+         if(controller.getFeldGesetzt()==false){
+           controller.setSize(10); pccontroller.setSize(10)
+                   
+         resize(10) }
+         else 
+           statusline.text="Sie haben die Zellen schon gesetzt"
+       }
+     }   
+    
     }
    }
       
