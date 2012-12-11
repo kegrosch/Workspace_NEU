@@ -106,6 +106,7 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
          statusline.text="Spielfeld ist schon 5 Zellen gross"
        }
        else
+         
       resize(5)
     }
    }
@@ -116,7 +117,7 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
        }
        else{
          if(controller.getFeldGesetzt()==false){
-           controller.setSize(10); pccontroller.setSize(10)
+//           controller.setSize(10); pccontroller.setSize(10)
                    
          resize(10) }
          else 
@@ -132,7 +133,8 @@ class GUI(controller: Controller, pccontroller:Controller) extends Frame {
   
   
   def resize(newSize: Int){
-    spiel(newSize)
+    controller.setSize(newSize)
+    pccontroller.setSize(newSize)
   }
 //  var zellen = controller.feld.zellen
 //  

@@ -6,7 +6,6 @@ import schiffe.Model.Zelle
 import scala.swing.Publisher
 import scala.swing.event.Event
 case class FeldResize(newSize:Int) extends Event
-
 class Controller (var feld: Feld) extends Publisher{
   
 //  def available(row: Int, col: Int) = feld.available(row, col)
@@ -51,6 +50,7 @@ class Controller (var feld: Feld) extends Publisher{
 
   def setSize(newSize: Int) = {
     feld = new Feld(newSize)
+ 
     publish(new FeldResize(newSize))
 //    notifyObservers
   }
