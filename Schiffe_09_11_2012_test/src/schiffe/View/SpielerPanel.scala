@@ -27,8 +27,16 @@ val cellButton = new Button {
   }
   contents += cellButton
   listenTo(cellButton)
-   def redraw = {
-    
+ def redraw = {
+  
+
     repaint
   }
-}
+ def setBackground(p: Panel) = p.background = if (myCell.getGesetzt & myCell.getGetroffen) Schiffgetroffen
+  else if(!myCell.getGesetzt & myCell.getGetroffen)
+    SchiffNichtgetroffen
+    else if(myCell.getGesetzt & !myCell.getGetroffen)
+        Schiffgesetzt
+        else InitialfarbeSpieler
+    
+  }
