@@ -14,20 +14,22 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   //    //    case e: CellChanged => redraw
   //  }
   title = "Schiffe Versenken"
+    
+   
 
   def spiel(spielSize: Int) = {
     var groesse = spielSize
     var statusline = new Label { text = controller.statusText }
-    val labelcomp = new Label { text = "Spielfeld des Computers" }
-    val labelsp = new Label { text = "Ihr Spielfeld" }
-    val neustarten = new Button {
+    val titelpc = new Label { text = "Spielfeld des Computers" }
+    val titelUser = new Label { text = "Ihr Spielfeld" }
+    val neustarten = new Button {//Button zum Neustarten des Spiels
       action = Action("Spiel neu Starten") {
         controller.reset
         pccontroller.reset
         statusline.text = controller.statusText
       }
     }
-    val spiel2 = new Button {
+    val spiel2 = new Button {//Button zu ändern der Spielfeldgröße auf 2
       action = Action("Spielgrösse 2") {
         if (groesse == 2) {
           statusline.text = "Spielfeld ist schon 2 Zellen gross"
@@ -37,7 +39,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
         }
       }
     }
-    val spiel5 = new Button {
+    val spiel5 = new Button {//Button zu ändern der Spielfeldgröße auf 5
       action = Action("Spielgrösse 5") {
         if (groesse == 5) {
           statusline.text = "Spielfeld ist schon 5 Zellen gross"
@@ -48,7 +50,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
 
       }
     }
-    val spiel10 = new Button {
+    val spiel10 = new Button {//Button zu ändern der Spielfeldgröße auf 10
       action = Action("Spielgrösse 10") {
         if (groesse == 10) {
           statusline.text = "Spielfeld ist schon 10 Zellen gross"
@@ -64,15 +66,15 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
         }
       }
     }
-    val loesen = new Button {
+    val loesen = new Button {//Button zum Lösen des Spiels
       action = Action("Spiel lösen") {
         pccontroller.solve
         statusline.text = controller.statusText
       }
     }
 
-    var cells = Array.ofDim[SpielerPanel](controller.getSize, controller.getSize)
-    var computercells = Array.ofDim[PCPanel](pccontroller.getSize, pccontroller.getSize)
+    var cells = Array.ofDim[SpielerPanel](groesse, groesse)
+    var computercells = Array.ofDim[PCPanel](groesse, groesse)
     contents = new BorderPanel {
 
       add(new FlowPanel { //Leiste im oberen Bereich mit Größenänderung, Neu Starten und Lösen
@@ -85,44 +87,23 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
         contents += statusline
 
       }, BorderPanel.Position.North)
+      
       add(new FlowPanel { //Überschrift für die beiden Spielfelder
 
-        contents += labelsp
-        contents += labelcomp
+        contents += titelUser
+        contents += titelpc
 
       }, BorderPanel.Position.South)
 
-      add(new GridPanel(spielSize, spielSize) { //Spielfeld des Users
-        border = LineBorder(java.awt.Color.WHITE, 2)
-        for (i <- 0 to (spielSize - 1)) {
-          for (j <- 0 to (spielSize - 1)) {
-            var spielerPanel = new SpielerPanel(i, j, controller)
-            spielerPanel.background_=(java.awt.Color.BLUE)
-            cells(i)(j) = spielerPanel
-            contents += spielerPanel
-            listenTo(spielerPanel)
-
-          }
-
-        }
-
-      }, BorderPanel.Position.West)
+      add(spielfeldUser(groesse), BorderPanel.Position.West)
       add(new FlowPanel(), BorderPanel.Position.Center)
-      add(new GridPanel(spielSize, spielSize) { //Spielfeld des PCs
-        border = LineBorder(java.awt.Color.WHITE, 2)
-        for (k <- 0 to (spielSize - 1)) {
-          for (l <- 0 to (spielSize - 1)) {
-            var PCPanel = new PCPanel(k, l, pccontroller)
-            PCPanel.background_=(java.awt.Color.BLACK)
-            computercells(k)(l) = PCPanel
-            contents += PCPanel
-            listenTo(PCPanel)
-          }
-        }
-
-      }, BorderPanel.Position.East)
-
-      listenTo(neustarten, loesen, spiel5, spiel10)
+      add(spielfeldPc(groesse), BorderPanel.Position.East)
+      
+      
+      
+      
+//
+//      listenTo(neustarten, loesen, spiel5, spiel10)
 
       //      reactions += {
       //        case ButtonClicked(`neustarten`) => 
@@ -173,9 +154,43 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
 
   }
 
+  def spielfeldUser(groesse: Int):GridPanel = {
+   var cells = Array.ofDim[SpielerPanel](groesse, groesse)
+   new GridPanel(groesse, groesse){ 
+     border = LineBorder(java.awt.Color.WHITE, 2)
+        for (i <- 0 to (groesse - 1)) {
+          for (j <- 0 to (groesse - 1)) {
+            var spielerPanel = new SpielerPanel(i, j, controller)
+            spielerPanel.background_=(java.awt.Color.BLUE)
+            cells(i)(j) = spielerPanel
+            contents += spielerPanel
+            listenTo(spielerPanel)
+
+          }
+
+        }
+  }
+    
+  }
+  def spielfeldPc(groesse: Int):GridPanel = {
+    var computercells = Array.ofDim[PCPanel](groesse, groesse)
+   new GridPanel(groesse, groesse){
+    border = LineBorder(java.awt.Color.WHITE, 2)
+        for (k <- 0 to (groesse - 1)) {
+          for (l <- 0 to (groesse - 1)) {
+            var PCPanel = new PCPanel(k, l, pccontroller)
+            PCPanel.background_=(java.awt.Color.BLACK)
+            computercells(k)(l) = PCPanel
+            contents += PCPanel
+            listenTo(PCPanel)
+          }
+        }
+        }
+  }
   def resize(newSize: Int) {
     controller.setSize(newSize)
     pccontroller.setSize(newSize)
+    
   }
   //  var zellen = controller.feld.zellen
   //  
@@ -236,5 +251,6 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   //      }
   //
   //    }
+   
 
 }
