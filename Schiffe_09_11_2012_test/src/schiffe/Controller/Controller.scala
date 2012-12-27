@@ -5,6 +5,7 @@ import schiffe.Model.Schiff
 import schiffe.Model.Zelle
 import scala.swing.Publisher
 import scala.swing.event.Event
+case object CellChanged extends Event
 case class FeldResize(newSize:Int) extends Event
 class Controller (var feld: Feld) extends Publisher{
   

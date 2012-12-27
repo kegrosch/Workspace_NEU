@@ -11,7 +11,7 @@ object Schiffe {
     val pccontroller = new Controller(new Feld(5))
     val userTui=new Tui(controller, pccontroller)
     val userGui = new GUI(controller, pccontroller)
-    userGui.spiel(5)
+//    userGui.spiel(5)
     userGui.visible = true
     
     while((userTui.readInput(readLine()))==true){}
