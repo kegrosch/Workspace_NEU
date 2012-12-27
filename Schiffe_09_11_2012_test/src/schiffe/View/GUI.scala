@@ -5,10 +5,12 @@ import scala.swing.Swing.LineBorder
 import scala.swing.event._
 import schiffe.Controller.FeldResize
 import schiffe.Controller.CellChanged
+import javax.swing.ImageIcon
 class CellClicked(val row: Int, val column: Int) extends Event
 
 class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   listenTo(controller, pccontroller)
+ 
   var groesse = controller.feld.zellen.length
   var cells = Array.ofDim[Button](groesse, groesse)
   var computercells = Array.ofDim[Button](groesse, groesse)
@@ -86,6 +88,8 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
     contents += loesen
     contents += statusline
   }
+  def schiffleiste(groesse: Int) = new SchiffPanel(groesse)
+  def schiffleiste_Grid = schiffleiste(groesse).schiffleiste
   contents = new BorderPanel {
 
     add(funktionsleiste, BorderPanel.Position.North)
@@ -98,7 +102,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
     }, BorderPanel.Position.South)
 
     add(spielfeldUserButtons, BorderPanel.Position.West)
-    add(new FlowPanel(), BorderPanel.Position.Center)
+    add(schiffleiste_Grid, BorderPanel.Position.Center)
     add(spielfeldPcButtons, BorderPanel.Position.East)
 
     visible = true
@@ -112,7 +116,7 @@ reactions += {
     }
   def resize(newSize: Int) = {
 
-    
+
 
     contents = new BorderPanel {
       add(funktionsleiste, BorderPanel.Position.North)
@@ -121,7 +125,7 @@ reactions += {
         contents += titelpc
       }, BorderPanel.Position.South)
       add(spielfeldUserButtons, BorderPanel.Position.West)
-      add(new FlowPanel(), BorderPanel.Position.Center)
+      add(schiffleiste(newSize).schiffleiste, BorderPanel.Position.Center)
       add(spielfeldPcButtons, BorderPanel.Position.East)
 
     }
