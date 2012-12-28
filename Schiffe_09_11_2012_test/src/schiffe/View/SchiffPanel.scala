@@ -5,194 +5,582 @@ import scala.swing.Button
 import java.awt.Dimension
 import scala.swing.Action
 import scala.swing.event.ButtonClicked
+import scala.swing._
 
 class SchiffPanel(size: Int) {
   var schlachtschiff_icon = new ImageIcon("images/Schlachtschiff.png")
   var kreuzer_icon = new ImageIcon("images/Kreuzer.png")
   var uboot_icon = new ImageIcon("images/UBoot.png")
   var zerstoerer_icon = new ImageIcon("images/Zerstoerer.png")
+  var z_einzeln = false
+  var z = false
+        var u = false
+        var k = false
+         var z1_groﬂ = false
+        var z2_groﬂ = false
+        var z3_groﬂ = false
+        var z4_groﬂ = false
+        var u1_groﬂ = false
+        var u2_groﬂ = false
+        var u3_groﬂ = false
+        var k1_groﬂ = false
+        var k2_groﬂ = false
+        var s_groﬂ = false
 
   def schiffleiste: GridPanel = {
     size match {
       case 2 =>
-        var z = false
+        
         var schiffleiste = new GridPanel(1, 1) {
           background = java.awt.Color.WHITE
-          var zerstoerer = new Button("Zerstˆrer") {
+          var zerstoerer_einzeln = new Button("Zerstˆrer") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
 
             reactions += {
-              case ButtonClicked(zerstoerer) =>
-                if (z == false) {
-                  zerstoerer.background_=(java.awt.Color.RED)
-                  zerstoerer.preferredSize_=(new Dimension(300, 60))
-                  z = true
+              case ButtonClicked(zerstoerer_einzeln) =>
+                if (z_einzeln == false) {
+                  zerstoerer_einzeln.background_=(java.awt.Color.RED)
+                  zerstoerer_einzeln.preferredSize_=(new Dimension(300, 60))
+                  z_einzeln = true
                 } else {
                   background = java.awt.Color.WHITE
                   preferredSize_=(new Dimension(350, 60))
-                  z = false
+                  z_einzeln = false
                 }
             }
           }
 
-          zerstoerer.icon = zerstoerer_icon
+          zerstoerer_einzeln.icon = zerstoerer_icon
 
-          contents += zerstoerer
-          listenTo(zerstoerer)
+          contents += zerstoerer_einzeln
+          listenTo(zerstoerer_einzeln)
         }
         schiffleiste
       case 5 =>
-        var z = false
-        var u = false
-        var k = false
+        var zerstoerer = new Button
+        var uboot = new Button
+        var kreuzer = new Button
         var schiffleiste = new GridPanel(3, 1) {
           background = java.awt.Color.WHITE
-          var zerstoerer = new Button("Zerstˆrer") {
+           zerstoerer = new Button("Zerstˆrer"){
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+          
             reactions += {
               case ButtonClicked(zerstoerer) =>
                 if (z == false) {
                   zerstoerer.background_=(java.awt.Color.RED)
-                  zerstoerer.preferredSize_=(new Dimension(300, 60))
+                  zerstoerer.preferredSize_=(new Dimension(350, 60))
+                  reset(kreuzer)
+                  reset(uboot)
+                  
+                  k = false
+                  u = false
                   z = true
                 } else {
-                  background = java.awt.Color.WHITE
-                  preferredSize_=(new Dimension(350, 60))
+                  zerstoerer.background = java.awt.Color.WHITE
+                  zerstoerer.preferredSize_=(new Dimension(350, 60))
                   z = false
                 }
             }
+          icon = zerstoerer_icon
           }
 
-          zerstoerer.icon = zerstoerer_icon
 
           contents += zerstoerer
           listenTo(zerstoerer)
-          var uboot = new Button("U-Boot") {
+          uboot = new Button("U-Boot") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+          
             reactions += {
               case ButtonClicked(uboot) =>
                 if (u == false) {
-                  background_=(java.awt.Color.RED)
-                  preferredSize_=(new Dimension(300, 60))
+                	
+                  reset(kreuzer)
+                  reset(zerstoerer)
+                 uboot. background_=(java.awt.Color.RED)
+                  uboot.preferredSize_=(new Dimension(300, 60))
+
+                  z = false
+                  k = false
                   u = true
                 } else {
-                  background = java.awt.Color.WHITE
-                  preferredSize_=(new Dimension(350, 60))
+                  uboot.background = java.awt.Color.WHITE
+                  uboot.preferredSize_=(new Dimension(350, 60))
                   u = false
                 }
+                
             }
-          }
-          uboot.icon = uboot_icon
-
+          icon = uboot_icon
+        }
           contents += uboot
           listenTo(uboot)
-          var kreuzer = new Button("Kreuzer") {
+          kreuzer = new Button("Kreuzer") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+          
             reactions += {
               case ButtonClicked(kreuzer) =>
                 if (k == false) {
                   background_=(java.awt.Color.RED)
                   preferredSize_=(new Dimension(300, 60))
+                  reset(uboot)
+                reset(zerstoerer)
+                  
+                  z = false
+                  u = false
                   k = true
                 } else {
-                  background = java.awt.Color.WHITE
+                  background_=(java.awt.Color.WHITE)
                   preferredSize_=(new Dimension(350, 60))
                   k = false
                 }
             }
-            
-          }
-          kreuzer.icon = kreuzer_icon
+            icon = kreuzer_icon
+          }          
+          
 
           contents += kreuzer
           listenTo(kreuzer)
         }
         schiffleiste
       case 10 =>
+        var schlachtschiff_groﬂ = new Button
+           var kreuzer_2_groﬂ = new Button
+          var kreuzer_1_groﬂ = new Button
+          var uboot_3_groﬂ = new Button
+          var uboot_2_groﬂ = new Button
+           var uboot_1_groﬂ = new Button
+          var zerstoerer_4_groﬂ = new Button
+           var zerstoerer_3_groﬂ = new Button
+          var zerstoerer_2_groﬂ = new Button
+          var zerstoerer_1_groﬂ = new Button
+          
         var schiffleiste = new GridPanel(10, 1) {
           background = java.awt.Color.WHITE
-          var zerstoerer_1 = new Button("1.ter Zerstˆrer") {
+          zerstoerer_1_groﬂ = new Button("1.ter Zerstˆrer") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+            reactions += {
+              case ButtonClicked(zerstoerer_1_groﬂ) =>
+                if (z1_groﬂ == false) {
+                  
+                  background_=(java.awt.Color.RED)
+                  preferredSize_=(new Dimension(300, 60))
+                  reset(zerstoerer_2_groﬂ)
+                  reset(zerstoerer_3_groﬂ)
+                  reset(zerstoerer_4_groﬂ)
+                  reset(uboot_1_groﬂ)
+                  reset(uboot_2_groﬂ)
+                  reset(uboot_3_groﬂ)
+                  reset(kreuzer_1_groﬂ)
+                  reset(kreuzer_2_groﬂ)
+                  reset(schlachtschiff_groﬂ)
+                  z1_groﬂ = true
+                  z2_groﬂ = false
+                  z3_groﬂ = false
+                  z4_groﬂ = false
+                  u1_groﬂ = false
+                  u2_groﬂ = false
+                  u3_groﬂ = false
+                  k1_groﬂ = false
+                  k2_groﬂ = false
+                  s_groﬂ = false
+                } else {
+                  background = java.awt.Color.WHITE
+                  preferredSize_=(new Dimension(350, 60))
+                  z1_groﬂ = false
+                }
+            }
+            icon = zerstoerer_icon
           }
-          zerstoerer_1.icon = zerstoerer_icon
-          contents += zerstoerer_1
-          listenTo(zerstoerer_1)
-          var zerstoerer_2 = new Button("2.ter Zerstˆrer") {
+          
+          contents += zerstoerer_1_groﬂ
+          listenTo(zerstoerer_1_groﬂ)
+          
+          
+           
+          zerstoerer_2_groﬂ = new Button("2.ter Zerstˆrer") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+            reactions += {
+              case ButtonClicked(zerstoerer_2_groﬂ) =>
+                if (z2_groﬂ == false) {
+                  reset(zerstoerer_1_groﬂ)
+                  reset(zerstoerer_3_groﬂ)
+                  reset(zerstoerer_4_groﬂ)
+                  reset(uboot_1_groﬂ)
+                  reset(uboot_2_groﬂ)
+                  reset(uboot_3_groﬂ)
+                  reset(kreuzer_1_groﬂ)
+                  reset(kreuzer_2_groﬂ)
+                  reset(schlachtschiff_groﬂ)
+                  background_=(java.awt.Color.RED)
+                  preferredSize_=(new Dimension(300, 60))
+                  z1_groﬂ = false
+                  z2_groﬂ = true
+                  z3_groﬂ = false
+                  z4_groﬂ = false
+                  u1_groﬂ = false
+                  u2_groﬂ = false
+                  u3_groﬂ = false
+                  k1_groﬂ = false
+                  k2_groﬂ = false
+                  s_groﬂ = false
+                } else {
+                  background = java.awt.Color.WHITE
+                  preferredSize_=(new Dimension(350, 60))
+                  z2_groﬂ = false
+                }
+            }
+            icon = zerstoerer_icon
           }
-          zerstoerer_2.icon = zerstoerer_icon
-          contents += zerstoerer_2
-          listenTo(zerstoerer_2)
-          var zerstoerer_3 = new Button("3.ter Zerstˆrer") {
+          
+          contents += zerstoerer_2_groﬂ
+          listenTo(zerstoerer_2_groﬂ)
+          
+          
+          
+          zerstoerer_3_groﬂ = new Button("3.ter Zerstˆrer") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+            reactions += {
+              case ButtonClicked(zerstoerer_3_groﬂ) =>
+                if (z3_groﬂ == false) {
+                  reset(zerstoerer_1_groﬂ)
+                  reset(zerstoerer_2_groﬂ)
+                  reset(zerstoerer_4_groﬂ)
+                  reset(uboot_1_groﬂ)
+                  reset(uboot_2_groﬂ)
+                  reset(uboot_3_groﬂ)
+                  reset(kreuzer_1_groﬂ)
+                  reset(kreuzer_2_groﬂ)
+                  reset(schlachtschiff_groﬂ)
+                  background_=(java.awt.Color.RED)
+                  preferredSize_=(new Dimension(300, 60))
+                  z1_groﬂ = false
+                  z2_groﬂ = false
+                  z3_groﬂ = true
+                  z4_groﬂ = false
+                  u1_groﬂ = false
+                  u2_groﬂ = false
+                  u3_groﬂ = false
+                  k1_groﬂ = false
+                  k2_groﬂ = false
+                  s_groﬂ = false
+                } else {
+                  background = java.awt.Color.WHITE
+                  preferredSize_=(new Dimension(350, 60))
+                  z3_groﬂ = false
+                }
+            }
+            icon = zerstoerer_icon
           }
-          zerstoerer_3.icon = zerstoerer_icon
-          contents += zerstoerer_3
-          listenTo(zerstoerer_3)
-          var zerstoerer_4 = new Button("4.ter Zerstˆrer") {
+          
+          contents += zerstoerer_3_groﬂ
+          listenTo(zerstoerer_3_groﬂ)
+          
+         
+          
+          zerstoerer_4_groﬂ = new Button("4.ter Zerstˆrer") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+            reactions += {
+              case ButtonClicked(zerstoerer_4_groﬂ) =>
+                if (z4_groﬂ == false) {
+                  reset(zerstoerer_1_groﬂ)
+                  reset(zerstoerer_2_groﬂ)
+                  reset(zerstoerer_3_groﬂ)
+                  reset(uboot_1_groﬂ)
+                  reset(uboot_2_groﬂ)
+                  reset(uboot_3_groﬂ)
+                  reset(kreuzer_1_groﬂ)
+                  reset(kreuzer_2_groﬂ)
+                  reset(schlachtschiff_groﬂ)
+                  background_=(java.awt.Color.RED)
+                  preferredSize_=(new Dimension(300, 60))
+                  z1_groﬂ = false
+                  z2_groﬂ = false
+                  z3_groﬂ = false
+                  z4_groﬂ = true
+                  u1_groﬂ = false
+                  u2_groﬂ = false
+                  u3_groﬂ = false
+                  k1_groﬂ = false
+                  k2_groﬂ = false
+                  s_groﬂ = false
+                } else {
+                  background = java.awt.Color.WHITE
+                  preferredSize_=(new Dimension(350, 60))
+                  z4_groﬂ = false
+                }
+            }
+            icon = zerstoerer_icon
           }
-          zerstoerer_4.icon = zerstoerer_icon
-          contents += zerstoerer_4
-          listenTo(zerstoerer_4)
-          var uboot_1 = new Button("1.tes U-Boot") {
+          
+          contents += zerstoerer_4_groﬂ
+          listenTo(zerstoerer_4_groﬂ)
+          
+          
+          
+           
+          uboot_1_groﬂ = new Button("1.tes U-Boot") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+            reactions += {
+              case ButtonClicked(uboot_1_groﬂ) =>
+                if (u1_groﬂ == false) {
+                  reset(zerstoerer_1_groﬂ)
+                  reset(zerstoerer_2_groﬂ)
+                  reset(zerstoerer_3_groﬂ)
+                  reset(zerstoerer_4_groﬂ)
+                  
+                  reset(uboot_2_groﬂ)
+                  reset(uboot_3_groﬂ)
+                  reset(kreuzer_1_groﬂ)
+                  reset(kreuzer_2_groﬂ)
+                  reset(schlachtschiff_groﬂ)
+                  background_=(java.awt.Color.RED)
+                  preferredSize_=(new Dimension(300, 60))
+                  z1_groﬂ = false
+                  z2_groﬂ = false
+                  z3_groﬂ = false
+                  z4_groﬂ = false
+                  u1_groﬂ = true
+                  u2_groﬂ = false
+                  u3_groﬂ = false
+                  k1_groﬂ = false
+                  k2_groﬂ = false
+                  s_groﬂ = false
+                } else {
+                  background = java.awt.Color.WHITE
+                  preferredSize_=(new Dimension(350, 60))
+                  u1_groﬂ = false
+                }
+            }
+            icon = uboot_icon
           }
-          uboot_1.icon = uboot_icon
+          
 
-          contents += uboot_1
-          listenTo(uboot_1)
-          var uboot_2 = new Button("2.tes U-Boot") {
+           
+          
+          contents += uboot_1_groﬂ
+          listenTo(uboot_1_groﬂ)
+          uboot_2_groﬂ = new Button("2.tes U-Boot") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+            reactions += {
+              case ButtonClicked(uboot_2_groﬂ) =>
+                if (u2_groﬂ == false) {
+                  reset(zerstoerer_1_groﬂ)
+                  reset(zerstoerer_2_groﬂ)
+                  reset(zerstoerer_3_groﬂ)
+                  reset(zerstoerer_4_groﬂ)
+                  
+                  reset(uboot_1_groﬂ)
+                  reset(uboot_3_groﬂ)
+                  reset(kreuzer_1_groﬂ)
+                  reset(kreuzer_2_groﬂ)
+                  reset(schlachtschiff_groﬂ)
+                  background_=(java.awt.Color.RED)
+                  preferredSize_=(new Dimension(300, 60))
+                  z1_groﬂ = false
+                  z2_groﬂ = false
+                  z3_groﬂ = false
+                  z4_groﬂ = false
+                  u1_groﬂ = false
+                  u2_groﬂ = true
+                  u3_groﬂ = false
+                  k1_groﬂ = false
+                  k2_groﬂ = false
+                  s_groﬂ = false
+                } else {
+                  background = java.awt.Color.WHITE
+                  preferredSize_=(new Dimension(350, 60))
+                  u2_groﬂ = false
+                }
+            }
+            icon = uboot_icon
           }
-          uboot_2.icon = uboot_icon
+          
 
-          contents += uboot_2
-          listenTo(uboot_2)
-          var uboot_3 = new Button("3.tes U-Boot") {
+          
+         
+          
+          contents += uboot_2_groﬂ
+          listenTo(uboot_2_groﬂ)
+          uboot_3_groﬂ = new Button("3.tes U-Boot") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+            reactions += {
+              case ButtonClicked(uboot_3_groﬂ) =>
+                if (u3_groﬂ == false) {
+                  reset(zerstoerer_1_groﬂ)
+                  reset(zerstoerer_2_groﬂ)
+                  reset(zerstoerer_3_groﬂ)
+                  reset(zerstoerer_4_groﬂ)
+                  
+                  reset(uboot_1_groﬂ)
+                  reset(uboot_2_groﬂ)
+                  reset(kreuzer_1_groﬂ)
+                  reset(kreuzer_2_groﬂ)
+                  reset(schlachtschiff_groﬂ)
+                  background_=(java.awt.Color.RED)
+                  preferredSize_=(new Dimension(300, 60))
+                  z1_groﬂ = false
+                  z2_groﬂ = false
+                  z3_groﬂ = false
+                  z4_groﬂ = false
+                  u1_groﬂ = false
+                  u2_groﬂ = false
+                  u3_groﬂ = true
+                  k1_groﬂ = false
+                  k2_groﬂ = false
+                  s_groﬂ = false
+                } else {
+                  background = java.awt.Color.WHITE
+                  preferredSize_=(new Dimension(350, 60))
+                  u3_groﬂ = false
+                }
+            }
+            icon = uboot_icon
           }
-          uboot_3.icon = uboot_icon
+          
 
-          contents += uboot_3
-          listenTo(uboot_3)
-          var kreuzer_1 = new Button("1.ter Kreuzer") {
+          
+          
+          contents += uboot_3_groﬂ
+          listenTo(uboot_3_groﬂ)
+          kreuzer_1_groﬂ = new Button("1.ter Kreuzer") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+            reactions += {
+              case ButtonClicked(kreuzer_1_groﬂ) =>
+                if (k1_groﬂ == false) {
+                  reset(zerstoerer_1_groﬂ)
+                  reset(zerstoerer_2_groﬂ)
+                  reset(zerstoerer_3_groﬂ)
+                  reset(zerstoerer_4_groﬂ)
+                  reset(uboot_1_groﬂ)
+                  reset(uboot_2_groﬂ)
+                  reset(uboot_3_groﬂ)
+                  
+                  reset(kreuzer_2_groﬂ)
+                  reset(schlachtschiff_groﬂ)
+                  background_=(java.awt.Color.RED)
+                  preferredSize_=(new Dimension(300, 60))
+                  z1_groﬂ = false
+                  z2_groﬂ = false
+                  z3_groﬂ = false
+                  z4_groﬂ = false
+                  u1_groﬂ = false
+                  u2_groﬂ = false
+                  u3_groﬂ = false
+                  k1_groﬂ = true
+                  k2_groﬂ = false
+                  s_groﬂ = false
+                } else {
+                  background = java.awt.Color.WHITE
+                  preferredSize_=(new Dimension(350, 60))
+                  k1_groﬂ = false
+                }
+            }
+            icon = kreuzer_icon
           }
-          kreuzer_1.icon = kreuzer_icon
+          
 
-          contents += kreuzer_1
-          listenTo(kreuzer_1)
-          var kreuzer_2 = new Button("2.ter Kreuzer") {
+          
+           
+          contents += kreuzer_1_groﬂ
+          listenTo(kreuzer_1_groﬂ)
+          kreuzer_2_groﬂ = new Button("2.ter Kreuzer") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+            reactions += {
+              case ButtonClicked(kreuzer_2_groﬂ) =>
+                if (k2_groﬂ == false) {
+                  reset(zerstoerer_1_groﬂ)
+                  reset(zerstoerer_2_groﬂ)
+                  reset(zerstoerer_3_groﬂ)
+                  reset(zerstoerer_4_groﬂ)
+                  reset(uboot_1_groﬂ)
+                  reset(uboot_2_groﬂ)
+                  reset(uboot_3_groﬂ)
+                  
+                  reset(kreuzer_1_groﬂ)
+                  reset(schlachtschiff_groﬂ)
+                  background_=(java.awt.Color.RED)
+                  preferredSize_=(new Dimension(300, 60))
+                  z1_groﬂ = false
+                  z2_groﬂ = false
+                  z3_groﬂ = false
+                  z4_groﬂ = false
+                  u1_groﬂ = false
+                  u2_groﬂ = false
+                  u3_groﬂ = false
+                  k1_groﬂ = false
+                  k2_groﬂ = true
+                  s_groﬂ = false
+                } else {
+                  background = java.awt.Color.WHITE
+                  preferredSize_=(new Dimension(350, 60))
+                  k2_groﬂ = false
+                }
+            }
+            icon = kreuzer_icon
           }
-          kreuzer_2.icon = kreuzer_icon
+          
 
-          contents += kreuzer_2
-          listenTo(kreuzer_2)
-          var schlachtschiff = new Button("Schlachtschiff") {
+          contents += kreuzer_2_groﬂ
+          listenTo(kreuzer_2_groﬂ)
+          schlachtschiff_groﬂ = new Button("Schlachtschiff") {
             background = java.awt.Color.WHITE
             preferredSize_=(new Dimension(350, 60))
+            reactions += {
+              case ButtonClicked(schlachtschiff_groﬂ) =>
+                if (s_groﬂ == false) {
+                  reset(zerstoerer_1_groﬂ)
+                  reset(zerstoerer_2_groﬂ)
+                  reset(zerstoerer_3_groﬂ)
+                  reset(zerstoerer_4_groﬂ)
+                  reset(uboot_1_groﬂ)
+                  reset(uboot_2_groﬂ)
+                  reset(uboot_3_groﬂ)
+                  reset(kreuzer_1_groﬂ)
+                  reset(kreuzer_2_groﬂ)
+                  
+                  background_=(java.awt.Color.RED)
+                  preferredSize_=(new Dimension(300, 60))
+                  z1_groﬂ = false
+                  z2_groﬂ = false
+                  z3_groﬂ = false
+                  z4_groﬂ = false
+                  u1_groﬂ = false
+                  u2_groﬂ = false
+                  u3_groﬂ = false
+                  k1_groﬂ = false
+                  k2_groﬂ = false
+                  s_groﬂ = true
+                } else {
+                  background = java.awt.Color.WHITE
+                  preferredSize_=(new Dimension(350, 60))
+                  s_groﬂ = false
+                }
+            }
+            icon = schlachtschiff_icon
           }
-          schlachtschiff.icon = schlachtschiff_icon
-          contents += schlachtschiff
-          listenTo(schlachtschiff)
+          
+          contents += schlachtschiff_groﬂ
+          listenTo(schlachtschiff_groﬂ)
         }
 
         schiffleiste
     }
   }
+ def reset(button: AbstractButton): Unit = {
+   button.background_=(java.awt.Color.WHITE)
+   button.preferredSize_=(new Dimension(350, 60))
+ }
 }
