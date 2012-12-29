@@ -11,6 +11,7 @@ class CellClicked(val row: Int, val column: Int) extends Event
 class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   listenTo(controller, pccontroller)
  
+ 
   var groesse = controller.feld.zellen.length
   var cells = Array.ofDim[Button](groesse, groesse)
   var computercells = Array.ofDim[Button](groesse, groesse)
@@ -40,7 +41,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
 
         newSize(2)
 
-        redraw
+//        redraw
 
       }
     }
@@ -52,7 +53,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
       } else
     	  groesse = 5
         newSize(5)
-      redraw
+//      redraw
 
     }
   }
@@ -66,7 +67,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
           //                       controller.setSize(10); pccontroller.setSize(10)
         	groesse = 10
           newSize(10)
-          redraw
+//          redraw
         } else
           statusline.text = "Sie haben die Zellen schon gesetzt"
 
@@ -116,7 +117,8 @@ reactions += {
     }
   def resize(newSize: Int) = {
 
-
+spielfeldUser.setSize(newSize)
+spielfeldUser.redraw(newSize)
 
     contents = new BorderPanel {
       add(funktionsleiste, BorderPanel.Position.North)
@@ -133,15 +135,32 @@ reactions += {
   }
 
   def redraw = {
+//    var anzahl = controller.feld.zellen.length
+//    for(i <- 0 to (anzahl-1)){
+//      for(j <- 0 to (anzahl-1)){
+//        println("reihe: " + i)
+//        println("spalte: "+ j)
+//        spielfeldUser.setBackground(spielfeldUser.buttons(i)(j),i,j)
+//      }
+//    }
+    spielfeldUser.redraw(controller.feld.zellen.length)
     spielfeldPc.redraw(pccontroller.feld.zellen.length)
+    spielfeldUserButtons.repaint()
+    spielfeldPcButtons.repaint()
+    
+    
+    
+    
     statusline.text = controller.statusText
-    repaint
+    repaint()
   }
 
   def newSize(newSize: Int) {
     controller.setSize(newSize)
     pccontroller.setSize(newSize)
   }
+  
+
 
   //  var zellen = controller.feld.zellen
   //  

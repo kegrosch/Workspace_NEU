@@ -69,6 +69,7 @@ class Controller (var feld: Feld) extends Publisher{
     var schiff = new Schiff(laenge, startZelle, feld.zellen)
     var freiGesetzt = schiff.setzen(richtung, groesse)
 //    notifyObservers
+    publish(CellChanged)
     return freiGesetzt
     
 //    println("Schiff gesetzt")
