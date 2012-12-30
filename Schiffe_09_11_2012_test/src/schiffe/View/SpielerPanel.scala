@@ -3,97 +3,128 @@ import scala.swing._
 import scala.swing.event._
 import schiffe.Controller.Controller
 import schiffe.Model.Zelle
+import schiffe.Controller.CellChanged
+import scala.swing.Button
 
-class SpielerPanel(controller: Controller, size: Int) {
-  var spielSize = size
+class SpielerPanel(controller: Controller, size: Int) extends GridPanel(size, size){
+  listenTo(controller)
+  var spielSize = controller.feld.zellen.length
   var startButtonGesetzt = false
-
   var richtungButtonGesetzt = false
   var startReihe = 0
   var startSpalte = 0
   var richtung = 0
-  var userFeld = new GridPanel(_,_)
+
 
   val InitialfarbeSpieler = new Color(200, 200, 255)
   val Schiffgesetzt = new Color(192, 255, 192)
   val Schiffgetroffen = new Color(190, 245, 170)
   val SchiffNichtgetroffen = new Color(150, 160, 162)
-  var buttons = Array.ofDim[Button](size, size)
+
   def getZelle(reihe: Int, spalte: Int): Zelle = controller.cell(reihe, spalte)
-
-  def spielfeld(size: Int): GridPanel = {
-
-    var userFeld = new GridPanel(spielSize, spielSize) {
-      background = java.awt.Color.BLACK
-      for (i <- 0 to (spielSize - 1)) {
-        for (j <- 0 to (spielSize - 1)) {
-          buttons(i)(j) = new Button {
-
-            if (((controller.feld.zellen(i)(j).getGesetzt == true))) {
-              background = Schiffgesetzt
-              preferredSize_=(new Dimension(60, 60))
-            } else {
-              background = InitialfarbeSpieler
-              preferredSize_=(new Dimension(60, 60))
-            }
-            reactions += {
-              case ButtonClicked(buttons) =>
-                if (startButtonSetzen(i, j, 3, spielSize) == true) {
-                  background = java.awt.Color.RED
-                  preferredSize_=(new Dimension(60, 60))
-                }
-            }
-
-          }
-          contents += buttons(i)(j)
-
-        }
-        repaint
-      }
-
-      def redraw(newSize: Int) = {
-        contents.clear()
-
-      }
+  
+  def button(i: Int, j: Int) = new Button{
+    preferredSize = new Dimension(60, 60)
+    background = if(controller.feld.zellen(i)(j).getGesetzt == true) java.awt.Color.GREEN else java.awt.Color.RED
+    listenTo(controller)
+    reactions += {
+      case CellChanged => 
+//        redraw
+//        repaint
+        setBackground(this, i, j)
+      
     }
-return userFeld
+
   }
+  
+  def createButtons{
+   background = java.awt.Color.BLACK
+  for (i <- 0 to (controller.feld.zellen.length-1)) {
+	  for (j <- 0 to (controller.feld.zellen.length-1)) {
+          var buttons = button(i,j)
+//
+//            if (((controller.feld.zellen(i)(j).getGesetzt == true))) {
+//              println("GESETZT")
+//              background = Schiffgesetzt
+//              preferredSize_=(new Dimension(60, 60))
+//            } else {
+//              println(" NICHT GESETZT")
+//              background = (java.awt.Color.GREEN)
+//              preferredSize_=(new Dimension(60, 60))
+//            }
+//            reactions += {
+//              case ButtonClicked(buttons) =>
+//                if (startButtonSetzen(i, j, 2, spielSize) == true) {
+//                  background = java.awt.Color.RED
+//                  preferredSize_=(new Dimension(60, 60))
+//                }
+//            }
+//
+//          }
+	    
+          contents += buttons
+
+        
+      }
+
+      
+    } 
+  }
+  
+createButtons
   def setSize(newSize: Int) = {
     spielSize = newSize
-    spielfeld(newSize)
+//    spielfeld(newSize)
     spielSize = newSize
-    spielfeld(newSize).repaint()
+//    spielfeld(newSize).repaint()
 
   }
-  def redraw(newSize: Int) = {
+  def redraw = {
 
-    spielSize = newSize
-    spielfeld(newSize).repaint()
-    for (i <- 0 to (newSize - 1)) {
-      for (j <- 0 to (newSize - 1)) {
-        setBackground(buttons(i)(j), i, j)
-       
-      }
-    }
+    contents.clear()
+    createButtons
+    
+    
+//    spielSize = newSize
+//    spielfeld(newSize).repaint()
+        
+//    for (i <- 0 to (spielSize - 1)) {
+//      for (j <- 0 to (spielSize - 1)) {
+//        createButtons
+//        var buttons = button(i,j)
+//        setBackground(button(i,j), i, j)
+//        contents += buttons
+//        
+//        createButtons
+//      }
+//    }
+//        if (controller.feld.zellen(i)(j).getGesetzt == true) {
+//      println("GESETZT")
+//      buttons(i)(j).background_=(java.awt.Color.RED)
+//      buttons(i)(j).preferredSize_=(new Dimension(60, 60))
+//
+//    } else {
+//      println(" NICHT GESETZT")
+//      buttons(i)(j).background_=(java.awt.Color.GREEN)
+//      buttons(i)(j).preferredSize_=(new Dimension(60, 60))
+//    }
+//      }
+//    }
+//    
+    repaint
+    
+    
+    
 //    spielfeld(newSize).redraw(newSize)
 
-    this.spielfeld(newSize).repaint()
+//    this.spielfeld(newSize).repaint()
 
   }
 
-  def setBackground(button: Button, reihe: Int, spalte: Int) {
+  def setBackground(button: Button, i: Int ,j: Int) {
+    button.background = if(controller.feld.zellen(i)(j).getGesetzt == true) java.awt.Color.GREEN else java.awt.Color.RED
 
-    if (controller.feld.zellen(reihe)(spalte).getGesetzt == true) {
-      println("GESETZT")
-      buttons(reihe)(spalte).background_=(java.awt.Color.RED)
-      buttons(reihe)(spalte).preferredSize_=(new Dimension(60, 60))
-
-    } else {
-      println(" NICHT GESETZT")
-      buttons(reihe)(spalte).background_=(java.awt.Color.WHITE)
-      buttons(reihe)(spalte).preferredSize_=(new Dimension(60, 60))
-    }
-    buttons(reihe)(spalte).repaint()
+  
   }
   def startButtonSetzen(reihe: Int, spalte: Int, laenge: Int, groesse: Int): Boolean = {
 
@@ -149,6 +180,8 @@ return userFeld
 
   }
 }
+
+
 //var buttons = Array.ofDim[Button](size, size)
 //def myCell = controller.cell(row, column)
 //

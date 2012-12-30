@@ -10,16 +10,17 @@ class CellClicked(val row: Int, val column: Int) extends Event
 
 class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   listenTo(controller, pccontroller)
- 
- 
-  var groesse = controller.feld.zellen.length
-  var cells = Array.ofDim[Button](groesse, groesse)
-  var computercells = Array.ofDim[Button](groesse, groesse)
+   var groesse = controller.feld.zellen.length
+ var cells = new SpielerPanel(controller, controller.feld.zellen.length)
+
+  var computercells = new PCPanel(pccontroller, controller.feld.zellen.length)
+
+  
   title = "Schiffe Versenken"
-  def spielfeldPc = new PCPanel(pccontroller, groesse)
-  def spielfeldPcButtons = spielfeldPc.spielfeld(groesse, groesse)
-  def spielfeldUser = new SpielerPanel(controller, groesse)
-  def spielfeldUserButtons = spielfeldUser.spielfeld(groesse)
+  def spielfeldPc = new PCPanel(pccontroller, controller.feld.zellen.length)
+  def spielfeldPcButtons = spielfeldPc.spielfeld(controller.feld.zellen.length, controller.feld.zellen.length)
+  def spielfeldUser = new SpielerPanel(controller, controller.feld.zellen.length)
+  def spielfeldUserButtons = spielfeldUser
 
 
   var statusline = new Label(controller.statusText)
@@ -34,7 +35,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   }
   val spiel2 = new Button { //Button zu aendern der Spielfeldgröße auf 2
     action = Action("Spielgrösse 2") {
-      if (groesse == 2) {
+      if (controller.feld.zellen.length == 2) {
         statusline.text = "Spielfeld ist schon 2 Zellen gross"
       } else {
         groesse = 2
@@ -48,7 +49,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   }
   val spiel5 = new Button { //Button zu ändern der Spielfeldgröße auf 5
     action = Action("Spielgrösse 5") {
-      if (groesse == 5) {
+      if (controller.feld.zellen.length == 5) {
         statusline.text = "Spielfeld ist schon 5 Zellen gross"
       } else
     	  groesse = 5
@@ -60,7 +61,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   val spiel10 = new Button { //Button zu ändern der Spielfeldgröße auf 10
 
     action = Action("Spielgrösse 10") {
-      if (groesse == 10) {
+      if (controller.feld.zellen.length == 10) {
         statusline.text = "Spielfeld ist schon 10 Zellen gross"
       } else {
         if (controller.getFeldGesetzt() == false) {
@@ -116,9 +117,10 @@ reactions += {
       case CellChanged => redraw
     }
   def resize(newSize: Int) = {
-
-spielfeldUser.setSize(newSize)
-spielfeldUser.redraw(newSize)
+cells = new SpielerPanel(controller, controller.feld.zellen.length)
+computercells = new PCPanel(pccontroller, controller.feld.zellen.length)
+spielfeldUser.setSize(controller.feld.zellen.length)
+spielfeldUser.redraw
 
     contents = new BorderPanel {
       add(funktionsleiste, BorderPanel.Position.North)
@@ -131,7 +133,7 @@ spielfeldUser.redraw(newSize)
       add(spielfeldPcButtons, BorderPanel.Position.East)
 
     }
-    repaint()
+//    repaint()
   }
 
   def redraw = {
@@ -143,16 +145,20 @@ spielfeldUser.redraw(newSize)
 //        spielfeldUser.setBackground(spielfeldUser.buttons(i)(j),i,j)
 //      }
 //    }
-    spielfeldUser.redraw(controller.feld.zellen.length)
-    spielfeldPc.redraw(pccontroller.feld.zellen.length)
-    spielfeldUserButtons.repaint()
-    spielfeldPcButtons.repaint()
-    
-    
-    
-    
-    statusline.text = controller.statusText
-    repaint()
+ cells.contents.clear()
+      cells = new SpielerPanel(controller, controller.feld.zellen.length)
+
+//    computercells.repaint()
+//    spielfeldUser.redraw(controller.feld.zellen.length)
+//    spielfeldPc.redraw(pccontroller.feld.zellen.length)
+//    spielfeldUserButtons.repaint()
+//    spielfeldPcButtons.repaint()
+//    
+//    
+//    
+//    
+//    statusline.text = controller.statusText
+//    repaint()
   }
 
   def newSize(newSize: Int) {

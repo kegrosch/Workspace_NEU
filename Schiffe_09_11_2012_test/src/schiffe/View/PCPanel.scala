@@ -33,9 +33,9 @@ def setSize(newSize: Int) ={
   
   
 }
-def redraw(newSize: Int) ={
-  spielSize = newSize
-  spielfeld(newSize, spielSize).repaint()
+def redraw ={
+//  spielSize = newSize
+  spielfeld(spielSize, spielSize).repaint()
   
   
 }
