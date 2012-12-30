@@ -19,8 +19,10 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   title = "Schiffe Versenken"
   def spielfeldPc = new PCPanel(pccontroller, controller.feld.zellen.length)
   def spielfeldPcButtons = spielfeldPc.spielfeld(controller.feld.zellen.length, controller.feld.zellen.length)
-  def spielfeldUser = new SpielerPanel(controller, controller.feld.zellen.length)
+    def spielfeldUser = new SpielerPanel(controller, controller.feld.zellen.length)
   def spielfeldUserButtons = spielfeldUser
+
+  
 
 
   var statusline = new Label(controller.statusText)
@@ -117,10 +119,12 @@ reactions += {
       case CellChanged => redraw
     }
   def resize(newSize: Int) = {
+  
 cells = new SpielerPanel(controller, controller.feld.zellen.length)
 computercells = new PCPanel(pccontroller, controller.feld.zellen.length)
 spielfeldUser.setSize(controller.feld.zellen.length)
 spielfeldUser.redraw
+
 
     contents = new BorderPanel {
       add(funktionsleiste, BorderPanel.Position.North)
@@ -145,7 +149,7 @@ spielfeldUser.redraw
 //        spielfeldUser.setBackground(spielfeldUser.buttons(i)(j),i,j)
 //      }
 //    }
- cells.contents.clear()
+// cells.contents.clear()
       cells = new SpielerPanel(controller, controller.feld.zellen.length)
 
 //    computercells.repaint()

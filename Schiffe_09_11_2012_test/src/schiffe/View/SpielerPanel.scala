@@ -7,8 +7,8 @@ import schiffe.Controller.CellChanged
 import scala.swing.Button
 
 class SpielerPanel(controller: Controller, size: Int) extends GridPanel(size, size){
-  listenTo(controller)
-  var spielSize = controller.feld.zellen.length
+//  listenTo(controller)
+  var spielSize = size
   var startButtonGesetzt = false
   var richtungButtonGesetzt = false
   var startReihe = 0
@@ -24,24 +24,30 @@ class SpielerPanel(controller: Controller, size: Int) extends GridPanel(size, si
   def getZelle(reihe: Int, spalte: Int): Zelle = controller.cell(reihe, spalte)
   
   def button(i: Int, j: Int) = new Button{
+
     preferredSize = new Dimension(60, 60)
     background = if(controller.feld.zellen(i)(j).getGesetzt == true) java.awt.Color.GREEN else java.awt.Color.RED
-    listenTo(controller)
+    
     reactions += {
       case CellChanged => 
 //        redraw
 //        repaint
-        setBackground(this, i, j)
+        background = if(controller.feld.zellen(i)(j).getGesetzt == true) java.awt.Color.GREEN else java.awt.Color.RED
+//        setBackground(this, i, j)
+        
       
     }
+    listenTo(controller)
 
   }
   
   def createButtons{
+    
    background = java.awt.Color.BLACK
-  for (i <- 0 to (controller.feld.zellen.length-1)) {
-	  for (j <- 0 to (controller.feld.zellen.length-1)) {
-          var buttons = button(i,j)
+  for (m <- 0 to (spielSize-1)) {
+	  for (n <- 0 to (spielSize-1)) {
+	    
+          var buttons = button(m,n)
 //
 //            if (((controller.feld.zellen(i)(j).getGesetzt == true))) {
 //              println("GESETZT")
@@ -69,6 +75,7 @@ class SpielerPanel(controller: Controller, size: Int) extends GridPanel(size, si
 
       
     } 
+   
   }
   
 createButtons
@@ -82,6 +89,7 @@ createButtons
   def redraw = {
 
     contents.clear()
+    
     createButtons
     
     
@@ -121,7 +129,7 @@ createButtons
 
   }
 
-  def setBackground(button: Button, i: Int ,j: Int) {
+  def setBackground(button: Button, i: Int , j: Int) {
     button.background = if(controller.feld.zellen(i)(j).getGesetzt == true) java.awt.Color.GREEN else java.awt.Color.RED
 
   

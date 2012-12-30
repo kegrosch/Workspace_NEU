@@ -257,7 +257,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                   }
                 }
                 }else{
-                for (i <- 0 to laenge) {
+                for (i <- 0 to laenge) { //30.12.2012 - geändert: "-1" Hinzugefügt
                   if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                     return false
                   } else {
@@ -525,6 +525,9 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           case `groesse` => //Spalte = letzte Spalte & Reihe = letzte Reihe
             richtung match {
               case 0 => //Schiff geht nach oben
+                if(startZelle.getReihe - laenge < 0 ){
+                  return okay
+                }else{
                 for (i <- (startZelle.getReihe - laenge) to groesse) {
                   if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                     return false
@@ -538,6 +541,7 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
                   return okay
 
+                }
                 }
               case 3 => //Schiff geht nach links
                 for (i <- (groesse - laenge) to groesse) {
