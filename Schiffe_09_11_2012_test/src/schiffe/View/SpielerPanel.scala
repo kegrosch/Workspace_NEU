@@ -20,7 +20,7 @@ class SpielerPanel(controller: Controller, size: Int) extends GridPanel(size, si
   val Schiffgesetzt = new Color(192, 255, 192)
   val Schiffgetroffen = new Color(190, 245, 170)
   val SchiffNichtgetroffen = new Color(150, 160, 162)
-  var alleButtons = Array.ofDim[Button](size, size)
+  var alleButtons = setAlleButtonSize(size)
 
   def getZelle(reihe: Int, spalte: Int): Zelle = {
 //    println("reihe: "+ reihe)
@@ -59,6 +59,7 @@ class SpielerPanel(controller: Controller, size: Int) extends GridPanel(size, si
   }
   
   def createButtons{
+    alleButtons = setAlleButtonSize(size)
     contents.clear()
    background = java.awt.Color.BLACK
    
@@ -100,6 +101,7 @@ class SpielerPanel(controller: Controller, size: Int) extends GridPanel(size, si
   }
 createButtons
   def setSize(newSize: Int) = {
+   alleButtons = Array.ofDim[Button](newSize, newSize)
     spielSize = newSize
 //    alleButtons = Array.ofDim[Button](newSize-1, newSize-1)
 //    size = newSize
@@ -111,7 +113,7 @@ createButtons
   def redraw = {
 
     contents.clear()
-    
+    alleButtons = Array.ofDim[Button](spielSize, spielSize)
     createButtons
     
     
@@ -150,12 +152,16 @@ createButtons
 //    this.spielfeld(newSize).repaint()
 
   }
-
+def setAlleButtonSize(anzahl: Int)= Array.ofDim[Button](anzahl, anzahl)
   def setBackground = {
+  while(alleButtons.length != controller.feld.zellen.length){
+    alleButtons = setAlleButtonSize(controller.feld.zellen.length)
+  }
+//    println("BUTTONS: " +alleButtons.length)
     for(k <- 0 to (controller.feld.zellen.length-1)){
       for(l <- 0 to (controller.feld.zellen.length-1)){
-        println("K: " + k)
-        println("L: "+ l)
+//        println("K: " + k)
+//        println("L: "+ l)
     	  if(getZelle(k,l).getGesetzt == true) alleButtons(k)(l).background = java.awt.Color.GREEN else alleButtons(k)(l).background = java.awt.Color.RED	
       }
     }

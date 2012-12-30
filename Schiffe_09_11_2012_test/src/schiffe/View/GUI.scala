@@ -123,7 +123,7 @@ reactions += {
   
 // cells.setSize(newSize)
 cells = new SpielerPanel(controller, newSize)
-  
+  cells.setAlleButtonSize(newSize)
 computercells = new PCPanel(pccontroller, newSize)
 
 //cells.createButtons
