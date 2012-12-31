@@ -9,18 +9,30 @@ import javax.swing.ImageIcon
 class CellClicked(val row: Int, val column: Int) extends Event
 
 class GUI(controller: Controller, pccontroller: Controller) extends Frame {
-  listenTo(controller, pccontroller)
+  
    var groesse = controller.feld.zellen.length
- var cells = new SpielerPanel(controller, groesse)
+ 
 
   var computercells = new PCPanel(pccontroller, groesse)
-
+   var schiffsleiste = new SchiffPanel(groesse)
+    def setSchiffleiste(groesse: Int): SchiffPanel = {
+    schiffsleiste = new SchiffPanel(groesse) 
+    listenTo(schiffsleiste)
+    schiffsleiste
+   }
+//  def schiffleiste_Grid = schiffleiste(groesse).schiffleiste
+  listenTo(controller, pccontroller,schiffsleiste)
+var cells = new SpielerPanel(controller, groesse, schiffsleiste)
   
   title = "Schiffe Versenken"
   def spielfeldPc = new PCPanel(pccontroller, groesse)
   def spielfeldPcButtons = spielfeldPc.spielfeld(groesse, groesse)
 //    def spielfeldUser = new SpielerPanel(controller, groesse)
-  def spielfeldUserButtons = new SpielerPanel(controller, groesse)
+  def spielfeldUserButtons(groesse: Int): SpielerPanel = {
+    schiffsleiste = setSchiffleiste(groesse)
+   cells = new SpielerPanel(controller, groesse, schiffsleiste)
+   cells
+  }
 
   
 
@@ -92,8 +104,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
     contents += loesen
     contents += statusline
   }
-  def schiffleiste(groesse: Int) = new SchiffPanel(groesse)
-  def schiffleiste_Grid = schiffleiste(groesse).schiffleiste
+
   contents = new BorderPanel {
 
     add(funktionsleiste, BorderPanel.Position.North)
@@ -105,24 +116,33 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
 
     }, BorderPanel.Position.South)
 
-    add(spielfeldUserButtons, BorderPanel.Position.West)
-    add(schiffleiste_Grid, BorderPanel.Position.Center)
+    add(spielfeldUserButtons(groesse), BorderPanel.Position.West)
+    add(schiffsleiste.schiffleiste, BorderPanel.Position.Center)
     add(spielfeldPcButtons, BorderPanel.Position.East)
 
     visible = true
 
     
   }
+  listenTo(schiffsleiste)
 reactions += {
+    case e:SetSchiff => seti 
+    
       case e: FeldResize => resize(e.newSize)
 
       case CellChanged => redraw
+      
+      
     }
+def seti{
+  println("HGHGHGHGGH")
+}
   def resize(newSize: Int) = {
   groesse = newSize
   
 // cells.setSize(newSize)
-cells = new SpielerPanel(controller, newSize)
+  setSchiffleiste(newSize)
+cells = new SpielerPanel(controller, newSize, schiffsleiste)
   cells.setAlleButtonSize(newSize)
 computercells = new PCPanel(pccontroller, newSize)
 
@@ -137,7 +157,7 @@ computercells = new PCPanel(pccontroller, newSize)
         contents += titelpc
       }, BorderPanel.Position.South)
       add(cells, BorderPanel.Position.West)
-      add(schiffleiste(newSize).schiffleiste, BorderPanel.Position.Center)
+      add(schiffsleiste.schiffleiste, BorderPanel.Position.Center)
       add(spielfeldPcButtons, BorderPanel.Position.East)
 
     }
@@ -154,8 +174,8 @@ computercells = new PCPanel(pccontroller, newSize)
 //      }
 //    }
 // cells.contents.clear()
-    
-      cells = new SpielerPanel(controller, groesse)
+    setSchiffleiste(groesse)
+      cells = new SpielerPanel(controller, groesse, schiffsleiste)
 
 //    computercells.repaint()
 //    spielfeldUser.redraw(controller.feld.zellen.length)

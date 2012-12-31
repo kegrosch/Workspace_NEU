@@ -4,6 +4,8 @@ import schiffe.Model.Feld
 import schiffe.util._
 import schiffe.Model.Schiff
 import scala.swing.Reactor
+import schiffe.Controller.CellChanged
+import schiffe.Controller.CellChanged
 
 class Tui(var controller: Controller, pccontroller: Controller) extends Reactor {
   listenTo(controller)
@@ -11,7 +13,7 @@ class Tui(var controller: Controller, pccontroller: Controller) extends Reactor 
   printTui
   reactions += {
     case e: FeldResize => printTui
-//    case e: CellChanged => printTui
+    case CellChanged => printTui
   }
   def update = printTui
   def printTui = {

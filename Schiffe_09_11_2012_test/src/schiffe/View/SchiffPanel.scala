@@ -6,8 +6,12 @@ import java.awt.Dimension
 import scala.swing.Action
 import scala.swing.event.ButtonClicked
 import scala.swing._
+import scala.swing.event.Event
 
-class SchiffPanel(size: Int) {
+case class SetSchiff(laenge: Int) extends Event
+class SchiffPanel(size: Int) extends Publisher{
+  var aktuelleLaenge = 0
+  var aktuellerButton = new Button
   var schlachtschiff_icon = new ImageIcon("images/Schlachtschiff.png")
   var kreuzer_icon = new ImageIcon("images/Kreuzer.png")
   var uboot_icon = new ImageIcon("images/UBoot.png")
@@ -42,6 +46,9 @@ class SchiffPanel(size: Int) {
                 if (z_einzeln == false) {
                   zerstoerer_einzeln.background_=(java.awt.Color.RED)
                   zerstoerer_einzeln.preferredSize_=(new Dimension(300, 60))
+                  publish(new SetSchiff(2))
+                  aktuelleLaenge = 2
+                  aktuellerButton = this
                   z_einzeln = true
                 } else {
                   background = java.awt.Color.WHITE
@@ -72,9 +79,11 @@ class SchiffPanel(size: Int) {
                 if (z == false) {
                   zerstoerer.background_=(java.awt.Color.RED)
                   zerstoerer.preferredSize_=(new Dimension(350, 60))
+                  publish(new SetSchiff(2))
+                  aktuelleLaenge = 2
                   reset(kreuzer)
                   reset(uboot)
-                  
+                  aktuellerButton = this
                   k = false
                   u = false
                   z = true
@@ -102,7 +111,9 @@ class SchiffPanel(size: Int) {
                   reset(zerstoerer)
                  uboot. background_=(java.awt.Color.RED)
                   uboot.preferredSize_=(new Dimension(300, 60))
-
+                 publish(new SetSchiff(3))
+                 aktuellerButton = this
+                 aktuelleLaenge = 3
                   z = false
                   k = false
                   u = true
@@ -128,7 +139,8 @@ class SchiffPanel(size: Int) {
                   preferredSize_=(new Dimension(300, 60))
                   reset(uboot)
                 reset(zerstoerer)
-                  
+                aktuellerButton = this
+                  aktuelleLaenge = 4
                   z = false
                   u = false
                   k = true
@@ -166,7 +178,7 @@ class SchiffPanel(size: Int) {
             reactions += {
               case ButtonClicked(zerstoerer_1_groﬂ) =>
                 if (z1_groﬂ == false) {
-                  
+                  aktuelleLaenge = 2
                   background_=(java.awt.Color.RED)
                   preferredSize_=(new Dimension(300, 60))
                   reset(zerstoerer_2_groﬂ)
@@ -208,6 +220,7 @@ class SchiffPanel(size: Int) {
             reactions += {
               case ButtonClicked(zerstoerer_2_groﬂ) =>
                 if (z2_groﬂ == false) {
+                  aktuelleLaenge = 2
                   reset(zerstoerer_1_groﬂ)
                   reset(zerstoerer_3_groﬂ)
                   reset(zerstoerer_4_groﬂ)
@@ -249,6 +262,7 @@ class SchiffPanel(size: Int) {
             reactions += {
               case ButtonClicked(zerstoerer_3_groﬂ) =>
                 if (z3_groﬂ == false) {
+                  aktuelleLaenge = 2
                   reset(zerstoerer_1_groﬂ)
                   reset(zerstoerer_2_groﬂ)
                   reset(zerstoerer_4_groﬂ)
@@ -290,6 +304,7 @@ class SchiffPanel(size: Int) {
             reactions += {
               case ButtonClicked(zerstoerer_4_groﬂ) =>
                 if (z4_groﬂ == false) {
+                  aktuelleLaenge = 2
                   reset(zerstoerer_1_groﬂ)
                   reset(zerstoerer_2_groﬂ)
                   reset(zerstoerer_3_groﬂ)
@@ -332,6 +347,7 @@ class SchiffPanel(size: Int) {
             reactions += {
               case ButtonClicked(uboot_1_groﬂ) =>
                 if (u1_groﬂ == false) {
+                  aktuelleLaenge = 3
                   reset(zerstoerer_1_groﬂ)
                   reset(zerstoerer_2_groﬂ)
                   reset(zerstoerer_3_groﬂ)
@@ -374,6 +390,7 @@ class SchiffPanel(size: Int) {
             reactions += {
               case ButtonClicked(uboot_2_groﬂ) =>
                 if (u2_groﬂ == false) {
+                  aktuelleLaenge = 3
                   reset(zerstoerer_1_groﬂ)
                   reset(zerstoerer_2_groﬂ)
                   reset(zerstoerer_3_groﬂ)
@@ -417,6 +434,7 @@ class SchiffPanel(size: Int) {
             reactions += {
               case ButtonClicked(uboot_3_groﬂ) =>
                 if (u3_groﬂ == false) {
+                  aktuelleLaenge = 3
                   reset(zerstoerer_1_groﬂ)
                   reset(zerstoerer_2_groﬂ)
                   reset(zerstoerer_3_groﬂ)
@@ -459,6 +477,7 @@ class SchiffPanel(size: Int) {
             reactions += {
               case ButtonClicked(kreuzer_1_groﬂ) =>
                 if (k1_groﬂ == false) {
+                  aktuelleLaenge = 4
                   reset(zerstoerer_1_groﬂ)
                   reset(zerstoerer_2_groﬂ)
                   reset(zerstoerer_3_groﬂ)
@@ -501,6 +520,7 @@ class SchiffPanel(size: Int) {
             reactions += {
               case ButtonClicked(kreuzer_2_groﬂ) =>
                 if (k2_groﬂ == false) {
+                  aktuelleLaenge = 4
                   reset(zerstoerer_1_groﬂ)
                   reset(zerstoerer_2_groﬂ)
                   reset(zerstoerer_3_groﬂ)
@@ -541,6 +561,7 @@ class SchiffPanel(size: Int) {
             reactions += {
               case ButtonClicked(schlachtschiff_groﬂ) =>
                 if (s_groﬂ == false) {
+                  aktuelleLaenge = 5
                   reset(zerstoerer_1_groﬂ)
                   reset(zerstoerer_2_groﬂ)
                   reset(zerstoerer_3_groﬂ)
