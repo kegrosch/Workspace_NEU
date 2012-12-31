@@ -45,7 +45,13 @@ class Controller (var feld: Feld) extends Publisher{
   }
   def hit(reihe: Int, spalte: Int): Boolean ={
     println("REIHE: " + reihe + " Spalte: " + spalte) 
-    return feld.hit(reihe-1, spalte-1)
+//    publish(CellChanged)
+    if(feld.hit(reihe-1, spalte-1)){
+      publish(CellChanged)
+      return true
+    }else{
+    return false
+    }
 //    notifyObservers
   }
 

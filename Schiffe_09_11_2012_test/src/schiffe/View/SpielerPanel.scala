@@ -20,7 +20,8 @@ class SpielerPanel(controller: Controller, size: Int) extends GridPanel(size, si
   val Schiffgesetzt = new Color(192, 255, 192)
   val Schiffgetroffen = new Color(190, 245, 170)
   val SchiffNichtgetroffen = new Color(150, 160, 162)
-  var alleButtons = setAlleButtonSize(size)
+//  var alleButtons = setAlleButtonSize(size)
+   var alleButtons = Array.ofDim[Button](size,size)
 
   def getZelle(reihe: Int, spalte: Int): Zelle = {
 //    println("reihe: "+ reihe)
@@ -35,7 +36,7 @@ class SpielerPanel(controller: Controller, size: Int) extends GridPanel(size, si
     preferredSize = new Dimension(60, 60)
 //    println("I-VOR: "+ a)
 //        println("J-VOR: " + b)
-    background = if(controller.feld.zellen(a)(b).getGesetzt == true) java.awt.Color.GREEN else java.awt.Color.RED
+    background = java.awt.Color.GRAY
     
     reactions += {
       case CellChanged => 
@@ -59,12 +60,12 @@ class SpielerPanel(controller: Controller, size: Int) extends GridPanel(size, si
   }
   
   def createButtons{
-    alleButtons = setAlleButtonSize(size)
+//    alleButtons = setAlleButtonSize(size)
     contents.clear()
    background = java.awt.Color.BLACK
    
-  for (m <- 0 to (size-1)) {
-	  for (n <- 0 to (size-1)) {
+  for (m <- 0 to (alleButtons.length-1)) {
+	  for (n <- 0 to (alleButtons.length-1)) {
 	    
 //		  println("M: " + m)
 //		  println("N: " + n)
@@ -152,17 +153,35 @@ createButtons
 //    this.spielfeld(newSize).repaint()
 
   }
-def setAlleButtonSize(anzahl: Int)= Array.ofDim[Button](anzahl, anzahl)
+def setAlleButtonSize(anzahl: Int)= {
+  
+alleButtons = Array.ofDim[Button](anzahl, anzahl)
+createButtons
+
+}
   def setBackground = {
   while(alleButtons.length != controller.feld.zellen.length){
-    alleButtons = setAlleButtonSize(controller.feld.zellen.length)
+    setAlleButtonSize(controller.feld.zellen.length)
   }
-//    println("BUTTONS: " +alleButtons.length)
-    for(k <- 0 to (controller.feld.zellen.length-1)){
-      for(l <- 0 to (controller.feld.zellen.length-1)){
+    println("BUTTONS: " +alleButtons.length)
+    for(k <- 0 to (alleButtons.length-1)){
+      for(l <- 0 to (alleButtons.length-1)){
 //        println("K: " + k)
 //        println("L: "+ l)
-    	  if(getZelle(k,l).getGesetzt == true) alleButtons(k)(l).background = java.awt.Color.GREEN else alleButtons(k)(l).background = java.awt.Color.RED	
+    	  if(getZelle(k,l).getGesetzt == true){
+    	    if(getZelle(k,l).getGetroffen == true){
+    	     alleButtons(k)(l).background = java.awt.Color.RED 
+    	    }else{
+    	    	alleButtons(k)(l).background = java.awt.Color.GREEN
+    	    }
+    	  }else{
+    	    if(getZelle(k,l).getGetroffen == true){
+    	      alleButtons(k)(l).background = java.awt.Color.BLACK
+    	    }else{
+    	    alleButtons(k)(l).background = java.awt.Color.GRAY
+    	    }
+    	  
+    	  }
       }
     }
    

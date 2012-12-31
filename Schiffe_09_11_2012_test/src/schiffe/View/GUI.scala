@@ -155,7 +155,7 @@ computercells = new PCPanel(pccontroller, newSize)
 //    }
 // cells.contents.clear()
     
-//      cells = new SpielerPanel(controller, groesse)
+      cells = new SpielerPanel(controller, groesse)
 
 //    computercells.repaint()
 //    spielfeldUser.redraw(controller.feld.zellen.length)
