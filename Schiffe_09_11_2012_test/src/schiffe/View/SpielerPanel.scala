@@ -27,9 +27,9 @@ class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel) 
   //  var alleButtons = setAlleButtonSize(size)
   var alleButtons = Array.ofDim[Button](size, size)
   reactions += {
-    case e: SetSchiff =>{
-     schiffLaenge = e.laenge
-     println("HGHGHGHGGH")
+    case e: SetSchiff => {
+      schiffLaenge = e.laenge
+      println("HGHGHGHGGH")
     }
   }
 
@@ -40,7 +40,6 @@ class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel) 
   }
   var reihe = 0
   var spalte = 0
- 
 
   def button(a: Int, b: Int) = new Button {
     reihe = a
@@ -65,23 +64,26 @@ class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel) 
         setBackground
 
       case ButtonClicked(buttons) =>
-    
-//        println("A: " + a)
-//        println("B: " + b)
-//        println("Schifflänge: " + schiffPanel.aktuelleLaenge)
-//        println("SpielSize: " + spielSize)
+
+        //        println("A: " + a)
+        //        println("B: " + b)
+        //        println("Schifflänge: " + schiffPanel.aktuelleLaenge)
+        //        println("SpielSize: " + spielSize)
         if (startButtonSetzen(a, b, schiffPanel.aktuelleLaenge, spielSize) == true) {
-          if(schiffGesetzt == true){
+          if (schiffGesetzt == true) {
             background = java.awt.Color.GREEN
             schiffPanel.aktuellerButton.visible_=(false)
             schiffGesetzt = false
-          }else{
-          background = java.awt.Color.RED
-          preferredSize_=(new Dimension(60, 60))
-//          schiffLaenge = 0
+            setBackground
+          } else {
+            background = java.awt.Color.RED
+            preferredSize_=(new Dimension(60, 60))
+            //          schiffLaenge = 0
           }
+        } else {
+          setBackground
         }
-      
+
     }
     listenTo(controller)
 
@@ -212,34 +214,57 @@ class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel) 
 
     if (startButtonGesetzt == true) {
       richtungButtonGesetzt = true
-      if (spalte == startSpalte) {
-        if (reihe == startReihe) {
-          return false
-        } else {
-          if (reihe > startReihe) { //schiff geht nach unten
-            richtung = 1
-          } else { //schiff geht nach oben
-            richtung = 0
-          }
-        }
+
+      if (reihe < startReihe - 1 || reihe > startReihe + 1) {
+        richtungButtonGesetzt = false
+        return false
       } else {
+        if (spalte < startSpalte - 1 || spalte > startSpalte + 1) {
+            richtungButtonGesetzt = false
+            return false
+          } else {
+        if (spalte == startSpalte) {
 
-        if (reihe == startReihe) {
-          return false
+          if (reihe == startReihe) {
+            return false
+          } else {
+            if (reihe > startReihe) { //schiff geht nach unten
+              richtung = 1
+            } else { //schiff geht nach oben
+              richtung = 0
+            }
+          }
+
         } else {
-          if (spalte > startSpalte) { //schiff geht nach rechts
-            richtung = 2
-          } else { //schiff geht nach links
-            richtung = 3
+          
+            if (reihe == startReihe) {
+
+              if (spalte > startSpalte) { //schiff geht nach rechts
+                richtung = 2
+              } else { //schiff geht nach links
+                richtung = 3
+              }
+            } else {
+              if (spalte > startSpalte) { //schiff geht nach rechts
+                richtung = 2
+              } else { //schiff geht nach links
+                richtung = 3
+              }
+            }
           }
         }
-
       }
-      if ((schiffeSetzen(startReihe, startSpalte, richtung, laenge, groesse)) == true) {
+      println("REIHE: " + startReihe)
+      println("Spalte: "+ startSpalte)
+      println("Richtung: " + richtung)
+      println("Länge: " + laenge)
+      println("Größe: " + groesse)
+      if ((schiffeSetzen(startReihe+1, startSpalte+1, richtung, laenge, groesse)) == true) {
         return true
       } else {
         return false
       }
+
     } else {
 
       startReihe = reihe
@@ -251,8 +276,9 @@ class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel) 
   }
 
   def schiffeSetzen(reihe: Int, spalte: Int, richtung: Int, laenge: Int, groesse: Int): Boolean = {
-    if (controller.set(laenge, reihe + 1, spalte + 1, richtung, (groesse - 1)) == true) {
+    if (controller.set(laenge, reihe, spalte, richtung, (groesse - 1)) == true) {
 
+      setBackground
       richtungButtonGesetzt = false
       startButtonGesetzt = false
       schiffGesetzt = true

@@ -40,7 +40,33 @@ def redraw ={
   
 }
 
-
+//def setBackground = {
+//    while (alleButtons.length != controller.feld.zellen.length) {
+//      setAlleButtonSize(controller.feld.zellen.length)
+//    }
+//    //    println("BUTTONS: " + alleButtons.length)
+//    for (k <- 0 to (alleButtons.length - 1)) {
+//      for (l <- 0 to (alleButtons.length - 1)) {
+//        //        println("K: " + k)
+//        //        println("L: "+ l)
+//        if (getZelle(k, l).getGesetzt == true) {
+//          if (getZelle(k, l).getGetroffen == true) {
+//            alleButtons(k)(l).background = java.awt.Color.RED
+//          } else {
+//            alleButtons(k)(l).background = java.awt.Color.GREEN
+//          }
+//        } else {
+//          if (getZelle(k, l).getGetroffen == true) {
+//            alleButtons(k)(l).background = java.awt.Color.BLACK
+//          } else {
+//            alleButtons(k)(l).background = java.awt.Color.GRAY
+//          }
+//
+//        }
+//      }
+//    }
+//
+//  }
 //val cellButton = new Button {
 //  preferredSize_=(new Dimension(60,60))
 //  opaque=true
