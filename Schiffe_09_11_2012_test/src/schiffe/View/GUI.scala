@@ -202,7 +202,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
     controller.setSize(newSize)
     pccontroller.setSize(newSize)
   }
-
+//TEST
   //  var zellen = controller.feld.zellen
   //  
   //  var aktionsleiste = new FlowPanel()
