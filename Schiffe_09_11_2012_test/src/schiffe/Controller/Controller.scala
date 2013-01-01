@@ -21,11 +21,23 @@ class Controller (var feld: Feld) extends Publisher{
 //  }
   var statusText="Bitte setzen Sie Schiffe"
   var feldGesetzt = false
+  var zaehler =0
   def getFeldGesetzt() :Boolean={
-    return feldGesetzt
+    if((getSize ==10 && zaehler ==30)| (getSize ==5 && zaehler ==9)| (getSize ==2 && zaehler ==2)|feldGesetzt==true ){
+      feldGesetzt==true
+      return feldGesetzt
+    }
+    else{
+      return false
+    }
+    
   }
   def setFeldGesetzt(gesetzt:Boolean) ={
     this.feldGesetzt =gesetzt
+  }
+  
+  def setStatusText(text:String){
+    this.statusText =text
   }
   def reset = {
     feld = feld.reset
@@ -34,6 +46,7 @@ class Controller (var feld: Feld) extends Publisher{
    zaehlerAlleGesetzt = 0
    zaehlerGesetzt = 0
   schiffGesetzt = false
+  zaehler=0
     statusText="Spiel zurückgesetzt"
 //    notifyObservers
   }
@@ -48,20 +61,32 @@ class Controller (var feld: Feld) extends Publisher{
 //    publish(CellChanged)
     if(feld.hit(reihe-1, spalte-1)){
       publish(CellChanged)
+       statusText="Getroffen"
       return true
     }else{
+        statusText="Nicht getroffen"
     return false
     }
 //    notifyObservers
   }
 
   def setSize(newSize: Int) = {
-    feld = new Feld(newSize)
- 
+    if (getSize == newSize) {
+       setStatusText("Spielfeld ist schon in der benötigten Grösse")
+      } else {
+        if(getFeldGesetzt()==false ){
+        feld = new Feld(newSize)
+    statusText="Spielgrösse verändert"
     publish(new FeldResize(newSize))
+        }
+        else 
+         setStatusText( "Die Schiffe sind schon gesetzt. Keine Grössenänderung möglich")
+      }
+    
 //    notifyObservers
   }
- def getSize: Int = feld.size.toInt
+  def getSize: Int = {return feld.size.toInt}
+  
   def spielfertig: Boolean= {
     if(feld.spielFertig == true){
       return true
@@ -75,6 +100,13 @@ class Controller (var feld: Feld) extends Publisher{
     var schiff = new Schiff(laenge, startZelle, feld.zellen)
     var freiGesetzt = schiff.setzen(richtung, groesse)
 //    notifyObservers
+    if(freiGesetzt){
+      statusText="Schiff gesetzt"
+        zaehler = zaehler +1
+    }
+    else{
+      statusText="Schiff nicht gesetzt. Falsche Eingabe"
+    }
     publish(CellChanged)
     return freiGesetzt
     

@@ -46,53 +46,55 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   val spiel2 = new Button { //Button zu aendern der Spielfeldgröße auf 2
     action = Action("Spielgrösse 2") {
       if (groesse == 2) {
-        statusline.text = "Spielfeld ist schon 2 Zellen gross"
+        controller.setStatusText("Spielfeld ist schon 2 Zellen gross")
       } else {
         
         if(controller.getFeldGesetzt()==false && pccontroller.getFeldGesetzt==false){
-        groesse = 2
+       // groesse = 2
 
         newSize(2)
          }
         else 
-          statusline.text = "Die Schiffe sind schon gesetzt. Keine Grössenänderung möglich"
+          controller.setStatusText("Die Schiffe sind schon gesetzt. Keine Grössenänderung möglich")
 
         //        redraw
 
       }
+       statusline.text = controller.statusText
     }
   }
   val spiel5 = new Button { //Button zu ändern der Spielfeldgröße auf 5
     action = Action("Spielgrösse 5") {
       if (groesse == 5) {
-        statusline.text = "Spielfeld ist schon 5 Zellen gross"
+       controller.setStatusText("Spielfeld ist schon 5 Zellen gross")
       } else {
         if(controller.getFeldGesetzt()==false && pccontroller.getFeldGesetzt==false){
-        groesse = 5
+        //groesse = 5
       newSize(5)
         }
         else 
-          statusline.text = "Die Schiffe sind schon gesetzt. Keine Grössenänderung möglich"
+          controller.setStatusText( "Die Schiffe sind schon gesetzt. Keine Grössenänderung möglich")
       }
       //      redraw
-
+   statusline.text = controller.statusText
     }
   }
   val spiel10 = new Button { //Button zu ändern der Spielfeldgröße auf 10
 
     action = Action("Spielgrösse 10") {
       if (groesse == 10) {
-        statusline.text = "Spielfeld ist schon 10 Zellen gross"
+        controller.setStatusText( "Spielfeld ist schon 10 Zellen gross")
       } else {
         if (controller.getFeldGesetzt() == false && pccontroller.getFeldGesetzt==false) {
           //                       controller.setSize(10); pccontroller.setSize(10)
-          groesse = 10
+          //groesse = 10
           newSize(10)
           //          redraw
         } else
-          statusline.text = "Sie haben die Schiffe schon gesetzt"
+          controller.setStatusText( "Sie haben die Schiffe schon gesetzt")
 
       }
+       statusline.text = controller.statusText
     }
   }
   val loesen = new Button { //Button zum Lösen des Spiels

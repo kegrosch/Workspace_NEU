@@ -80,7 +80,7 @@ class Tui(var controller: Controller, pccontroller: Controller) extends Reactor 
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
             println(pccontroller.feld.pcToString)
-           controller.setFeldGesetzt(true)
+           //controller.setFeldGesetzt(true)
            println("Sie haben folgende Auswahlmöglichkeiten: q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen")
 
           case 5 =>
@@ -168,7 +168,7 @@ class Tui(var controller: Controller, pccontroller: Controller) extends Reactor 
             
           pccontroller.setcomputerschiff5
           
-            controller.feldGesetzt = true
+            //controller.feldGesetzt = true
             println("Die Schiffe des Computers wurden gesetzt")
             println("IHR EIGENES SPIELFELD:")
             printTui
@@ -491,7 +491,7 @@ class Tui(var controller: Controller, pccontroller: Controller) extends Reactor 
             printTui
             println("DAS SPIELFELD DES COMPUTERS:")
             println(pccontroller.feld.pcToString)
-            controller.setFeldGesetzt(true)
+            //controller.setFeldGesetzt(true)
             println("Sie haben folgende Auswahlmöglichkeiten: q- Spiel verlassen, s -Spielfeld des Computers anzeigen und Spiel verlassen, hit- schiessen, r -Feld neu setzen") 
         }
 
