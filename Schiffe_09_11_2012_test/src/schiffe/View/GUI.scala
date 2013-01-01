@@ -121,6 +121,7 @@ computercells.pcSchiffeSetzen(groesse)
   val loesen = new Button { //Button zum Lösen des Spiels
     action = Action("Spiel lösen") {
       pccontroller.solve
+      controller.solve
       statusline.text = controller.statusText
     }
   }
@@ -147,6 +148,7 @@ computercells.pcSchiffeSetzen(groesse)
 
     add(spielfeldUserButtons(groesse), BorderPanel.Position.West)
     add(schiffsleiste.schiffleiste, BorderPanel.Position.Center)
+    
     add(spielfeldPcButtons(groesse), BorderPanel.Position.East)
     
 
@@ -165,6 +167,7 @@ computercells.pcSchiffeSetzen(groesse)
   }
 
   def endGame = {
+//    println("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
     pccontroller.solve
     controller.solve
     contents = new BorderPanel {
@@ -176,12 +179,13 @@ computercells.pcSchiffeSetzen(groesse)
       add(cells, BorderPanel.Position.West)
       add(endGamePanel, BorderPanel.Position.Center)
       add(computercells, BorderPanel.Position.East)
+      repaint
   }
   }
   
-  def endGamePanel: Label = {
+  def endGamePanel: Button = {
     //var ende = new Label("Spiel ist vorbei",new ImageIcon("c:\\test\\test.png"),Alignment.Right)
-    var ende = new Label("Spiel ist vorbei")
+    var ende = new Button("Spiel ist vorbei")
     ende
   } 
   def resize(newSize: Int) = {
