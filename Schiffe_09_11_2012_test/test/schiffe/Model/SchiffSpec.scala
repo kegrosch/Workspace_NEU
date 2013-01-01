@@ -68,7 +68,7 @@ class SchiffSpec extends SpecificationWithJUnit{
       var canSet = schiff2.setzen(0,4)
       canSet must be_==(false)
     }
-    "cant set if a ship is set in the cells already" in{
+    "cant set if a ship is set in the cells already (oben)" in{
       var startZelle1 = zellen(4)(1)
       var startZelle2 = zellen(3)(1)
       var schiff1 = new Schiff(2, startZelle1, zellen)
@@ -91,21 +91,51 @@ class SchiffSpec extends SpecificationWithJUnit{
     }
     
     "if ship is not short and is not longer than size of feld(direction: down)" in{
-      var feldNeu = new Feld(5)
-      feld.reset
+    var feldNeu = new Feld(5)
+    feld.reset
     var startZelleNeu = zellen(1)(1)
     var schiffNeu = new Schiff(2, startZelleNeu, feldNeu.zellen)
     var canSet = schiffNeu.setzen(1,4)
     canSet must be_==(true)
     }
     
-    "if ship is not short and is longer than size of feld(direction: down)"in{}
+    "if ship is not short and is longer than size of feld(direction: down)"in{
+    var feldNeu = new Feld(5)
+    feld.reset
+    var startZelleNeu = zellen(1)(1)
+    var schiffNeu = new Schiff(6, startZelleNeu, feldNeu.zellen)
+    var canSet = schiffNeu.setzen(1,4)
+    canSet must be_==(false)
+      
+    }
     
-    "if the cells of the ship are not already set(direction: down)"in{}
+    "if the cells of the ship are not already set(direction: down)"in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(3)(1)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var canSet = schiff1.setzen(1,4)
+      canSet must be_==(true)
+      
+    }
     
-    "if the cells of the ship are already set(direction: down)"in{}
+    "if the cells of the ship are already set(direction: down)"in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(1)(1)
+      var startZelle2 = zellen(1)(1)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(1,4)
+      var canSet = schiff2.setzen(1,4)
+      canSet must be_==(false)
+    }
     
-    "if there is no other ship nearby(direction: down)"in{}
+    "if there is no other ship nearby(direction: down)"in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(1)(1)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var canSet = schiff1.setzen(1,4)
+      canSet must be_==(true)
+    }
     
     "if there is an other ship nearby(direction: down)"in{
       var feldNeu = new Feld(5)
@@ -119,36 +149,156 @@ class SchiffSpec extends SpecificationWithJUnit{
     }
     
     //rechts
-    "if ship is short and cell is already set(direction:right)"in{}
+    "if ship is short and cell is already set(direction:right)"in{
+      var feldShort = new Feld(5)
+      var startZelleShort1 = zellen(0)(0)
+      var startZelleShort2 = zellen(0)(0)
+      var schiff1 = new Schiff(1, startZelleShort1, feldShort.zellen)
+      var schiff2 = new Schiff(1, startZelleShort2, feldShort.zellen)
+      schiff1.setzen(2,4)
+      var canSet = schiff2.setzen(2,4)
+      canSet must be_==(false)
+      
+    }
     
-    "if ship is not short and is not longer than size of feld(direction: right)"in{}
+    "if ship is not short and is not longer than size of feld(direction: right)"in{
+    var feldNeu = new Feld(5)
+    feld.reset
+    var startZelleNeu = zellen(1)(1)
+    var schiffNeu = new Schiff(2, startZelleNeu, feldNeu.zellen)
+    var canSet = schiffNeu.setzen(2,4)
+    canSet must be_==(true)
+      
+    }
     
-    "if ship is not short and is longer than size of feld(direction: right)" in{}
+    "if ship is not short and is longer than size of feld(direction: right)" in{
+     var feldNeu = new Feld(5)
+    feld.reset
+    var startZelleNeu = zellen(3)(3)
+    var schiffNeu = new Schiff(6, startZelleNeu, feldNeu.zellen)
+    var canSet = schiffNeu.setzen(2,4)
+    canSet must be_==(false) 
+      
+    }
     
-    "if the cells of the ship are not already set(direction: right)" in{}
+    "if the cells of the ship are not already set(direction: right)" in{
+     var feldNeu = new Feld(5)
+      var startZelle1 = zellen(1)(1)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var canSet = schiff1.setzen(2,4)
+      canSet must be_==(true) 
+      
+    }
     
-    "if the cells of the ship are already set(direction: right)" in{}
+    "if the cells of the ship are already set(direction: right)" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(1)(1)
+      var startZelle2 = zellen(1)(1)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(2,4)
+      var canSet = schiff2.setzen(2,4)
+      canSet must be_==(false)
+      
+    }
     
-    "if there is no other ship nearby(direction: right)" in{}
+    "if there is no other ship nearby(direction: right)" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(1)(1)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var canSet = schiff1.setzen(2,4)
+      canSet must be_==(true)}
     
-    "if there is an other ship nearby(direction: right)" in{}
+    "if there is an other ship nearby(direction: right)" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(1)(1)
+      var startZelle2 = zellen(1)(2)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(2,4)
+      var canSet = schiff2.setzen(2,4)
+      canSet must be_==(false)
+      }
     
     //left
-    "if ship is short and cell is already set(direction:left)" in{}
+    "if ship is short and cell is already set(direction:left)" in{
+      var feldShort = new Feld(5)
+      var startZelleShort1 = zellen(2)(2)
+      var startZelleShort2 = zellen(2)(2)
+      var schiff1 = new Schiff(1, startZelleShort1, feldShort.zellen)
+      var schiff2 = new Schiff(1, startZelleShort2, feldShort.zellen)
+      schiff1.setzen(3,4)
+      var canSet = schiff2.setzen(3,4)
+      canSet must be_==(false)
+      }
     
-    "if ship is not short and is not longer than size of feld(direction: left)" in{}
+    "if ship is not short and is not longer than size of feld(direction: left)" in{
+    var feldNeu = new Feld(5)
+    feld.reset
+    var startZelleNeu = zellen(3)(3)
+    var schiffNeu = new Schiff(2, startZelleNeu, feldNeu.zellen)
+    var canSet = schiffNeu.setzen(3,4)
+    canSet must be_==(true)
+      
+    }
     
-    "if ship is not short and is longer than size of feld(direction: left)" in{}
+    "if ship is not short and is longer than size of feld(direction: left)" in{
+    var feldNeu = new Feld(5)
+    feld.reset
+    var startZelleNeu = zellen(3)(3)
+    var schiffNeu = new Schiff(6, startZelleNeu, feldNeu.zellen)
+    var canSet = schiffNeu.setzen(3,4)
+    canSet must be_==(false)   
+      
+    }
     
-    "if the cells of the ship are not already set(direction: left)" in{}
+    "if the cells of the ship are not already set(direction: left)" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(4)(1)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var canSet = schiff1.setzen(3,4)
+      canSet must be_==(true) 
+      
+    }
     
-    "if the cells of the ship are already set(direction: left)" in{}
+    "if the cells of the ship are already set(direction: left)" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(4)(4)
+      var startZelle2 = zellen(4)(4)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(3,4)
+      var canSet = schiff2.setzen(3,4)
+      canSet must be_==(false)
+      
+    }
     
-    "if there is no other ship nearby(direction: left)" in{}
+    "if there is no other ship nearby(direction: left)" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(3)(3)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var canSet = schiff1.setzen(3,4)
+      canSet must be_==(true) 
+      
+    }
     
-    "if there is an other ship nearby(direction: left)" in{}
+    "if there is an other ship nearby(direction: left)" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(3)(4)
+      var startZelle2 = zellen(2)(4)
+      var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(3,4)
+      var canSet = schiff2.setzen(3,4)
+      canSet must be_==(false)  
+      
+    }
     
-    "if the random direction is wrong" in{}
+    "if the random direction is wrong" in{
+      
+      var canSet = schiff.setzen(4,4)
+      canSet must be_==(false)  
+    }
 
     "if the ship is not setable" in{}
 }

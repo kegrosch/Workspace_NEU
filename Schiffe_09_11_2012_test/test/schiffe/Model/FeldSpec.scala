@@ -133,6 +133,14 @@ class FeldSpec extends SpecificationWithJUnit{
       var feldBox = newFeld.pcToString
       feldBox must beEqualTo(hbox)
     }
+    "the index of cells should be right field of 2" in{
+       var newFeld = feld.reset
+      newFeld.zellen(1)(1) must be_== (newFeld.cell(1,1))
+    }
+    "the index of cells should be right field of 5" in{
+      var middleFeld = new Feld(5)
+      middleFeld.zellen(4)(4) must be_== (middleFeld.cell(4,4))
+    }
    }
 
 }
