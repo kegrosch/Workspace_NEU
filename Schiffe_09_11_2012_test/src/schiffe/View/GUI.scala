@@ -6,6 +6,7 @@ import scala.swing.event._
 import schiffe.Controller.FeldResize
 import schiffe.Controller.CellChanged
 import javax.swing.ImageIcon
+import schiffe.Controller.SpielFertig
 class CellClicked(val row: Int, val column: Int) extends Event
 
 class GUI(controller: Controller, pccontroller: Controller) extends Frame {
@@ -158,9 +159,31 @@ computercells.pcSchiffeSetzen(groesse)
     case e: FeldResize => resize(e.newSize)
 
     case CellChanged => redraw
+    
+    case SpielFertig => endGame
 
   }
 
+  def endGame = {
+    pccontroller.solve
+    controller.solve
+    contents = new BorderPanel {
+      add(funktionsleiste, BorderPanel.Position.North)
+      add(new FlowPanel { //Überschrift für die beiden Spielfelder
+        contents += titelUser
+        contents += titelpc
+      }, BorderPanel.Position.South)
+      add(cells, BorderPanel.Position.West)
+      add(endGamePanel, BorderPanel.Position.Center)
+      add(computercells, BorderPanel.Position.East)
+  }
+  }
+  
+  def endGamePanel: Label = {
+    //var ende = new Label("Spiel ist vorbei",new ImageIcon("c:\\test\\test.png"),Alignment.Right)
+    var ende = new Label("Spiel ist vorbei")
+    ende
+  } 
   def resize(newSize: Int) = {
 //    println("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
     groesse = newSize
