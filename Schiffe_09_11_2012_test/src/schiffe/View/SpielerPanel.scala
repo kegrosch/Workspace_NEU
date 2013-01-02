@@ -19,7 +19,7 @@ class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel) 
   var startReihe = 0
   var startSpalte = 0
   var richtung = 0
-  
+  //TEST
   val InitialfarbeSpieler = new Color(200, 200, 255)
   val Schiffgesetzt = new Color(192, 255, 192)
   val Schiffgetroffen = new Color(190, 245, 170)
