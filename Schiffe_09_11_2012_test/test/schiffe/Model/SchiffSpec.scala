@@ -16,9 +16,7 @@ class SchiffSpec extends SpecificationWithJUnit{
       schiff.setzen(0,4)
       var isSet = zellen(0)(0).getGesetzt
       isSet must be_==(true)
-      
-      
-    }
+       }
     
    
     "Cell should be set when set (Richtung: unten)" in{
@@ -75,6 +73,17 @@ class SchiffSpec extends SpecificationWithJUnit{
       var schiff2 = new Schiff(2, startZelle2, zellen)
       schiff2.setzen(0,4)
       var canSet = schiff1.setzen(0,4)
+      canSet must be_==(false)
+    }
+    
+    "if ship is short and cell is already set(direction:oben)" in{
+      var feldShort = new Feld(5)
+      var startZelleShort1 = zellen(4)(0)
+      var startZelleShort2 = zellen(4)(0)
+      var schiff1 = new Schiff(1, startZelleShort1, feldShort.zellen)
+      var schiff2 = new Schiff(1, startZelleShort2, feldShort.zellen)
+      schiff1.setzen(0,4)
+      var canSet = schiff2.setzen(0,4)
       canSet must be_==(false)
     }
     
@@ -299,6 +308,248 @@ class SchiffSpec extends SpecificationWithJUnit{
       var canSet = schiff.setzen(4,4)
       canSet must be_==(false)  
     }
+    
+    "it is possible to set one ship up one ship down" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(0)(0)
+      var startZelle2 = zellen(4)(4)
+      var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(1,4)
+      var canSet = schiff2.setzen(0,4)
+      canSet must be_==(true)  
+    }
+    
+    "it is possible to set one ship right one ship left" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(0)(0)
+      var startZelle2 = zellen(4)(4)
+      var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(2,4)
+      var canSet = schiff2.setzen(3,4)
+      canSet must be_==(true)  
+    }
+    "it is possible to set one ship down one ship right" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(0)(0)
+      var startZelle2 = zellen(2)(4)
+      var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(1,4)
+      var canSet = schiff2.setzen(2,4)
+      canSet must be_==(true)  
+    }
+    
+    "it is possible to set one ship down one ship left" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(0)(0)
+      var startZelle2 = zellen(2)(4)
+      var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(1,4)
+      var canSet = schiff2.setzen(3,4)
+      canSet must be_==(true)  
+    }
+    
+    "it is possible to set one ship up one ship left" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(4)(4)
+      var startZelle2 = zellen(2)(2)
+      var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(0,4)
+      var canSet = schiff2.setzen(3,4)
+      canSet must be_==(true)  
+    }
+    
+    "it is possible to set one ship up one ship right" in{
+      var feldNeu = new Feld(5)
+      var startZelle1 = zellen(4)(4)
+      var startZelle2 = zellen(2)(0)
+      var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+      var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+      schiff1.setzen(0,4)
+      var canSet = schiff2.setzen(2,4)
+      canSet must be_==(true)  
+    }
+"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach unten groesse =4 umfeldrechtsschongesetzt " in{
+  var feldNeu = new Feld(5)
+  var startZelle1 = feldNeu.zellen(0)(0)
+  var startZelle2 = feldNeu.zellen(0)(1)
+  var schiff2 = new Schiff(4, startZelle2, feldNeu.zellen)
+  var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+  schiff2.setzen(1,4)
+  schiff1.setzen(1,4)
+  var isSet = feldNeu.zellen(0)(0).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach unten groesse =4 umfeldlinksschongesetzt " in{
+  var feldNeu = new Feld(5)
+  var startZelle1 = feldNeu.zellen(0)(0)
+  var startZelle2 = feldNeu.zellen(0)(1)
+  var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+  var schiff2 = new Schiff(4, startZelle2, feldNeu.zellen)
+  schiff1.setzen(1,4)
+  schiff2.setzen(1,4)
+  var isSet = feldNeu.zellen(0)(1).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Schiff geht nach unten erste Reihe groesse =4 umfeldlrechtschongesetzt " in{
+  var feldNeu = new Feld(5)
+  var startZelle1 = feldNeu.zellen(0)(3)
+  var startZelle2 = feldNeu.zellen(0)(4)
+  var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+  var schiff2 = new Schiff(4, startZelle2, feldNeu.zellen)
+  schiff1.setzen(1,4)
+  schiff2.setzen(1,4)
+  var isSet = feldNeu.zellen(0)(4).getGesetzt
+  isSet must be_==(false)
+}
+
+"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach unten groesse =4 umfelduntenschongesetzt " in{
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelle2 = feldNeu.zellen(4)(0)
+  var startZelle1 = feldNeu.zellen(0)(0)
+  var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+  schiff2.setzen(2,4)
+  var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+  
+  schiff1.setzen(1,4)
+  var isSet = feldNeu.zellen(2)(0).getGesetzt
+  isSet must be_==(false)
+}
+
+"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach rechts groesse =4 umfelduntenschongesetzt " in{
+  var feldNeu = new Feld(5)
+  var startZelle1 = feldNeu.zellen(0)(0)
+  var startZelle2 = feldNeu.zellen(1)(0)
+  var schiff2 = new Schiff(4, startZelle2, feldNeu.zellen)
+  var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+  schiff2.setzen(2,4)
+  schiff1.setzen(2,4)
+  var isSet = feldNeu.zellen(0)(0).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach rechts  groesse =4 umfeldlinksschongesetzt " in{
+  var feldNeu = new Feld(5)
+  var startZelle1 = feldNeu.zellen(0)(0)
+  var startZelle2 = feldNeu.zellen(0)(1)
+  var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+  var schiff2 = new Schiff(4, startZelle2, feldNeu.zellen)
+  schiff1.setzen(1,4)
+  schiff2.setzen(2,4)
+  var isSet = feldNeu.zellen(0)(1).getGesetzt
+  isSet must be_==(false)
+}
+
+"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach rechts groesse =4 umfeldrechtsschongesetzt " in{
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelle2 = feldNeu.zellen(0)(4)
+  var startZelle1 = feldNeu.zellen(0)(0)
+  var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+  schiff2.setzen(1,4)
+  var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+  schiff1.setzen(2,4)
+  var isSet = feldNeu.zellen(0)(2).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte = letzte Spalte & Reihe = erste Reihe Schiff geht nach unten" in {
+  
+}
+"Umfeldkontrolle Spalte = letzte Spalte & Reihe = erste Reihe Schiff geht nach links" in{
+  
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach rechts stößt  rechts an" in {
+  
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach Rechts stößt nicht rechts an" in {
+  
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt nicht links an" in {
+  
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt links an" in {
+  
+}
+"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach oben " in{
+  
+}
+"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach rechts " in{
+  
+}
+"Spalte = letzte Spalte & Reihe = letzte Reihe Schiff geht nach oben" in {
+  
+}
+"Spalte = letzte Spalte & Reihe = letzte Reihe Schiff geht nach links" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe Schiff geht nach oben" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe Schiff geht nach rechts stösst rechts an" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe Schiff geht nach rechts stösst nicht rechts an" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe Schiff geht nach links stösst links an" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe Schiff geht nach links stösst nicht links an" in {
+  
+}
+"Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe geht nach oben stösst oben nicht an" in{
+  }
+
+"Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe geht nach oben stösst oben an" in{
+  }
+"Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe geht nach unten stösst unten nicht an" in{
+  }
+
+"Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe geht nach unten stösst unten an" in{
+  }
+"Spalte = erste Spalte & Reihe != erste Reihe & Reihe != letzte Reihe geht nach rechts" in{
+  }
+"Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach oben stösst oben an" in{
+}
+"Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach oben stösst obennicht an" in{
+  
+}
+"Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach unten stösst unten an" in{
+}
+"Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach unten  stösst unten nicht an" in{
+  
+}
+"Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach links" in{
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach oben stösst oben an" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach oben stösst oben nicht an" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach unten stösst unten an" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach unten stösst unten nicht an" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach rechts stösst rechts an" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach rechts stösst rechts nicht an" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach links stösst links an" in {
+  
+}
+"Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe Schiff geht nach links stösst links nicht an" in {
+  
+}
 
     "if the ship is not setable" in{}
 }
