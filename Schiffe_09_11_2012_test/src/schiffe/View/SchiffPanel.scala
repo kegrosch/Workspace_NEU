@@ -10,6 +10,15 @@ import scala.swing.event.Event
 
 case class SetSchiff(laenge: Int) extends Event
 class SchiffPanel(size: Int) extends Publisher{
+  
+  def setButtonsVisible = {
+    for(i <- 0 to schiffleiste.contents.length){
+      schiffleiste.contents(i).visible_=(true)
+    }
+    
+      
+    
+  }
   var aktuelleLaenge = 0
   var aktuellerButton = new Button
   var schlachtschiff_icon = new ImageIcon("images/Schlachtschiff.png")

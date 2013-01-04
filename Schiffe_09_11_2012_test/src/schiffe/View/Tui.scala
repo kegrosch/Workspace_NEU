@@ -29,11 +29,12 @@ class Tui(var controller: Controller, pccontroller: Controller) extends Reactor 
     var continue = true
     eingabe match {
       case "q" => continue = false
-      case "s" => { println(pccontroller.feld.toString()) 
+      case "s" => { pccontroller.solve
+        controller.solve//println(pccontroller.feld.toString()) 
       continue = false  
       }
       case "r" => {controller.reset
-      pccontroller.reset
+      pccontroller.feld.reset
       
       println("Die Spielfelder wurden zurückgesetzt")
       }

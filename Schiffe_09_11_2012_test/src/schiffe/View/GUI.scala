@@ -7,6 +7,7 @@ import schiffe.Controller.FeldResize
 import schiffe.Controller.CellChanged
 import javax.swing.ImageIcon
 import schiffe.Controller.SpielFertig
+
 class CellClicked(val row: Int, val column: Int) extends Event
 
 class GUI(controller: Controller, pccontroller: Controller) extends Frame {
@@ -50,8 +51,9 @@ computercells.pcSchiffeSetzen(groesse)
   val neustarten = new Button { //Button zum Neustarten des Spiels
     action = Action("Spiel neu Starten") {
       controller.reset
-      pccontroller.reset
+      pccontroller.feld.reset
       statusline.text = controller.statusText
+      computercells.pcSchiffeSetzen(pccontroller.feld.zellen.length)
     }
   }
   val spiel2 = new Button { //Button zu aendern der Spielfeldgröße auf 2
@@ -167,9 +169,9 @@ computercells.pcSchiffeSetzen(groesse)
   }
 
   def endGame = {
-//    println("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
-    pccontroller.solve
-    controller.solve
+    println("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
+//    pccontroller.solve
+//    controller.solve
     contents = new BorderPanel {
       add(funktionsleiste, BorderPanel.Position.North)
       add(new FlowPanel { //Überschrift für die beiden Spielfelder
@@ -234,7 +236,17 @@ computercells.pcSchiffeSetzen(groesse)
     //    }
     // cells.contents.clear()
 
-    setSchiffleiste(groesse)
+    if(controller.getFeldGesetzt()==true){
+      println("JKJKJJDHDHDJMDJFJFFJJFFJJ")
+    schiffsleiste.schiffleiste.contents.clear()
+    schiffsleiste.schiffleiste
+    schiffsleiste = schiffsleiste
+    }else{
+      println("IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
+    schiffsleiste = setSchiffleiste(groesse)
+    schiffsleiste.schiffleiste.contents.foreach(n => visible_=(true))
+    }
+//    foreach[schiffsleiste.schiffleiste](visible_=(true))
     cells = new SpielerPanel(controller, groesse, schiffsleiste)
     computercells = new PCPanel(pccontroller, groesse, controller)
 //    pcSchiffeSetzen(groesse)
@@ -249,9 +261,9 @@ computercells.pcSchiffeSetzen(groesse)
     //    
     //    
     //    statusline.text = controller.statusText
-    //    repaint()
+        repaint()
   }
-
+  
   def newSize(newSize: Int) {
     groesse = newSize
     cells.contents.clear()

@@ -139,7 +139,7 @@ class PCPanel(pccontroller: Controller, size: Int, controller: Controller) exten
   //  
   //}
   def pcSchiffeSetzen(size: Int) = {
-    println("dddddddddd")
+//    println("dddddddddd")
     size match {
 
       case 2 => pccontroller.setcomputerschiff2

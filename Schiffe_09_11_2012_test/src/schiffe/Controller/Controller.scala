@@ -7,6 +7,7 @@ import scala.swing.Publisher
 import scala.swing.event.Event
 case object SpielFertig extends Event
 case object CellChanged extends Event
+
 case class FeldResize(newSize:Int) extends Event
 class Controller (var feld: Feld) extends Publisher{
   
@@ -49,6 +50,7 @@ class Controller (var feld: Feld) extends Publisher{
   schiffGesetzt = false
   zaehler=0
     statusText="Spiel zurückgesetzt"
+      publish(new FeldResize(getSize))
 //    notifyObservers
   }
   
@@ -56,7 +58,7 @@ class Controller (var feld: Feld) extends Publisher{
     feld= feld.solve
 //    notifyObservers
     statusText="Spiel beendet"
-      publish(SpielFertig)
+      publish(CellChanged)
   }
   def hit(reihe: Int, spalte: Int): Boolean ={
     println("REIHE: " + reihe + " Spalte: " + spalte) 
@@ -103,7 +105,7 @@ class Controller (var feld: Feld) extends Publisher{
     var schiff = new Schiff(laenge, startZelle, feld.zellen)
     var freiGesetzt = schiff.setzen(richtung, groesse)
 //    notifyObservers
-    if(freiGesetzt){
+    if(freiGesetzt == true){
       statusText="Schiff gesetzt"
         zaehler = zaehler +1
     }
