@@ -7,7 +7,7 @@ import scala.swing.Publisher
 import scala.swing.event.Event
 case object SpielFertig extends Event
 case object CellChanged extends Event
-
+case class SchiffGesetzt(laenge:Int) extends Event
 case class FeldResize(newSize:Int) extends Event
 class Controller (var feld: Feld) extends Publisher{
   
@@ -113,6 +113,7 @@ class Controller (var feld: Feld) extends Publisher{
       statusText="Schiff nicht gesetzt. Falsche Eingabe"
     }
     publish(CellChanged)
+//    publish(new SchiffGesetzt(laenge))
     return freiGesetzt
     
 //    println("Schiff gesetzt")

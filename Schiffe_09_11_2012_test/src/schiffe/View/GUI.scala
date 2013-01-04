@@ -7,6 +7,7 @@ import schiffe.Controller.FeldResize
 import schiffe.Controller.CellChanged
 import javax.swing.ImageIcon
 import schiffe.Controller.SpielFertig
+import schiffe.Controller.SchiffGesetzt
 
 class CellClicked(val row: Int, val column: Int) extends Event
 
@@ -165,13 +166,20 @@ computercells.pcSchiffeSetzen(groesse)
     case CellChanged => redraw
     
     case SpielFertig => endGame
+    
+    
 
   }
 
   def endGame = {
-    println("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
+//    println("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
 //    pccontroller.solve
 //    controller.solve
+//    setSchiffleiste(groesse)
+//    cells = new SpielerPanel(controller, groesse, schiffsleiste)
+//    cells.setAlleButtonSize(groesse)
+//    computercells = new PCPanel(pccontroller, groesse, controller)
+//    computercells.setAlleButtonSize(groesse)
     contents = new BorderPanel {
       add(funktionsleiste, BorderPanel.Position.North)
       add(new FlowPanel { //Überschrift für die beiden Spielfelder
@@ -182,6 +190,7 @@ computercells.pcSchiffeSetzen(groesse)
       add(endGamePanel, BorderPanel.Position.Center)
       add(computercells, BorderPanel.Position.East)
       repaint
+      redraw
   }
   }
   
@@ -236,19 +245,53 @@ computercells.pcSchiffeSetzen(groesse)
     //    }
     // cells.contents.clear()
 
-    if(controller.getFeldGesetzt()==true){
-      println("JKJKJJDHDHDJMDJFJFFJJFFJJ")
-    schiffsleiste.schiffleiste.contents.clear()
-    schiffsleiste.schiffleiste
-    schiffsleiste = schiffsleiste
+//    if(controller.getFeldGesetzt()==true){
+////      println("JKJKJJDHDHDJMDJFJFFJJFFJJ")
+//    schiffsleiste.schiffleiste.contents.clear()
+//    schiffsleiste.schiffleiste
+//    schiffsleiste = schiffsleiste
+//    }else{
+//      println("IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
+    if(controller.feld.spielFertig == true){
+      schiffsleiste = setSchiffleiste(groesse)
+//      cells = new SpielerPanel(controller, groesse, schiffsleiste)
+//        computercells = new PCPanel(pccontroller, groesse, controller)
+       contents = new BorderPanel {
+      add(funktionsleiste, BorderPanel.Position.North)
+      add(new FlowPanel { //Überschrift für die beiden Spielfelder
+        contents += titelUser
+        contents += titelpc
+      }, BorderPanel.Position.South)
+      add(cells, BorderPanel.Position.West)
+      add(endGamePanel, BorderPanel.Position.Center)
+      add(computercells, BorderPanel.Position.East)
+       }
     }else{
-      println("IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
-    schiffsleiste = setSchiffleiste(groesse)
-    schiffsleiste.schiffleiste.contents.foreach(n => visible_=(true))
+      if(pccontroller.feld.spielFertig == true){
+        schiffsleiste = setSchiffleiste(groesse)
+//        cells = new SpielerPanel(controller, groesse, schiffsleiste)
+//        computercells = new PCPanel(pccontroller, groesse, controller)
+         contents = new BorderPanel {
+      add(funktionsleiste, BorderPanel.Position.North)
+      add(new FlowPanel { //Überschrift für die beiden Spielfelder
+        contents += titelUser
+        contents += titelpc
+      }, BorderPanel.Position.South)
+      add(cells, BorderPanel.Position.West)
+      add(endGamePanel, BorderPanel.Position.Center)
+      add(computercells, BorderPanel.Position.East)
+         }
+      }else{
+        schiffsleiste = setSchiffleiste(groesse)
+        cells = new SpielerPanel(controller, groesse, schiffsleiste)
+        computercells = new PCPanel(pccontroller, groesse, controller)
+      }
     }
+    
+//    schiffsleiste.schiffleiste.contents.foreach(n => visible_=(true))
+//    }
 //    foreach[schiffsleiste.schiffleiste](visible_=(true))
-    cells = new SpielerPanel(controller, groesse, schiffsleiste)
-    computercells = new PCPanel(pccontroller, groesse, controller)
+
 //    pcSchiffeSetzen(groesse)
 //    pcSchiffeSetzen(groesse)
     //    computercells.repaint()
