@@ -145,6 +145,8 @@ class PCPanel(pccontroller: Controller, size: Int, controller: Controller) exten
       case 2 => pccontroller.setcomputerschiff2
       case 5 => pccontroller.setcomputerschiff5
       case 10 => pccontroller.setcomputerschiff10
+      
+      publish(CellChanged)
     }
   }
   def setBackground = {

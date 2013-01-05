@@ -148,6 +148,7 @@ def setcomputerschiff2={
               }
 
             }
+  publish(CellChanged)
 }
   var alleGesetzt = false
   var zaehlerAlleGesetzt = 0
@@ -159,7 +160,7 @@ def setcomputerschiff2={
               //Schiffe für Computer setzen
               
               while (schiffGesetzt == false) {
-                if (zaehlerGesetzt >= 10) {
+                if (zaehlerGesetzt >= 50) {
                   schiffGesetzt = true
                 }
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
@@ -180,7 +181,7 @@ def setcomputerschiff2={
               zaehlerGesetzt = 0
 
               while (schiffGesetzt == false) {
-                if (zaehlerGesetzt >= 50) {
+                if (zaehlerGesetzt >= 100) {
                   schiffGesetzt = true
                 }
                 var startReihe = scala.util.Random.nextInt(5 - 1) + 1
@@ -205,7 +206,7 @@ def setcomputerschiff2={
                zaehlerGesetzt = 0
 
                 while (schiffGesetzt == false) {
-                  if (zaehlerGesetzt >= 50) {
+                  if (zaehlerGesetzt >= 100) {
                     schiffGesetzt = true
                   }else{
                   var startReihe = scala.util.Random.nextInt(5 - 1) + 1
@@ -238,6 +239,7 @@ def setcomputerschiff2={
                
               }
             }
+            publish(CellChanged)
   }
   def setcomputerschiff10{
     while (alleGesetzt == false) {
@@ -366,5 +368,5 @@ if (zaehlerAlleGesetzt == 10) {
     }
   
   
-  
+  publish(CellChanged)
 }

@@ -26,9 +26,9 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   }
   //  def schiffleiste_Grid = schiffleiste(groesse).schiffleiste
   listenTo(controller, pccontroller, schiffsleiste)
-  var cells = new SpielerPanel(controller, groesse, schiffsleiste)
+  var cells = new SpielerPanel(controller, groesse, schiffsleiste, computercells)
     var computercells = new PCPanel(pccontroller, groesse, controller)
-computercells.pcSchiffeSetzen(groesse)
+//computercells.pcSchiffeSetzen(groesse)
   title = "Schiffe Versenken"
 
 //  def spielfeldPc = new PCPanel(pccontroller, groesse)
@@ -42,7 +42,7 @@ computercells.pcSchiffeSetzen(groesse)
   //    def spielfeldUser = new SpielerPanel(controller, groesse)
   def spielfeldUserButtons(groesse: Int): SpielerPanel = {
     schiffsleiste = setSchiffleiste(groesse)
-    cells = new SpielerPanel(controller, groesse, schiffsleiste)
+    cells = new SpielerPanel(controller, groesse, schiffsleiste, computercells)
     cells
   }
 
@@ -52,9 +52,9 @@ computercells.pcSchiffeSetzen(groesse)
   val neustarten = new Button { //Button zum Neustarten des Spiels
     action = Action("Spiel neu Starten") {
       controller.reset
-      pccontroller.feld.reset
+      pccontroller.reset
       statusline.text = controller.statusText
-      computercells.pcSchiffeSetzen(pccontroller.feld.zellen.length)
+//      computercells.pcSchiffeSetzen(pccontroller.feld.zellen.length)
     }
   }
   val spiel2 = new Button { //Button zu aendern der Spielfeldgröße auf 2
@@ -125,6 +125,9 @@ computercells.pcSchiffeSetzen(groesse)
     action = Action("Spiel lösen") {
       pccontroller.solve
       controller.solve
+      controller.setFeldGesetzt(false)
+      pccontroller.setFeldGesetzt(false)
+      
       statusline.text = controller.statusText
     }
   }
@@ -180,7 +183,23 @@ computercells.pcSchiffeSetzen(groesse)
 //    cells.setAlleButtonSize(groesse)
 //    computercells = new PCPanel(pccontroller, groesse, controller)
 //    computercells.setAlleButtonSize(groesse)
-    contents = new BorderPanel {
+//    contents = new BorderPanel {
+//      add(funktionsleiste, BorderPanel.Position.North)
+//      add(new FlowPanel { //Überschrift für die beiden Spielfelder
+//        contents += titelUser
+//        contents += titelpc
+//      }, BorderPanel.Position.South)
+//      add(cells, BorderPanel.Position.West)
+//      add(endGamePanel, BorderPanel.Position.Center)
+//      add(computercells, BorderPanel.Position.East)
+//      repaint
+//      redraw
+//  }
+     if(controller.feld.spielFertig == true){
+      schiffsleiste = setSchiffleiste(groesse)
+//      cells = new SpielerPanel(controller, groesse, schiffsleiste)
+//        computercells = new PCPanel(pccontroller, groesse, controller)
+       contents = new BorderPanel {
       add(funktionsleiste, BorderPanel.Position.North)
       add(new FlowPanel { //Überschrift für die beiden Spielfelder
         contents += titelUser
@@ -189,14 +208,33 @@ computercells.pcSchiffeSetzen(groesse)
       add(cells, BorderPanel.Position.West)
       add(endGamePanel, BorderPanel.Position.Center)
       add(computercells, BorderPanel.Position.East)
-      repaint
-      redraw
+       }
+    }else{
+      if(pccontroller.feld.spielFertig == true){
+        schiffsleiste = setSchiffleiste(groesse)
+//        cells = new SpielerPanel(controller, groesse, schiffsleiste)
+//        computercells = new PCPanel(pccontroller, groesse, controller)
+         contents = new BorderPanel {
+      add(funktionsleiste, BorderPanel.Position.North)
+      add(new FlowPanel { //Überschrift für die beiden Spielfelder
+        contents += titelUser
+        contents += titelpc
+      }, BorderPanel.Position.South)
+      add(cells, BorderPanel.Position.West)
+      add(endGamePanel, BorderPanel.Position.Center)
+      add(computercells, BorderPanel.Position.East)
+         }
+      }
   }
   }
   
   def endGamePanel: Button = {
-    //var ende = new Label("Spiel ist vorbei",new ImageIcon("c:\\test\\test.png"),Alignment.Right)
-    var ende = new Button("Spiel ist vorbei")
+    var ende = new Button//var ende = new Label("Spiel ist vorbei",new ImageIcon("c:\\test\\test.png"),Alignment.Right)
+    if(controller.feld.spielFertig == true){
+     ende = new Button("Spiel ist vorbei\n Der PC hat gewonnen") 
+    }else{
+    ende = new Button("Spiel ist vorbei\n Sie haben gewonnen")
+    }
     ende
   } 
   def resize(newSize: Int) = {
@@ -205,7 +243,7 @@ computercells.pcSchiffeSetzen(groesse)
 
     // cells.setSize(newSize)
     setSchiffleiste(newSize)
-    cells = new SpielerPanel(controller, newSize, schiffsleiste)
+    cells = new SpielerPanel(controller, newSize, schiffsleiste, computercells)
     cells.setAlleButtonSize(newSize)
     computercells = new PCPanel(pccontroller, newSize, controller)
     computercells.setAlleButtonSize(newSize)
@@ -227,7 +265,7 @@ computercells.pcSchiffeSetzen(groesse)
       add(schiffsleiste.schiffleiste, BorderPanel.Position.Center)
       add(computercells, BorderPanel.Position.East)
 
-      computercells.pcSchiffeSetzen(pccontroller.feld.zellen.length)
+      
     }
     //    repaint()
   }
@@ -254,6 +292,8 @@ computercells.pcSchiffeSetzen(groesse)
 //      println("IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
     if(controller.feld.spielFertig == true){
       schiffsleiste = setSchiffleiste(groesse)
+      controller.setFeldGesetzt(false)
+      pccontroller.setFeldGesetzt(false)
 //      cells = new SpielerPanel(controller, groesse, schiffsleiste)
 //        computercells = new PCPanel(pccontroller, groesse, controller)
        contents = new BorderPanel {
@@ -283,7 +323,7 @@ computercells.pcSchiffeSetzen(groesse)
          }
       }else{
         schiffsleiste = setSchiffleiste(groesse)
-        cells = new SpielerPanel(controller, groesse, schiffsleiste)
+        cells = new SpielerPanel(controller, groesse, schiffsleiste, computercells)
         computercells = new PCPanel(pccontroller, groesse, controller)
       }
     }

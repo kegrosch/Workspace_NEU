@@ -8,9 +8,10 @@ import scala.swing.Button
 import schiffe.View.SchiffPanel
 import schiffe.View.SchiffPanel
 
-class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel) extends GridPanel(size, size) {
+class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel, computercells: PCPanel) extends GridPanel(size, size) {
   //  listenTo(controller)
   listenTo(schiffPanel)
+   var anzahlGesetzteSchiffe = 0
   var schiffGesetzt = false
   var spielSize = size
   var schiffLaenge = 0
@@ -254,12 +255,29 @@ class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel) 
           }
         }
       }
-      println("REIHE: " + startReihe)
-      println("Spalte: "+ startSpalte)
-      println("Richtung: " + richtung)
-      println("Länge: " + laenge)
-      println("Größe: " + groesse)
+//      println("REIHE: " + startReihe)
+//      println("Spalte: "+ startSpalte)
+//      println("Richtung: " + richtung)
+//      println("Länge: " + laenge)
+//      println("Größe: " + groesse)
       if ((schiffeSetzen(startReihe+1, startSpalte+1, richtung, laenge, groesse)) == true) {
+        anzahlGesetzteSchiffe = anzahlGesetzteSchiffe+1
+        groesse match{
+          case 2 =>
+            if(anzahlGesetzteSchiffe == 1){controller.setFeldGesetzt(true)
+              computercells.pcSchiffeSetzen(controller.feld.zellen.length)
+            }
+          case 5 =>
+            if(anzahlGesetzteSchiffe == 3){
+              controller.setFeldGesetzt(true)
+              computercells.pcSchiffeSetzen(controller.feld.zellen.length)
+            }
+          case 10 =>
+            if(anzahlGesetzteSchiffe == 10){controller.setFeldGesetzt(true)
+              computercells.pcSchiffeSetzen(controller.feld.zellen.length)
+            }
+        }
+        
         return true
       } else {
         return false

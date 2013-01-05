@@ -199,6 +199,8 @@ class SchiffPanel(size: Int) extends Publisher{
                   reset(kreuzer_1_groﬂ)
                   reset(kreuzer_2_groﬂ)
                   reset(schlachtschiff_groﬂ)
+                  aktuellerButton = this
+                  aktuelleLaenge = 2
                   z1_groﬂ = true
                   z2_groﬂ = false
                   z3_groﬂ = false
@@ -251,6 +253,9 @@ class SchiffPanel(size: Int) extends Publisher{
                   k1_groﬂ = false
                   k2_groﬂ = false
                   s_groﬂ = false
+                  
+                aktuellerButton = this
+                  aktuelleLaenge = 2
                 } else {
                   background = java.awt.Color.WHITE
                   preferredSize_=(new Dimension(350, 60))
@@ -283,6 +288,8 @@ class SchiffPanel(size: Int) extends Publisher{
                   reset(schlachtschiff_groﬂ)
                   background_=(java.awt.Color.RED)
                   preferredSize_=(new Dimension(300, 60))
+                  aktuellerButton = this
+                  aktuelleLaenge = 2
                   z1_groﬂ = false
                   z2_groﬂ = false
                   z3_groﬂ = true
@@ -325,6 +332,8 @@ class SchiffPanel(size: Int) extends Publisher{
                   reset(schlachtschiff_groﬂ)
                   background_=(java.awt.Color.RED)
                   preferredSize_=(new Dimension(300, 60))
+                  aktuellerButton = this
+                  aktuelleLaenge = 2
                   z1_groﬂ = false
                   z2_groﬂ = false
                   z3_groﬂ = false
@@ -369,6 +378,8 @@ class SchiffPanel(size: Int) extends Publisher{
                   reset(schlachtschiff_groﬂ)
                   background_=(java.awt.Color.RED)
                   preferredSize_=(new Dimension(300, 60))
+                  aktuellerButton = this
+                  aktuelleLaenge = 3
                   z1_groﬂ = false
                   z2_groﬂ = false
                   z3_groﬂ = false
@@ -412,6 +423,8 @@ class SchiffPanel(size: Int) extends Publisher{
                   reset(schlachtschiff_groﬂ)
                   background_=(java.awt.Color.RED)
                   preferredSize_=(new Dimension(300, 60))
+                  aktuellerButton = this
+                  aktuelleLaenge = 3
                   z1_groﬂ = false
                   z2_groﬂ = false
                   z3_groﬂ = false
@@ -456,6 +469,8 @@ class SchiffPanel(size: Int) extends Publisher{
                   reset(schlachtschiff_groﬂ)
                   background_=(java.awt.Color.RED)
                   preferredSize_=(new Dimension(300, 60))
+                  aktuellerButton = this
+                  aktuelleLaenge = 3
                   z1_groﬂ = false
                   z2_groﬂ = false
                   z3_groﬂ = false
@@ -499,6 +514,8 @@ class SchiffPanel(size: Int) extends Publisher{
                   reset(schlachtschiff_groﬂ)
                   background_=(java.awt.Color.RED)
                   preferredSize_=(new Dimension(300, 60))
+                  aktuellerButton = this
+                  aktuelleLaenge = 4
                   z1_groﬂ = false
                   z2_groﬂ = false
                   z3_groﬂ = false
@@ -542,6 +559,8 @@ class SchiffPanel(size: Int) extends Publisher{
                   reset(schlachtschiff_groﬂ)
                   background_=(java.awt.Color.RED)
                   preferredSize_=(new Dimension(300, 60))
+                  aktuellerButton = this
+                  aktuelleLaenge = 4
                   z1_groﬂ = false
                   z2_groﬂ = false
                   z3_groﬂ = false
@@ -583,6 +602,8 @@ class SchiffPanel(size: Int) extends Publisher{
                   
                   background_=(java.awt.Color.RED)
                   preferredSize_=(new Dimension(300, 60))
+                  aktuellerButton = this
+                  aktuelleLaenge = 5
                   z1_groﬂ = false
                   z2_groﬂ = false
                   z3_groﬂ = false
