@@ -5,12 +5,16 @@ import net.liftweb._
 import http._
 import util._
 import Helpers._
-
 import scala.swing.Reactor
-
-import schiffe.Schiffe
+import schiffe._
 import schiffe.Controller._
 import schiffe.Controller.CellChanged
+import Schiffe.controller._
+import schiffe.Controller.CellChanged
+import schiffe.Controller.CellChanged
+
+
+
 
 /**
  * The screen real estate on the browser will be represented
@@ -20,12 +24,12 @@ import schiffe.Controller.CellChanged
 class FeldRenderer extends CometActor with CometListener with Reactor{
 
   listenTo(Schiffe.controller)
-
+import schiffe.Controller._
   reactions += {
     //case e: GridSizeChanged => resize(e.newSize)
     
+  case CellChanged => reRender()
   
-  case e: CellChanged => reRender()
   }
   private var status: String = "" // private state
 
@@ -35,6 +39,7 @@ class FeldRenderer extends CometActor with CometListener with Reactor{
    */
   def registerWith = SchiffeServer
 
+  
   /**
    * The CometActor is an Actor, so it processes messages.
    * In this case, we're listening for Vector[String],
