@@ -1,6 +1,2 @@
 #Source Dependencies
-#Sat Jan 05 03:27:40 CET 2013
-src\\main\\scala\\code\\snippet\\HelloWorld.scala=
-src\\main\\scala\\code\\model\\User.scala=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala
-src\\main\\scala\\bootstrap\\liftweb\\Boot.scala=
-src\\main\\scala\\code\\lib\\DependencyFactory.scala=src\\main\\scala\\code\\snippet\\HelloWorld.scala
+#Sat Jan 05 19:19:11 CET 2013

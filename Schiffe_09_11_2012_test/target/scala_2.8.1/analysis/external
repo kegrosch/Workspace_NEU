@@ -1,10 +1,2 @@
 #External Dependencies
-#Sat Jan 05 03:27:40 CET 2013
-D\:\\FH\\Master\\Scala\\Workspace_NEU\\Schiffe_09_11_2012_test\\lib_managed\\scala_2.8.1\\compile\\lift-common_2.8.1-2.3.jar=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala;src\\main\\scala\\code\\snippet\\HelloWorld.scala;src\\main\\scala\\code\\model\\User.scala
-D\:\\FH\\Master\\Scala\\Workspace_NEU\\Schiffe_09_11_2012_test\\project\\boot\\scala-2.8.1\\lib\\scala-library.jar=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala;src\\main\\scala\\code\\snippet\\HelloWorld.scala;src\\main\\scala\\code\\lib\\DependencyFactory.scala;src\\main\\scala\\code\\model\\User.scala
-D\:\\FH\\Master\\Scala\\Workspace_NEU\\Schiffe_09_11_2012_test\\lib_managed\\scala_2.8.1\\compile\\lift-util_2.8.1-2.3.jar=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala;src\\main\\scala\\code\\snippet\\HelloWorld.scala;src\\main\\scala\\code\\lib\\DependencyFactory.scala;src\\main\\scala\\code\\model\\User.scala
-C\:\\Program\ Files\\Java\\jre7\\lib\\rt.jar=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala;src\\main\\scala\\code\\snippet\\HelloWorld.scala;src\\main\\scala\\code\\lib\\DependencyFactory.scala;src\\main\\scala\\code\\model\\User.scala
-D\:\\FH\\Master\\Scala\\Workspace_NEU\\Schiffe_09_11_2012_test\\lib_managed\\scala_2.8.1\\compile\\lift-mapper_2.8.1-2.3.jar=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala;src\\main\\scala\\code\\model\\User.scala
-D\:\\FH\\Master\\Scala\\Workspace_NEU\\Schiffe_09_11_2012_test\\lib_managed\\scala_2.8.1\\compile\\lift-db_2.8.1-2.3.jar=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala
-D\:\\FH\\Master\\Scala\\Workspace_NEU\\Schiffe_09_11_2012_test\\lib_managed\\scala_2.8.1\\compile\\lift-proto_2.8.1-2.3.jar=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala;src\\main\\scala\\code\\model\\User.scala
-D\:\\FH\\Master\\Scala\\Workspace_NEU\\Schiffe_09_11_2012_test\\lib_managed\\scala_2.8.1\\compile\\lift-webkit_2.8.1-2.3.jar=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala;src\\main\\scala\\code\\lib\\DependencyFactory.scala
+#Sat Jan 05 19:19:11 CET 2013
