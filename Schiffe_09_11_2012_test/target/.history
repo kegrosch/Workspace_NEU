@@ -1,0 +1,41 @@
+update
+~jetty-run
+update
+~jetty-run
+update
+~jetty-run
+update
+~jetty-run
+sbt
+update
+~jetty-run
+update
+~jetty-run
+update
+~jetty-run
+prepare webapp
+prepare-webapp
+update
+prepare-webapp
+sbt
+q
+quit
+update
+prepare-webapp
+quit
+update
+~jetty-run
+container_start
+container:start
+update
+~jetty-run
+update
+quit
+update
+~jetty.run
+jetty-run
+run sbt
+sbt
+update
+scala update
+update scala

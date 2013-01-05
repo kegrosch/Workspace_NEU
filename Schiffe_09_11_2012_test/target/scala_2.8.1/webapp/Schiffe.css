@@ -1,0 +1,134 @@
+@CHARSET "ISO-8859-1";
+
+div.Schiffe {
+	text-align: center;
+	margin:auto;
+	font-size: 150%; 
+	color: #000000; 
+	font-family: sans-serif;
+	padding: 0px;	
+}
+#normal {
+	background-color:#E0E0FF;
+}
+#given {
+	background-color:#C8C8FF;
+}
+#highlighted {
+	background-color:#C0FFC0;
+	vertical-align: center;
+	text-align: center;
+}
+div.funktionsleiste {
+	font-size: 16px;
+	height:30px;
+}
+#outmost {
+	margin:auto;
+	width:522px;
+	border-style: inset; 
+	border-width: 2px;
+	border-spacing: 0px;
+	border-color: #f6f6FF;	
+}
+table.grid {
+	border-width:0px; 
+	padding:0px;
+	background-color: #000000;
+	border-spacing: 0px;
+}
+div.zelleouter {
+	 background-color:#E0E0FF;	
+	 padding: 3px; 
+}
+div.zelleborder {
+	border-style: outset;
+	border-width: 2px;
+	border-spacing: 0px;
+	padding: 0px;
+	background-color: #E0E0FF;
+	border-color: #f6f6FF;	
+}
+table.candidate {
+	padding: 0px;
+	border-width:0px;
+	border-spacing: 0px;
+	line-height: 15px;
+}
+div.zelle {
+	width: 46px;
+	height: 46px;
+	text-align: center;
+	font-size: 30px;
+	padding: 0px;
+	border-width: 0px;
+	line-height: 45px;	
+}
+td.candidatecell {
+	width: 15px;
+	height: 15px;
+	text-align: center;
+	padding: 0px;
+	border-width: 0px;
+	line-height: 10px;
+	font-size:12px;
+}
+div.statusline {
+	font-size: 16px;
+	text-align: left;
+}
+#NWblock {
+	padding-top: 2px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 2px;
+}
+#Nblock {
+	padding-top: 2px;
+	padding-right: 1px;
+	padding-bottom: 0px;
+	padding-left: 1px;
+}
+#NEblock {
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+#Wblock {
+	padding-top: 1px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 2px;
+}
+#Cblock {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+}
+#Eblock {
+	padding-top: 1px;
+	padding-right: 2px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+#SWblock {
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+}
+#Sblock {
+	padding-top: 0px;
+	padding-right: 1px;
+	padding-bottom: 2px;
+	padding-left: 1px;
+}
+#SEblock {
+	padding-top: 0px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+}
+
