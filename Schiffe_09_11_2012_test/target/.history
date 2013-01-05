@@ -10,3 +10,20 @@ update
 ~jetty-run
 update
 ~jetty-run
+update
+~jetty-run
+update
+~jetty-run
+set build.scala.versions 2.8.0.RC2
+
+reload
+set build.scala.versions 2.8.0.RC2
+
+reload
+update
+~jett-run
+~jetty-run
+update
+~jetty-run
+update
+~jetty-run
