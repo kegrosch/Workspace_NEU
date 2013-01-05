@@ -44,3 +44,6 @@
 <schiffe.Model.ZelleSpec-stats timestamp="1354052020232"><stats expectations="6" examples="6" successes="6" time="2"></stats></schiffe.Model.ZelleSpec-stats>
 <schiffe.Model.ZelleSpec-stats timestamp="1354052025514"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
 <schiffe.Model.ZelleSpec-stats timestamp="1354052345643"><stats expectations="6" examples="6" successes="6" time="2"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1357406632999"><stats expectations="6" examples="6" successes="6" time="4"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1357406666730"><stats expectations="6" examples="6" successes="6" time="14"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1357406814332"><stats expectations="6" examples="6" successes="6" time="3"></stats></schiffe.Model.ZelleSpec-stats>

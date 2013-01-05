@@ -5,7 +5,7 @@ import schiffe.Controller._
 import schiffe.Model._
 
 object Schiffe {
-  
+  //MAIN KLASSE
   def main(args: Array[String]) {
     val controller = new Controller(new Feld(5))
     val pccontroller = new Controller(new Feld(5))
