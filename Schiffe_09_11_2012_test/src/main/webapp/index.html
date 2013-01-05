@@ -2,36 +2,26 @@
 <html>
   <head><title>Home</title>
     <link rel="stylesheet" type="text/css" href="Schiffe.css"/>
+ <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <title>Home</title>
   </head>
-
   <body class="lift:content_id=main">
     <div id="main" class="lift:surround?with=default;at=content">
-
-      <div  id="outmost" >
-        <div class="lift:comet?type=FeldRenderer">
-        
-      <table class="feld lift:FeldSnippet">
-      <tr>
-      <td class=lift:ZelleSnippet?row=0;column=0" id="NWblock">
-      <div class="cellouter">
-      <div id="given" class="cellborder">
-      <div class="cell">1
-      </div>
-      </div>
-      </div>
-      </td>
-      </table>
-        
-        
-        
-          <form class="lift:form.ajax">
-            <input class="lift:CommandLine" id="command"/>
-            <input type="submit" value="Command"/>
-          </form>
-        </div>
-      </div>  
+      <h2>Schiffe Versenken</h2>
+      <p>
+      
+	<div class="lift:Feld.getFeld">
+	Hier ist die Tabell
+	
+	<table id ="feld"></table>
+	
+	</div>
+	</table>
+      </p>
     </div>
   </body>
+
 
 </html>
 
