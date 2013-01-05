@@ -1,2 +1,4 @@
 #Classes with main methods
-#Sat Jan 05 19:19:11 CET 2013
+#Sat Jan 05 21:23:03 CET 2013
+src\\main\\scala\\schiffe\\Schiffe.scala=schiffe.Schiffe
+src\\main\\scala\\schiffe\\Test.scala=schiffe.Test

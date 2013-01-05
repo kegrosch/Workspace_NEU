@@ -1,2 +1,19 @@
 #Source Hashes
-#Sat Jan 05 19:19:11 CET 2013
+#Sat Jan 05 21:23:03 CET 2013
+src\\main\\scala\\schiffe\\Model\\Schiff.scala=04d014437cafcbed66202d516630dffbb175b9c5
+src\\main\\scala\\schiffe\\View\\Tui.scala=7d1ceeefe1acb95c09d1711cc18fd39ea2f5a122
+src\\main\\scala\\schiffe\\View\\PCPanel.scala=989755b32f91045a13d1120fe4245252ba841e8c
+src\\main\\scala\\schiffe\\Model\\Feld.scala=a6f2856111f26837387e3dbc063be9074580d76f
+src\\main\\scala\\bootstrap\\liftweb\\Boot.scala=b3c19592692dfc0cd4f24523b9c7e17a8ddeb0eb
+src\\main\\scala\\schiffe\\Test.scala=b2858972b5c7bbfd16503eacff3a186a7c2e37a3
+src\\main\\scala\\schiffe\\Model\\Zelle.scala=dc451fdf5d219dcbfc425c04ddaa2d40450e5031
+src\\main\\scala\\schiffe\\Schiffe.scala=e4edca2af8aa9fd36855b89633b268db9b40e643
+src\\main\\scala\\schiffe\\View\\SpielerPanel.scala=3df72a1b159fef9f5524aa05c3cce3e97b9ecdda
+src\\main\\scala\\code\\lib\\DependencyFactory.scala=e5d94ad2d69afe24876734d3cc8549a5f3a7c7fd
+src\\main\\scala\\schiffe\\util\\Feld.scala=28a057ddb05679104d6415b40832a1d0c9055a08
+src\\main\\scala\\schiffe\\Controller\\Controller.scala=30215aaf74295d730508bd1effe1e4568247fd2d
+src\\main\\scala\\code\\snippet\\HelloWorld.scala=de230f51dc065543636a40e9d2d204f30f1bc04d
+src\\main\\scala\\schiffe\\View\\GUI.scala=91d5f130a77259b45fbdc53666e004bb7479cb68
+src\\main\\scala\\schiffe\\util\\Observer.scala=4bd8422db9772753ee59d2861037fa64fc1f2613
+src\\main\\scala\\code\\model\\User.scala=780b064f75cfd7994521dd78fe932cc0fa9729ea
+src\\main\\scala\\schiffe\\View\\SchiffPanel.scala=5ac763465ccef0d65a2822bd5e1f0640ce922b65

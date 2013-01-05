@@ -1,7 +1,6 @@
 setting 'ivy.default.settings.dir' to 'jar:file:/D:/FH/Master/Scala/Workspace_NEU/Schiffe_09_11_2012_test/sbt-launcher.jar!/org/apache/ivy/core/settings'
 setting 'ivy.basedir' to 'D:\FH\Master\Scala\Workspace_NEU\Schiffe_09_11_2012_test\.'
 setting 'ivy.default.conf.dir' to 'jar:file:/D:/FH/Master/Scala/Workspace_NEU/Schiffe_09_11_2012_test/sbt-launcher.jar!/org/apache/ivy/core/settings'
-impossible to define new type: class not found: org.apache.ivy.plugins.version.PatternVersionMatcher in [] nor Ivy classloader
 impossible to define new type: class not found: org.apache.ivy.plugins.trigger.LogTrigger in [] nor Ivy classloader
 impossible to define new type: class not found: org.apache.ivy.plugins.resolver.VsftpResolver in [] nor Ivy classloader
 impossible to define new type: class not found: org.apache.ivy.plugins.conflict.RegexpConflictManager in [] nor Ivy classloader
@@ -75,7 +74,7 @@ setting 'ivy.cache.dir' to 'C:\Users\Kevin\.ivy2\cache'
 no default cache defined: set to C:\Users\Kevin\.ivy2\cache
 setting 'ivy.basedir' to 'D:\FH\Master\Scala\Workspace_NEU\Schiffe_09_11_2012_test\project\boot'
 setting 'basedir' to 'D:\FH\Master\Scala\Workspace_NEU\Schiffe_09_11_2012_test\project\boot'
-setting 'scala' to '2.7.7'
+setting 'scala' to '2.9.2'
 :: resolving dependencies :: org.scala-tools.sbt#boot-app;1.0
 	confs: [default]
 	validate = true
@@ -83,174 +82,174 @@ setting 'scala' to '2.7.7'
 resolving dependencies for configuration 'default'
 == resolving dependencies for org.scala-tools.sbt#boot-app;1.0 [default]
 loadData of org.scala-tools.sbt#boot-app;1.0 of rootConf=default
-== resolving dependencies org.scala-tools.sbt#boot-app;1.0->org.scala-tools.sbt#sbt_2.7.7;1.0.0 [default->default(compile)]
-loadData of org.scala-tools.sbt#sbt_2.7.7;1.0.0 of rootConf=default
-	using redefined-public to resolve org.scala-tools.sbt#sbt_2.7.7;1.0.0
-redefined-public: Checking cache for: dependency: org.scala-tools.sbt#sbt_2.7.7;1.0.0 {default=[default(compile)]}
+== resolving dependencies org.scala-tools.sbt#boot-app;1.0->org.scala-tools.sbt#sbt_2.9.2;0.7.5 [default->default(compile)]
+loadData of org.scala-tools.sbt#sbt_2.9.2;0.7.5 of rootConf=default
+	using redefined-public to resolve org.scala-tools.sbt#sbt_2.9.2;0.7.5
+redefined-public: Checking cache for: dependency: org.scala-tools.sbt#sbt_2.9.2;0.7.5 {default=[default(compile)]}
 redefined-public: no namespace defined: using system
-	no ivy file in cache for org.scala-tools.sbt#sbt_2.7.7;1.0.0: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.7.7\ivy-1.0.0.xml
+	no ivy file in cache for org.scala-tools.sbt#sbt_2.9.2;0.7.5: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.9.2\ivy-0.7.5.xml
 redefined-public: no latest strategy defined: using default
 local: no namespace defined: using system
-	no ivy file in cache for org.scala-tools.sbt#sbt_2.7.7;1.0.0: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.7.7\ivy-1.0.0.xml
-	 trying C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
-		tried C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
-	local: resource not reachable for org.scala-tools.sbt#sbt_2.7.7;1.0.0: res=C:\Users\Kevin\.ivy2\local\org.scala-tools.sbt\sbt_2.7.7\1.0.0\ivys\ivy.xml
-	 trying C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
-		tried C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
-	local: resource not reachable for org.scala-tools.sbt#sbt_2.7.7;1.0.0: res=C:\Users\Kevin\.ivy2\local\org.scala-tools.sbt\sbt_2.7.7\1.0.0\jars\sbt_2.7.7.jar
-	local: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.7.7;1.0.0
+	no ivy file in cache for org.scala-tools.sbt#sbt_2.9.2;0.7.5: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.9.2\ivy-0.7.5.xml
+	 trying C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
+		tried C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
+	local: resource not reachable for org.scala-tools.sbt#sbt_2.9.2;0.7.5: res=C:\Users\Kevin\.ivy2\local\org.scala-tools.sbt\sbt_2.9.2\0.7.5\ivys\ivy.xml
+	 trying C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
+		tried C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
+	local: resource not reachable for org.scala-tools.sbt#sbt_2.9.2;0.7.5: res=C:\Users\Kevin\.ivy2\local\org.scala-tools.sbt\sbt_2.9.2\0.7.5\jars\sbt_2.9.2.jar
+	local: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.9.2;0.7.5
 Maven2 Local: no namespace defined: using system
-	no ivy file in cache for org.scala-tools.sbt#sbt_2.7.7;1.0.0: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.7.7\ivy-1.0.0.xml
-	 trying file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-		tried file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
+	no ivy file in cache for org.scala-tools.sbt#sbt_2.9.2;0.7.5: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.9.2\ivy-0.7.5.xml
+	 trying file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+		tried file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
 installing class org.apache.ivy.util.url.IvyAuthenticator
-	Maven2 Local: resource not reachable for org/scala-tools/sbt#sbt_2.7.7;1.0.0: res=file://C:/Users/Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-	 trying file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-		tried file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-	Maven2 Local: resource not reachable for org/scala-tools/sbt#sbt_2.7.7;1.0.0: res=file://C:/Users/Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-	Maven2 Local: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.7.7;1.0.0
+	Maven2 Local: resource not reachable for org/scala-tools/sbt#sbt_2.9.2;0.7.5: res=file://C:/Users/Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+	 trying file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+		tried file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+	Maven2 Local: resource not reachable for org/scala-tools/sbt#sbt_2.9.2;0.7.5: res=file://C:/Users/Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+	Maven2 Local: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.9.2;0.7.5
 sbt-db: no namespace defined: using system
-	no ivy file in cache for org.scala-tools.sbt#sbt_2.7.7;1.0.0: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.7.7\ivy-1.0.0.xml
-	 trying http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
-		tried http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
-HTTP response status: 404 url=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
-CLIENT ERROR: Not Found url=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
-	sbt-db: resource not reachable for org.scala-tools.sbt#sbt_2.7.7;1.0.0: res=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
-	 trying http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
-		tried http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
-HTTP response status: 404 url=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
-CLIENT ERROR: Not Found url=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
-	sbt-db: resource not reachable for org.scala-tools.sbt#sbt_2.7.7;1.0.0: res=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
-	sbt-db: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.7.7;1.0.0
+	no ivy file in cache for org.scala-tools.sbt#sbt_2.9.2;0.7.5: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.9.2\ivy-0.7.5.xml
+	 trying http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
+		tried http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
+HTTP response status: 404 url=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
+CLIENT ERROR: Not Found url=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
+	sbt-db: resource not reachable for org.scala-tools.sbt#sbt_2.9.2;0.7.5: res=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
+	 trying http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
+		tried http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
+HTTP response status: 404 url=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
+CLIENT ERROR: Not Found url=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
+	sbt-db: resource not reachable for org.scala-tools.sbt#sbt_2.9.2;0.7.5: res=http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
+	sbt-db: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.9.2;0.7.5
 Maven Central: no namespace defined: using system
-	no ivy file in cache for org.scala-tools.sbt#sbt_2.7.7;1.0.0: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.7.7\ivy-1.0.0.xml
-	 trying http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-		tried http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-HTTP response status: 404 url=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-CLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-	Maven Central: resource not reachable for org/scala-tools/sbt#sbt_2.7.7;1.0.0: res=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-	 trying http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-		tried http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-HTTP response status: 404 url=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-CLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-	Maven Central: resource not reachable for org/scala-tools/sbt#sbt_2.7.7;1.0.0: res=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-	Maven Central: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.7.7;1.0.0
+	no ivy file in cache for org.scala-tools.sbt#sbt_2.9.2;0.7.5: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.9.2\ivy-0.7.5.xml
+	 trying http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+		tried http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+HTTP response status: 404 url=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+CLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+	Maven Central: resource not reachable for org/scala-tools/sbt#sbt_2.9.2;0.7.5: res=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+	 trying http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+		tried http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+HTTP response status: 404 url=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+CLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+	Maven Central: resource not reachable for org/scala-tools/sbt#sbt_2.9.2;0.7.5: res=http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+	Maven Central: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.9.2;0.7.5
 Scala-Tools Maven2 Repository: no namespace defined: using system
-	no ivy file in cache for org.scala-tools.sbt#sbt_2.7.7;1.0.0: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.7.7\ivy-1.0.0.xml
-	 trying http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-		tried http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-HTTP response status: 404 url=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-CLIENT ERROR: Not Found url=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-	Scala-Tools Maven2 Repository: resource not reachable for org/scala-tools/sbt#sbt_2.7.7;1.0.0: res=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-	 trying http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-		tried http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-HTTP response status: 404 url=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-CLIENT ERROR: Not Found url=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-	Scala-Tools Maven2 Repository: resource not reachable for org/scala-tools/sbt#sbt_2.7.7;1.0.0: res=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-	Scala-Tools Maven2 Repository: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.7.7;1.0.0
+	no ivy file in cache for org.scala-tools.sbt#sbt_2.9.2;0.7.5: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.9.2\ivy-0.7.5.xml
+	 trying http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+		tried http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+HTTP response status: 404 url=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+CLIENT ERROR: Not Found url=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+	Scala-Tools Maven2 Repository: resource not reachable for org/scala-tools/sbt#sbt_2.9.2;0.7.5: res=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+	 trying http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+		tried http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+HTTP response status: 404 url=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+CLIENT ERROR: Not Found url=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+	Scala-Tools Maven2 Repository: resource not reachable for org/scala-tools/sbt#sbt_2.9.2;0.7.5: res=http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+	Scala-Tools Maven2 Repository: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.9.2;0.7.5
 Scala-Tools Maven2 Snapshots Repository: no namespace defined: using system
-	no ivy file in cache for org.scala-tools.sbt#sbt_2.7.7;1.0.0: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.7.7\ivy-1.0.0.xml
-	 trying http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-		tried http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-HTTP response status: 404 url=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-CLIENT ERROR: Not Found url=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-	Scala-Tools Maven2 Snapshots Repository: resource not reachable for org/scala-tools/sbt#sbt_2.7.7;1.0.0: res=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-	 trying http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-		tried http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-HTTP response status: 404 url=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-CLIENT ERROR: Not Found url=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-	Scala-Tools Maven2 Snapshots Repository: resource not reachable for org/scala-tools/sbt#sbt_2.7.7;1.0.0: res=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
-	Scala-Tools Maven2 Snapshots Repository: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.7.7;1.0.0
-WARN: 	module not found: org.scala-tools.sbt#sbt_2.7.7;1.0.0
+	no ivy file in cache for org.scala-tools.sbt#sbt_2.9.2;0.7.5: tried C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt\sbt_2.9.2\ivy-0.7.5.xml
+	 trying http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+		tried http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+HTTP response status: 404 url=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+CLIENT ERROR: Not Found url=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+	Scala-Tools Maven2 Snapshots Repository: resource not reachable for org/scala-tools/sbt#sbt_2.9.2;0.7.5: res=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+	 trying http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+		tried http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+HTTP response status: 404 url=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+CLIENT ERROR: Not Found url=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+	Scala-Tools Maven2 Snapshots Repository: resource not reachable for org/scala-tools/sbt#sbt_2.9.2;0.7.5: res=http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
+	Scala-Tools Maven2 Snapshots Repository: no ivy file nor artifact found for org.scala-tools.sbt#sbt_2.9.2;0.7.5
+WARN: 	module not found: org.scala-tools.sbt#sbt_2.9.2;0.7.5
 WARN: ==== local: tried
-WARN:   C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
-WARN:   -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
-WARN:   C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
+WARN:   C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
+WARN:   -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
+WARN:   C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
 WARN: ==== Maven2 Local: tried
-WARN:   file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-WARN:   -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
-WARN:   file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
+WARN:   file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+WARN:   -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
+WARN:   file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
 WARN: ==== sbt-db: tried
-WARN:   http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
-WARN:   -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
-WARN:   http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
+WARN:   http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
+WARN:   -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
+WARN:   http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
 WARN: ==== Maven Central: tried
-WARN:   http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-WARN:   -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
-WARN:   http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
+WARN:   http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+WARN:   -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
+WARN:   http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
 WARN: ==== Scala-Tools Maven2 Repository: tried
-WARN:   http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-WARN:   -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
-WARN:   http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
+WARN:   http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+WARN:   -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
+WARN:   http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
 WARN: ==== Scala-Tools Maven2 Snapshots Repository: tried
-WARN:   http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
-WARN:   -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
-WARN:   http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
+WARN:   http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
+WARN:   -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
+WARN:   http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
 Nbr of module to sort : 0
 	resolved ivy file produced in C:\Users\Kevin\.ivy2\cache\resolved-org.scala-tools.sbt-boot-app-1.0.xml
 :: downloading artifacts ::
-:: resolution report :: resolve 17103ms :: artifacts dl 1ms
+:: resolution report :: resolve 11274ms :: artifacts dl 0ms
 WARN: 	::::::::::::::::::::::::::::::::::::::::::::::
 WARN: 	::          UNRESOLVED DEPENDENCIES         ::
 WARN: 	::::::::::::::::::::::::::::::::::::::::::::::
-WARN: 	:: org.scala-tools.sbt#sbt_2.7.7;1.0.0: not found
+WARN: 	:: org.scala-tools.sbt#sbt_2.9.2;0.7.5: not found
 WARN: 	::::::::::::::::::::::::::::::::::::::::::::::
 
 Nbr of module to sort : 0
 	report for org.scala-tools.sbt#boot-app;1.0 default produced in C:\Users\Kevin\.ivy2\cache\org.scala-tools.sbt-boot-app-default.xml
-	resolve done (17103ms resolve - 1ms download)
+	resolve done (11274ms resolve - 0ms download)
 
 :: problems summary ::
 :::: WARNINGS
-		module not found: org.scala-tools.sbt#sbt_2.7.7;1.0.0
+		module not found: org.scala-tools.sbt#sbt_2.9.2;0.7.5
 
 	==== local: tried
 
-	  C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
+	  C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
 
-	  -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
+	  -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
 
-	  C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
+	  C:\Users\Kevin\.ivy2/local/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
 
 	==== Maven2 Local: tried
 
-	  file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
+	  file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
 
-	  -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
+	  -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
 
-	  file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
+	  file://C:\Users\Kevin/.m2/repository/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
 
 	==== sbt-db: tried
 
-	  http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/ivys/ivy.xml
+	  http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/ivys/ivy.xml
 
-	  -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
+	  -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
 
-	  http://databinder.net/repo/org.scala-tools.sbt/sbt_2.7.7/1.0.0/jars/sbt_2.7.7.jar
+	  http://databinder.net/repo/org.scala-tools.sbt/sbt_2.9.2/0.7.5/jars/sbt_2.9.2.jar
 
 	==== Maven Central: tried
 
-	  http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
+	  http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
 
-	  -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
+	  -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
 
-	  http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
+	  http://repo1.maven.org/maven2/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
 
 	==== Scala-Tools Maven2 Repository: tried
 
-	  http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
+	  http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
 
-	  -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
+	  -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
 
-	  http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
+	  http://scala-tools.org/repo-releases/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
 
 	==== Scala-Tools Maven2 Snapshots Repository: tried
 
-	  http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.pom
+	  http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.pom
 
-	  -- artifact org.scala-tools.sbt#sbt_2.7.7;1.0.0!sbt_2.7.7.jar:
+	  -- artifact org.scala-tools.sbt#sbt_2.9.2;0.7.5!sbt_2.9.2.jar:
 
-	  http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.7.7/1.0.0/sbt_2.7.7-1.0.0.jar
+	  http://scala-tools.org/repo-snapshots/org/scala-tools/sbt/sbt_2.9.2/0.7.5/sbt_2.9.2-0.7.5.jar
 
 		::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -258,7 +257,7 @@ Nbr of module to sort : 0
 
 		::::::::::::::::::::::::::::::::::::::::::::::
 
-		:: org.scala-tools.sbt#sbt_2.7.7;1.0.0: not found
+		:: org.scala-tools.sbt#sbt_2.9.2;0.7.5: not found
 
 		::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -266,99 +265,99 @@ Nbr of module to sort : 0
 
 :: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS
 java.lang.RuntimeException: not found
-	at org.apache.ivy.core.resolve.IvyNode.loadData(IvyNode.java:238)
-	at org.apache.ivy.core.resolve.VisitNode.loadData(VisitNode.java:274)
+	at org.apache.ivy.core.resolve.IvyNode.loadData(IvyNode.java:236)
+	at org.apache.ivy.core.resolve.VisitNode.loadData(VisitNode.java:271)
 	at org.apache.ivy.core.resolve.ResolveEngine.fetchDependencies(ResolveEngine.java:671)
 	at org.apache.ivy.core.resolve.ResolveEngine.doFetchDependencies(ResolveEngine.java:757)
 	at org.apache.ivy.core.resolve.ResolveEngine.fetchDependencies(ResolveEngine.java:679)
 	at org.apache.ivy.core.resolve.ResolveEngine.getDependencies(ResolveEngine.java:551)
 	at org.apache.ivy.core.resolve.ResolveEngine.resolve(ResolveEngine.java:235)
-	at xsbt.boot.Update.resolve(Update.scala:159)
+	at xsbt.boot.Update.resolve(Update.scala:158)
 	at xsbt.boot.Update.update(Update.scala:116)
 	at xsbt.boot.Update.update(Update.scala:110)
 	at xsbt.boot.Update.xsbt$boot$Update$$lockedApply(Update.scala:73)
 	at xsbt.boot.Update$$anon$2.call(Update.scala:67)
 	at xsbt.boot.Update$$anon$2.call(Update.scala:67)
-	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:63)
-	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:67)
-	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:67)
+	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:51)
+	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:55)
+	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:55)
 	at xsbt.boot.Using$.withResource(Using.scala:11)
 	at xsbt.boot.Using$.apply(Using.scala:10)
-	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:67)
-	at xsbt.boot.Locks$GlobalLock.liftedTree1$1(Locks.scala:45)
-	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:45)
-	at xsbt.boot.Locks$.apply(Locks.scala:31)
+	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:55)
+	at xsbt.boot.Locks$GlobalLock.liftedTree1$1(Locks.scala:33)
+	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:33)
+	at xsbt.boot.Locks$.apply(Locks.scala:19)
 	at xsbt.boot.Update.apply(Update.scala:68)
 	at xsbt.boot.Provider$initialize.call(Provider.scala:41)
 	at xsbt.boot.Provider$initialize.call(Provider.scala:32)
-	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:63)
-	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:67)
-	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:67)
+	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:51)
+	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:55)
+	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:55)
 	at xsbt.boot.Using$.withResource(Using.scala:11)
 	at xsbt.boot.Using$.apply(Using.scala:10)
-	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:67)
-	at xsbt.boot.Locks$GlobalLock.liftedTree1$1(Locks.scala:45)
-	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:45)
-	at xsbt.boot.Locks$.apply(Locks.scala:31)
+	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:55)
+	at xsbt.boot.Locks$GlobalLock.liftedTree1$1(Locks.scala:33)
+	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:33)
+	at xsbt.boot.Locks$.apply(Locks.scala:19)
 	at xsbt.boot.Provider$class.$init$(Provider.scala:31)
-	at xsbt.boot.Launch$ScalaProvider$AppProvider.<init>(Launch.scala:100)
-	at xsbt.boot.Launch$ScalaProvider.app(Launch.scala:98)
-	at xsbt.boot.Launch$.run(Launch.scala:49)
-	at xsbt.boot.Launch$$anonfun$explicit$1.apply(Launch.scala:42)
-	at xsbt.boot.Launch$$anonfun$explicit$1.apply(Launch.scala:42)
-	at xsbt.boot.Launch$.launch(Launch.scala:57)
-	at xsbt.boot.Launch$.explicit(Launch.scala:42)
-	at xsbt.boot.Launch$.initialized(Launch.scala:38)
-	at xsbt.boot.Launch$.parsed(Launch.scala:31)
-	at xsbt.boot.Launch$.configured(Launch.scala:21)
-	at xsbt.boot.Launch$.apply(Launch.scala:16)
-	at xsbt.boot.Launch$.apply(Launch.scala:13)
+	at xsbt.boot.Launch$ScalaProvider$AppProvider.<init>(Launch.scala:108)
+	at xsbt.boot.Launch$ScalaProvider.app(Launch.scala:106)
+	at xsbt.boot.Launch$.run(Launch.scala:54)
+	at xsbt.boot.Launch$$anonfun$explicit$1.apply(Launch.scala:47)
+	at xsbt.boot.Launch$$anonfun$explicit$1.apply(Launch.scala:47)
+	at xsbt.boot.Launch$.launch(Launch.scala:66)
+	at xsbt.boot.Launch$.explicit(Launch.scala:47)
+	at xsbt.boot.Launch$.initialized(Launch.scala:43)
+	at xsbt.boot.Launch$.parsed(Launch.scala:37)
+	at xsbt.boot.Launch$.configured(Launch.scala:25)
+	at xsbt.boot.Launch$.apply(Launch.scala:18)
+	at xsbt.boot.Launch$.apply(Launch.scala:15)
 	at xsbt.boot.Boot$.runImpl(Boot.scala:24)
 	at xsbt.boot.Boot$.run(Boot.scala:19)
 	at xsbt.boot.Boot$.main(Boot.scala:15)
 	at xsbt.boot.Boot.main(Boot.scala)
 Error during sbt execution: Error retrieving required libraries
 	at xsbt.boot.Pre$.error(Pre.scala:18)
-	at xsbt.boot.Update.resolve(Update.scala:166)
+	at xsbt.boot.Update.resolve(Update.scala:165)
 	at xsbt.boot.Update.update(Update.scala:116)
 	at xsbt.boot.Update.update(Update.scala:110)
 	at xsbt.boot.Update.xsbt$boot$Update$$lockedApply(Update.scala:73)
 	at xsbt.boot.Update$$anon$2.call(Update.scala:67)
 	at xsbt.boot.Update$$anon$2.call(Update.scala:67)
-	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:63)
-	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:67)
-	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:67)
+	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:51)
+	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:55)
+	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:55)
 	at xsbt.boot.Using$.withResource(Using.scala:11)
 	at xsbt.boot.Using$.apply(Using.scala:10)
-	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:67)
-	at xsbt.boot.Locks$GlobalLock.liftedTree1$1(Locks.scala:45)
-	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:45)
-	at xsbt.boot.Locks$.apply(Locks.scala:31)
+	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:55)
+	at xsbt.boot.Locks$GlobalLock.liftedTree1$1(Locks.scala:33)
+	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:33)
+	at xsbt.boot.Locks$.apply(Locks.scala:19)
 	at xsbt.boot.Update.apply(Update.scala:68)
 	at xsbt.boot.Provider$initialize.call(Provider.scala:41)
 	at xsbt.boot.Provider$initialize.call(Provider.scala:32)
-	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:63)
-	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:67)
-	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:67)
+	at xsbt.boot.Locks$GlobalLock.withChannel$1(Locks.scala:51)
+	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:55)
+	at xsbt.boot.Locks$GlobalLock$$anonfun$withFileLock$1.apply(Locks.scala:55)
 	at xsbt.boot.Using$.withResource(Using.scala:11)
 	at xsbt.boot.Using$.apply(Using.scala:10)
-	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:67)
-	at xsbt.boot.Locks$GlobalLock.liftedTree1$1(Locks.scala:45)
-	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:45)
-	at xsbt.boot.Locks$.apply(Locks.scala:31)
+	at xsbt.boot.Locks$GlobalLock.withFileLock(Locks.scala:55)
+	at xsbt.boot.Locks$GlobalLock.liftedTree1$1(Locks.scala:33)
+	at xsbt.boot.Locks$GlobalLock.withLock(Locks.scala:33)
+	at xsbt.boot.Locks$.apply(Locks.scala:19)
 	at xsbt.boot.Provider$class.$init$(Provider.scala:31)
-	at xsbt.boot.Launch$ScalaProvider$AppProvider.<init>(Launch.scala:100)
-	at xsbt.boot.Launch$ScalaProvider.app(Launch.scala:98)
-	at xsbt.boot.Launch$.run(Launch.scala:49)
-	at xsbt.boot.Launch$$anonfun$explicit$1.apply(Launch.scala:42)
-	at xsbt.boot.Launch$$anonfun$explicit$1.apply(Launch.scala:42)
-	at xsbt.boot.Launch$.launch(Launch.scala:57)
-	at xsbt.boot.Launch$.explicit(Launch.scala:42)
-	at xsbt.boot.Launch$.initialized(Launch.scala:38)
-	at xsbt.boot.Launch$.parsed(Launch.scala:31)
-	at xsbt.boot.Launch$.configured(Launch.scala:21)
-	at xsbt.boot.Launch$.apply(Launch.scala:16)
-	at xsbt.boot.Launch$.apply(Launch.scala:13)
+	at xsbt.boot.Launch$ScalaProvider$AppProvider.<init>(Launch.scala:108)
+	at xsbt.boot.Launch$ScalaProvider.app(Launch.scala:106)
+	at xsbt.boot.Launch$.run(Launch.scala:54)
+	at xsbt.boot.Launch$$anonfun$explicit$1.apply(Launch.scala:47)
+	at xsbt.boot.Launch$$anonfun$explicit$1.apply(Launch.scala:47)
+	at xsbt.boot.Launch$.launch(Launch.scala:66)
+	at xsbt.boot.Launch$.explicit(Launch.scala:47)
+	at xsbt.boot.Launch$.initialized(Launch.scala:43)
+	at xsbt.boot.Launch$.parsed(Launch.scala:37)
+	at xsbt.boot.Launch$.configured(Launch.scala:25)
+	at xsbt.boot.Launch$.apply(Launch.scala:18)
+	at xsbt.boot.Launch$.apply(Launch.scala:15)
 	at xsbt.boot.Boot$.runImpl(Boot.scala:24)
 	at xsbt.boot.Boot$.run(Boot.scala:19)
 	at xsbt.boot.Boot$.main(Boot.scala:15)
