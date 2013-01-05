@@ -8,6 +8,8 @@ import common._
 import http._
 import sitemap._
 import Loc._
+import net.liftmodules.JQueryModule
+import net.liftweb.http.js.jquery._
 
 
 /**
@@ -42,6 +44,15 @@ class Boot {
 
     // Force the request to be UTF-8
     LiftRules.early.append(_.setCharacterEncoding("UTF-8"))
+
+    // Use HTML5 for rendering
+    LiftRules.htmlProperties.default.set((r: Req) =>
+      new Html5Properties(r.userAgent))
+
+    //Init the jQuery module, see http://liftweb.net/jquery for more information.
+    LiftRules.jsArtifacts = JQueryArtifacts
+    JQueryModule.InitParam.JQuery=JQueryModule.JQuery172
+    JQueryModule.init()
 
   }
 }
