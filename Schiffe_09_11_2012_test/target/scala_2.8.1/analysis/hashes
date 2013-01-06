@@ -1,5 +1,5 @@
 #Source Hashes
-#Sun Jan 06 18:08:57 CET 2013
+#Sun Jan 06 18:25:09 CET 2013
 src\\main\\scala\\code\\comet\\StatusLine.scala=7089db117357ba35237c1ded5cfc3bf6aafbc022
 src\\main\\scala\\schiffe\\Model\\Schiff.scala=04d014437cafcbed66202d516630dffbb175b9c5
 src\\main\\scala\\code\\comet\\FeldRenderer.scala=73969fb8630eb99002d0ed095928e49825a1f7f6
@@ -12,7 +12,7 @@ src\\main\\scala\\code\\snippet\\HighlightButtonSnippet.scala=fc571518d81e9e9c85
 src\\main\\scala\\schiffe\\View\\SchiffPanel.scala=5ac763465ccef0d65a2822bd5e1f0640ce922b65
 src\\main\\scala\\schiffe\\Schiffe.scala=c188cdea3be86094ff0d89750133a4b10eeed421
 src\\main\\scala\\code\\snippet\\HelloWorld.scala=de230f51dc065543636a40e9d2d204f30f1bc04d
-src\\main\\scala\\code\\snippet\\Funktionsleiste.scala=b0f74c77df4936d794241c7881f33ec5ddd44291
+src\\main\\scala\\code\\snippet\\Funktionsleiste.scala=e8aa9b0cca4828ccbd14bbb0edb9fdf93096dbeb
 src\\main\\scala\\schiffe\\Controller\\Controller.scala=255b8237fad403c45912dbf7962a5e239310f7d1
 src\\main\\scala\\schiffe\\Model\\Feld.scala=a6f2856111f26837387e3dbc063be9074580d76f
 src\\main\\scala\\code\\snippet\\Feld.scala=a17e2721d4e6f5ab70b9d99e995fe132c2a41c70

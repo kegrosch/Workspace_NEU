@@ -15,12 +15,13 @@ import net.liftweb.http.SHtml
 
 class Feldunktionsleiste {
  
-   def exampleTwo(xhtml: NodeSeq) = {
+   def exampleTwo() = {
     val controller = new Controller(new schiffe.Model.Feld(5))
     val pccontroller = new Controller(new schiffe.Model.Feld(5))
     val userTui=new Tui(controller, pccontroller)
     val userGui = new GUI(controller, pccontroller)
     userGui.visible = true
+     while((userTui.readInput(readLine()))==true){}
 
 //  bind("example",xhtml,
 //    "neuStarten" -> SHtml.button("neuStartet") )
