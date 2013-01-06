@@ -12,32 +12,41 @@ import Helpers._
 class Feld {
   
 var anzahl = Schiffe.controller.getSize
-
-
+//
+//
 //def getFeld = "#feld *" #> createFeld(anzahl)
-def getFeld = "#feld *" #> <tr><td>GGGGGG</td><td>HHHHH</td></tr><tr><td>JJJJJ</td><td>KKKKK</td></tr>;
+//def getFeld = "#feld *" #> <tr><td>GGGGGG</td><td>HHHHH</td></tr><tr><td>JJJJJ</td><td>KKKKK</td></tr>;
 
 
 
 
-  def createFeld = {
-    {for(i <- 1 to (anzahl-1)) yield{
-      {for(j <- 1 to (anzahl-1)) yield{
-        <tr> 
-      
-        <td class={"reihe"+i+"spalte"+j}>{i + " / " + j}</td>
+  def createFeld: String = {
+  
+  <table class="feld">{
+         for(i <- 1 to (anzahl-1)) yield{
+             <tr>
+                 {for(j <- 1 to (anzahl-1)) yield{
+                     <td class={"reihe"+i+"spalte"+j + ">"+ i + " / " + j +}</td>}
+                     
+                  
+                
+             
+                 }
+}
+}
+}
+}
+                 
+              </tr>  
+                 }      
+                 
+                 
+                 }</table>
+                 
+                 
 
-</tr>
-      
-    }
+  
+  
   }
-    }
-    }
+  
 }
-  /*
-   lazy val date: Date = DependencyFactory.time.vend // create the date via factory
-
-   def howdy = "#time *" #> date.toString
-   */
-}
-
