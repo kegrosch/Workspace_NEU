@@ -11,7 +11,7 @@ import Helpers._
 
 class Feld {
   
-var anzahl = Schiffe.controller.getSize
+//var anzahl = Schiffe.controller.getSize
 //
 //
 //def getFeld = "#feld *" #> createFeld(anzahl)
@@ -20,33 +20,19 @@ var anzahl = Schiffe.controller.getSize
 
 
 
-  def createFeld: String = {
-  
+  def createFeld = {
   <table class="feld">{
-         for(i <- 1 to (anzahl-1)) yield{
+         for (row <- 0 until Schiffe.controller.getSize) yield {
              <tr>
-                 {for(j <- 1 to (anzahl-1)) yield{
-                     <td class={"reihe"+i+"spalte"+j + ">"+ i + " / " + j +}</td>}
-                     
+                  { for (column <- 0 until Schiffe.controller.getSize) yield {
+                     <td class={"reihe="+row+"&column="+column}>{"reihe="+row+"&column="+column}</td>
+                     }
                   
-                
-             
-                 }
+                  }
+             </tr>
+         }
+     }
+     </table>
+   }           
 }
-}
-}
-}
-                 
-              </tr>  
-                 }      
-                 
-                 
-                 }</table>
-                 
-                 
 
-  
-  
-  }
-  
-}
