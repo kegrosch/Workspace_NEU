@@ -153,3 +153,5 @@ update
 reload
 update
 ~jetty-run
+update
+~jetty-run
