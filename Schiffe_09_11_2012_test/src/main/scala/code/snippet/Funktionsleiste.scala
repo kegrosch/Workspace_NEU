@@ -1,30 +1,22 @@
 package code 
 package snippet 
 
-import scala.xml.{NodeSeq, Text}
-import schiffe._
-import net.liftweb.util._
-import net.liftweb.common._
-import java.util.Date
-import code.lib._
+import net.liftweb._
+import util._
 import Helpers._
+import http._
+import js.JsCmds._
 import schiffe.Controller.Controller
-import schiffe.View._
-import schiffe.Model._
-import net.liftweb.http.SHtml
+import schiffe.View.Tui
+import schiffe.View.GUI
+import schiffe.Schiffe
 
-class Feldunktionsleiste {
- 
-   def exampleTwo() = {
-    val controller = new Controller(new schiffe.Model.Feld(5))
-    val pccontroller = new Controller(new schiffe.Model.Feld(5))
-    val userTui=new Tui(controller, pccontroller)
-    val userGui = new GUI(controller, pccontroller)
-    userGui.visible = true
-     while((userTui.readInput(readLine()))==true){}
 
-//  bind("example",xhtml,
-//    "neuStarten" -> SHtml.button("neuStartet") )
-  
-}
+object Feldunktionsleiste {
+private object pos extends RequestVar(0)
+  private object cnt extends RequestVar(0)
+
+def render = {
+  Schiffe.controller.setSize(10)
+  }
 }
