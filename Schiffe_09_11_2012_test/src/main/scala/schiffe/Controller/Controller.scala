@@ -82,6 +82,7 @@ class Controller (var feld: Feld) extends Publisher{
         feld = new Feld(newSize)
     statusText="Spielgroesse veraendert"
     publish(new FeldResize(newSize))
+//      publish(CellChanged)
         }
         else 
          setStatusText( "Die Schiffe sind schon gesetzt. Keine Groessenaenderung moeglich")

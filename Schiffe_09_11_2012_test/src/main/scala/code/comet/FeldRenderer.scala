@@ -24,9 +24,9 @@ import schiffe.Controller.CellChanged
 class FeldRenderer extends CometActor with CometListener with Reactor{
 
   listenTo(Schiffe.controller)
-import schiffe.Controller._
+
   reactions += {
-    //case e: GridSizeChanged => resize(e.newSize)
+    case e: FeldResize => println("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
     
   case CellChanged => reRender()
   
