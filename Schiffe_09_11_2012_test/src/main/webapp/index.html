@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Home</title>
-<link rel="stylesheet" type="text/css" href="Schiffe.css" />
+
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 <title>Home</title>
@@ -20,44 +20,37 @@ Some chat messages
         </ul>
 </div>
 
-<div>
-        <form class="lift:form.ajax">
-          <input class="lift:ChatIn" id="chat_in"/>
-          <input type="submit" value="Say Something"/>
-        </form>
-      </div>
 
 		<table>
 			<tr>
 				<th>
 				<div>
        
-      
-					<button class="Funktionsleiste">Neu Starten	</button>
+      <form>         
+          <input class="lift:ChatIn.neuStarten" type="submit" value="Neu Starten"/>
+        </form>
 					</div>
-					<form class="Funktionsleiste.exampleTwo">
-						<input type="submit" value="Neustarten" />
-					</form>
+					
 				</th>
 				<th>
-					<form>
-						<input type="submit" value="Spielfeldgrösse 2" />
-					</form>
+					<form>         
+          <input class="lift:ChatIn.groesse2" type="submit" value="Spielgröße 2"/>
+        </form>
 				</th>
 				<th>
-					<form>
-						<input type="submit" value="Spielfeldgrösse 5" />
-					</form>
+					<form>         
+          <input class="lift:ChatIn.groesse5" type="submit" value="Spielgröße 5"/>
+        </form>
 				</th>
 				<th>
-					<form>
-						<input type="submit" value="Spielfeldgrösse 10" />
-					</form>
+					<form>         
+          <input class="lift:ChatIn.groesse10" type="submit" value="Spielgröße 10"/>
+        </form>
 				</th>
 				<th>
-					<form>
-						<input type="submit" value="Lösen" />
-					</form>
+					<form>         
+          <input class="lift:ChatIn.loesen" type="submit" value="Lösen"/>
+        </form>
 				</th>
 			</tr>
 		</table>
@@ -66,14 +59,10 @@ Some chat messages
 
 
 		<p>Hier ist die Tabelle
-		<div class="lift:comet?type=FeldRenderer">
-			<table>
-				<div class="lift:Feld.createFeld">
-					<table>
-
-						<span class="lift:Feld.createFeld"></span>
-
-					</table>
+		<div class="lift:comet?type=Chat">
+			<table class="grid" border="1">
+				<div class="lift:Feld.createFeld" width="200px">
+					
 				</div>
 			</table>
 		</div>

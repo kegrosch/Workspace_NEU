@@ -19,6 +19,21 @@ object ChatIn {
    */
   def render = SHtml.onSubmit(s => {
     SchiffeServer ! s
-    SetValById("chat_in", "")
+//    SetValById("chat_in", "")
+  })
+  def neuStarten = SHtml.onSubmit(s =>{
+    SchiffeServer.neuStarten
+  })
+  def loesen = SHtml.onSubmit(s =>{
+    SchiffeServer.loesen
+  })
+  def groesse2 = SHtml.onSubmit(s =>{
+    SchiffeServer.setSize(2)
+  })
+  def groesse5 = SHtml.onSubmit(s =>{
+    SchiffeServer.setSize(5)
+  })
+  def groesse10 = SHtml.onSubmit(s =>{
+    SchiffeServer.setSize(10)
   })
 }

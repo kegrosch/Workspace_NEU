@@ -44,7 +44,17 @@ object SchiffeServer extends LiftActor with ListenerManager {
    * danger or locking.
    */
   def createUpdate = msgs
-
+def setSize(groesse: Int){
+    Schiffe.controller.setSize(groesse); Schiffe.pccontroller.setSize(groesse)
+  }
+  def neuStarten{
+    Schiffe.controller.reset
+    Schiffe.pccontroller.reset
+  }
+  def loesen{
+    Schiffe.controller.solve
+    Schiffe.pccontroller.solve
+  }
   /**
    * process messages that are sent to the Actor.  In
    * this case, we're looking for Strings that are sent
@@ -53,6 +63,6 @@ object SchiffeServer extends LiftActor with ListenerManager {
    */
   override def lowPriority = {
 //    case s: String => msgs :+= s; updateListeners()
-    case s: String => Schiffe.userTui.readInput(s); msgs :+= s;updateListeners(); 
+    case s: String => Schiffe.controller.setSize(10); Schiffe.pccontroller.setSize(10); msgs :+= s;updateListeners(); 
   }
 }

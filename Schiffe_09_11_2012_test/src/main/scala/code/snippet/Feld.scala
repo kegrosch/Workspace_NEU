@@ -21,11 +21,15 @@ class Feld {
 
 
   def createFeld = {
-  <table class="feld">{
+  <table class="grid" border="1">
+    <colgroup width="200" span="5"></colgroup>{
+    
          for (row <- 0 until Schiffe.controller.getSize) yield {
              <tr>
                   { for (column <- 0 until Schiffe.controller.getSize) yield {
-                     <td class={"reihe="+row+"&column="+column}>{"reihe="+row+"&column="+column}</td>
+                    var gesetzt = Schiffe.controller.cell(row, column).getGesetzt
+//                    {<td class={"reihe="+row+"&column="+column}>{if(gesetzt)"X"else " "}</td>
+                    <td width="500px" class="candidate" id="Nblock">{if(gesetzt)"X"else " "}</td>
                      }
                   
                   }
