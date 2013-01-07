@@ -10,14 +10,7 @@
 	<div id="main">
 		<h2>Schiffe Versenken</h2>
 
-<div class="lift:comet?type=Chat">
-Some chat messages
-        <ul>
-          <li>A message</li>
-          <li class="clearable">Another message</li>
-          <li class="clearable">A third message</li>
-        </ul>
-</div>
+
 
 
 		<table>
@@ -55,19 +48,39 @@ Some chat messages
 		</table>
 
 
+<table>
+<tr>
+<th>Ihr Spielfeld</th><th>Spielfed des PCs</tr>
 
-
-		<p>Hier ist die Tabelle
-		<div class="lift:comet?type=Chat">
+<tr>
+<th>
+		
+		<div class="pcFeld">
 			<table class="grid" border="1" cellspacing="10" cellpadding="20">
-				<div class="lift:Feld.createFeld" width="200px">
+				<div class="lift:Feld.createUserFeld" width="200px">
 					
 				</div>
 			</table>
 		</div>
-		</p>
+		
+</th>
+<th><div class="userFeld">
+			<table class="grid2" border="1" cellspacing="10" cellpadding="20">
+				<div class="lift:Feld.createPcFeld" width="200px">
+					
+				</div>
+			</table>
+		</div>
+</th>
+</tr>
 
-	
+</table>
+
+<table data-lift="SchiffeSetzen">
+<tr>
+<td onClick="lift:SchiffSetzen.onClick">HALLO</td>
+</tr>
+</table>
 	
 </body>
 
