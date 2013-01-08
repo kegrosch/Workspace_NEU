@@ -68,11 +68,13 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
               } else {
                 gesetzt = false
                 zaehler = zaehler + 1
+                return false
               }
 
             } else {
               gesetzt = false
               zaehler = zaehler + 1
+              return false
             }
           }
 

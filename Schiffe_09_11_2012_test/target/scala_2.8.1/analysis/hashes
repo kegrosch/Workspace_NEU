@@ -1,8 +1,8 @@
 #Source Hashes
-#Tue Jan 08 10:08:26 CET 2013
+#Tue Jan 08 10:23:00 CET 2013
 src\\main\\scala\\code\\comet\\StatusLine.scala=7089db117357ba35237c1ded5cfc3bf6aafbc022
 src\\main\\scala\\code\\snippet\\ChatIn.scala=83fff486126ee65c84d8c333d77f31e5b1538a1d
-src\\main\\scala\\schiffe\\Model\\Schiff.scala=04d014437cafcbed66202d516630dffbb175b9c5
+src\\main\\scala\\schiffe\\Model\\Schiff.scala=d407e77ae702e4d67de904aed300115504ae673b
 src\\main\\scala\\schiffe\\View\\SpielerPanel.scala=3df72a1b159fef9f5524aa05c3cce3e97b9ecdda
 src\\main\\scala\\code\\comet\\FeldRenderer.scala=73969fb8630eb99002d0ed095928e49825a1f7f6
 src\\main\\scala\\code\\snippet\\CommandLine.scala=89ad5eae4ae79acf1b7dcd6c0f3e6b09d14b995c

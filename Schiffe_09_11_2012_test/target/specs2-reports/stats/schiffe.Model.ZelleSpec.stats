@@ -9,3 +9,10 @@
 </schiffe.Model.ZelleSpec-results>
 <schiffe.Model.ZelleSpec-stats timestamp="1357635523655"><stats expectations="6" successes="5" examples="6" failures="1" time="1"></stats></schiffe.Model.ZelleSpec-stats>
 <schiffe.Model.ZelleSpec-stats timestamp="1357635870370"><stats expectations="6" examples="6" successes="6" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1357636206302"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1357636296894"><stats expectations="6" examples="6" successes="6" time="7"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1357636438744"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1357636567822"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1357636586260"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1357636854459"><stats expectations="6" examples="6" successes="6" time="2"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1357636977668"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
