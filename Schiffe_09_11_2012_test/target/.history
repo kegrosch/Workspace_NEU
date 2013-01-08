@@ -163,3 +163,9 @@ update
 ~jetty-run
 update
 ~jetty-run
+update
+~jetty-run
+jetty-run
+~jetty-run
+prepare-webapp
+~jetty-run
