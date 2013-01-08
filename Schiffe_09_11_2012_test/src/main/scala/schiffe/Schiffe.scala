@@ -5,7 +5,7 @@ import schiffe.Controller._
 import schiffe.Model._
 
 object Schiffe {
-  val controller = new Controller(new Feld(5))
+    val controller = new Controller(new Feld(5))
     val pccontroller = new Controller(new Feld(5))
     val userTui=new Tui(controller, pccontroller)
     val userGui = new GUI(controller, pccontroller)
