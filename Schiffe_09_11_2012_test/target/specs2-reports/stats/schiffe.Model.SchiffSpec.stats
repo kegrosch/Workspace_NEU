@@ -1,0 +1,3 @@
+<schiffe.Model.SchiffSpec-results timestamp="1357635523589"><result location="schiffe.Model.SchiffSpec (SchiffSpec.scala:54)" id="1855720217"><stats expectations="1" examples="1" failures="1" time="48"></stats></result>
+</schiffe.Model.SchiffSpec-results>
+<schiffe.Model.SchiffSpec-stats timestamp="1357635523595"><stats expectations="79" successes="78" examples="79" failures="1" time="16"></stats></schiffe.Model.SchiffSpec-stats>

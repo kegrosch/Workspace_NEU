@@ -5,3 +5,6 @@
 <schiffe.Model.ZelleSpec-results timestamp="1357635320149"><result location="schiffe.Model.ZelleSpec (ZelleSpec.scala:17)" id="-1662727133"><stats expectations="1" examples="1" failures="1" time="23"></stats></result>
 </schiffe.Model.ZelleSpec-results>
 <schiffe.Model.ZelleSpec-stats timestamp="1357635320159"><stats expectations="6" successes="5" examples="6" failures="1" time="13"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-results timestamp="1357635523646"><result location="schiffe.Model.ZelleSpec (ZelleSpec.scala:17)" id="-1662727133"><stats expectations="1" examples="1" failures="1" time="1"></stats></result>
+</schiffe.Model.ZelleSpec-results>
+<schiffe.Model.ZelleSpec-stats timestamp="1357635523655"><stats expectations="6" successes="5" examples="6" failures="1" time="1"></stats></schiffe.Model.ZelleSpec-stats>
