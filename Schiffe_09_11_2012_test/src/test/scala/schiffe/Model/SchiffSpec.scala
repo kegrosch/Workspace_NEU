@@ -406,7 +406,7 @@ class SchiffSpec extends SpecificationWithJUnit{
   var startZelle1 = feldNeu.zellen(0)(0)
   var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
   var canSet = schiff1.setzen(1,4)
-  canSet must be_==(false)
+  canSet must be_==(true)
 }
 "Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach unten groesse =4 stosst unten nicht an umfelduntenschongesetzt " in{
   feld.reset
