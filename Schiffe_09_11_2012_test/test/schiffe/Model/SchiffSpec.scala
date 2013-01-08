@@ -373,7 +373,20 @@ class SchiffSpec extends SpecificationWithJUnit{
       var canSet = schiff2.setzen(2,4)
       canSet must be_==(true)  
     }
-"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach unten groesse =4 umfeldrechtsschongesetzt " in{
+ "Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach unten schiffsgroesse =2 feld=2 stösst unten an umfeldrechtsschongesetzt " in{
+  var feldNeu = new Feld(2)
+  var startZelle1 = feldNeu.zellen(0)(0)
+  var startZelle2 = feldNeu.zellen(0)(1)
+  var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
+  var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
+  schiff2.setzen(1,1)
+  schiff1.setzen(1,1)
+  var isSet = feldNeu.zellen(0)(0).getGesetzt
+  isSet must be_==(false)
+}
+
+ 
+"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach unten schiffsgroesse =4 stösst unten nicht an umfeldrechtsschongesetzt " in{
   var feldNeu = new Feld(5)
   var startZelle1 = feldNeu.zellen(0)(0)
   var startZelle2 = feldNeu.zellen(0)(1)
@@ -384,44 +397,29 @@ class SchiffSpec extends SpecificationWithJUnit{
   var isSet = feldNeu.zellen(0)(0).getGesetzt
   isSet must be_==(false)
 }
-"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach unten groesse =4 umfeldlinksschongesetzt " in{
+/*Zeile 266 soll überprüft werden*/
+"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach unten schiffsgroesse =4 stösst unten nicht an umfelduntenschongesetzt " in{
   var feldNeu = new Feld(5)
-  var startZelle1 = feldNeu.zellen(0)(0)
-  var startZelle2 = feldNeu.zellen(0)(1)
-  var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
-  var schiff2 = new Schiff(4, startZelle2, feldNeu.zellen)
-  schiff1.setzen(1,4)
-  schiff2.setzen(1,4)
-  var isSet = feldNeu.zellen(0)(1).getGesetzt
-  isSet must be_==(false)
-}
-"Umfeldkontrolle Schiff geht nach unten erste Reihe groesse =4 umfeldlrechtschongesetzt " in{
-  var feldNeu = new Feld(5)
-  var startZelle1 = feldNeu.zellen(0)(3)
-  var startZelle2 = feldNeu.zellen(0)(4)
-  var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
-  var schiff2 = new Schiff(4, startZelle2, feldNeu.zellen)
-  schiff1.setzen(1,4)
-  schiff2.setzen(1,4)
-  var isSet = feldNeu.zellen(0)(4).getGesetzt
-  isSet must be_==(false)
-}
-
-"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach unten groesse =4 umfelduntenschongesetzt " in{
-  var feldNeu = new Feld(5)
-  feldNeu.reset
   var startZelle2 = feldNeu.zellen(4)(0)
-  var startZelle1 = feldNeu.zellen(0)(0)
   var schiff2 = new Schiff(2, startZelle2, feldNeu.zellen)
   schiff2.setzen(2,4)
+  var startZelle1 = feldNeu.zellen(0)(0)
   var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
-  
+  var canSet = schiff1.setzen(1,4)
+  canSet must be_==(false)
+}
+"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach unten groesse =4 stosst unten nicht an umfelduntenschongesetzt " in{
+  feld.reset
+  var startZelle2 = feld.zellen(4)(0)
+  var startZelle1 = feld.zellen(0)(0)
+  var schiff2 = new Schiff(2, startZelle2, feld.zellen)
+  schiff2.setzen(2,4)
+  var schiff1 = new Schiff(4, startZelle1, feld.zellen)
   schiff1.setzen(1,4)
-  var isSet = feldNeu.zellen(2)(0).getGesetzt
+  var isSet = feld.zellen(2)(0).getGesetzt
   isSet must be_==(false)
 }
-
-"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach rechts groesse =4 umfelduntenschongesetzt " in{
+"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach rechts groesse =4 stösst rechts nichts an umfelduntenschongesetzt " in{
   var feldNeu = new Feld(5)
   var startZelle1 = feldNeu.zellen(0)(0)
   var startZelle2 = feldNeu.zellen(1)(0)
@@ -432,18 +430,6 @@ class SchiffSpec extends SpecificationWithJUnit{
   var isSet = feldNeu.zellen(0)(0).getGesetzt
   isSet must be_==(false)
 }
-"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach rechts  groesse =4 umfeldlinksschongesetzt " in{
-  var feldNeu = new Feld(5)
-  var startZelle1 = feldNeu.zellen(0)(0)
-  var startZelle2 = feldNeu.zellen(0)(1)
-  var schiff1 = new Schiff(2, startZelle1, feldNeu.zellen)
-  var schiff2 = new Schiff(4, startZelle2, feldNeu.zellen)
-  schiff1.setzen(1,4)
-  schiff2.setzen(2,4)
-  var isSet = feldNeu.zellen(0)(1).getGesetzt
-  isSet must be_==(false)
-}
-
 "Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach rechts groesse =4 umfeldrechtsschongesetzt " in{
   var feldNeu = new Feld(5)
   feldNeu.reset
@@ -456,41 +442,417 @@ class SchiffSpec extends SpecificationWithJUnit{
   var isSet = feldNeu.zellen(0)(2).getGesetzt
   isSet must be_==(false)
 }
-"Umfeldkontrolle Spalte = letzte Spalte & Reihe = erste Reihe Schiff geht nach unten" in {
+/*
+"Umfeldkontrolle Spalte = erste Spalte & Reihe = erste Reihe Schiff geht nach rechts groesse =4 umfeldrechtsschongesetzt " in{
+  var feldNeu = new Feld(5)
+  var startZelle1 = feldNeu.zellen(0)(0)
+  var startZelle2 = feldNeu.zellen(0)(4)
+  var schiff2 = new Schiff(4, startZelle2, feldNeu.zellen)
+  var schiff1 = new Schiff(4, startZelle1, feldNeu.zellen)
+  schiff2.setzen(1,4)
+  schiff1.setzen(2,4)
+  var isSet = feldNeu.zellen(0)(0).getGesetzt
+  isSet must be_==(false)
+}*/
+
+
+
+"Umfeldkontrolle Spalte = letzte Spalte & Reihe = erste Reihe Schiff geht nach unten groesse=4 stösst links nicht an umfeldlinksschongesetzt" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(4)
+  var startZelleHilfsschiff = feldNeu.zellen(0)(3)
+  var EigentlicherSchiff= new Schiff(4,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(4, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(1,4)
+  var isSet=EigentlicherSchiff.setzen(1,4)
+  //var isSet = feldNeu.zellen(1)(4).getGesetzt
+  isSet must be_==(false)
   
 }
-"Umfeldkontrolle Spalte = letzte Spalte & Reihe = erste Reihe Schiff geht nach links" in{
+
+"Umfeldkontrolle Spalte = letzte Spalte & Reihe = erste Reihe Schiff geht nach unten groesse=4 stösst links nicht an umfeldluntenschongesetzt" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(4)
+  var startZelleHilfsschiff = feldNeu.zellen(4)(4)
+  var EigentlicherSchiff= new Schiff(4,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(3,4)
+  EigentlicherSchiff.setzen(1,4)
+  var isSet = feldNeu.zellen(1)(4).getGesetzt
+  isSet must be_==(false)
   
 }
-"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach rechts stößt  rechts an" in {
+"Umfeldkontrolle Spalte = letzte Spalte & Reihe = erste Reihe Schiff geht nach unten groesse=5 stösst links an umfeldluntenschongesetzt" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(4)
+  var startZelleHilfsschiff = feldNeu.zellen(4)(4)
+  var EigentlicherSchiff= new Schiff(5,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(3,4)
+  EigentlicherSchiff.setzen(1,4)
+  var isSet = feldNeu.zellen(1)(4).getGesetzt
+  isSet must be_==(false)
   
 }
-"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach Rechts stößt nicht rechts an" in {
+
+"Umfeldkontrolle Spalte = letzte Spalte & Reihe = erste Reihe Schiff geht nach links groesse = 4 umfelduntenschongesetzt" in{
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(4)
+  var startZelleHilfsschiff = feldNeu.zellen(1)(4)
+  var EigentlicherSchiff= new Schiff(4,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(4, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(3,4)
+  EigentlicherSchiff.setzen(3,4)
+  var isSet = feldNeu.zellen(0)(3).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte = letzte Spalte & Reihe = erste Reihe Schiff geht nach links groesse = 4 umfeldlinksschongesetzt" in{
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(4)
+  var startZelleHilfsschiff = feldNeu.zellen(0)(0)
+  var EigentlicherSchiff= new Schiff(4,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(4, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(1,4)
+  EigentlicherSchiff.setzen(3,4)
+  var isSet = feldNeu.zellen(0)(3).getGesetzt
+  isSet must be_==(false)
+}
+
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach unten stößt unten an umfeldlinksschongesetzt" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(3)
+  var startZelleHilfsschiff = feldNeu.zellen(0)(2)
+  var EigentlicherSchiff= new Schiff(5,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(4, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(1,4)
+  EigentlicherSchiff.setzen(1,4)
+  var isSet = feldNeu.zellen(0)(3).getGesetzt
+  isSet must be_==(false)
+}
+
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach unten stößt unten an umfeldrechtschongesetzt" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(3)
+  var startZelleHilfsschiff = feldNeu.zellen(0)(4)
+  var EigentlicherSchiff= new Schiff(5,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(4, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(1,4)
+  EigentlicherSchiff.setzen(1,4)
+  var isSet = feldNeu.zellen(0)(3).getGesetzt
+  isSet must be_==(false)
+}
+
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach rechts stößt  rechts an umfeld untengesetzt" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(3)
+  var startZelleHilfsschiff = feldNeu.zellen(1)(3)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(2,4)
+  EigentlicherSchiff.setzen(2,4)
+  var isSet = feldNeu.zellen(0)(3).getGesetzt
+  isSet must be_==(false)
+}
+
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach rechts stößt  rechts an umfeld  links gesetzt" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(3)
+  var startZelleHilfsschiff = feldNeu.zellen(0)(2)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(1,4)
+  EigentlicherSchiff.setzen(2,4)
+  var isSet = feldNeu.zellen(0)(3).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach Rechts stößt nicht rechts an umfeld unten gesetzt " in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(1)
+  var startZelleHilfsschiff = feldNeu.zellen(1)(1)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(2,4)
+  EigentlicherSchiff.setzen(2,4)
+  var isSet = feldNeu.zellen(0)(1).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach Rechts stößt nicht rechts an umfeld links gesetzt " in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(1)
+  var startZelleHilfsschiff = feldNeu.zellen(0)(0)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(1,4)
+  EigentlicherSchiff.setzen(2,4)
+  var isSet = feldNeu.zellen(0)(1).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach Rechts stößt nicht rechts an umfeld rechts gesetzt " in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(1)
+  var startZelleHilfsschiff = feldNeu.zellen(0)(2)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(1,4)
+  EigentlicherSchiff.setzen(2,4)
+  var isSet = feldNeu.zellen(0)(1).getGesetzt
+  isSet must be_==(false)
+}
+
+
+
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt nicht links an umfelduntengesetzt " in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(3)
+  var startZelleHilfsschiff = feldNeu.zellen(1)(3)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(3,4)
+  EigentlicherSchiff.setzen(3,4)
+  var isSet = feldNeu.zellen(0)(3).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt nicht links an umfelduntennicht gesetzt " in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(2)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(3,4)
+  var isSet = feldNeu.zellen(0)(2).getGesetzt
+  isSet must be_==(true)
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt nicht links an umfeld links gesetzt " in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(0)(1)
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(1,4)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(2)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(3,4)
+  var isSet = feldNeu.zellen(0)(2).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt nicht links an umfeld rechts gesetzt " in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(0)(3)
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(1,4)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(2)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(3,4)
+  var isSet = feldNeu.zellen(0)(2).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt links an umfelduntengesetzt" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(1)(2)
+  var Hilfsschiff =new Schiff(3, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(3,4)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(2)
+  var EigentlicherSchiff= new Schiff(3,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(3,4)
+  var isSet = feldNeu.zellen(0)(2).getGesetzt
+  isSet must be_==(false)
+}
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt links an umfeldlinksgesetzt" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(0)(1)
+  var Hilfsschiff =new Schiff(1, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(3,4)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(2)
+  var EigentlicherSchiff= new Schiff(3,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(3,4)
+  var isSet = feldNeu.zellen(0)(2).getGesetzt
+  isSet must be_==(false)
+}
+/*Es soll überprüfen if ((zellen(startZelle.getReihe)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                    return false
+                  } else {
+                    return okay
+                  } Zeile 463
+                  warum tut er das nicht????*/
+"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt links an umfeldlinksgesetzt2" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(0)(1)
+  var Hilfsschiff =new Schiff(1, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(3,4)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(0)(2)
+  var EigentlicherSchiff= new Schiff(3,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var isSet = EigentlicherSchiff.setzen(3,4)
+  isSet must be_==(false)
+}
+"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach oben stosst oben an umfeldrechtsgesetzt" in{
+  var feldNeu = new Feld(2)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(1)(1)
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(0,1)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(1)(0)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var isSet = EigentlicherSchiff.setzen(0,1)
+  isSet must be_==(false)
   
 }
-"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt nicht links an" in {
+"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach oben stosst oben an umfeldnichtgesetzt" in{
+  var feldNeu = new Feld(2)
+  feldNeu.reset
+  
+  var startZelleEigentlicherSchiff = feldNeu.zellen(1)(0)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var isSet = EigentlicherSchiff.setzen(0,1)
+  isSet must be_==(true)
   
 }
-"Umfeldkontrolle Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe Schiff geht nach links stößt links an" in {
+/* warum funktioniert es nicht?? Zeile 516
+"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach oben stosst oben nicht an umfeld oben gesetzt" in{
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(1)(0)
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(2,4)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(4)(0)
+  var EigentlicherSchiff= new Schiff(3,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var isSet = EigentlicherSchiff.setzen(0,4)
+  isSet must be_==(false)
   
 }
-"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach oben " in{
-  
+*/
+
+"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach rechts stosstrechts an umfeld oben schon gesetzt" in{
+  var feldNeu = new Feld(2)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(0)(0)
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(2,1)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(1)(0)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var isSet = EigentlicherSchiff.setzen(2,1)
+  isSet must be_==(false)
 }
-"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach rechts " in{
-  
+"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach rechts stosstrechts an umfeld oben nicht gesetzt" in{
+  var feldNeu = new Feld(2)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(1)(0)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var isSet = EigentlicherSchiff.setzen(2,1)
+  isSet must be_==(true)
 }
-"Spalte = letzte Spalte & Reihe = letzte Reihe Schiff geht nach oben" in {
-  
+/*es sollte eigentlich Zeile 535 überprüfen*/
+"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach rechts stosstrechts an umfeld rechts gesetzt" in{
+  var feldNeu = new Feld(2)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(1)(1)
+  var Hilfsschiff =new Schiff(1, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(2,1)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(1)(0)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  var isSet = EigentlicherSchiff.setzen(2,1)
+  isSet must be_==(false)
 }
-"Spalte = letzte Spalte & Reihe = letzte Reihe Schiff geht nach links" in {
-  
+/*das soll Zeile 542 überprüfen*/
+"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach rechts stosstrechts nicht an umfeld oben schon gesetzt" in{
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(3)(0)
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(2,4)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(4)(0)
+  var EigentlicherSchiff= new Schiff(3,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(2,4)
+  var isSet= feldNeu.zellen(4)(2).getGesetzt
+  isSet must be_==(false)
+}
+"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach rechts stosstrechts nicht an umfeld nicht gesetzt" in{
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleEigentlicherSchiff = feldNeu.zellen(4)(0)
+  var EigentlicherSchiff= new Schiff(3,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(2,4)
+  var isSet= feldNeu.zellen(4)(2).getGesetzt
+  isSet must be_==(true)
+}
+/*warum funktioniert es nicht?????? Zeile 550*/
+/*"Spalte = erste Spalte & Reihe = letzte Reihe Schiff geht nach rechts stosstrechts nicht an umfeld rechts gesetzt" in{
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(4)(3)
+  var Hilfsschiff =new Schiff(1, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(0,4)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(4)(0)
+  var EigentlicherSchiff= new Schiff(3,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(2,4)
+  var isSet= feldNeu.zellen(4)(1).getGesetzt
+  isSet must be_==(false)
+}*/
+"Spalte = letzte Spalte & Reihe = letzte Reihe Schiff geht nach oben stösst nicht oben an umfeld links schon gesetzt" in {
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(4)(3)
+  var Hilfsschiff =new Schiff(1, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(0,4)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(4)(4)
+  var EigentlicherSchiff= new Schiff(4,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(0,4)
+  var isSet= feldNeu.zellen(4)(4).getGesetzt
+  isSet must be_==(false)
+}
+/*
+"Spalte = letzte Spalte & Reihe = letzte Reihe Schiff geht nach oben stösst  oben an umfeld links schon gesetzt" in {
+  var feldNeu = new Feld(2)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(1)(0)
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(0,1)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(1)(1)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(0,1)
+  var isSet= feldNeu.zellen(1)(1).getGesetzt
+  isSet must be_==(false)
+}*/
+"Spalte = letzte Spalte & Reihe = letzte Reihe Schiff geht nach links umfeld oben schon gesetzt" in {
+  var feldNeu = new Feld(2)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(0)(1)
+  var Hilfsschiff =new Schiff(2, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(3,1)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(1)(1)
+  var EigentlicherSchiff= new Schiff(4,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(3,1)
+  var isSet= feldNeu.zellen(1)(1).getGesetzt
+  isSet must be_==(false)
 }
 "Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe Schiff geht nach oben" in {
   
 }
 "Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe Schiff geht nach rechts stösst rechts an" in {
-  
+  var feldNeu = new Feld(5)
+  feldNeu.reset
+  var startZelleHilfsschiff = feldNeu.zellen(3)(4)
+  var Hilfsschiff =new Schiff(1, startZelleHilfsschiff, feldNeu.zellen )
+  Hilfsschiff.setzen(0,1)
+  var startZelleEigentlicherSchiff = feldNeu.zellen(4)(4)
+  var EigentlicherSchiff= new Schiff(2,startZelleEigentlicherSchiff, feldNeu.zellen )
+  EigentlicherSchiff.setzen(2,1)
+  var isSet= feldNeu.zellen(4)(4).getGesetzt
+  isSet must be_==(false)
 }
 "Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe Schiff geht nach rechts stösst nicht rechts an" in {
   
