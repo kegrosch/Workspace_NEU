@@ -53,7 +53,7 @@ class Feld {
                   { for (column <- 0 until Schiffe.controller.getSize) yield {
                     {var gesetzt = Schiffe.controller.cell(row, column).getGesetzt}
 //                    {<td class={"reihe="+row+"&column="+column}>{if(gesetzt)"X"else " "}</td>
-                    <td width="20px" class="candidate" id="Nblock">{SHtml.ajaxButton("Hallo", () => schiffeSetzen(row, column), "class" -> "Schiff gesetzt")}</td>
+                    <td width="20px" class="candidate" id="Nblock">{SHtml.ajaxButton("Hallo", () => schiffeSetzen(row, column))}</td>
                     }
                     
                   }
@@ -66,13 +66,6 @@ class Feld {
    }
    
    def schiffeSetzen(reihe: Int, spalte: Int): JsCmd = 
-     
-     Confirm("WIXER" , SHtml.ajaxInvoke(() => setzen)._2.cmd)
-     
-
-
-
-def setzen: JsCmd ={
-  
-}
+     Alert("OOUUZUZUZ")
+   JsCmds.SetHtml("HHHHH Gesetzt", createPcFeld)
 }
