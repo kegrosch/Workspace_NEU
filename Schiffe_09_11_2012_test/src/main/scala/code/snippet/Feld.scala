@@ -51,7 +51,7 @@ def createSchiffe =
     
        <tr><td><button name="zerstoerer_klein" type="button" value="Zerstörer">
       <p>
-       <img src="\schiffe\images\Zerstoerer.png" width="350" height="60" alt="Zerstoerer"></img>
+       <img src="images\Zerstoerer.png" width="350" height="60" alt="Zerstoerer"></img>
         
       </p>
         </button></td></tr>
