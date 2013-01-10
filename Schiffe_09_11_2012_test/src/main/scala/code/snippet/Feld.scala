@@ -17,13 +17,56 @@ import net.liftweb.http.js.JsCmds
 
 class Feld {
   
-//var anzahl = Schiffe.controller.getSize
-//
-//
-//def getFeld = "#feld *" #> createFeld(anzahl)
-//def getFeld = "#feld *" #> <tr><td>GGGGGG</td><td>HHHHH</td></tr><tr><td>JJJJJ</td><td>KKKKK</td></tr>;
 
 
+def createSchiffe = 
+<table class="schiffeAuswahl" border="1">
+
+  {  var aktuelleLaenge = 0 }
+  
+  {var schlachtschiff_icon = "images/Schlachtschiff.png"
+  var kreuzer_icon = "images/Kreuzer.png"
+  var uboot_icon ="images/UBoot.png"
+  var zerstoerer_icon = "images/Zerstoerer.png"
+  var z_einzeln = false
+  var z = false
+        var u = false
+        var k = false
+         var z1_gross = false
+        var z2_gross = false
+        var z3_gross = false
+        var z4_gross = false
+        var u1_gross = false
+        var u2_gross = false
+        var u3_gross = false
+        var k1_gross = false
+        var k2_gross = false
+        var s_gross = false}
+        
+  {Schiffe.controller.getSize match{
+    case 2 => 
+      
+        
+      
+    
+       <tr><td><button name="zerstoerer_klein" type="button" value="Zerstörer">
+      <p>
+       <img src="images\Zerstoerer.png" width="350" height="60" alt="Zerstoerer"></img>
+        
+      </p>
+        </button></td></tr>
+
+
+    
+    case 5 =>
+    case 10 =>
+    
+  }
+  }
+ 
+</table>
+    
+   
 
 
   def createUserFeld = {
@@ -51,28 +94,23 @@ class Feld {
          for (row <- 0 until Schiffe.controller.getSize) yield {
              <tr>
                   { for (column <- 0 until Schiffe.controller.getSize) yield {
-                    {var gesetzt = Schiffe.controller.cell(row, column).getGesetzt}
-//                    {<td class={"reihe="+row+"&column="+column}>{if(gesetzt)"X"else " "}</td>
-                    <td width="20px" class="candidate" id="Nblock">{SHtml.ajaxButton("Hallo", () => schiffeSetzen(row, column), "class" -> "Schiff gesetzt")}</td>
-                    }
-                    
+                    var gesetzt = Schiffe.controller.cell(row, column).getGesetzt
+                    <td  id={"reihe="+row+"&column="+column}>{if(gesetzt)"X"else " "}
+                   <form>         
+                   <input type="submit" value=" "/>
+                    </form>
+</td>
+                   
                   }
+                  //class={"lift:SchiffeSetzen.neuStarten("+ row + "," + column + ",2,5)"} 
                   
-                  
+                  }
              </tr>
          }
      }
      </table>
-   }
-   
+   }   
    def schiffeSetzen(reihe: Int, spalte: Int): JsCmd = 
-     
-     Confirm("WIXER" , SHtml.ajaxInvoke(() => setzen)._2.cmd)
-     
-
-
-
-def setzen: JsCmd ={
-  
-}
+     Alert("OOUUZUZUZ")
+   JsCmds.SetHtml("HHHHH Gesetzt", createPcFeld)
 }

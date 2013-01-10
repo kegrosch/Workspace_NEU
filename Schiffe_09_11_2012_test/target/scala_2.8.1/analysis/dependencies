@@ -1,5 +1,5 @@
 #Source Dependencies
-#Tue Jan 08 10:34:00 CET 2013
+#Wed Jan 09 22:45:04 CET 2013
 src\\main\\scala\\code\\comet\\StatusLine.scala=
 src\\main\\scala\\code\\snippet\\ChatIn.scala=
 src\\main\\scala\\schiffe\\Model\\Schiff.scala=src\\main\\scala\\schiffe\\Controller\\Controller.scala
@@ -11,11 +11,11 @@ src\\main\\scala\\schiffe\\Model\\Zelle.scala=src\\main\\scala\\schiffe\\View\\T
 src\\main\\scala\\schiffe\\util\\Feld.scala=
 src\\main\\scala\\code\\snippet\\HighlightButtonSnippet.scala=
 src\\main\\scala\\schiffe\\View\\SchiffPanel.scala=src\\main\\scala\\schiffe\\View\\SpielerPanel.scala;src\\main\\scala\\schiffe\\View\\GUI.scala
-src\\main\\scala\\schiffe\\Schiffe.scala=src\\main\\scala\\code\\comet\\FeldRenderer.scala;src\\main\\scala\\code\\snippet\\FeldSnippet.scala;src\\main\\scala\\code\\snippet\\Funktionsleiste.scala;src\\main\\scala\\code\\snippet\\ZelleSnippet.scala;src\\main\\scala\\code\\comet\\SchiffeServer.scala;src\\main\\scala\\code\\snippet\\Feld.scala
+src\\main\\scala\\schiffe\\Schiffe.scala=src\\main\\scala\\code\\comet\\FeldRenderer.scala;src\\main\\scala\\code\\snippet\\FeldSnippet.scala;src\\main\\scala\\code\\snippet\\Funktionsleiste.scala;src\\main\\scala\\code\\snippet\\ZelleSnippet.scala;src\\main\\scala\\code\\comet\\SchiffeServer.scala;src\\main\\scala\\code\\snippet\\Feld.scala;src\\main\\scala\\code\\snippet\\SchiffeSetzen.scala
 src\\main\\scala\\code\\snippet\\HelloWorld.scala=
 src\\main\\scala\\code\\snippet\\Funktionsleiste.scala=
-src\\main\\scala\\schiffe\\Controller\\Controller.scala=src\\main\\scala\\code\\comet\\FeldRenderer.scala;src\\main\\scala\\code\\snippet\\FeldSnippet.scala;src\\main\\scala\\schiffe\\View\\GUI.scala;src\\main\\scala\\schiffe\\View\\PCPanel.scala;src\\main\\scala\\code\\snippet\\Funktionsleiste.scala;src\\main\\scala\\code\\snippet\\ZelleSnippet.scala;src\\main\\scala\\schiffe\\View\\Tui.scala;src\\main\\scala\\code\\comet\\SchiffeServer.scala;src\\main\\scala\\schiffe\\View\\SpielerPanel.scala;src\\main\\scala\\schiffe\\Schiffe.scala;src\\main\\scala\\code\\snippet\\Feld.scala
-src\\main\\scala\\schiffe\\Model\\Feld.scala=src\\main\\scala\\schiffe\\View\\GUI.scala;src\\main\\scala\\schiffe\\View\\Tui.scala;src\\main\\scala\\schiffe\\View\\PCPanel.scala;src\\main\\scala\\code\\snippet\\Funktionsleiste.scala;src\\main\\scala\\schiffe\\View\\SpielerPanel.scala;src\\main\\scala\\schiffe\\Schiffe.scala;src\\main\\scala\\schiffe\\Controller\\Controller.scala
+src\\main\\scala\\schiffe\\Controller\\Controller.scala=src\\main\\scala\\code\\comet\\FeldRenderer.scala;src\\main\\scala\\code\\snippet\\FeldSnippet.scala;src\\main\\scala\\schiffe\\View\\GUI.scala;src\\main\\scala\\schiffe\\View\\PCPanel.scala;src\\main\\scala\\code\\snippet\\Funktionsleiste.scala;src\\main\\scala\\code\\snippet\\ZelleSnippet.scala;src\\main\\scala\\schiffe\\View\\Tui.scala;src\\main\\scala\\code\\comet\\SchiffeServer.scala;src\\main\\scala\\schiffe\\View\\SpielerPanel.scala;src\\main\\scala\\schiffe\\Schiffe.scala;src\\main\\scala\\code\\snippet\\Feld.scala;src\\main\\scala\\code\\snippet\\SchiffeSetzen.scala
+src\\main\\scala\\schiffe\\Model\\Feld.scala=src\\main\\scala\\schiffe\\View\\GUI.scala;src\\main\\scala\\schiffe\\View\\Tui.scala;src\\main\\scala\\schiffe\\View\\PCPanel.scala;src\\main\\scala\\code\\snippet\\Funktionsleiste.scala;src\\main\\scala\\schiffe\\View\\SpielerPanel.scala;src\\main\\scala\\schiffe\\Schiffe.scala;src\\main\\scala\\code\\snippet\\SchiffeSetzen.scala;src\\main\\scala\\schiffe\\Controller\\Controller.scala
 src\\main\\scala\\code\\snippet\\Feld.scala=
 src\\main\\scala\\code\\lib\\DependencyFactory.scala=src\\main\\scala\\code\\snippet\\Feld.scala;src\\main\\scala\\code\\snippet\\HelloWorld.scala
 src\\main\\scala\\bootstrap\\liftweb\\Boot.scala=
