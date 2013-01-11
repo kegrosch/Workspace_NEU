@@ -208,3 +208,17 @@ update
 ~jetty-run
 update
 ~jetty-run
+update
+~jetty-run
+update
+~jetty-run
+quit
+update
+~jetty-run
+quit
+sbt clean
+sbt-clean
+sbt
+quit
+update
+~jetty-run

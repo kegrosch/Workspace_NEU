@@ -7,16 +7,20 @@ import Helpers._
 import http._
 import js.JsCmds._
 import schiffe._
+import net.liftweb.http.js.JsCmds
 
 object SchiffAuswahl {
   
-  def render = {
-    "button [onClick]" #> 
-    SHtml.ajaxInvoke(() => {
-      Schiffe.controller.hit(1,1)
-      Alert("JJJJJJJJJJJJJ")
-      Alert("JJJJJJJJJJJJJ")
-    })
-  }
+//  def render = {
+//    
+//    "@zerstoerer_mittel [onclick]" #> SHtml.ajaxInvoke (() => {
+////      info("Data confirmed!")
+//      Alert("JJJJJJ")
+//      JsCmds.Alert("We saved your \nName: %s\nLast name: %s\nAge: %s") &
+//      JsCmds.JsHideId("finish")
+//    })
+//    
+//  }
+  def render = "zerstoerer_mittel [onclick]" #> SHtml.ajaxInvoke(() => {println("click"); JsCmds.Alert("Hi")} )
 
 }
