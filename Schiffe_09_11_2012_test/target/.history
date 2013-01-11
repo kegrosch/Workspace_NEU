@@ -191,3 +191,10 @@ update
 ~jetty-run
 update
 ~jetty-run
+update
+~jetty-run
+quit
+update
+quit
+update
+~jetty-run

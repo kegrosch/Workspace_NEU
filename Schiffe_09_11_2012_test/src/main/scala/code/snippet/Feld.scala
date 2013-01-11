@@ -20,7 +20,7 @@ class Feld {
 
 
 def createSchiffe = 
-<table class="schiffeAuswahl" border="1">
+<table class="schiffeAuswahl" border="1" >
 
   {  var aktuelleLaenge = 0 }
   
@@ -49,9 +49,9 @@ def createSchiffe =
         
       
     
-       <tr><td><button name="zerstoerer_klein" type="button" value="Zerstörer">
+       <tr><td width="350" height="60"><button name="zerstoerer_klein" type="button" value="Zerstörer">
       <p>
-       <img src="images\Zerstoerer.png" width="350" height="60" alt="Zerstoerer"></img>
+       <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img>
         
       </p>
         </button></td></tr>
