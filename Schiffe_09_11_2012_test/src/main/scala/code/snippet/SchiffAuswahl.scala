@@ -34,7 +34,7 @@ S.notice("NNNN" + naem)
 }
   def click(in: NodeSeq):NodeSeq = {
     
-    <button class="lift:SchiffAuswahl.render" onClick="lift:SchiffAuswahl.render" id="zerstoerer_mittel" name="zerstoerer_mittel" type="button" value="Zerst�rer" style="background-color:red; text-align:center; vertical-align:middle; font-size:35px" >
+    <button class="lift:SchiffAuswahl.render" onClick='lift:SchiffAuswahl.render' id="zerstoerer_mittel" name="zerstoerer_mittel" type="button" value="Zerst�rer" style="background-color:red; text-align:center; vertical-align:middle; font-size:35px" >
       
        <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img> Zerstoerer
         
