@@ -5,6 +5,7 @@ import org.specs2.runner.JUnitRunner
 
 
 
+
 @RunWith(classOf[JUnitRunner])
 class ZelleSpec extends SpecificationWithJUnit{
   "A new Zelle" should{
