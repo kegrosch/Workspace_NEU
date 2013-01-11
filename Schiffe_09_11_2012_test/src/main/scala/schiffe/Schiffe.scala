@@ -5,6 +5,7 @@ import schiffe.Controller._
 import schiffe.Model._
 
 
+
 object Schiffe {
     val controller = new Controller(new Feld(5))
     val pccontroller = new Controller(new Feld(5))
@@ -12,6 +13,7 @@ object Schiffe {
     val userGui = new GUI(controller, pccontroller)
   //MAIN KLASSE
   def main(args: Array[String]) {
+  
     
 //    userGui.spiel(5)
     userGui.visible = true

@@ -1,5 +1,5 @@
 #External Dependencies
-#Fri Jan 11 09:59:36 CET 2013
+#Fri Jan 11 10:22:03 CET 2013
 D\:\\FH\\Master\\Scala\\Workspace_NEU\\Schiffe_09_11_2012_test\\lib_managed\\scala_2.8.1\\compile\\scala-swing-2.8.1.jar=src\\main\\scala\\schiffe\\View\\SchiffPanel.scala;src\\main\\scala\\schiffe\\View\\GUI.scala;src\\main\\scala\\schiffe\\View\\Tui.scala;src\\main\\scala\\schiffe\\View\\PCPanel.scala;src\\main\\scala\\code\\comet\\FeldRenderer.scala;src\\main\\scala\\code\\snippet\\Funktionsleiste.scala;src\\main\\scala\\schiffe\\View\\SpielerPanel.scala;src\\main\\scala\\schiffe\\Schiffe.scala;src\\main\\scala\\schiffe\\Controller\\Controller.scala
 D\:\\FH\\Master\\Scala\\Workspace_NEU\\Schiffe_09_11_2012_test\\lib_managed\\scala_2.8.1\\compile\\lift-proto_2.8.1-2.3.jar=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala;src\\main\\scala\\code\\model\\User.scala
 D\:\\FH\\Master\\Scala\\Workspace_NEU\\Schiffe_09_11_2012_test\\lib_managed\\scala_2.8.1\\compile\\lift-mapper_2.8.1-2.3.jar=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala;src\\main\\scala\\code\\model\\User.scala
