@@ -29,11 +29,15 @@ object ChatIn {
   })
   def groesse2 = SHtml.onSubmit(s =>{
     SchiffeServer.setSize(2)
+    
   })
   def groesse5 = SHtml.onSubmit(s =>{
     SchiffeServer.setSize(5)
   })
   def groesse10 = SHtml.onSubmit(s =>{
     SchiffeServer.setSize(10)
+  })
+  def buttonClicked = SHtml.onSubmit(s =>{
+    SchiffeServer.setSize(2)
   })
 }

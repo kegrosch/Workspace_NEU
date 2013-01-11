@@ -53,12 +53,12 @@ def createSchiffe =
         </button></td></tr>
       
     case 5 =>
-      <tr><td class="lift:SchiffAuswahl" id="zerstoerer_mittel" name="zerstoerer_mittel"><button id="zerstoerer_mittel" class="lift:SchiffAuswahl" name="zerstoerer_mittel" type="button" value="Zerstörer" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" >
+      <tr><td id="zerstoerer_mittel" name="zerstoerer_mittel"><div class="SchiffAuswahl.render" ><button class="lift:SchiffAuswahl.click" id="zerstoerer_mittel" name="zerstoerer_mittel" type="button" value="Zerstörer" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" >
       
        <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img> Zerstörer
         
       
-        </button></td></tr>
+        </button></div></td></tr>
       <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="uboot_mittel" type="button" value="U-Boot">
       
        <img src="images\UBoot.png"  alt="U-Boot" ></img> U-Boot
