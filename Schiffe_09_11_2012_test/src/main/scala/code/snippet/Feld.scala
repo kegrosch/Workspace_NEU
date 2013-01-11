@@ -53,7 +53,7 @@ def createSchiffe =
         </button></td></tr>
       
     case 5 =>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer_mittel" type="button" value="Zerstörer">
+      <tr><td><button class="lift:SchiffAuswahl" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer_mittel" type="button" value="Zerstörer">
       <p>
        <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img> Zerstörer
         
