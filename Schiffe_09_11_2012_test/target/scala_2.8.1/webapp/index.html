@@ -18,8 +18,30 @@
 		<h2>Schiffe Versenken</h2>
 
 <script>
+var startButtonGesetzt = 0;
+var startButton;
 var gesetzt = 0;
 var aktuellerButton;
+</script>
+<script>
+function setStart(data)
+{
+	if(startButtonGesetzt==1){
+		
+		startButton.style.backgroundColor='gray';
+		
+		
+	}
+	if(startButton == data){
+		startButtonGesetzt = 0;
+		startButton=null
+	}else{
+	data.style.backgroundColor=(data.style.backgroundColor=='gray')?'green':'gray';
+	startButtonGesetzt = 1;
+	startButton = data;
+	Alert("Gesetzt: " + gesetzt);
+	}
+}
 </script>
 <script>
 function setSchiffBackground(data)

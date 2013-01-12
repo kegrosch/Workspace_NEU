@@ -138,15 +138,21 @@ def createSchiffe =
 
 
   def createUserFeld = {
-  <table class="grid" border="1" cellspacing="10" cellpadding="8">
+  <table class="grid" border="1" bordercolor="blue" cellspacing="0" cellpadding="0">
    {
     
          for (row <- 0 until Schiffe.controller.getSize) yield {
-             <tr>
+             <tr border="0">
                   { for (column <- 0 until Schiffe.controller.getSize) yield {
                     var gesetzt = Schiffe.controller.cell(row, column).getGesetzt
 //                    {<td class={"reihe="+row+"&column="+column}>{if(gesetzt)"X"else " "}</td>
-                    <td width="20px" class="candidate" id="Nblock">{if(gesetzt)"   X   "else "   X   "}</td>
+                    <td style="height: 48px; width: 48px;" border="0">
+                   <button onClick="setStart(this);" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
+      
+       {if(gesetzt)"X"else "O"}
+    
+        </button>
+</td>
                      }
                   
                   }
@@ -156,17 +162,19 @@ def createSchiffe =
      </table>
    }   
    def createPcFeld = {
-  <table class="grid" border="1" cellspacing="10" cellpadding="8">
+  <table class="grid" border="1" bordercolor="blue" cellspacing="0" cellpadding="0">
    {
     
          for (row <- 0 until Schiffe.controller.getSize) yield {
              <tr>
                   { for (column <- 0 until Schiffe.controller.getSize) yield {
                     var gesetzt = Schiffe.controller.cell(row, column).getGesetzt
-                    <td  id={"reihe="+row+"&column="+column}>{if(gesetzt)"X"else " "}
-                   <form>         
-                   <input type="submit" value=" "/>
-                    </form>
+                    <td style="height: 48px; width: 48px;" border="0">
+                   <button onClick="setStart(this);" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
+      
+       {if(gesetzt)"X"else "O"}
+    
+        </button>
 </td>
                    
                   }
