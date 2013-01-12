@@ -22,19 +22,12 @@ object SchiffAuswahl {
 //    })
 //    
 //  }
-//  def render = "@zerstoerer_mittel [onclick]" #> SHtml.ajaxInvoke(() => {ChatIn.buttonClicked; println("click"); JsCmds.Alert("Hi");Alert("UUUUU")} )
+  def render = "@zerstoerer_mittel [onfocus]" #> SHtml.ajaxInvoke(() => {ChatIn.buttonClicked; println("click"); JsCmds.Alert("Hi");Alert("UUUUU")} )
 
-  
-  def render(in: NodeSeq): NodeSeq = {
 
-var naem = S.param("zerstoerer_mittel")
-S.notice("NNNN" + naem)
-
-  in
-}
   def click(in: NodeSeq):NodeSeq = {
     
-    <button class="lift:SchiffAuswahl.render" onClick='lift:SchiffAuswahl.render' id="zerstoerer_mittel" name="zerstoerer_mittel" type="button" value="Zerst�rer" style="background-color:red; text-align:center; vertical-align:middle; font-size:35px" >
+    <button onFocus="javascript:setSchiffButtonsColor()" id="zerstoerer_mittel" name="zerstoerer_mittel" type="button" value="Zerstoerer" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" >
       
        <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img> Zerstoerer
         
