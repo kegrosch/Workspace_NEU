@@ -147,7 +147,7 @@ def createSchiffe =
                     var gesetzt = Schiffe.controller.cell(row, column).getGesetzt
 //                    {<td class={"reihe="+row+"&column="+column}>{if(gesetzt)"X"else " "}</td>
                     <td style="height: 48px; width: 48px;" border="0">
-                   <button onClick="setStart(this);" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
+                   <button id="button" class="lift:SchiffAuswahl"  border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
       
        {if(gesetzt)"X"else "O"}
     
