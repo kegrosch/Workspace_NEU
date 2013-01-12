@@ -20,7 +20,7 @@ class Feld {
 
 
 def createSchiffe = 
-<table class="schiffeAuswahl" border="1" width="300" height="300">
+<table class="schiffeAuswahl" >
 <tbody width="300" height="300">
   {  var aktuelleLaenge = 0 }
   
@@ -45,31 +45,31 @@ def createSchiffe =
         
   {Schiffe.controller.getSize match{
     case 2 => 
-       <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:25px; height: 100px; width: 300px;" name="zerstoerer_klein" type="button" value="Zerstörer">
-      <p>
-       <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img> Zerstörer
+       <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:25px; height: 50px; width: 200px;" name="zerstoerer_klein" type="button" value="Zerstörer">
+      <table><tr><td>
+       <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img></td><td> Zerstörer</td></tr></table>
         
-      </p>
+      
         </button></td></tr>
       
     case 5 =>
-      <tr><td><button onClick="setSchiffBackground(this);" id="zerstoerer_mittel" name="zerstoerer_mittel" type="button" value="Zerstoerer" style="background-color:white; text-align:center; vertical-align:middle; font-size:25px; height: 96px; width: 300px;" >
-      
-       <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img> Zerstoerer
+      <tr><td><button onClick="setSchiffBackground(this);" id="zerstoerer_mittel" name="zerstoerer_mittel" type="button" value="Zerstoerer" style="background-color:white; text-align:center; vertical-align:middle; font-size:18px; height: 81px; width:241px;" >
+      <table><tr><td>
+       <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img></td><td>Zerstörer</td></tr></table>
         
       
         </button>
 </td></tr>
-      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:25px; height: 96px; width: 300px;" name="uboot_mittel" type="button" value="U-Boot">
-      
-       <img src="images\UBoot.png"  alt="U-Boot" ></img> U-Boot
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:18px; height: 81px; width: 241px;" name="uboot_mittel" type="button" value="U-Boot">
+      <table><tr><td>
+       <img src="images\UBoot.png"  alt="U-Boot" ></img></td><td>U-Boot</td></tr></table>
       
         </button> </td></tr>
-      <tr><td><button width="300" onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:25px; height: 96px; width: 300px;" name="kreuzer_mittel" type="button" value="Kreuzer">
-      <p>
-       <img src="images\Kreuzer.png"  alt="Kreuzer" ></img> Kreuzer
+      <tr><td><button width="300" onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:18px; height: 81px; width: 241px;" name="kreuzer_mittel" type="button" value="Kreuzer">
+      <table><tr><td>
+       <img src="images\Kreuzer.png"  alt="Kreuzer" ></img></td><td>Kreuzer</td></tr></table>
         
-      </p>
+      
         </button></td></tr>
       
     case 10 =>
@@ -139,14 +139,7 @@ def createSchiffe =
 
 
   def createUserFeld = {
-    
-      Schiffe.controller.getSize match{
-        case 2 => <table class="grid" border="1" cellspacing="10" cellpadding="8" width="120" height="120">
-        case 5 => <table class="grid" border="1" cellspacing="10" cellpadding="8" width="300" height="300">
-        case 10 => <table class="grid" border="1" cellspacing="10" cellpadding="8" width="600" height="600">
-      
-    }
-     
+  <table class="grid" border="1" cellspacing="10" cellpadding="8">
    {
     
          for (row <- 0 until Schiffe.controller.getSize) yield {
@@ -164,7 +157,7 @@ def createSchiffe =
      </table>
    }   
    def createPcFeld = {
-  <table class="grid" border="1" cellspacing="10" cellpadding="8" width="300" height="300">
+  <table class="grid" border="1" cellspacing="10" cellpadding="8">
    {
     
          for (row <- 0 until Schiffe.controller.getSize) yield {
