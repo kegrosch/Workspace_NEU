@@ -1,5 +1,5 @@
 #Source Dependencies
-#Sat Jan 12 23:16:13 CET 2013
+#Sun Jan 13 00:08:39 CET 2013
 src\\main\\scala\\code\\comet\\StatusLine.scala=
 src\\main\\scala\\code\\snippet\\ChatIn.scala=src\\main\\scala\\code\\snippet\\SchiffAuswahl.scala
 src\\main\\scala\\schiffe\\Model\\Schiff.scala=src\\main\\scala\\schiffe\\Controller\\Controller.scala
@@ -25,7 +25,7 @@ src\\main\\scala\\schiffe\\View\\PCPanel.scala=src\\main\\scala\\schiffe\\View\\
 src\\main\\scala\\schiffe\\Test.scala=
 src\\main\\scala\\code\\comet\\Chat.scala=
 src\\main\\scala\\code\\model\\User.scala=src\\main\\scala\\bootstrap\\liftweb\\Boot.scala
-src\\main\\scala\\schiffe\\View\\Tui.scala=src\\main\\scala\\schiffe\\Schiffe.scala
+src\\main\\scala\\schiffe\\View\\Tui.scala=src\\main\\scala\\code\\comet\\SchiffeServer.scala;src\\main\\scala\\schiffe\\Schiffe.scala
 src\\main\\scala\\code\\snippet\\FeldSnippet.scala=
 src\\main\\scala\\code\\snippet\\SchiffeSetzen.scala=
 src\\main\\scala\\schiffe\\util\\Observer.scala=

@@ -69,7 +69,7 @@ function setSchiffBackground(data)
 
 
 <form>
-<input class="lift:SchiffAuswahl.render" type="button">HHHH</input>
+<button id="button" class="lift:SchiffAuswahl.render" type="button">HHHH</button>
 </form>
 		<table>
 			<tr>
@@ -148,7 +148,18 @@ function setSchiffBackground(data)
 <td onClick="lift:SchiffSetzen.onClick">HALLO</td>
 </tr>
 </table>	
+ <div id="status" class="lift:comet?type=StatusLine"> 
+          StatusLine
+        </div>
+        <div>
+          <form class="lift:form.ajax">
+            <input class="lift:CommandLine" id="command"/>
+            <input type="submit" value="Command"/>
+          </form>
+        </div>
+
 </div>
+
 
 </body>
 

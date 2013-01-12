@@ -63,6 +63,6 @@ def setSize(groesse: Int){
    */
   override def lowPriority = {
 //    case s: String => msgs :+= s; updateListeners()
-    case s: String => Schiffe.controller.setSize(10); Schiffe.pccontroller.setSize(10); msgs :+= s;updateListeners(); 
+    case s: String => Schiffe.userTui.readInput(s); msgs :+= s;updateListeners(); 
   }
 }

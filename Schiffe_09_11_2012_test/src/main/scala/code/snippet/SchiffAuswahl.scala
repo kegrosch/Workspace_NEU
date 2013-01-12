@@ -11,7 +11,7 @@ import code.comet.SchiffeServer
 
 object SchiffAuswahl {
   
-  def ajaxFunc1 : JsCmd = {ChatIn.groesse2; SchiffeServer ! "1"}
+  def ajaxFunc1 : JsCmd = SchiffeServer ! "1"
   def ajaxFunc2 : JsCmd = SchiffeServer ! "1"
 
 //def renderAjaxButton(html: Group): NodeSeq = {
@@ -25,9 +25,8 @@ object SchiffAuswahl {
 //) }
   
 def render = {
- 
-   ChatIn.groesse2
-   
+ "button [onClick]" #> SHtml.onSubmit(("style"->"backgroundColor:red"))
+  
   }
 
 }
