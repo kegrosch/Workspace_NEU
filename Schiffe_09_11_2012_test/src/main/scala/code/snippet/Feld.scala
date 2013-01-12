@@ -45,7 +45,7 @@ def createSchiffe =
         
   {Schiffe.controller.getSize match{
     case 2 => 
-       <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer_klein" type="button" value="Zerstörer">
+       <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer_klein" type="button" value="Zerstörer">
       <p>
        <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img> Zerstörer
         
@@ -53,18 +53,19 @@ def createSchiffe =
         </button></td></tr>
       
     case 5 =>
-      <tr><td id="zerstoerer_mittel" name="zerstoerer_mittel"><div ><button class="lift:SchiffAuswahl.click" id="zerstoerer_mittel" name="zerstoerer_mittel" type="button" value="Zerstörer" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" >
+      <tr><td><div > <button onClick="setSchiffBackground(this);" id="zerstoerer_mittel" name="zerstoerer_mittel" type="button" value="Zerstoerer" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" >
       
-       <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img> Zerstörer
+       <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img> Zerstoerer
         
       
-        </button></div></td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="uboot_mittel" type="button" value="U-Boot">
+        </button>
+</div></td></tr>
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="uboot_mittel" type="button" value="U-Boot">
       
        <img src="images\UBoot.png"  alt="U-Boot" ></img> U-Boot
       
         </button> </td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="kreuzer_mittel" type="button" value="Kreuzer">
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="kreuzer_mittel" type="button" value="Kreuzer">
       <p>
        <img src="images\Kreuzer.png"  alt="Kreuzer" ></img> Kreuzer
         
@@ -72,58 +73,58 @@ def createSchiffe =
         </button></td></tr>
       
     case 10 =>
-     <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer1_gross" type="button" value="1.ter Zerstörer">
+     <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer1_gross" type="button" value="1.ter Zerstörer">
       <p>
        <img src="images\Zerstoerer.png"  alt="Zerstoerer_1" ></img> 1.ter Zerstörer
         
       </p>
         </button></td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer2_gross" type="button" value="2.ter Zerstörer">
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer2_gross" type="button" value="2.ter Zerstörer">
       <p>
        <img src="images\Zerstoerer.png"  alt="Zerstoerer_2" ></img> 2.ter Zerstörer
         
       </p>
         </button></td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer3_gross" type="button" value="3.ter Zerstörer">
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer3_gross" type="button" value="3.ter Zerstörer">
       <p>
        <img src="images\Zerstoerer.png"  alt="Zerstoerer_3" ></img> 3.ter Zerstörer
         
       </p>
         </button></td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer4_gross" type="button" value="4.ter Zerstörer">
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="zerstoerer4_gross" type="button" value="4.ter Zerstörer">
       <p>
        <img src="images\Zerstoerer.png"  alt="Zerstoerer_4" ></img> 4.ter Zerstörer
         
       </p>
         </button></td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="uboot1_gross" type="button" value="1.tes U-Boot">
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="uboot1_gross" type="button" value="1.tes U-Boot">
       
        <img src="images\UBoot.png"  alt="U-Boot_1" ></img> 1.tes U-Boot
       
         </button> </td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="uboot2_gross" type="button" value="2.tes U-Boot">
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="uboot2_gross" type="button" value="2.tes U-Boot">
       
        <img src="images\UBoot.png"  alt="U-Boot_2" ></img> 2.tes U-Boot
       
         </button> </td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="uboot3_gross" type="button" value="3.tes U-Boot">
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="uboot3_gross" type="button" value="3.tes U-Boot">
       
        <img src="images\UBoot.png"  alt="U-Boot_3" ></img> 3.tes U-Boot
       
         </button> </td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="kreuzer1_gross" type="button" value="1.ter Kreuzer">
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="kreuzer1_gross" type="button" value="1.ter Kreuzer">
       <p>
        <img src="images\Kreuzer.png"  alt="Kreuzer_1" ></img> 1.ter Kreuzer
         
       </p>
         </button></td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="kreuzer2_gross" type="button" value="2.ter Kreuzer">
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="kreuzer2_gross" type="button" value="2.ter Kreuzer">
       <p>
        <img src="images\Kreuzer.png"  alt="Kreuzer_2" ></img> 2.ter Kreuzer
         
       </p>
         </button></td></tr>
-      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="schlachtschiff_gross" type="button" value="Schlachtschiff">
+      <tr><td><button onClick="setSchiffBackground(this);" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" name="schlachtschiff_gross" type="button" value="Schlachtschiff">
       <p>
        <img src="images\Schlachtschiff.png"  alt="Schlachtschiff" ></img> Schlachtschiff
         
