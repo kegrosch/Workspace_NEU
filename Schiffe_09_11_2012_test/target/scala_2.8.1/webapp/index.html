@@ -17,12 +17,23 @@
 
 		<h2>Schiffe Versenken</h2>
 
-
+<script>
+var gesetzt = 0;
+var aktuellerButton;
+</script>
 <script>
 function setSchiffBackground(data)
 {
+	if(gesetzt==1){
+		aktuellerButton.style.backgroundColor='white';
+		
+		
+	}
 	data.style.backgroundColor=(data.style.backgroundColor=='white')?'red':'white';
-
+	gesetzt = 1;
+	aktuellerButton = data;
+	Alert("Gesetzt: " + gesetzt);
+	
 }
 </script>
 
