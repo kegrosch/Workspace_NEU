@@ -25,15 +25,20 @@ var aktuellerButton;
 function setSchiffBackground(data)
 {
 	if(gesetzt==1){
+		
 		aktuellerButton.style.backgroundColor='white';
 		
 		
 	}
+	if(aktuellerButton == data){
+		gesetzt = 0;
+		aktuellerButton=null
+	}else{
 	data.style.backgroundColor=(data.style.backgroundColor=='white')?'red':'white';
 	gesetzt = 1;
 	aktuellerButton = data;
 	Alert("Gesetzt: " + gesetzt);
-	
+	}
 }
 </script>
 
