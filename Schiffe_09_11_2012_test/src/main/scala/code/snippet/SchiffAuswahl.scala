@@ -1,39 +1,26 @@
 package code
 package snippet
-
-import net.liftweb._
-import util._
-import Helpers._
-import http._
-import js.JsCmds._
-import schiffe._
-import net.liftweb.http.js.JsCmds
+import _root_.net.liftweb.http.js.{JE,JsCmd,JsCmds}
+import net.liftweb.http.SHtml
+import net.liftweb.http.js.JsCmd
+import net.liftweb.util.Helpers._
 import scala.xml.NodeSeq
+import scala.xml.Group
+import code.comet.SchiffeServer
+import net.liftweb.http.js.JE.Str
 
-object SchiffAuswahl {
+
+class SchiffAuswahl {
   
-//  def render = {
-//    
-//    "@zerstoerer_mittel [onclick]" #> SHtml.ajaxInvoke (() => {
-////      info("Data confirmed!")
-//      Alert("JJJJJJ")
-//      JsCmds.Alert("We saved your \nName: %s\nLast name: %s\nAge: %s") &
-//      JsCmds.JsHideId("finish")
-//    })
-//    
-//  }
-  def render = "@zerstoerer_mittel [onfocus]" #> SHtml.ajaxInvoke(() => {ChatIn.buttonClicked; println("click"); JsCmds.Alert("Hi");Alert("UUUUU")} )
+  def ajaxFunc1 : JsCmd = SchiffeServer ! "1"
+  def ajaxFunc2 : JsCmd = SchiffeServer ! "1"
 
-
-  def click(in: NodeSeq):NodeSeq = {
-    
-    <button onFocus="javascript:setSchiffButtonsColor()" id="zerstoerer_mittel" name="zerstoerer_mittel" type="button" value="Zerstoerer" style="background-color:white; text-align:center; vertical-align:middle; font-size:35px" >
-      
-       <img src="images\Zerstoerer.png"  alt="Zerstoerer" ></img> Zerstoerer
-        
-      
-        </button>
-
-  }
+def renderAjaxButton(html: Group): NodeSeq = {
+    bind("highlight", html,         
+            "zerstoerer_mittel" -> SHtml.ajaxButton("Zerstörer", ajaxFunc1 _),
+            "uboot_mittel" -> SHtml.ajaxButton("U-Boot", ajaxFunc1 _),
+             
+            "kreuzer_mittel" -> SHtml.ajaxButton("U-Boot", ajaxFunc1 _)
+              
+) }
 }
-

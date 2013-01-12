@@ -37,6 +37,7 @@ function setStart(data)
 		startButton=null
 	}else{
 	data.style.backgroundColor=(data.style.backgroundColor=='gray')?'green':'gray';
+	data.class="lift:ChatIn.groesse2"
 	startButtonGesetzt = 1;
 	startButton = data;
 	Alert("Gesetzt: " + gesetzt);
@@ -44,6 +45,7 @@ function setStart(data)
 }
 </script>
 <script>
+
 function setSchiffBackground(data)
 {
 	if(gesetzt==1){
@@ -66,6 +68,14 @@ function setSchiffBackground(data)
 
 
 
+<div>
+          Highlight: 
+         <div class="lift:SchiffAuswahl.renderAjaxButton">
+         
+         </div>
+         
+
+</div>
 		<table>
 			<tr>
 				<th>

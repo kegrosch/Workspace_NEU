@@ -1,5 +1,5 @@
 #Source Dependencies
-#Sat Jan 12 20:17:41 CET 2013
+#Sat Jan 12 21:58:18 CET 2013
 src\\main\\scala\\code\\comet\\StatusLine.scala=
 src\\main\\scala\\code\\snippet\\ChatIn.scala=src\\main\\scala\\code\\snippet\\SchiffAuswahl.scala
 src\\main\\scala\\schiffe\\Model\\Schiff.scala=src\\main\\scala\\schiffe\\Controller\\Controller.scala
@@ -29,4 +29,4 @@ src\\main\\scala\\schiffe\\View\\Tui.scala=src\\main\\scala\\schiffe\\Schiffe.sc
 src\\main\\scala\\code\\snippet\\FeldSnippet.scala=
 src\\main\\scala\\code\\snippet\\SchiffeSetzen.scala=
 src\\main\\scala\\schiffe\\util\\Observer.scala=
-src\\main\\scala\\code\\comet\\SchiffeServer.scala=src\\main\\scala\\code\\comet\\FeldRenderer.scala;src\\main\\scala\\code\\snippet\\ZelleSnippet.scala;src\\main\\scala\\code\\comet\\StatusLine.scala;src\\main\\scala\\code\\snippet\\ChatIn.scala;src\\main\\scala\\code\\comet\\Chat.scala;src\\main\\scala\\code\\snippet\\CommandLine.scala;src\\main\\scala\\code\\snippet\\HighlightButtonSnippet.scala
+src\\main\\scala\\code\\comet\\SchiffeServer.scala=src\\main\\scala\\code\\snippet\\SchiffAuswahl.scala;src\\main\\scala\\code\\comet\\FeldRenderer.scala;src\\main\\scala\\code\\snippet\\ZelleSnippet.scala;src\\main\\scala\\code\\comet\\StatusLine.scala;src\\main\\scala\\code\\snippet\\ChatIn.scala;src\\main\\scala\\code\\comet\\Chat.scala;src\\main\\scala\\code\\snippet\\CommandLine.scala;src\\main\\scala\\code\\snippet\\HighlightButtonSnippet.scala

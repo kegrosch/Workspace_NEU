@@ -170,7 +170,7 @@ def createSchiffe =
                   { for (column <- 0 until Schiffe.controller.getSize) yield {
                     var gesetzt = Schiffe.controller.cell(row, column).getGesetzt
                     <td style="height: 48px; width: 48px;" border="0">
-                   <button onClick="setStart(this);" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
+                   <button  border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
       
        {if(gesetzt)"X"else "O"}
     
