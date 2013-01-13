@@ -10,60 +10,7 @@ import net.liftweb.http.S
 
 
 object SchiffAuswahl {
-  
-  def setzen(in: NodeSeq):NodeSeq = {
-    
-   
  
-
-    for {
-      r <- S.request if r.post_? 
-      typ <- S.param("type") 
-      schiff <- S.param("schiff") 
-      reihe <- S.param("reihe")
-      spalte <- S.param("spalte")
-      richtung <- S.param("richtung")
-    } 
-      typ match{
-        case "set" => 
-          schiff match{
-            case "Zerstörer" =>
-              var laenge = 2
-            case "U-Boot" =>
-              var laenge = 3
-            case "Kreuzer" =>
-              var laenge = 4
-            case "Schlachtschiff" =>
-              var laenge = 5
-          }
-        richtung match{
-          case "oben" =>
-            var richtung = 2
-          case "unten" =>
-            var richtung = 1
-          case "rechts" =>
-            var richtung = 2
-          case "links" =>
-            var richtung = 3
-        }
-         Schiffe.controller.set(laenge, reihe, spalte, richtung, (groesse - 1)) == true
- 
-          
-        case "hit" =>
-      }
-      
-     {
-
-
-
-      S.notice("Name: "+name)
-      S.notice("Age: "+age)
-      S.redirectTo("/")
-    }
-
-    in
-  
-}
   
   def schiffe(in: NodeSeq):NodeSeq = {
     Schiffe.controller.getSize match{
