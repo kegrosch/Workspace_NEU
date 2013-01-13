@@ -1,18 +1,13 @@
 package code
 package snippet
-import _root_.net.liftweb.http.js.{JE,JsCmd,JsCmds}
-import net.liftweb._
-import util._
-import Helpers._
-import http._
-import js.JsCmds._
-import code.comet.SchiffeServer
+
+import net.liftweb.http.js.JE.JsFunc
 
 
 object SchiffAuswahl {
   
-  def ajaxFunc1 : JsCmd = SchiffeServer ! "1"
-  def ajaxFunc2 : JsCmd = SchiffeServer ! "1"
+//  def ajaxFunc1 : JsCmd = SchiffeServer ! "1"
+//  def ajaxFunc2 : JsCmd = SchiffeServer ! "1"
 
 //def renderAjaxButton(html: Group): NodeSeq = {
 //    bind("highlight", html,         
@@ -24,9 +19,12 @@ object SchiffAuswahl {
   
 //) }
   
-def render = {
- "button [onClick]" #> SHtml.onSubmit(("style"->"backgroundColor:red"))
-  
-  }
+//def render = {
+// "button [onClick]" #> SHtml.ajaxInvoke(JsCmds.("style" -> "backgroundColor:red"))
+//  
+//  }
 
+val jsFunc: JsFunc = Function("myFunc")("param1", "param2") {case param1 :: param2 :: Nil =>
+  
+}
 }
