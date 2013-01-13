@@ -68,9 +68,6 @@ function setSchiffBackground(data)
 
 
 
-<form>
-<button id="button" class="lift:SchiffAuswahl.render" type="button">HHHH</button>
-</form>
 		<table>
 			<tr>
 				<th>
@@ -106,6 +103,39 @@ function setSchiffBackground(data)
 		</table>
 
 
+<table>
+<tr>
+<form method="POST" class="lift:SchiffAuswahl.setzen">
+<th> <select name="type">
+      <option value="set">Schiffe setzen</option>
+      <option value="hit">Schiessen</option>      
+    </select>
+    </th>
+    <th>
+    <div class="lift:SchiffAuswahl.schiffe">
+    
+    </div>
+    
+    </th>
+    <th>
+    <div class="lift:SchiffAuswahl.startButtonReihe"></div>
+    </th>
+    <th>
+    <div class="lift:SchiffAuswahl.startButtonSpalte"></div>
+    </th>
+    <th> <select name="richtung">
+      <option>rechts</option>
+      <option>links</option>
+      <option>oben</option>
+      <option>unten</option>      
+    </select>
+    </th>
+    <th>
+    <input type="submit" value="Schiff setzen"></input>
+    </th>
+    </form>
+</tr>
+</table>
 <table>
 <tr>
 <th>Ihr Spielfeld</th><th></th><th>Spielfed des PCs</tr>
