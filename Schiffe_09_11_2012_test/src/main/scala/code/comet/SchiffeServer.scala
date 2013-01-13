@@ -55,10 +55,13 @@ def setSize(groesse: Int){
     Schiffe.controller.solve
     Schiffe.pccontroller.solve
   }
+  def setSchiff(laenge: Int, reihe:Int, spalte:Int, richtung:Int, groesse:Int){
+    Schiffe.controller.set(laenge, reihe, spalte, richtung, groesse)
+  }
   /**
    * process messages that are sent to the Actor.  In
    * this case, we're looking for Strings that are sent
-   * to the ChatServer.  We append them to our Vector of
+   * to the ChatServer.  We append them to our Vector of 
    * messages, and then update all the listeners.
    */
   override def lowPriority = {

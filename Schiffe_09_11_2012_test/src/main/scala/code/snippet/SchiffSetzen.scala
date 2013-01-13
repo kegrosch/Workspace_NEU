@@ -4,6 +4,7 @@ import http._
 import util.Helpers._
 import scala.xml.NodeSeq
 import schiffe.Schiffe
+import code.comet.SchiffeServer
 
 object SchiffSetzen {
  
@@ -18,32 +19,78 @@ object SchiffSetzen {
       var richt =""
   
   def process(){
-      typ match{
-        case "set" => 
-          schiff match{
-            case "Zerstörer" =>
-              laenge = 2
-            case "U-Boot" =>
-              laenge = 3
-            case "Kreuzer" =>
-              laenge = 4
-            case "Schlachtschiff" =>
-              laenge = 5
+    
+    if(typ=="set"){
+      if(schiff=="Zerstörer"){
+        laenge=2
+      }else{
+        if(schiff=="U-Boot"){
+          laenge = 3
+        }else{
+          if(schiff=="Kreuzer"){
+            laenge=4
+          }else{
+            if(schiff=="Schlachtschiff"){
+              laenge=5
+            }else{
+              S.error("FALSCHES SCHIFF EINGEGEBEN")
+            }
           }
-          richt match{
-          case "oben" =>
-            richtung = 2
-          case "unten" =>
-            richtung = 1
-          case "rechts" =>
-            richtung = 2
-          case "links" =>
-            richtung = 3
         }
-         Schiffe.controller.set(laenge, (reihe.toInt-1), (spalte.toInt-1), richtung, (Schiffe.controller.getSize - 1))
-         S.notice("Länge: "+ laenge)
-        case "hit" => 
+      }
+      
+      if(richt=="oben"){
+        richtung=0
+      }else{
+        if(richt=="unten"){
+          richtung=1
+        }else{
+          if(richt=="rechts"){
+            richtung=2
+          }else{
+            if(richt=="links"){
+              richtung=3
+            }else{
+              S.error("FALSCHE RICHTUNG!")
+            }
+          }
+        }
+      }
+       ChatIn.setSchiffe(laenge, (reihe.toInt-1), (spalte.toInt-1), richtung, (Schiffe.controller.getSize - 1))
+    }else{
+      //HIT
     }
+//      typ match{
+//        case "set" => {
+//          schiff match{
+//            case "Zerstörer" =>
+//              laenge = 2
+//            case "U-Boot" =>
+//              laenge = 3
+//            case "Kreuzer" =>
+//              laenge = 4
+//            case "Schlachtschiff" =>
+//              laenge = 5
+//          }
+//          richt match{
+//          case "oben" =>
+//            richtung = 2
+//          case "unten" =>
+//            richtung = 1
+//          case "rechts" =>
+//            richtung = 2
+//          case "links" =>
+//            richtung = 3
+//        }
+         
+//         SchiffeServer.setSchiff(laenge, (reihe.toInt-1), (spalte.toInt-1), richtung, (Schiffe.controller.getSize - 1))
+//        }
+//        case "hit" => 
+    }
+      S.notice("Länge: "+ laenge)
+      S.notice("Reihe: "+ reihe)
+      
+  
    "name=type" #> SHtml.onSubmit(typ = _) &
    "name=schiff" #> SHtml.onSubmit(schiff = _) &
    "name=reihe" #> SHtml.onSubmit(s => asInt(s).foreach(reihe = _)) &
@@ -52,8 +99,9 @@ object SchiffSetzen {
    
    "type=submit" #> SHtml.onSubmitUnit(process)
    
-    }
-   
+    
+}
+}   
  
 
 //    for {
@@ -96,5 +144,3 @@ object SchiffSetzen {
 //    in
 //  
 //}
-}
-}

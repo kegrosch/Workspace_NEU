@@ -40,4 +40,7 @@ object ChatIn {
   def buttonClicked = SHtml.onSubmit(s =>{
     SchiffeServer.setSize(2)
   })
+  def setSchiffe(laenge: Int, reihe:Int, spalte:Int, richtung:Int, groesse:Int) = SHtml.onSubmit(s =>{
+    SchiffeServer.setSchiff(laenge, reihe, spalte, richtung, groesse)
+  })
 }
