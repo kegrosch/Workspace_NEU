@@ -1,10 +1,10 @@
 #Source Hashes
-#Mon Jan 14 13:33:34 CET 2013
+#Mon Jan 14 13:41:23 CET 2013
 src\\main\\scala\\code\\comet\\StatusLine.scala=7089db117357ba35237c1ded5cfc3bf6aafbc022
 src\\main\\scala\\code\\snippet\\ChatIn.scala=632fa94f959dad47c0a2397a9283764a0ed67a77
 src\\main\\scala\\schiffe\\Model\\Schiff.scala=d407e77ae702e4d67de904aed300115504ae673b
 src\\main\\scala\\schiffe\\View\\SpielerPanel.scala=3df72a1b159fef9f5524aa05c3cce3e97b9ecdda
-src\\main\\scala\\code\\comet\\FeldRenderer.scala=73969fb8630eb99002d0ed095928e49825a1f7f6
+src\\main\\scala\\code\\comet\\FeldRenderer.scala=411870653066d599a7c959dc19ce92c920a20d58
 src\\main\\scala\\code\\snippet\\CommandLine.scala=89ad5eae4ae79acf1b7dcd6c0f3e6b09d14b995c
 src\\main\\scala\\code\\snippet\\ZelleSnippet.scala=60d05427b54ad84bd02342701c02efb477556d40
 src\\main\\scala\\schiffe\\Model\\Zelle.scala=dc451fdf5d219dcbfc425c04ddaa2d40450e5031
