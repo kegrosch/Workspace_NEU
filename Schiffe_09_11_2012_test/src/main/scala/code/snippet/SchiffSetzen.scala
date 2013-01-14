@@ -20,10 +20,8 @@ object SchiffSetzen {
   
   
   def process(){
-    JOptionPane.showMessageDialog(null,
-                                              "Sie muessen eine Ganzzahl eingeben: " + typ,
-                                              "Eine Nachricht",                                       
-                                              JOptionPane.WARNING_MESSAGE);
+    
+    
     if(typ=="set"){
       if(schiff=="Zerstörer"){
         laenge=2
@@ -60,14 +58,15 @@ object SchiffSetzen {
           }
         }
       }
-      JOptionPane.showMessageDialog(null,
-                                              "Sie muessen eine Ganzzahl eingeben",
-                                              "Eine Nachricht",                                       
-                                              JOptionPane.WARNING_MESSAGE);
-       ChatIn.setSchiffe(laenge, (reihe.toInt-1), (spalte.toInt-1), richtung, (Schiffe.controller.getSize - 1))
+                                     
+                                              
+//       ChatIn.setSchiffe(laenge, (reihe.toInt-1), (spalte.toInt-1), richtung, (Schiffe.controller.getSize - 1))
+//       ChatIn.setSchiffen()
+       SchiffeServer.setSchiff(laenge, (reihe.toInt), (spalte.toInt), richtung, (Schiffe.controller.getSize - 1))
+//      SchiffeServer.setSchiff(3, 1, 1, 0, 4)
     }else{
       JOptionPane.showMessageDialog(null,
-                                              "FALSXCH",
+                                              "FALSCH - Hit wurde eingegeben",
                                               "Eine Nachricht",                                       
                                               JOptionPane.WARNING_MESSAGE);
       //HIT
@@ -109,8 +108,7 @@ object SchiffSetzen {
    "name=schiff" #> SHtml.onSubmit(schiff = _) &
    "name=reihe" #> SHtml.onSubmit(s => asInt(s).foreach(reihe = _)) &
    "name=spalte" #> SHtml.onSubmit(s => asInt(s).foreach(spalte = _)) &
-   "name=richtung" #> SHtml.onSubmit(richt = _)
-   
+   "name=richtung" #> SHtml.onSubmit(richt = _)&   
    "type=submit" #> SHtml.onSubmitUnit(process)
    
     
