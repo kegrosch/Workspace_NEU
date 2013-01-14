@@ -168,7 +168,7 @@ def createSchiffe =
          for (row <- 0 until Schiffe.controller.getSize) yield {
              <tr>
                   { for (column <- 0 until Schiffe.controller.getSize) yield {
-                    var gesetzt = Schiffe.controller.cell(row, column).getGesetzt
+                    var gesetzt = Schiffe.pccontroller.cell(row, column).getGesetzt
                     <td style="height: 48px; width: 48px;" border="0">
                    <button  border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
       

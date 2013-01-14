@@ -114,10 +114,7 @@ class Controller (var feld: Feld) extends Publisher{
     else{
       statusText="Schiff nicht gesetzt. Falsche Eingabe"
     }
-    JOptionPane.showMessageDialog(null,
-                                              "Sie muessen eine Ganzzahl eingeben",
-                                              "Eine Nachricht",                                       
-                                              JOptionPane.WARNING_MESSAGE);
+    
     publish(new CellChanged)
 //    publish(new SchiffGesetzt(laenge))
     return freiGesetzt

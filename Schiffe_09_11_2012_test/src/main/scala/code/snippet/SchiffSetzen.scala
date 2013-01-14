@@ -5,6 +5,7 @@ import util.Helpers._
 import scala.xml.NodeSeq
 import schiffe.Schiffe
 import code.comet.SchiffeServer
+import javax.swing.JOptionPane
 
 object SchiffSetzen {
  
@@ -56,8 +57,16 @@ object SchiffSetzen {
           }
         }
       }
+      JOptionPane.showMessageDialog(null,
+                                              "Sie muessen eine Ganzzahl eingeben",
+                                              "Eine Nachricht",                                       
+                                              JOptionPane.WARNING_MESSAGE);
        ChatIn.setSchiffe(laenge, (reihe.toInt-1), (spalte.toInt-1), richtung, (Schiffe.controller.getSize - 1))
     }else{
+      JOptionPane.showMessageDialog(null,
+                                              "FALSXCH",
+                                              "Eine Nachricht",                                       
+                                              JOptionPane.WARNING_MESSAGE);
       //HIT
     }
 //      typ match{
@@ -87,9 +96,9 @@ object SchiffSetzen {
 //        }
 //        case "hit" => 
     
-      S.notice("Länge: "+ laenge)
-      S.notice("Reihe: "+ reihe)
-      S.redirectTo("/")
+//      S.notice("Länge: "+ laenge)
+//      S.notice("Reihe: "+ reihe)
+//      S.redirectTo("/")
   
 }
   
