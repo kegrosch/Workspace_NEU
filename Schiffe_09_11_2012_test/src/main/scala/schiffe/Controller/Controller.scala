@@ -6,7 +6,7 @@ import schiffe.Model.Zelle
 import scala.swing.Publisher
 import scala.swing.event.Event
 case object SpielFertig extends Event
-case object CellChanged extends Event
+case class CellChanged extends Event
 case class SchiffGesetzt(laenge:Int) extends Event
 case class FeldResize(newSize:Int) extends Event
 class Controller (var feld: Feld) extends Publisher{
@@ -58,13 +58,13 @@ class Controller (var feld: Feld) extends Publisher{
     feld= feld.solve
 //    notifyObservers
     statusText="Spiel beendet"
-      publish(CellChanged)
+      publish(new CellChanged)
   }
   def hit(reihe: Int, spalte: Int): Boolean ={
     println("REIHE: " + reihe + " Spalte: " + spalte) 
 //    publish(CellChanged)
     if(feld.hit(reihe-1, spalte-1)){
-      publish(CellChanged)
+      publish(new CellChanged)
        statusText="Getroffen"
       return true
     }else{
@@ -113,7 +113,7 @@ class Controller (var feld: Feld) extends Publisher{
     else{
       statusText="Schiff nicht gesetzt. Falsche Eingabe"
     }
-    publish(CellChanged)
+    publish(new CellChanged)
 //    publish(new SchiffGesetzt(laenge))
     return freiGesetzt
     
@@ -149,7 +149,7 @@ def setcomputerschiff2={
               }
 
             }
-  publish(CellChanged)
+  publish(new CellChanged)
 }
   var alleGesetzt = false
   var zaehlerAlleGesetzt = 0
@@ -239,7 +239,7 @@ def setcomputerschiff2={
                
               }
             }
-            publish(CellChanged)
+            publish(new CellChanged)
   }
   def setcomputerschiff10{
     while (alleGesetzt == false) {
@@ -368,5 +368,5 @@ if (zaehlerAlleGesetzt == 10) {
     }
   
   
-  publish(CellChanged)
+  publish(new CellChanged)
 }

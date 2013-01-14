@@ -51,7 +51,7 @@ class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel, 
     background = java.awt.Color.GRAY
 
     reactions += {
-      case CellChanged =>
+      case e: CellChanged =>
         //        redraw
         //        repaint
         //        println("I: "+ a)

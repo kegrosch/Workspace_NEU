@@ -13,7 +13,7 @@ class Tui(var controller: Controller, pccontroller: Controller) extends Reactor 
     printTui
   reactions += {
     case e: FeldResize => printTui
-    case CellChanged => printTui
+    case e: CellChanged => printTui
   }
   def update = printTui
   def printTui = {

@@ -165,7 +165,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
 
     case e: FeldResize => resize(e.newSize)
 
-    case CellChanged => redraw
+    case e: CellChanged => redraw
     
     case SpielFertig => endGame
     

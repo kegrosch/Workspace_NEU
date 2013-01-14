@@ -25,7 +25,7 @@ class PCPanel(pccontroller: Controller, size: Int, controller: Controller) exten
     background = java.awt.Color.GRAY
 
     reactions += {
-      case CellChanged =>
+      case e: CellChanged =>
         setBackground
 
       case ButtonClicked(buttons) =>
@@ -146,7 +146,7 @@ class PCPanel(pccontroller: Controller, size: Int, controller: Controller) exten
       case 5 => pccontroller.setcomputerschiff5
       case 10 => pccontroller.setcomputerschiff10
       
-      publish(CellChanged)
+      publish(new CellChanged)
     }
   }
   def setBackground = {

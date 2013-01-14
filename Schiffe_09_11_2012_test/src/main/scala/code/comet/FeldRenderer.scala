@@ -10,10 +10,7 @@ import schiffe._
 import schiffe.Controller._
 import schiffe.Controller.CellChanged
 import Schiffe.controller._
-import schiffe.Controller.CellChanged
-import schiffe.Controller.CellChanged
-import schiffe.Controller.CellChanged
-import schiffe.Controller.CellChanged
+
 
 
 
@@ -28,9 +25,9 @@ class FeldRenderer extends CometActor with CometListener with Reactor{
   listenTo(Schiffe.controller)
 
   reactions += {
-//    case e: FeldResize => println("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+    case e: FeldResize => println("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
     
-  case CellChanged => reRender()
+  case e: CellChanged => reRender()
   
   }
   private var status: String = "" // private state

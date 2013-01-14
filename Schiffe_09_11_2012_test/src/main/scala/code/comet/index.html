@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><title>Home</title>
+    <link rel="stylesheet" type="text/css" href="Sudoku.css"/>
+  </head>
+
+  <body class="lift:content_id=main">
+    <div id="main" class="lift:surround?with=sudoku-template;at=content">
+      <div  id="outmost" >
+        <div class="lift:comet?type=GridRenderer">
+        <div class="highlightbuttons">
+          Highlight: 
+          <lift:HighlightButtonSnippet.renderAjaxButton>
+            <highlight:button0/>
+            <highlight:button1/>
+            <highlight:button2/>
+            <highlight:button3/>
+            <highlight:button4/>
+            <highlight:button5/>
+            <highlight:button6/>
+            <highlight:button7/>
+            <highlight:button8/>
+            <highlight:button9/>
+          </lift:HighlightButtonSnippet.renderAjaxButton>
+             
+                    
+         
+         
+               
+        </div>
+     
+        
+        <table class="grid lift:GridSnippet">
+          <tr>
+            <td class="lift:CellSnippet?row=0;column=0" id="NWblock">
+               <div class="cellouter">
+                  <div id="given" class="cellborder">
+                     <div class="cell">1  
+                     </div>
+                  </div>
+               </div>
+            </td>
+            <td id="Nblock">
+              <div class="cellouter">
+                <div class="cellborder">
+                  <div class="cell">
+                    <table class="candidate" align="center">
+                      <tr>
+                        <td class="candidatecell">1</td>
+                        <td class="candidatecell">2</td>
+                        <td class="candidatecell">3</td>
+                      </tr>
+                      <tr>
+                        <td class="candidatecell">4</td>
+                        <td class="candidatecell">5</td>
+                        <td class="candidatecell">6</td>
+                      </tr>
+                      <tr>
+                        <td class="candidatecell">7</td>
+                        <td class="candidatecell">8</td>
+                        <td class="candidatecell">9</td>
+                      </tr> 
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td id="NEblock">
+              <div class="cellouter" onclick="setShowCandidates(0,0 )">
+                <div id="highlighted" class="cellborder">
+                  <div class="cell">3 </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+        </div> 
+        <div id="status" class="lift:comet?type=StatusLine"> 
+          StatusLine
+        </div>
+        <div>
+          <form class="lift:form.ajax">
+            <input class="lift:CommandLine" id="command"/>
+            <input type="submit" value="Command"/>
+          </form>
+        </div>
+      </div>  
+    </div>
+  </body>
+</html>
+
