@@ -8,16 +8,16 @@ import code.comet.SchiffeServer
 import javax.swing.JOptionPane
 
 object SchiffSetzen {
- 
-  
-  def render = {
-  var laenge = 0  
+ var laenge = 0  
   var reihe = 0
   var spalte = 0
   var richtung = 0
   var schiff =""
     var typ =""
       var richt =""
+  
+  def render = {
+  
   
   def process(){
     JOptionPane.showMessageDialog(null,
