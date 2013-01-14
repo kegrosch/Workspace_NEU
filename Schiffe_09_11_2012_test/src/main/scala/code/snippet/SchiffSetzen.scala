@@ -20,7 +20,10 @@ object SchiffSetzen {
       var richt =""
   
   def process(){
-    
+    JOptionPane.showMessageDialog(null,
+                                              "Sie muessen eine Ganzzahl eingeben: " + typ,
+                                              "Eine Nachricht",                                       
+                                              JOptionPane.WARNING_MESSAGE);
     if(typ=="set"){
       if(schiff=="Zerstörer"){
         laenge=2
@@ -102,7 +105,7 @@ object SchiffSetzen {
   
 }
   
-   "name=type" #> SHtml.onSubmit(typ = _) &
+   "name=typ" #> SHtml.onSubmit(typ = _) &
    "name=schiff" #> SHtml.onSubmit(schiff = _) &
    "name=reihe" #> SHtml.onSubmit(s => asInt(s).foreach(reihe = _)) &
    "name=spalte" #> SHtml.onSubmit(s => asInt(s).foreach(spalte = _)) &
