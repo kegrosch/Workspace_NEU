@@ -44,4 +44,8 @@ object ChatIn {
     SchiffeServer.setSchiff(2, 1, 1, 0, 4)
     Alert("JJKJKJKJKJ")
   })
+def setSchiffen() = SHtml.onSubmit(s =>{
+    SchiffeServer.setSchiff(2, 1, 1, 0, 4)
+    Alert("JJKJKJKJKJ")
+  })
 }
