@@ -1,199 +1,173 @@
-<!DOCTYPE html>
-
-
-<html>
-
-
-<head>
-
-
-<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-<title>Home</title>
-</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Schiffe Versenken</title>	
+	</head>
 <body class="lift:content_id=main">
-
-	<div id="main">
-
-<div class="lift:comet?type=FeldRenderer">
-		<h2>Schiffe Versenken</h2>
-
+	<div id="main" class="lift:surround?with=default;at=content">
 		<script>
-var startButtonGesetzt = 0;
-var startButton;
-var gesetzt = 0;
-var aktuellerButton;
-</script>
+			var startButtonGesetzt = 0;
+			var startButton;
+			var gesetzt = 0;
+			var aktuellerButton;
+		</script>
 		<script>
-function setStart(data)
-{
-	if(startButtonGesetzt==1){
-		
-		startButton.style.backgroundColor='gray';
-		
-		
-	}
-	if(startButton == data){
-		startButtonGesetzt = 0;
-		startButton=null
-	}else{
-	data.style.backgroundColor=(data.style.backgroundColor=='gray')?'green':'gray';
-	data.class="lift:ChatIn.groesse2";
-	startButtonGesetzt = 1;
-	startButton = data;
-	Alert("Gesetzt: " + gesetzt);
-	}
-}
-</script>
+			function setStart(data) {
+				if (startButtonGesetzt == 1) {
+
+					startButton.style.backgroundColor = 'gray';
+
+				}
+				if (startButton == data) {
+					startButtonGesetzt = 0;
+					startButton = null
+				} else {
+					data.style.backgroundColor = (data.style.backgroundColor == 'gray') ? 'green'
+							: 'gray';
+					data.class = "lift:ChatIn.groesse2";
+					startButtonGesetzt = 1;
+					startButton = data;
+					Alert("Gesetzt: " + gesetzt);
+				}
+			}
+		</script>
 		<script>
+			function setSchiffBackground(data) {
+				if (gesetzt == 1) {
 
-function setSchiffBackground(data)
-{
-	if(gesetzt==1){
+					aktuellerButton.style.backgroundColor = 'white';
+
+				}
+				if (aktuellerButton == data) {
+					gesetzt = 0;
+					aktuellerButton = null
+				} else {
+					data.style.backgroundColor = (data.style.backgroundColor == 'white') ? 'red'
+							: 'white';
+					gesetzt = 1;
+					aktuellerButton = data;
+					Alert("Gesetzt: " + gesetzt);
+				}
+			}
+		</script>
 		
-		aktuellerButton.style.backgroundColor='white';
 		
-		
-	}
-	if(aktuellerButton == data){
-		gesetzt = 0;
-		aktuellerButton=null
-	}else{
-	data.style.backgroundColor=(data.style.backgroundColor=='white')?'red':'white';
-	gesetzt = 1;
-	aktuellerButton = data;
-	Alert("Gesetzt: " + gesetzt);
-	}
-}
-</script>
-
-
-
-		<table>
-			<tr>
-				<th>
-					<div>
-
+			<h2>Schiffe Versenken</h2>
+			<table>
+				<tr>
+					<th>
+						<div>
+							<form>
+								<input class="lift:ChatIn.neuStarten" type="submit"
+									value="Neu Starten" />
+							</form>
+						</div>
+					</th>
+					<th>
 						<form>
-							<input class="lift:ChatIn.neuStarten" type="submit"
-								value="Neu Starten" />
+							<input class="lift:ChatIn.groesse2" type="submit"
+								value="Spielgröße 2" />
 						</form>
-					</div>
+					</th>
+					<th>
+						<form>
+							<input class="lift:ChatIn.groesse5" type="submit"
+								value="Spielgröße 5" />
+						</form>
+					</th>
+					<th>
+						<form>
+							<input class="lift:ChatIn.groesse10" type="submit"
+								value="Spielgröße 10" />
+						</form>
+					</th>
+					<th>
+						<form>
+							<input class="lift:ChatIn.loesen" type="submit" value="Lösen" />
+						</form>
+					</th>
+					<th>
+						<form>
+							<input class="lift:ChatIn.setSchiffen" type="submit" value="SETZEN" />
+						</form>
+					</th>
+				</tr>
+			</table>
+			
+			<table>
+				<tr>
+					<th>
+						<form class="lift:SchiffSetzen?form=post">
+							<input name="type" value="set"> <input name="schiff">
+									<input name="reihe"><input name="spalte"> <input
+								name="richtung"><input type="submit" value="SSS">
+						</form>
+					</th>
+					<th>
+						<form class="lift:SchiffSetzen?form=post">
+							<select name="type">
+								<option value="set">Schiffe setzen</option>
+								<option value="hit">Schiessen</option>
+							</select>
+					</th>
+					<th>
+						<div class="lift:SchiffAuswahl.schiffe"></div>
 
-				</th>
-				<th>
-					<form>
-						<input class="lift:ChatIn.groesse2" type="submit"
-							value="Spielgröße 2" />
+					</th>
+					<th>
+						<div class="lift:SchiffAuswahl.startButtonReihe"></div>
+					</th>
+					<th>
+						<div class="lift:SchiffAuswahl.startButtonSpalte"></div>
+					</th>
+					<th><select name="richtung">
+							<option>rechts</option>
+							<option>links</option>
+							<option>oben</option>
+							<option>unten</option>
+					</select></th>
+					<th><input type="submit" value="Schiff setzen"></th>
 					</form>
-				</th>
-				<th>
-					<form>
-						<input class="lift:ChatIn.groesse5" type="submit"
-							value="Spielgröße 5" />
-					</form>
-				</th>
-				<th>
-					<form>
-						<input class="lift:ChatIn.groesse10" type="submit"
-							value="Spielgröße 10" />
-					</form>
-				</th>
-				<th>
-					<form>
-						<input class="lift:ChatIn.loesen" type="submit" value="Lösen" />
-					</form>
-				</th>
-			</tr>
-		</table>
+				</tr>
+			</table>
+			
+			<table>
+				<tr>
+					<th>Ihr Spielfeld</th>
+					<th></th>
+					<th>Spielfed des PCs
+				</tr>
+				<tr>
+					<th>
+						<div class="pcFeld">
+
+							<div class="lift:Feld.createUserFeld" width="800px"></div>
+
+						</div>
+
+					</th>
+
+					<th>
+
+						<div class="lift:Feld.createSchiffe" width=500"></div>
+						<th><div class="userFeld">
+
+								<div class="lift:Feld.createPcFeld" width="200px"></div>
+
+							</div></th>
+							</th>
+				</tr>
+
+			</table>
 
 
-		<table>
-			<tr>
-		
-				<form class="lift:SchiffSetzen?form=post">
-					<input name="type" value="set"><input name="schiff"><input
-						name="reihe"> <input name="spalte"><input
-						name="richtung"><input type="submit" value="SSS">
-				</form>
-				</div>
-				<div>
-					<form class="lift:SchiffSetzen?form=post">
-				<th><select name="type">
-						<option value="set">Schiffe setzen</option>
-						<option value="hit">Schiessen</option>
-				</select></th>
-				<th>
-					<div class="lift:SchiffAuswahl.schiffe"></div>
-
-				</th>
-				<th>
-					<div class="lift:SchiffAuswahl.startButtonReihe"></div>
-				</th>
-				<th>
-					<div class="lift:SchiffAuswahl.startButtonSpalte"></div>
-				</th>
-				<th><select name="richtung">
-						<option>rechts</option>
-						<option>links</option>
-						<option>oben</option>
-						<option>unten</option>
-				</select></th>
-				<th><input type="submit" value="Schiff setzen"></th>
-				</form>
-
-
-			</tr>
-		</table>
-		<table>
-			<tr>
-				<th>Ihr Spielfeld</th>
-				<th></th>
-				<th>Spielfed des PCs
-			</tr>
-
-			<tr>
-				<th>
-
-					<div class="pcFeld">
-
-						<div class="lift:Feld.createUserFeld" width="800px"></div>
-
-					</div>
-
-				</th>
-
-				<th>
-
-					<div class="lift:Feld.createSchiffe" width=500"></div>
-				<th><div class="userFeld">
-
-						<div class="lift:Feld.createPcFeld" width="200px"></div>
-
-					</div></th>
-			</tr>
-
-		</table>
-
-
-		<table data-lift="SchiffeSetzen">
-			<tr>
-				<td onClick="lift:SchiffSetzen.onClick">HALLO</td>
-			</tr>
-		</table>
-		</div>
-		<div id="status" class="lift:comet?type=StatusLine">StatusLine</div>
-		<div>
-			<form class="lift:form.ajax">
-				<input class="lift:CommandLine" id="command" /> <input type="submit"
-					value="Command" />
-			</form>
-		</div>
 
 	</div>
 
-	</div>
 </body>
 
 
-</html>
 
+
+</html>

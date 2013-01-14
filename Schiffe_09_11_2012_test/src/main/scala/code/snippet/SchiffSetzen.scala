@@ -86,10 +86,12 @@ object SchiffSetzen {
 //         SchiffeServer.setSchiff(laenge, (reihe.toInt-1), (spalte.toInt-1), richtung, (Schiffe.controller.getSize - 1))
 //        }
 //        case "hit" => 
-    }
+    
       S.notice("Länge: "+ laenge)
       S.notice("Reihe: "+ reihe)
-      
+      S.redirectTo("/")
+  
+}
   
    "name=type" #> SHtml.onSubmit(typ = _) &
    "name=schiff" #> SHtml.onSubmit(schiff = _) &

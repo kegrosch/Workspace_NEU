@@ -302,3 +302,19 @@ update
 ~jetty-run
 update
 ~jetty-run
+update
+~jetty-run
+update
+~jetty-run
+sbt clean
+clean
+reload
+update
+reload
+ update
+~jetty-run
+quit
+update
+~jetty-run
+update
+~jetty-run

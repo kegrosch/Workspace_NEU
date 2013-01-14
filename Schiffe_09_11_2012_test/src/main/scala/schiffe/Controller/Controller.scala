@@ -5,6 +5,7 @@ import schiffe.Model.Schiff
 import schiffe.Model.Zelle
 import scala.swing.Publisher
 import scala.swing.event.Event
+import javax.swing.JOptionPane
 case object SpielFertig extends Event
 case class CellChanged extends Event
 case class SchiffGesetzt(laenge:Int) extends Event
@@ -113,6 +114,10 @@ class Controller (var feld: Feld) extends Publisher{
     else{
       statusText="Schiff nicht gesetzt. Falsche Eingabe"
     }
+    JOptionPane.showMessageDialog(null,
+                                              "Sie muessen eine Ganzzahl eingeben",
+                                              "Eine Nachricht",                                       
+                                              JOptionPane.WARNING_MESSAGE);
     publish(new CellChanged)
 //    publish(new SchiffGesetzt(laenge))
     return freiGesetzt
