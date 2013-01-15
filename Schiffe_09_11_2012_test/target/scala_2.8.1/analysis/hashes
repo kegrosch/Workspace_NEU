@@ -1,7 +1,7 @@
 #Source Hashes
-#Mon Jan 14 20:50:55 CET 2013
+#Tue Jan 15 22:48:51 CET 2013
 src\\main\\scala\\code\\comet\\StatusLine.scala=7089db117357ba35237c1ded5cfc3bf6aafbc022
-src\\main\\scala\\code\\snippet\\ChatIn.scala=ca93572d05fdc2f34bf6b01b7874cde5aa428c54
+src\\main\\scala\\code\\snippet\\ChatIn.scala=4d8ad293400b389082195655eb4328454d50acd7
 src\\main\\scala\\schiffe\\Model\\Schiff.scala=d407e77ae702e4d67de904aed300115504ae673b
 src\\main\\scala\\schiffe\\View\\SpielerPanel.scala=b1a279c6f2bb7483f6166eee777a80b1fd3f441d
 src\\main\\scala\\code\\comet\\FeldRenderer.scala=b6b290d2895905ad9d0b7aeceaae634df97e1685
@@ -14,11 +14,11 @@ src\\main\\scala\\schiffe\\View\\SchiffPanel.scala=5ac763465ccef0d65a2822bd5e1f0
 src\\main\\scala\\schiffe\\Schiffe.scala=37ff48197d5857c134df6af45c885b1145b19618
 src\\main\\scala\\code\\snippet\\HelloWorld.scala=de230f51dc065543636a40e9d2d204f30f1bc04d
 src\\main\\scala\\code\\snippet\\Funktionsleiste.scala=90825c5499da5c5d75c113fc921c1467c30c7dd7
-src\\main\\scala\\code\\snippet\\SchiffAuswahl.scala=d2b6c8e0744c392501b276d064fb7c2eb671ccec
+src\\main\\scala\\code\\snippet\\SchiffAuswahl.scala=0356a0464cced6582570fcc8952a2af3f652b0c8
 src\\main\\scala\\schiffe\\Controller\\Controller.scala=f381f6d7fd00e4d5ebc323470b3c5229600670ab
 src\\main\\scala\\schiffe\\Model\\Feld.scala=a6f2856111f26837387e3dbc063be9074580d76f
-src\\main\\scala\\code\\snippet\\Feld.scala=62df5c13b661fc7a9f77d3a3301d66be9d07c2c0
-src\\main\\scala\\code\\snippet\\SchiffSetzen.scala=489fa486453f64a16effcc78342312f7d19e09a7
+src\\main\\scala\\code\\snippet\\Feld.scala=6fa575b6ccd9be1d871f9e7efa7d98f72ec9c543
+src\\main\\scala\\code\\snippet\\SchiffSetzen.scala=c91172d5b077a5c25dce3c908619935f3bc57923
 src\\main\\scala\\code\\lib\\DependencyFactory.scala=e5d94ad2d69afe24876734d3cc8549a5f3a7c7fd
 src\\main\\scala\\bootstrap\\liftweb\\Boot.scala=b3c19592692dfc0cd4f24523b9c7e17a8ddeb0eb
 src\\main\\scala\\schiffe\\View\\GUI.scala=42d8a6b51b06775306ab3e05c17a037897945a2a
@@ -30,4 +30,4 @@ src\\main\\scala\\schiffe\\View\\Tui.scala=52decd23653486c65cacb0b51add4ccd4828f
 src\\main\\scala\\code\\snippet\\FeldSnippet.scala=5b84cb42779ef4e24176dc34e7109878d65ab0bb
 src\\main\\scala\\code\\snippet\\SchiffeSetzen.scala=78327a61f3fcfb223dec3189e2e09110f5912d37
 src\\main\\scala\\schiffe\\util\\Observer.scala=4bd8422db9772753ee59d2861037fa64fc1f2613
-src\\main\\scala\\code\\comet\\SchiffeServer.scala=38d60837dc5a4cd32d7e31bcd62a6a82511a429a
+src\\main\\scala\\code\\comet\\SchiffeServer.scala=67caeaff0e28041ab2d995ac56de0b7e488b8200

@@ -10,14 +10,28 @@ import net.liftweb.http.S
 
 
 object SchiffAuswahl {
- 
+  var z_klein = false
+  var z_mittel = false
+  var u_mittel = false
+  var k_mittel = false
+  var z1 = false
+  var z2 = false
+  var z3 = false
+  var z4 = false
+  var u1 = false
+  var u2 = false
+  var u3 = false
+  var k1 = false
+  var k2 = false
+  var s = false
   
   def schiffe(in: NodeSeq):NodeSeq = {
     Schiffe.controller.getSize match{
-      case 2 => <select name="schiff"><option>Zerstörer</option></select>
-      case 5 => <select name="schiff"><option>Zerstörer</option><option>U-Boot</option><option>Kreuzer</option></select>
+      case 2 => if(z_klein==false){<option value="Zerstörer">Zerstörer</option>}else{ <div></div>}
+       
+      case 5 => <option value="Zerstörer">Zerstörer</option><option value="U-Boot">U-Boot</option><option value="Kreuzer">Kreuzer</option>
         
-      case 10 => <select name="schiff"><option>Zerstörer 1</option><option>Zerstörer 2</option><option>Zerstörer 3</option><option>Zerstörer 4</option><option>U-Boot 1</option><option>U-Boot 2</option><option>U-Boot 3</option><option>Kreuzer 1</option><option>Kreuzer 2</option><option>Schlachtschiff</option></select>
+      case 10 => <option value="Zerstörer">Zerstörer 1</option><option value="Zerstörer">Zerstörer 2</option><option value="Zerstörer">Zerstörer 3</option><option value="Zerstörer">Zerstörer 4</option><option value="U-Boot">U-Boot 1</option><option value="U-Boot">U-Boot 2</option><option value="U-Boot">U-Boot 3</option><option value="Kreuzer">Kreuzer 1</option><option value="Kreuzer">Kreuzer 2</option><option value="Schlachtschiff">Schlachtschiff</option>
     }
     
     
@@ -25,20 +39,20 @@ object SchiffAuswahl {
   
 def startButtonReihe(in: NodeSeq):NodeSeq = {
   Schiffe.controller.getSize match{
-      case 2 => <select name="reihe"><option>1</option><option>2</option></select>
-      case 5 => <select name="reihe"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+      case 2 => <option>1</option><option>2</option>
+      case 5 => <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
         
-      case 10 => <select name="reihe"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select>
+      case 10 => <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
     }
   
   
 }
 def startButtonSpalte(in: NodeSeq):NodeSeq = {
   Schiffe.controller.getSize match{
-      case 2 => <select name="spalte"><option>1</option><option>2</option></select>
-      case 5 => <select name="spalte"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+      case 2 => <option>1</option><option>2</option>
+      case 5 => <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
         
-      case 10 => <select name="spalte"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select>
+      case 10 => <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
     }
   
   

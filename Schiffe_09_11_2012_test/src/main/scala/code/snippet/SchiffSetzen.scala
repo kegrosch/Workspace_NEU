@@ -6,6 +6,7 @@ import scala.xml.NodeSeq
 import schiffe.Schiffe
 import code.comet.SchiffeServer
 import javax.swing.JOptionPane
+import net.liftweb.http.js.JE.JsRaw
 
 object SchiffSetzen {
  var laenge = 0  
@@ -20,19 +21,63 @@ object SchiffSetzen {
   
   
   def process(){
-    
+      
     
     if(typ=="set"){
       if(schiff=="Zerstörer"){
+        Schiffe.controller.getSize match{
+          case 2 => SchiffAuswahl.z_klein = true
+          case 5 => SchiffAuswahl.z_mittel = true
+          case 10 => {
+            if(SchiffAuswahl.z1==false){
+              SchiffAuswahl.z1 = true
+            }else{
+              if(SchiffAuswahl.z2==false){
+                SchiffAuswahl.z2=true
+              }else{
+                if(SchiffAuswahl.z3==false){
+                  SchiffAuswahl.z3=true
+                }else{
+                  SchiffAuswahl.z4=true
+                }
+              }
+            }
+          }
+        }
         laenge=2
       }else{
         if(schiff=="U-Boot"){
+          Schiffe.controller.getSize match{
+          case 5 => SchiffAuswahl.u_mittel = true
+          case 10 => {
+            if(SchiffAuswahl.u1==false){
+              SchiffAuswahl.u1 = true
+            }else{
+              if(SchiffAuswahl.u2==false){
+                SchiffAuswahl.u2=true
+              }else{
+                SchiffAuswahl.u3=true                
+              }
+            }
+          }
+        }
           laenge = 3
         }else{
           if(schiff=="Kreuzer"){
+            Schiffe.controller.getSize match{
+            case 5 => SchiffAuswahl.k_mittel = true
+            case 10 => {
+            if(SchiffAuswahl.k1==false){
+              SchiffAuswahl.k1 = true
+            }else{              
+                SchiffAuswahl.k2=true              
+            }
+          }
+        }
             laenge=4
           }else{
             if(schiff=="Schlachtschiff"){
+              SchiffAuswahl.s = true
               laenge=5
             }else{
               S.error("FALSCHES SCHIFF EINGEGEBEN")

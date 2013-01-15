@@ -44,6 +44,9 @@ object SchiffeServer extends LiftActor with ListenerManager {
    * danger or locking.
    */
   def createUpdate = msgs
+def hit(reihe: Int, spalte:Int){
+    Schiffe.pccontroller.hit(reihe, spalte)
+  }
 def setSize(groesse: Int){
     Schiffe.controller.setSize(groesse); Schiffe.pccontroller.setSize(groesse)
   }

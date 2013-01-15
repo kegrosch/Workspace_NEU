@@ -7,6 +7,7 @@ import js._
 import JsCmds._
 import JE._
 import code.comet.SchiffeServer
+import javax.swing.JOptionPane
 object ChatIn {
 
   /**
@@ -17,11 +18,38 @@ object ChatIn {
    * to the ChatServer and then returns JavaScript which
    * clears the input.
    */
+  
+  def hit = SHtml.onSubmit(s => {
+    JOptionPane.showMessageDialog(null,
+                                              "SET:  Schiff:",
+                                              "Eine Nachricht",                                       
+                                              JOptionPane.WARNING_MESSAGE);
+    var reihe = S.attr("reihe") openOr "myparam: Y U NO DEFINED!?"
+    var spalte = S.attr("spalte") openOr "myparam: Y U NO DEFINED!?"
+    SchiffeServer.hit(reihe.toInt, spalte.toInt)
+    
+  })
+    
+  
   def render = SHtml.onSubmit(s => {
     SchiffeServer ! s
 //    SetValById("chat_in", "")
   })
   def neuStarten = SHtml.onSubmit(s =>{
+    SchiffAuswahl.z_klein = false
+  SchiffAuswahl.z_mittel = false
+  SchiffAuswahl.u_mittel = false
+  SchiffAuswahl.k_mittel = false
+  SchiffAuswahl.z1 = false
+  SchiffAuswahl.z2 = false
+  SchiffAuswahl.z3 = false
+  SchiffAuswahl.z4 = false
+  SchiffAuswahl.u1 = false
+  SchiffAuswahl.u2 = false
+  SchiffAuswahl.u3 = false
+  SchiffAuswahl.k1 = false
+  SchiffAuswahl.k2 = false
+  SchiffAuswahl.s = false
     SchiffeServer.neuStarten
   })
   def loesen = SHtml.onSubmit(s =>{
