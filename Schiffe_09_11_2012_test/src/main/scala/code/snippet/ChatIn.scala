@@ -65,16 +65,20 @@ object ChatIn {
   def buttonClicked = SHtml.onSubmit(s =>{
     SchiffeServer.setSize(2)
   })
-    def hit =  SHtml.onSubmit(s => {
-    
-    var reihe = S.attr("reihe") openOr "myparam: Y U NO DEFINED!?"
-    var spalte = S.attr("spalte") openOr "myparam: Y U NO DEFINED!?"
-    SchiffeServer.hit(reihe.toInt, spalte.toInt)
-    
+    def hit = SHtml.onSubmit(s => {
+            
+//    var param = S.get("reihe")
+    var reihe = S.param("reihe") //openOr "myparam: Y U NO DEFINED!?"
+//    ..param("reihe") openOr "Reihe: Y U NO DEFINED!?"
+    var spalte = S.param("spalte")
+//      S.attr("spalte") openOr "Spalte: Y U NO DEFINED!?"
     JOptionPane.showMessageDialog(null,
-                                              "SET:  Schiff:",
+                                              "Reihe: "+ reihe + " Spalte: " + spalte,
                                               "Eine Nachricht",                                       
                                               JOptionPane.WARNING_MESSAGE);
+//    SchiffeServer.hit(reihe.toInt, spalte.toInt)
+    
+    
   })
   
   

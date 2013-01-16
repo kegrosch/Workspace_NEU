@@ -200,31 +200,32 @@ def createSchiffe =
                     var getroffen = Schiffe.controller.cell(row, column).getGetroffen
                 if (gesetzt) {
                   if(getroffen){
-                    <td style="height: 48px; width: 48px;" border="0">
-                    <button class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:red; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
+                    <td style="height: 48px; width: 48px;" border="0"><form method="post">
+                    <input class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:red; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                       
-                    </button>
+                    </input>
+</form>
                   </td>
                   }else{
                   <td style="height: 48px; width: 48px;" border="0">
-                    <button class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
+                    <form method="post"><input class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                      
-                    </button>
+                    </input></form>
                   </td>
                   }
                 }else{
                   if(getroffen){
                     <td style="height: 48px; width: 48px;" border="0">
-                    <button class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:black; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
+                    <form method="post"><input class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:black; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                       
-                    </button>
+                    </input></form>
                   </td>
                     
                   }else{
                     <td style="height: 48px; width: 48px;" border="0">
-                    <button class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
+                    <form method="post"><input class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                      
-                    </button>
+                    </input></form>
                   </td>
                   }
                 }
