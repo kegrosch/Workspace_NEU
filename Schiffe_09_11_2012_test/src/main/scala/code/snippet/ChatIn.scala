@@ -65,12 +65,34 @@ object ChatIn {
   def buttonClicked = SHtml.onSubmit(s =>{
     SchiffeServer.setSize(2)
   })
-    def hit = SHtml.onSubmit(s => {
-            
+  var reihe = 0
+//  var reiheString =""
+  var spalte = 0
+  var spalteString = ""
+//  def hit: NodeSeq = {
+//    reiheString = S.attr("reihe") openOr "Reihe gibts nicht"
+//    reihe = reiheString.toInt
+//    spalteString = S.attr("spalte") openOr "Spalte gibts nicht"
+//    spalte = spalteString.toInt
+//    hitSchiff(reihe, spalte)
+//    JOptionPane.showMessageDialog(null,
+//                                              "Reihe: "+ reihe + " Spalte: " + spalte,
+//                                              "Eine Nachricht",                                       
+//                                              JOptionPane.WARNING_MESSAGE);
+//    <br/>
+//  }
+    def hit =  SHtml.onSubmit(s => {
+            JOptionPane.showMessageDialog(null,
+                                              "Reihe: "+ S.attr("reihe") + " Spalte: " + spalte,
+                                              "Eine Nachricht",                                       
+                                              JOptionPane.WARNING_MESSAGE);   
 //    var param = S.get("reihe")
-    var reihe = S.param("reihe") //openOr "myparam: Y U NO DEFINED!?"
+    var reiheString = S.attr("reihe").openOr("Reihe gibts nicht")
+    reihe = reiheString.toInt
 //    ..param("reihe") openOr "Reihe: Y U NO DEFINED!?"
-    var spalte = S.param("spalte")
+    spalteString = S.param("spalte").openOr("Spalte gibts nicht")
+    spalte = spalteString.toInt
+    
 //      S.attr("spalte") openOr "Spalte: Y U NO DEFINED!?"
     JOptionPane.showMessageDialog(null,
                                               "Reihe: "+ reihe + " Spalte: " + spalte,

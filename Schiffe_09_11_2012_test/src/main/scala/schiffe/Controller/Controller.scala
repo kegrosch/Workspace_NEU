@@ -69,6 +69,7 @@ class Controller (var feld: Feld) extends Publisher{
        statusText="Getroffen"
       return true
     }else{
+      publish(new CellChanged)
         statusText="Nicht getroffen"
     return false
     }

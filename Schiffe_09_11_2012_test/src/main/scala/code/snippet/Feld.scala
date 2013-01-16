@@ -197,18 +197,23 @@ def createSchiffe =
              <tr>
                   { for (column <- 0 until Schiffe.controller.getSize) yield {
                     var gesetzt = Schiffe.pccontroller.cell(row, column).getGesetzt
-                    var getroffen = Schiffe.controller.cell(row, column).getGetroffen
+                    var getroffen = Schiffe.pccontroller.cell(row, column).getGetroffen
                 if (gesetzt) {
                   if(getroffen){
-                    <td style="height: 48px; width: 48px;" border="0"><form method="post">
-                    <input class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:red; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
+                    <td style="height: 48px; width: 48px;" border="0"><form class="lift:Hit?form=post" >
+                    <input type="hidden" name="reihe" value={"" + row + ""} style="visibility:collapse;height:0.1px;width:0.1px;"/>
+<input type="hidden" name="spalte" value={"" + column + ""} style="visibility:collapse;height:0.1px;width:0.1px;"/>
+<input value="" id="button" border="0" style="background-color:red; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                       
                     </input>
 </form>
                   </td>
                   }else{
                   <td style="height: 48px; width: 48px;" border="0">
-                    <form method="post"><input class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
+                    <form class="lift:Hit?form=post" >
+<input type="hidden" name="reihe" value={"" + row + ""} style="visibility:collapse;height:0.1px;width:0.1px;"/>
+<input type="hidden" name="spalte" value={"" + column + ""} style="visibility:collapse;height:0.1px;width:0.1px;"/>
+<input value="" id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                      
                     </input></form>
                   </td>
@@ -216,15 +221,22 @@ def createSchiffe =
                 }else{
                   if(getroffen){
                     <td style="height: 48px; width: 48px;" border="0">
-                    <form method="post"><input class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:black; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
+                    <form class="lift:Hit?form=post" >
+<input type="hidden" name="reihe" value={"" + row + ""} style="visibility:collapse;height:0.1px;width:0.1px;"/>
+<input type="hidden" name="spalte" value={"" + column + ""} style="visibility:collapse;height:0.1px;width:0.1px;"/>
+<input value="" id="button" border="0" style="background-color:black; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                       
                     </input></form>
                   </td>
                     
                   }else{
                     <td style="height: 48px; width: 48px;" border="0">
-                    <form method="post"><input class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
+                    <form class="lift:Hit?form=post" >
+<input type="hidden" name="reihe" value={"" + row + ""} style="visibility:collapse;height:0.1px;width:0.1px;"/>
+<input type="hidden" name="spalte" value={"" + column + ""} style="visibility:collapse;height:0.1px;width:0.1px;"/>
+<input  id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" value="" type="submit">
                      
+
                     </input></form>
                   </td>
                   }

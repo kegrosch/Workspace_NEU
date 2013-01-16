@@ -5,30 +5,32 @@ import Helpers._
 import http._
 import js.JsCmds._
 import javax.swing.JOptionPane
+import code.comet.SchiffeServer
 
 object Hit {
   
-  var reihe=0
-  var spalte=0
-  
-  def render = {
-    // capture our position on the page
-//    val posOnPage = pos.set(pos.is + 1)
-"button [onclick]" #> 
-    SHtml.ajaxInvoke(() => {
-        JOptionPane.showMessageDialog(null,
-                                              "SET:  Schiff:",
-                                              "Eine Nachricht",                                       
-                                              JOptionPane.WARNING_MESSAGE);
-    })
+def render = {
+    // define some variables to put our values into
+    var reihe = 0
+    var spalte = 0
+    // process the form
+    def process() {
+      // if the age is < 13, display an error
+    	
+        // otherwise give the user feedback and
+        // redirect to the home page
+//       var reihe = S.param("reihe") openOr("KEINE REIHE")
+//        var spalte = S.param("spalte") openOr ("KEINE SPALTE")
+        
+     SchiffeServer.hit(reihe+1, spalte+1)
+    }
+  // associate each of the form elements
+    // with a function... behavior to perform when the
+    // for element is submitted
+    "name=reihe" #> SHtml.onSubmit(s => asInt(s).foreach(reihe = _)) & // set the name
+//    // set the age variable if we can convert to an Int
+    "name=spalte" #> SHtml.onSubmit(s => asInt(s).foreach(spalte = _)) &
+    // when the form is submitted, process the variable
+    "type=submit" #> SHtml.onSubmitUnit(process)
   }
-//  
-//  def render = {
-//        "button [onClick]" #>
-//        SHtml.onEvent()
-//        studentName & // Replace the HTML tag with id="name" to studentName 
-//        ".surname" #> surName & // Replace the HTML tag with class=surname to surName 
-//        ".clickable [onClick]" #> SHtml.onEvent(onClickCallback) // Append onClick attribute to HTML tag that has "clickable" class, and it will calle onClickCallable in your snippet.
-//    }
-//
 }

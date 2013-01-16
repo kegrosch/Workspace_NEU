@@ -46,10 +46,7 @@ object SchiffeServer extends LiftActor with ListenerManager {
    */
   def createUpdate = msgs
 def hit(reihe: Int, spalte:Int){
-     JOptionPane.showMessageDialog(null,
-                                              "SET:  Schiff:",
-                                              "Eine Nachricht",                                       
-                                              JOptionPane.WARNING_MESSAGE);
+
     Schiffe.pccontroller.hit(reihe, spalte)
   }
 def setSize(groesse: Int){
