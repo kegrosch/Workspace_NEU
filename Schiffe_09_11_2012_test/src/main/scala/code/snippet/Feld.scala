@@ -14,6 +14,7 @@ import net.liftweb.http.js.JsCmds.Confirm
 import net.liftweb.http.js.JsCmd
 import net.liftweb.http.js.JE.JsRaw
 import net.liftweb.http.js.JsCmds
+import net.liftweb.http.S
 
 class Feld {
   
@@ -187,6 +188,7 @@ def createSchiffe =
      }
      </table>
    }   
+
    def createPcFeld = {
   <table class="grid" border="1" bordercolor="blue" cellspacing="0" cellpadding="0">
    {
@@ -199,13 +201,13 @@ def createSchiffe =
                 if (gesetzt) {
                   if(getroffen){
                     <td style="height: 48px; width: 48px;" border="0">
-                    <button onClick="lift:ChatIn.hit?reihe=row;spalte=column" id="button" border="0" style="background-color:red; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
+                    <button class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:red; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                       
                     </button>
                   </td>
                   }else{
                   <td style="height: 48px; width: 48px;" border="0">
-                    <button onClick="lift:ChatIn.hit?reihe=row;spalte=column" id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
+                    <button class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                      
                     </button>
                   </td>
@@ -213,14 +215,14 @@ def createSchiffe =
                 }else{
                   if(getroffen){
                     <td style="height: 48px; width: 48px;" border="0">
-                    <button onClick="lift:ChatIn.hit?reihe=row;spalte=column" id="button" border="0" style="background-color:black; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
+                    <button class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:black; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                       
                     </button>
                   </td>
                     
                   }else{
                     <td style="height: 48px; width: 48px;" border="0">
-                    <button onClick="lift:ChatIn.hit?reihe=row;spalte=column" id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="button">
+                    <button class={"lift:ChatIn.hit?reihe=" + row + ";spalte=" + column} id="button" border="0" style="background-color:gray; text-align:center; vertical-align:center; font-size:20px; height: 48px; width: 48px;" type="submit">
                      
                     </button>
                   </td>

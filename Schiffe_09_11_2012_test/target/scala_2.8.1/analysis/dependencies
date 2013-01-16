@@ -1,5 +1,5 @@
 #Source Dependencies
-#Tue Jan 15 22:48:51 CET 2013
+#Wed Jan 16 16:19:45 CET 2013
 src\\main\\scala\\code\\comet\\StatusLine.scala=
 src\\main\\scala\\code\\snippet\\ChatIn.scala=
 src\\main\\scala\\schiffe\\Model\\Schiff.scala=src\\main\\scala\\schiffe\\Controller\\Controller.scala
@@ -7,6 +7,7 @@ src\\main\\scala\\schiffe\\View\\SpielerPanel.scala=src\\main\\scala\\schiffe\\V
 src\\main\\scala\\code\\comet\\FeldRenderer.scala=
 src\\main\\scala\\code\\snippet\\CommandLine.scala=
 src\\main\\scala\\code\\snippet\\ZelleSnippet.scala=
+src\\main\\scala\\code\\snippet\\Hit.scala=
 src\\main\\scala\\schiffe\\Model\\Zelle.scala=src\\main\\scala\\schiffe\\View\\Tui.scala;src\\main\\scala\\schiffe\\View\\PCPanel.scala;src\\main\\scala\\code\\snippet\\ZelleSnippet.scala;src\\main\\scala\\schiffe\\Model\\Schiff.scala;src\\main\\scala\\schiffe\\Model\\Feld.scala;src\\main\\scala\\schiffe\\View\\SpielerPanel.scala;src\\main\\scala\\code\\snippet\\Feld.scala
 src\\main\\scala\\schiffe\\util\\Feld.scala=
 src\\main\\scala\\code\\snippet\\HighlightButtonSnippet.scala=

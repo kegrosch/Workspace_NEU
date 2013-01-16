@@ -8,6 +8,7 @@ import JsCmds._
 import JE._
 import code.comet.SchiffeServer
 import javax.swing.JOptionPane
+import scala.xml.NodeSeq
 object ChatIn {
 
   /**
@@ -19,17 +20,13 @@ object ChatIn {
    * clears the input.
    */
   
-  def hit = SHtml.onSubmit(s => {
-    JOptionPane.showMessageDialog(null,
-                                              "SET:  Schiff:",
-                                              "Eine Nachricht",                                       
-                                              JOptionPane.WARNING_MESSAGE);
-    var reihe = S.attr("reihe") openOr "myparam: Y U NO DEFINED!?"
-    var spalte = S.attr("spalte") openOr "myparam: Y U NO DEFINED!?"
-    SchiffeServer.hit(reihe.toInt, spalte.toInt)
-    
-  })
-    
+ 
+
+    // Note there is no argument list
+   
+  
+
+  
   
   def render = SHtml.onSubmit(s => {
     SchiffeServer ! s
@@ -68,6 +65,19 @@ object ChatIn {
   def buttonClicked = SHtml.onSubmit(s =>{
     SchiffeServer.setSize(2)
   })
+    def hit =  SHtml.onSubmit(s => {
+    
+    var reihe = S.attr("reihe") openOr "myparam: Y U NO DEFINED!?"
+    var spalte = S.attr("spalte") openOr "myparam: Y U NO DEFINED!?"
+    SchiffeServer.hit(reihe.toInt, spalte.toInt)
+    
+    JOptionPane.showMessageDialog(null,
+                                              "SET:  Schiff:",
+                                              "Eine Nachricht",                                       
+                                              JOptionPane.WARNING_MESSAGE);
+  })
+  
+  
   def setSchiffe(laenge: Int, reihe:Int, spalte:Int, richtung:Int, groesse:Int) = SHtml.onSubmit(s =>{
     SchiffeServer.setSchiff(2, 1, 1, 0, 4)
     Alert("JJKJKJKJKJ")
