@@ -13,6 +13,7 @@ import javax.swing.JOptionPane
  * message will be processed at once.
  */
 object SchiffeServer extends LiftActor with ListenerManager {
+  var anzahlGesetzt = 0
 //  private var status = "Welcome to Sudoku" // private state
 //
 //  /**
@@ -55,6 +56,7 @@ def setSize(groesse: Int){
   def neuStarten{
     Schiffe.controller.reset
     Schiffe.pccontroller.reset
+    anzahlGesetzt=0
   }
   def loesen{
     Schiffe.controller.solve
@@ -62,6 +64,13 @@ def setSize(groesse: Int){
   }
   def setSchiff(laenge: Int, reihe:Int, spalte:Int, richtung:Int, groesse:Int){
     Schiffe.controller.set(laenge, reihe, spalte, richtung, groesse)
+    anzahlGesetzt = anzahlGesetzt+1
+    
+    Schiffe.controller.getSize match{
+      case 2 => Schiffe.pccontroller.setcomputerschiff2
+      case 5 => if(anzahlGesetzt==3) Schiffe.pccontroller.setcomputerschiff5 else{}
+      case 10 => if(anzahlGesetzt==10) Schiffe.pccontroller.setcomputerschiff10 else {}
+    }
   }
   /**
    * process messages that are sent to the Actor.  In
