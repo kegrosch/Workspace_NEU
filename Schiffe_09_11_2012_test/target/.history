@@ -361,3 +361,13 @@ update
 ~jetty-run
 update
 ~jetty-run
+update
+~jetty-run
+reload
+update
+reload
+~jetty-run
+update
+~jetty-run
+update
+~jetty-run
