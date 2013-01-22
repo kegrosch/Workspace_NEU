@@ -118,11 +118,154 @@ object SchiffAuswahl {
   }
   def schiffe(in: NodeSeq):NodeSeq = {
     Schiffe.controller.getSize match{
-      case 2 => <option id="z_klein" value="Zerstörer">Zerstörer</option>
-       
-      case 5 => <option id="z_mittel" value="Zerstörer">Zerstörer</option><option id="u_mittel" value="U-Boot">U-Boot</option><option id="k_mittel" value="Kreuzer">Kreuzer</option>
+      case 2 => if(z_klein==true){<div/>}else{<option id="z_klein" value="Zerstörer">Zerstörer</option>}
+
+      case 5 => {
+        if (z_mittel == false && u_mittel == false && k_mittel == false) {
+          <option id="z_mittel" value="Zerstörer">Zerstörer</option><option id="u_mittel" value="U-Boot">U-Boot</option><option id="k_mittel" value="Kreuzer">Kreuzer</option>
+        } else {
+          if (z_mittel == true) {
+            if (u_mittel == true) {
+              if (k_mittel == true) {
+                <div/>
+              } else {
+                <option id="k_mittel" value="Kreuzer">Kreuzer</option>
+              }
+            } else {
+              if (k_mittel == true) {
+                <option id="u_mittel" value="U-Boot">U-Boot</option>
+              } else {
+                <option id="u_mittel" value="U-Boot">U-Boot</option><option id="k_mittel" value="Kreuzer">Kreuzer</option>
+              }
+            }
+          } else {
+            if (u_mittel == true) {
+              if (k_mittel == true) {
+                <option id="z_mittel" value="Zerstörer">Zerstörer</option>
+              } else {
+                <option id="z_mittel" value="Zerstörer">Zerstörer</option><option id="k_mittel" value="Kreuzer">Kreuzer</option>
+              }
+
+            } else {
+
+              if (k_mittel == true) {
+                <option id="z_mittel" value="Zerstörer">Zerstörer</option><option id="u_mittel" value="U-Boot">U-Boot</option>
+              } else {
+                <option id="z_mittel" value="Zerstörer">Zerstörer</option><option id="u_mittel" value="U-Boot">U-Boot</option><option id="k_mittel" value="Kreuzer">Kreuzer</option>
+              }
+
+            }
+          }
+
+        }
+      }
         
-      case 10 => <option id="z1" value="Zerstörer">Zerstörer 1</option><option id="z2" value="Zerstörer">Zerstörer 2</option><option id="z3" value="Zerstörer">Zerstörer 3</option><option id="z4" value="Zerstörer">Zerstörer 4</option><option id="u2" value="U-Boot">U-Boot 1</option><option id="u2" value="U-Boot">U-Boot 2</option><option id="u3" value="U-Boot">U-Boot 3</option><option id="k1" value="Kreuzer">Kreuzer 1</option><option id="k2" value="Kreuzer">Kreuzer 2</option><option id="s" value="Schlachtschiff">Schlachtschiff</option>
+      case 10 => {
+        var options = (z1,z2,z3,z4,u1,u2,u3,k1,k2,s) match{
+          case (true,true,true,true,true,true,true,true,true,true) => <div/>
+          case (true,true,true,true,true,true,true,true,true,false) => <option id="s" value="Schlachtschiff">Schlachtschiff</option> 
+          case (true,true,true,true,true,true,true,true,false,true)
+          case (true,true,true,true,true,true,true,false,true,false)
+          case (true,true,true,true,true,true,true,false,true,true)
+          case (true,true,true,true,true,true,true,false,false,false)
+          case (true,true,true,true,true,true,true,false,false,true)
+          case (true,true,true,true,true,true,false,true,true,false)
+          case (true,true,true,true,true,true,false,true,true,true)
+          case (true,true,true,true,true,true,false,true,false,false)
+          case (true,true,true,true,true,true,false,true,false,true)
+          case (true,true,true,true,true,true,false,false,true,false)
+          case (true,true,true,true,true,true,false,false,true,true)
+          case (true,true,true,true,true,true,false,false,false,false)
+          case (true,true,true,true,true,false,true,true,true,true)
+          case (true,true,true,true,true,false,true,true,true,false)
+          case (true,true,true,true,true,false,true,true,false,true)
+          case (true,true,true,true,true,false,true,true,false,false)
+          case (true,true,true,true,true,false,true,false,true,true)
+          case (true,true,true,true,true,false,true,false,true,false)
+          case (true,true,true,true,true,false,true,false,false,true)
+          case (true,true,true,true,true,false,false,true,true,false)
+          case (true,true,true,true,true,false,false,true,true,true)
+          case (true,true,true,true,true,false,false,true,false,false)
+          case (true,true,true,true,true,false,false,true,false,true)
+          case (true,true,true,true,true,false,false,false,true,false)
+          case (true,true,true,true,true,false,false,false,true,true)
+          case (true,true,true,true,true,false,false,true,true,false)
+          case (true,true,true,true,true,true,true,true,true,true)
+          case (true,true,true,true,true,true,true,true,false,false)
+          case (true,true,true,true,true,true,true,true,false,true)
+          case (true,true,true,true,true,true,true,false,true,false)
+          case (true,true,true,true,true,true,true,false,true,true)
+          case (true,true,true,true,true,true,true,false,false,false)
+          case (true,true,true,true,true,true,true,false,false,true)
+          case (true,true,true,true,true,true,false,true,true,false)
+          case (true,true,true,true,true,true,false,true,true,true)
+          case (true,true,true,true,true,true,false,true,false,false)
+          case (true,true,true,true,true,true,false,true,false,true)
+          case (true,true,true,true,true,true,false,false,true,false)
+          case (true,true,true,true,true,true,false,false,true,true)
+          case (true,true,true,true,true,true,false,false,false,false)
+          case (true,true,true,true,true,false,true,true,true,true)
+          case (true,true,true,true,true,false,true,true,true,false)
+          case (true,true,true,true,true,false,true,true,false,true)
+          case (true,true,true,true,true,false,true,true,false,false)
+          case (true,true,true,true,true,false,true,false,true,true)
+          case (true,true,true,true,true,false,true,false,true,false)
+          case (true,true,true,true,true,false,true,false,false,true)
+          case (true,true,true,true,true,false,false,true,true,false)
+          case (true,true,true,true,true,false,false,true,true,true)
+          case (true,true,true,true,true,false,false,true,false,false)
+          case (true,true,true,true,true,false,false,true,false,true)
+          case (true,true,true,true,true,false,false,false,true,false)
+          case (true,true,true,true,true,false,false,false,true,true)
+          case (true,true,true,true,true,false,false,true,true,false)
+          case (true,true,true,true,true,true,true,true,true,true)
+          case (true,true,true,true,true,false,false,true,false,false)
+          case (true,true,true,true,true,false,false,false,true,true)
+          case (true,true,true,true,true,false,false,false,true,false)
+          case (true,true,true,true,true,false,false,true,true,true)
+          case (true,true,true,true,true,true,true,true,true,false)
+          case (true,true,true,true,true,true,true,true,false,true)
+          case (true,true,true,true,true,true,true,true,false,false)
+          case (true,true,true,true,true,true,true,false,true,true)
+          case (true,true,true,true,true,true,true,false,true,false)
+          case (true,true,true,true,true,true,true,false,false,true)
+          case (true,true,true,true,true,true,true,false,false,false)
+          case (true,true,true,true,true,true,false,true,true,true)
+          case (true,true,true,true,true,true,false,true,true,false)
+          case (true,true,true,true,true,true,false,true,false,true)
+          case (true,true,true,true,true,true,false,true,false,false)
+          case (true,true,true,true,true,true,false,false,true,true)
+          case (true,true,true,true,true,true,false,false,true,false)
+          case (true,true,true,true,true,true,false,false,false,true)
+          case (true,true,true,true,true,false,true,true,true,false)
+          case (true,true,true,true,true,false,true,true,true,true)
+          case (true,true,true,true,true,false,true,true,false,false)
+          case (true,true,true,true,true,false,true,true,false,true)
+          case (true,true,true,true,true,false,true,false,true,false)
+          case (true,true,true,true,true,false,true,false,true,true)
+          case (true,true,true,true,true,false,true,false,false,false)
+          case (true,true,true,true,true,false,false,true,true,true)
+          case (true,true,true,true,true,false,false,true,true,false)
+          case (false,false,false,false,false,false,false,false,false,true)
+          case (false,false,false,false,false,false,false,false,false,false)
+          case (false,false,false,false,false,false,false,false,false,true)
+          case (false,false,false,false,false,false,false,false,false,false)
+          case (false,false,false,false,false,false,false,false,false,true)
+          case (false,false,false,false,false,false,false,false,true,false)
+          case (false,false,false,false,false,false,true,false,false,true)
+          case (false,false,false,false,false,false,true,false,false,false)
+          case (false,false,false,false,false,false,false,true,true,true)
+          case (false,false,false,false,false,false,false,true,true,false)
+          case (false,false,false,false,false,false,false,true,false,true)
+          case (false,false,false,false,false,false,false,true,false,false)
+          case (false,false,false,false,false,false,false,false,true,true)
+          case (false,false,false,false,false,false,false,false,true,false)
+          case (false,false,false,false,false,false,false,false,false,true)
+          case (false,false,false,false,false,false,false,false,false,false)
+          
+        }
+       <option id="z1" value="Zerstörer">Zerstörer 1</option><option id="z2" value="Zerstörer">Zerstörer 2</option><option id="z3" value="Zerstörer">Zerstörer 3</option><option id="z4" value="Zerstörer">Zerstörer 4</option><option id="u2" value="U-Boot">U-Boot 1</option><option id="u2" value="U-Boot">U-Boot 2</option><option id="u3" value="U-Boot">U-Boot 3</option><option id="k1" value="Kreuzer">Kreuzer 1</option><option id="k2" value="Kreuzer">Kreuzer 2</option><option id="s" value="Schlachtschiff">Schlachtschiff</option> 
+      }
     }
     
     

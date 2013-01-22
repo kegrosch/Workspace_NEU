@@ -1,5 +1,5 @@
 #Source Dependencies
-#Thu Jan 17 20:41:32 CET 2013
+#Thu Jan 17 22:03:20 CET 2013
 src\\main\\scala\\code\\comet\\StatusLine.scala=
 src\\main\\scala\\code\\snippet\\ChatIn.scala=
 src\\main\\scala\\schiffe\\Model\\Schiff.scala=src\\main\\scala\\schiffe\\Controller\\Controller.scala
