@@ -8,359 +8,341 @@ import scala.swing.event.Event
 import javax.swing.JOptionPane
 case object SpielFertig extends Event
 case class CellChanged extends Event
-case class SchiffGesetzt(laenge:Int) extends Event
-case class FeldResize(newSize:Int) extends Event
-class Controller (var feld: Feld) extends Publisher{
-  
+case class SchiffGesetzt(laenge: Int) extends Event
+case class FeldResize(newSize: Int) extends Event
+class Controller(var feld: Feld) extends Publisher {
 
-  var statusText="Bitte setzen Sie Schiffe"
+  var statusText = "Bitte setzen Sie Schiffe"
   var feldGesetzt = false
-  var zaehler =0
-  def getFeldGesetzt() :Boolean={
-    if((getSize ==10 && zaehler ==30)| (getSize ==5 && zaehler ==9)| (getSize ==2 && zaehler ==2)|feldGesetzt==true ){
-      feldGesetzt==true
+  var zaehler = 0
+  def getFeldGesetzt(): Boolean = {
+    if ((getSize == 10 && zaehler == 30) | (getSize == 5 && zaehler == 9) | (getSize == 2 && zaehler == 2) | feldGesetzt == true) {
+      feldGesetzt == true
       return feldGesetzt
-    }
-    else{
+    } else {
       return false
     }
-    
+
   }
-  def setFeldGesetzt(gesetzt:Boolean) ={
-    this.feldGesetzt =gesetzt
+  def setFeldGesetzt(gesetzt: Boolean) = {
+    this.feldGesetzt = gesetzt
   }
-  
-  def setStatusText(text:String){
-    this.statusText =text
+
+  def setStatusText(text: String) {
+    this.statusText = text
+
   }
   def reset = {
     feld = feld.reset
     feldGesetzt = false
-   alleGesetzt = false
-   zaehlerAlleGesetzt = 0
-   zaehlerGesetzt = 0
-  schiffGesetzt = false
-  zaehler=0
-    statusText="Spiel zurueckgesetzt"
-      publish(new FeldResize(getSize))
-//    notifyObservers
+    alleGesetzt = false
+    zaehlerAlleGesetzt = 0
+    zaehlerGesetzt = 0
+    schiffGesetzt = false
+    zaehler = 0
+    statusText = "Spiel zurueckgesetzt"
+    publish(new FeldResize(getSize))
+    //    notifyObservers
   }
-  
-  def solve ={
-    feld= feld.solve
-//    notifyObservers
-    statusText="Spiel beendet"
-      publish(new CellChanged)
+
+  def solve = {
+    feld = feld.solve
+    //    notifyObservers
+    statusText = "Spiel beendet"
+    publish(new CellChanged)
   }
-  def hit(reihe: Int, spalte: Int): Boolean ={
-    println("REIHE: " + reihe + " Spalte: " + spalte) 
-//    publish(CellChanged)
-    if(feld.hit(reihe-1, spalte-1)){
+  def hit(reihe: Int, spalte: Int): Boolean = {
+    println("REIHE: " + reihe + " Spalte: " + spalte)
+    //    publish(CellChanged)
+    if (feld.hit(reihe - 1, spalte - 1)) {
       publish(new CellChanged)
-       statusText="Getroffen"
+      statusText = "Getroffen"
       return true
-    }else{
+    } else {
       publish(new CellChanged)
-        statusText="Nicht getroffen"
-    return false
+      statusText = "Nicht getroffen"
+      return false
     }
-//    notifyObservers
+    //    notifyObservers
   }
 
   def setSize(newSize: Int) = {
     if (getSize == newSize) {
-       setStatusText("Spielfeld ist schon in der benoetigten Groesse")
-      } else {
-        if(getFeldGesetzt()==false ){
+      setStatusText("Spielfeld ist schon in der benoetigten Groesse")
+    } else {
+      if (getFeldGesetzt() == false) {
         feld = new Feld(newSize)
-    statusText="Spielgroesse veraendert"
-    publish(new FeldResize(newSize))
-//      publish(CellChanged)
-        }
-        else 
-         setStatusText( "Die Schiffe sind schon gesetzt. Keine Groessenaenderung moeglich")
-      }
-    
-//    notifyObservers
+        statusText = "Spielgroesse veraendert"
+        publish(new FeldResize(newSize))
+        //      publish(CellChanged)
+      } else
+        setStatusText("Die Schiffe sind schon gesetzt. Keine Groessenaenderung moeglich")
+    }
+
+    //    notifyObservers
   }
-  def getSize: Int = {return feld.size.toInt}
-  
-  def spielfertig: Boolean= {
-    if(feld.spielFertig == true){
-//      publish(SpielFertig)
+  def getSize: Int = { return feld.size.toInt }
+
+  def spielfertig: Boolean = {
+    if (feld.spielFertig == true) {
+      //      publish(SpielFertig)
       return true
-    }else{
+    } else {
       return false
     }
-//    notifyObservers
+    //    notifyObservers
   }
-  def set(laenge: Int, row: Int, col: Int, richtung: Int, groesse: Int):Boolean = {
-    var startZelle = feld.zellen(row-1)(col-1)
+  def set(laenge: Int, row: Int, col: Int, richtung: Int, groesse: Int): Boolean = {
+    var startZelle = feld.zellen(row - 1)(col - 1)
     var schiff = new Schiff(laenge, startZelle, feld.zellen)
     var freiGesetzt = schiff.setzen(richtung, groesse)
-//    notifyObservers
-    if(freiGesetzt == true){
-      statusText="Schiff gesetzt"
-        zaehler = zaehler +1
+    //    notifyObservers
+    if (freiGesetzt == true) {
+      statusText = "Schiff gesetzt"
+      zaehler = zaehler + 1
+    } else {
+      statusText = "Schiff nicht gesetzt. Falsche Eingabe"
     }
-    else{
-      statusText="Schiff nicht gesetzt. Falsche Eingabe"
-    }
-    
-    publish(new CellChanged)
-//    publish(new SchiffGesetzt(laenge))
-    return freiGesetzt
-    
-//    println("Schiff gesetzt")
-  }
-//  def solve = {
-//    val (success, g) = feld.solve
-//    feld = g  
-//    notifyObservers
-//    (success, Feld.steps)
-//  }
-//  def valid = feld.valid
 
-//  	def set
-  def updateFeld(feld: Feld){
+    publish(new CellChanged)
+    //    publish(new SchiffGesetzt(laenge))
+    return freiGesetzt
+
+    //    println("Schiff gesetzt")
+  }
+
+  def updateFeld(feld: Feld) {
     this.feld = feld
   }
 
-def cell(row: Int, col: Int) = feld.cell(row, col)
+  def cell(row: Int, col: Int) = feld.cell(row, col)
 
-def setcomputerschiff2={
-  while (getFeldGesetzt == false) {
-              var startReihe = scala.util.Random.nextInt(2 - 1) + 1
-              var startSpalte = scala.util.Random.nextInt(2 - 1) + 1
-              var ersteZelle = feld.cell(startReihe,startSpalte)
+  def setcomputerschiff2 = {
+    while (getFeldGesetzt == false) {
+      var startReihe = scala.util.Random.nextInt(2 - 1) + 1
+      var startSpalte = scala.util.Random.nextInt(2 - 1) + 1
+      var ersteZelle = feld.cell(startReihe, startSpalte)
 
-              if (set(2, startReihe, startSpalte, 5, (getSize - 1)) == true) {
-                setFeldGesetzt(true)
-                 statusText= "Computerschiffe gesetzt"
-              } else {
-               setFeldGesetzt(false)
-                
-              }
+      if (set(2, startReihe, startSpalte, 5, (getSize - 1)) == true) {
+        setFeldGesetzt(true)
+        statusText = "Computerschiffe gesetzt"
+      } else {
+        setFeldGesetzt(false)
 
-            }
-  publish(new CellChanged)
-}
+      }
+
+    }
+    publish(new CellChanged)
+  }
   var alleGesetzt = false
   var zaehlerAlleGesetzt = 0
   var zaehlerGesetzt = 0
   var schiffGesetzt = false
-  def setcomputerschiff5= {           
-            while (alleGesetzt == false) {
-              //Schiffe fuer Computer setzen
-              
-              while (schiffGesetzt == false) {
-                if (zaehlerGesetzt >= 50) {
-                  schiffGesetzt = true
-                }
-                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
-                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-                var ersteZelle = feld.cell(startReihe, startSpalte)
+  def setcomputerschiff5 = {
+    while (alleGesetzt == false) {
+      //Schiffe fuer Computer setzen
 
-                if (set(4, startReihe, startSpalte, 5, (getSize - 1)) == true) {
-                  schiffGesetzt = true
-                  zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
-                } else {
-                  schiffGesetzt = false
-                  zaehlerGesetzt = zaehlerGesetzt + 1
-                }
-                
-              }
+      while (schiffGesetzt == false) {
+        if (zaehlerGesetzt >= 50) {
+          schiffGesetzt = true
+        }
+        var startReihe = scala.util.Random.nextInt(5 - 1) + 1
+        var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+        var ersteZelle = feld.cell(startReihe, startSpalte)
 
-              schiffGesetzt = false
-              zaehlerGesetzt = 0
+        if (set(4, startReihe, startSpalte, 5, (getSize - 1)) == true) {
+          schiffGesetzt = true
+          zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+        } else {
+          schiffGesetzt = false
+          zaehlerGesetzt = zaehlerGesetzt + 1
+        }
 
-              while (schiffGesetzt == false) {
-                if (zaehlerGesetzt >= 100) {
-                  schiffGesetzt = true
-                }
-                var startReihe = scala.util.Random.nextInt(5 - 1) + 1
-                var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-                var ersteZelle = feld.cell(startReihe,startSpalte)
+      }
 
-                if (set(3, startReihe, startSpalte, 5, (getSize - 1)) == true) {
-                  schiffGesetzt = true
-                  zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+      schiffGesetzt = false
+      zaehlerGesetzt = 0
 
-                } else {
-                  schiffGesetzt = false
-                  zaehlerGesetzt = zaehlerGesetzt + 1
+      while (schiffGesetzt == false) {
+        if (zaehlerGesetzt >= 100) {
+          schiffGesetzt = true
+        }
+        var startReihe = scala.util.Random.nextInt(5 - 1) + 1
+        var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+        var ersteZelle = feld.cell(startReihe, startSpalte)
 
-                }
-                
-              }
-              schiffGesetzt = false
-              zaehlerGesetzt = 0
+        if (set(3, startReihe, startSpalte, 5, (getSize - 1)) == true) {
+          schiffGesetzt = true
+          zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
 
- 
-               zaehlerGesetzt = 0
+        } else {
+          schiffGesetzt = false
+          zaehlerGesetzt = zaehlerGesetzt + 1
 
-                while (schiffGesetzt == false) {
-                  if (zaehlerGesetzt >= 100) {
-                    schiffGesetzt = true
-                  }else{
-                  var startReihe = scala.util.Random.nextInt(5 - 1) + 1
-                  var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
-                  var ersteZelle = feld.cell(startReihe, startSpalte)
+        }
 
-                  if (set(2, startReihe, startSpalte, 5, (getSize - 1)) == true) {
-                    schiffGesetzt = true
-                    zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+      }
+      schiffGesetzt = false
+      zaehlerGesetzt = 0
 
-                  } else {
-                    schiffGesetzt = false
-                    zaehlerGesetzt = zaehlerGesetzt + 1
+      zaehlerGesetzt = 0
 
-                  }
-                  }
-                }
-                schiffGesetzt = false
-             
-              if (zaehlerAlleGesetzt == 3) {
+      while (schiffGesetzt == false) {
+        if (zaehlerGesetzt >= 100) {
+          schiffGesetzt = true
+        } else {
+          var startReihe = scala.util.Random.nextInt(5 - 1) + 1
+          var startSpalte = scala.util.Random.nextInt(5 - 1) + 1
+          var ersteZelle = feld.cell(startReihe, startSpalte)
 
-                alleGesetzt = true
-                statusText= "Computerschiffe gesetzt"
-                setFeldGesetzt(true)
-              }else{
+          if (set(2, startReihe, startSpalte, 5, (getSize - 1)) == true) {
+            schiffGesetzt = true
+            zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
 
-                reset
-               
-               alleGesetzt = false
-               
-              }
-            }
-            publish(new CellChanged)
+          } else {
+            schiffGesetzt = false
+            zaehlerGesetzt = zaehlerGesetzt + 1
+
+          }
+        }
+      }
+      schiffGesetzt = false
+
+      if (zaehlerAlleGesetzt == 3) {
+
+        alleGesetzt = true
+        statusText = "Computerschiffe gesetzt"
+        setFeldGesetzt(true)
+      } else {
+
+        reset
+
+        alleGesetzt = false
+
+      }
+    }
+    publish(new CellChanged)
   }
-  def setcomputerschiff10{
+  def setcomputerschiff10 {
     while (alleGesetzt == false) {
       while (schiffGesetzt == false) {
-              if (zaehlerGesetzt >= 10) {
-                  schiffGesetzt = true
-                }
-              var startReihe = scala.util.Random.nextInt(10 - 1) + 1
-              var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-              var ersteZelle = feld.cell(startReihe,startSpalte)
+        if (zaehlerGesetzt >= 10) {
+          schiffGesetzt = true
+        }
+        var startReihe = scala.util.Random.nextInt(10 - 1) + 1
+        var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
+        var ersteZelle = feld.cell(startReihe, startSpalte)
 
-              if (set(5, startReihe, startSpalte, 5, (getSize - 1)) == true) {
-                schiffGesetzt = true
-                zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
-//                println("SCHIFF-5-OKAY")
+        if (set(5, startReihe, startSpalte, 5, (getSize - 1)) == true) {
+          schiffGesetzt = true
+          zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+          //                println("SCHIFF-5-OKAY")
 
-              } else {
-                schiffGesetzt = false
-                zaehlerGesetzt = zaehlerGesetzt + 1
+        } else {
+          schiffGesetzt = false
+          zaehlerGesetzt = zaehlerGesetzt + 1
 
-//                println("SCHIFF-5-SCHLECHT")
-                println(zaehlerGesetzt)
-              }
-            }
-            zaehlerGesetzt = 0
-            schiffGesetzt = false
-            for (k <- 1 to 2) {
-              
-              while (schiffGesetzt == false) {
-                if (zaehlerGesetzt >= 50) {
-                  schiffGesetzt = true
-                }else{
-                var startReihe = scala.util.Random.nextInt(10 - 1) + 1
-                var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-                var ersteZelle = feld.cell(startReihe, startSpalte)
+          //                println("SCHIFF-5-SCHLECHT")
+          println(zaehlerGesetzt)
+        }
+      }
+      zaehlerGesetzt = 0
+      schiffGesetzt = false
+      for (k <- 1 to 2) {
 
-                if (set(4, startReihe, startSpalte, 5, (getSize - 1)) == true) {
-                  schiffGesetzt = true
-                  zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
-//                  println("SCHIFF-4-OKAY")
-                } else {
-                  schiffGesetzt = false
-                  zaehlerGesetzt = zaehlerGesetzt + 1
-//                  println("SCHIFF-4-SCHLECHT")
-                println(zaehlerGesetzt)
+        while (schiffGesetzt == false) {
+          if (zaehlerGesetzt >= 50) {
+            schiffGesetzt = true
+          } else {
+            var startReihe = scala.util.Random.nextInt(10 - 1) + 1
+            var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
+            var ersteZelle = feld.cell(startReihe, startSpalte)
 
-                }
-              
-              
-                }
-              }
-              zaehlerGesetzt = 0
+            if (set(4, startReihe, startSpalte, 5, (getSize - 1)) == true) {
+              schiffGesetzt = true
+              zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+              //                  println("SCHIFF-4-OKAY")
+            } else {
               schiffGesetzt = false
+              zaehlerGesetzt = zaehlerGesetzt + 1
+              //                  println("SCHIFF-4-SCHLECHT")
+              println(zaehlerGesetzt)
+
             }
-zaehlerGesetzt = 0
-            for (k <- 1 to 3) {
 
-              while (schiffGesetzt == false) {
-                if (zaehlerGesetzt >= 50) {
-                  schiffGesetzt = true
-                }else{
-                var startReihe = scala.util.Random.nextInt(10 - 1) + 1
-                var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-                var ersteZelle = feld.cell(startReihe, startSpalte)
+          }
+        }
+        zaehlerGesetzt = 0
+        schiffGesetzt = false
+      }
+      zaehlerGesetzt = 0
+      for (k <- 1 to 3) {
 
-                if (set(3, startReihe, startSpalte, 5, (getSize - 1)) == true) {
-                  schiffGesetzt = true
-                  zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
-//                  println("SCHIFF-3-OKAY")
-                } else {
-                  schiffGesetzt = false
-                  zaehlerGesetzt = zaehlerGesetzt + 1
-//                  println("SCHIFF-3-SCHLECHT")
-                println(zaehlerGesetzt)
-                }
+        while (schiffGesetzt == false) {
+          if (zaehlerGesetzt >= 50) {
+            schiffGesetzt = true
+          } else {
+            var startReihe = scala.util.Random.nextInt(10 - 1) + 1
+            var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
+            var ersteZelle = feld.cell(startReihe, startSpalte)
 
-              
-              
-              
-                }
-              }
+            if (set(3, startReihe, startSpalte, 5, (getSize - 1)) == true) {
+              schiffGesetzt = true
+              zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+              //                  println("SCHIFF-3-OKAY")
+            } else {
               schiffGesetzt = false
-              
-              zaehlerGesetzt = 0
+              zaehlerGesetzt = zaehlerGesetzt + 1
+              //                  println("SCHIFF-3-SCHLECHT")
+              println(zaehlerGesetzt)
             }
-zaehlerGesetzt = 0
-            for (k <- 1 to 4) {
 
-              while (schiffGesetzt == false) {
-                if (zaehlerGesetzt >= 50) {
-                  schiffGesetzt = true
-                }else{
-                var startReihe = scala.util.Random.nextInt(10 - 1) + 1
-                var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
-                
+          }
+        }
+        schiffGesetzt = false
 
-                if (set(2, startReihe, startSpalte, 5, (getSize - 1)) == true) {
+        zaehlerGesetzt = 0
+      }
+      zaehlerGesetzt = 0
+      for (k <- 1 to 4) {
 
-                  schiffGesetzt = true
-                  zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
-                } else {
-                  schiffGesetzt = false
-                  zaehlerGesetzt = zaehlerGesetzt + 1
-                }
+        while (schiffGesetzt == false) {
+          if (zaehlerGesetzt >= 50) {
+            schiffGesetzt = true
+          } else {
+            var startReihe = scala.util.Random.nextInt(10 - 1) + 1
+            var startSpalte = scala.util.Random.nextInt(10 - 1) + 1
 
-              }
-              
-              }
-              zaehlerGesetzt = 0
+            if (set(2, startReihe, startSpalte, 5, (getSize - 1)) == true) {
+
+              schiffGesetzt = true
+              zaehlerAlleGesetzt = zaehlerAlleGesetzt + 1
+            } else {
               schiffGesetzt = false
+              zaehlerGesetzt = zaehlerGesetzt + 1
             }
-zaehlerGesetzt = 0
-if (zaehlerAlleGesetzt == 10) {
 
-                alleGesetzt = true
-                statusText= "Computerschiffe gesetzt"
-                  setFeldGesetzt(true)
-              }else{
-//                println("RESET")
-                reset
-               
-               alleGesetzt = false
-               
-              }
-            }
+          }
+
+        }
+        zaehlerGesetzt = 0
+        schiffGesetzt = false
+      }
+      zaehlerGesetzt = 0
+      if (zaehlerAlleGesetzt == 10) {
+
+        alleGesetzt = true
+        statusText = "Computerschiffe gesetzt"
+        setFeldGesetzt(true)
+      } else {
+        //                println("RESET")
+        reset
+
+        alleGesetzt = false
+
+      }
     }
-  
-  
+  }
+
   publish(new CellChanged)
 }

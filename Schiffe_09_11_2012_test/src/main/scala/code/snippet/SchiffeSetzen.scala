@@ -96,6 +96,8 @@ object SchiffeSetzen {
         
         return true
       } else {
+        startButtonGesetzt = false
+        richtungButtonGesetzt = false
         return false
       }
 

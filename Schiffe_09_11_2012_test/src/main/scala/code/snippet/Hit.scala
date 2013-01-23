@@ -15,12 +15,7 @@ def render = {
     var spalte = 0
     // process the form
     def process() {
-      // if the age is < 13, display an error
-    	
-        // otherwise give the user feedback and
-        // redirect to the home page
-//       var reihe = S.param("reihe") openOr("KEINE REIHE")
-//        var spalte = S.param("spalte") openOr ("KEINE SPALTE")
+
         
      SchiffeServer.hit(reihe+1, spalte+1)
     }

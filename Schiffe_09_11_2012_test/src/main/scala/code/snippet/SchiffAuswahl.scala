@@ -162,7 +162,7 @@ object SchiffAuswahl {
         
       case 10 => {
 
-           <option id="z1" value="Zerstörer" style="display:none">Zerstörer 1</option><option id="z2" value="Zerstörer">Zerstörer 2</option><option id="z3" value="Zerstörer">Zerstörer 3</option><option id="z4" value="Zerstörer">Zerstörer 4</option><option id="u2" value="U-Boot">U-Boot 1</option><option id="u2" value="U-Boot">U-Boot 2</option><option id="u3" value="U-Boot">U-Boot 3</option><option id="k1" value="Kreuzer">Kreuzer 1</option><option id="k2" value="Kreuzer">Kreuzer 2</option><option id="s" value="Schlachtschiff">Schlachtschiff</option>
+           <option id="z1" value="Zerstörer" >Zerstörer 1</option><option id="z2" value="Zerstörer">Zerstörer 2</option><option id="z3" value="Zerstörer">Zerstörer 3</option><option id="z4" value="Zerstörer">Zerstörer 4</option><option id="u2" value="U-Boot">U-Boot 1</option><option id="u2" value="U-Boot">U-Boot 2</option><option id="u3" value="U-Boot">U-Boot 3</option><option id="k1" value="Kreuzer">Kreuzer 1</option><option id="k2" value="Kreuzer">Kreuzer 2</option><option id="s" value="Schlachtschiff">Schlachtschiff</option>
         
        
       }
@@ -191,26 +191,5 @@ def startButtonSpalte(in: NodeSeq):NodeSeq = {
   
   
 }
-  
-//  def ajaxFunc1 : JsCmd = SchiffeServer ! "1"
-//  def ajaxFunc2 : JsCmd = SchiffeServer ! "1"
 
-//def renderAjaxButton(html: Group): NodeSeq = {
-//    bind("highlight", html,         
-//            "zerstoerer_mittel" -> SHtml.ajaxButton("Zerstörer", ajaxFunc1 _),
-//            "uboot_mittel" -> SHtml.ajaxButton("U-Boot", ajaxFunc1 _),
-//             
-//            "kreuzer_mittel" -> SHtml.ajaxButton("U-Boot", ajaxFunc1 _)
-//        
-  
-//) }
-  
-//def render = {
-//		"button [onClick]" #> SHtml.ajaxInvoke()
-//  
-//  }
-
-//val jsFunc: JsFunc = Function("myFunc")("param1", "param2") {case param1 :: param2 :: Nil =>
-  
-//}
 }

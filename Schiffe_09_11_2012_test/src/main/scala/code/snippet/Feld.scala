@@ -21,6 +21,41 @@ class Feld {
 
 
 def createSchiffe = 
+  
+
+    if(Schiffe.controller.feld.spielFertig == true){
+      <table>
+
+      
+      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:10px; height: 50px; width: 200px;" type="button" value="Spiel ist vorbei\n Der PC hat gewonnen">
+      <table><tr><td>
+       <img style="height: 40px; width: 70px;" src="images\Verloren.png"  ></img></td><td>Spiel ist vorbei Der PC hat gewonnen</td></tr></table>
+        
+      
+        </button></td></tr>
+ 
+
+</table>
+    }else{
+    if(Schiffe.pccontroller.feld.spielFertig == true){
+      <table>
+
+      
+      <tr><td><button style="background-color:white; text-align:center; vertical-align:middle; font-size:10px; height: 50px; width: 200px;" type="button" value="Spiel ist vorbei\n Sie haben gewonnen">
+      <table><tr><td>
+       <img style="height: 40px; width: 70px;" src="images\Gewonnen.png"  ></img></td><td>Spiel ist vorbei Sie haben gewonnen</td></tr></table>
+        
+      
+        </button></td></tr>
+ 
+
+</table>
+    }else{
+      
+   
+  
+  
+  
 <table class="schiffeAuswahl" >
 <tbody width="300" height="300">
   {  var aktuelleLaenge = 0 }
@@ -135,7 +170,8 @@ def createSchiffe =
  </tbody>
 </table>
     
-   
+    }
+    }
 
 
   def createUserFeld = {

@@ -69,6 +69,9 @@ class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel, 
 
           }
         } else {
+          controller.setStatusText("Schiff kann hier nicht gesetzt werden - Umfeld beachten!")
+          startButtonGesetzt = false
+  richtungButtonGesetzt = false
           setBackground
         }
 
@@ -145,6 +148,9 @@ class SpielerPanel(controller: Controller, size: Int, schiffPanel: SchiffPanel, 
     }
 
   }
+  
+  startButtonGesetzt = false
+  richtungButtonGesetzt = false
   def startButtonSetzen(reihe: Int, spalte: Int, laenge: Int, groesse: Int): Boolean = {
 
     if (startButtonGesetzt == true) {

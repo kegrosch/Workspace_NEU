@@ -240,155 +240,155 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           case 0 => //Spalte = erste Spalte & Reihe = erste Reihe
             richtung match {
               case 1 => //Schiff geht nach unten
-                if(groesse == (startZelle.getReihe+laenge-1)){
-                  for (i <- 0 to laenge-1) {
-                  if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                if (groesse == (startZelle.getReihe + laenge - 1)) {
+                  for (i <- 0 to laenge - 1) {
+                    if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+                  }
+                  if (((zellen(startZelle.getReihe + laenge - 1)(startZelle.getSpalte).getGesetzt) == true)) {
                     return false
                   } else {
-                    okay = true
+                    if ((zellen(startZelle.getReihe + laenge - 1)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      return okay
+                    }
                   }
-                }
-                if (((zellen(startZelle.getReihe + laenge-1)(startZelle.getSpalte).getGesetzt) == true)) {
-                  return false
                 } else {
-                  if ((zellen(startZelle.getReihe + laenge-1)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                  for (i <- 0 to laenge) { //30.12.2012 - geaendert: "-1" Hinzugefuegt
+                    if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+                  }
+                  if (((zellen(startZelle.getReihe + laenge)(startZelle.getSpalte).getGesetzt) == true)) {
                     return false
                   } else {
-                    return okay
+                    if ((zellen(startZelle.getReihe + laenge)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      return okay
+                    }
                   }
-                }
-                }else{
-                for (i <- 0 to laenge) { //30.12.2012 - geaendert: "-1" Hinzugefuegt
-                  if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte + 1).getGesetzt) == true) {
-                    return false
-                  } else {
-                    okay = true
-                  }
-                }
-                if (((zellen(startZelle.getReihe + laenge)(startZelle.getSpalte).getGesetzt) == true)) {
-                  return false
-                } else {
-                  if ((zellen(startZelle.getReihe + laenge)(startZelle.getSpalte + 1).getGesetzt) == true) {
-                    return false
-                  } else {
-                    return okay
-                  }
-                }
                 }
               case 2 => //Schiff geht nach rechts
-                if(groesse == (startZelle.getSpalte+laenge-1)){
-                  for (i <- 0 to laenge-1) {
-                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + i).getGesetzt) == true) {
-                    return false
-                  } else {
-                    okay = true
-                  }
+                if (groesse == (startZelle.getSpalte + laenge - 1)) {
+                  for (i <- 0 to laenge - 1) {
+                    if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
 
-                }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge-1).getGesetzt) == true)) {
-                  return false
+                  }
+                  if (((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge - 1).getGesetzt) == true)) {
+                    return false
+                  } else {
+                    if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + laenge - 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      return okay
+                    }
+                  }
                 } else {
-                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + laenge-1).getGesetzt) == true) {
-                    return false
-                  } else {
-                    return okay
-                  }
-                }
-                }else{
-                for (i <- 0 to laenge) {
-                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + i).getGesetzt) == true) {
-                    return false
-                  } else {
-                    okay = true
-                  }
+                  for (i <- 0 to laenge) {
+                    if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
 
-                }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge).getGesetzt) == true)) {
-                  return false
-                } else {
-                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + laenge).getGesetzt) == true) {
+                  }
+                  if (((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge).getGesetzt) == true)) {
                     return false
                   } else {
-                    return okay
+                    if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte + laenge).getGesetzt) == true) {
+                      return false
+                    } else {
+                      return okay
+                    }
                   }
-                }
                 }
             }
           case `groesse` => //Spalte = letzte Spalte & Reihe = erste Reihe
             richtung match {
               case 1 => //Schiff geht nach unten
-                if(groesse == (startZelle.getReihe+laenge-1)){
-                  for (i <- 0 to laenge-1) {
-                  if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                if (groesse == (startZelle.getReihe + laenge - 1)) {
+                  for (i <- 0 to laenge - 1) {
+                    if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+                  }
+                  if (((zellen(startZelle.getReihe + laenge - 1)(startZelle.getSpalte).getGesetzt) == true)) {
                     return false
                   } else {
-                    okay = true
+                    if ((zellen(startZelle.getReihe + laenge - 1)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      return okay
+                    }
                   }
-                }
-                if (((zellen(startZelle.getReihe + laenge-1)(startZelle.getSpalte).getGesetzt) == true)) {
-                  return false
                 } else {
-                  if ((zellen(startZelle.getReihe + laenge-1)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                  for (i <- 0 to laenge) {
+                    if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+                  }
+                  if (((zellen(startZelle.getReihe + laenge)(startZelle.getSpalte).getGesetzt) == true)) {
                     return false
                   } else {
-                    return okay
+                    if ((zellen(startZelle.getReihe + laenge)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      return okay
+                    }
                   }
-                }
-                }else{
-                for (i <- 0 to laenge) {
-                  if ((zellen(startZelle.getReihe + i)(startZelle.getSpalte - 1).getGesetzt) == true) {
-                    return false
-                  } else {
-                    okay = true
-                  }
-                }
-                if (((zellen(startZelle.getReihe + laenge)(startZelle.getSpalte).getGesetzt) == true)) {
-                  return false
-                } else {
-                  if ((zellen(startZelle.getReihe + laenge)(startZelle.getSpalte - 1).getGesetzt) == true) {
-                    return false
-                  } else {
-                    return okay
-                  }
-                }
                 }
               case 3 => //Schiff geht nach links
-                if(0 == (startZelle.getSpalte-laenge+1)){
-                  for (i <- (groesse - laenge+1) to groesse) {
-                  if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
-                    return false
-                  } else {
-                    okay = true
-                  }
+                if (0 == (startZelle.getSpalte - laenge + 1)) {
+                  for (i <- (groesse - laenge + 1) to groesse) {
+                    if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
 
-                }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge+1).getGesetzt) == true)) {
-                  return false
+                  }
+                  if (((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge + 1).getGesetzt) == true)) {
+                    return false
+                  } else {
+                    if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte - laenge + 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      return okay
+                    }
+                  }
                 } else {
-                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte - laenge+1).getGesetzt) == true) {
-                    return false
-                  } else {
-                    return okay
-                  }
-                }
-                }else{
-                for (i <- (groesse - laenge) to groesse) {
-                  if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
-                    return false
-                  } else {
-                    okay = true
-                  }
+                  for (i <- (groesse - laenge) to groesse) {
+                    if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
 
-                }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge).getGesetzt) == true)) {
-                  return false
-                } else {
-                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte - laenge).getGesetzt) == true) {
+                  }
+                  if (((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge).getGesetzt) == true)) {
                     return false
                   } else {
-                    return okay
+                    if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte - laenge).getGesetzt) == true) {
+                      return false
+                    } else {
+                      return okay
+                    }
                   }
-                }
                 }
             }
           case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = erste Reihe
@@ -492,130 +492,128 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
           case 0 => //Spalte = erste Spalte & Reihe = letzte Reihe
             richtung match {
               case 0 => //Schiff geht nach oben
-                if(startZelle.getReihe - laenge < 0){
-                  for (i <- (startZelle.getReihe - (laenge-1)) to groesse) {
-                  if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                if (startZelle.getReihe - laenge < 0) {
+                  for (i <- (startZelle.getReihe - (laenge - 1)) to groesse) {
+                    if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+                  }
+                  if (((zellen(startZelle.getReihe - (laenge - 1))(startZelle.getSpalte).getGesetzt) == true)) {
                     return false
                   } else {
-                    okay = true
+
+                    return okay
+
                   }
-                }
-                if (((zellen(startZelle.getReihe - (laenge-1))(startZelle.getSpalte).getGesetzt) == true)) {
-                  return false
                 } else {
-
-                  return okay
-
-                }
-                }else{
-                for (i <- (startZelle.getReihe - laenge) to groesse) {
-                  if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                  for (i <- (startZelle.getReihe - laenge) to groesse) {
+                    if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+                  }
+                  if (((zellen(startZelle.getReihe - laenge)(startZelle.getSpalte).getGesetzt) == true)) {
                     return false
                   } else {
-                    okay = true
+
+                    return okay
+
                   }
-                }
-                if (((zellen(startZelle.getReihe - laenge)(startZelle.getSpalte).getGesetzt) == true)) {
-                  return false
-                } else {
-
-                  return okay
-
-                }
                 }
               case 2 => //Schiff geht nach rechts
-                if(startZelle.getReihe + laenge > groesse){
-                  for (i <- 0 to laenge-1) {
-                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte + i).getGesetzt) == true) {
+                if (startZelle.getReihe + laenge > groesse) {
+                  for (i <- 0 to laenge - 1) {
+                    if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte + i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+
+                  }
+                  if (((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge - 1).getGesetzt) == true)) {
                     return false
                   } else {
-                    okay = true
+
+                    return okay
+
                   }
-
-                }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge-1).getGesetzt) == true)) {
-                  return false
                 } else {
+                  for (i <- 0 to laenge) {
+                    if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte + i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
 
-                  return okay
-
-                }
-                }else{
-                for (i <- 0 to laenge) {
-                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte + i).getGesetzt) == true) {
+                  }
+                  if (((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge).getGesetzt) == true)) {
                     return false
                   } else {
-                    okay = true
+
+                    return okay
+
                   }
-
-                }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge).getGesetzt) == true)) {
-                  return false
-                } else {
-
-                  return okay
-
-                }
                 }
             }
           case `groesse` => //Spalte = letzte Spalte & Reihe = letzte Reihe
             richtung match {
               case 0 => //Schiff geht nach oben
-                
-                          
-                
-                if(startZelle.getReihe - laenge < 0 ){
+
+                if (startZelle.getReihe - laenge < 0) {
                   return okay
-                }else{
-                for (i <- (startZelle.getReihe - laenge) to groesse) {
-                  if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                } else {
+                  for (i <- (startZelle.getReihe - laenge) to groesse) {
+                    if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+                  }
+                  if (((zellen(startZelle.getReihe - laenge)(startZelle.getSpalte).getGesetzt) == true)) {
                     return false
                   } else {
-                    okay = true
+
+                    return okay
+
                   }
-                }
-                if (((zellen(startZelle.getReihe - laenge)(startZelle.getSpalte).getGesetzt) == true)) {
-                  return false
-                } else {
-
-                  return okay
-
-                }
                 }
               case 3 => //Schiff geht nach links
-                 if(startZelle.getSpalte - laenge < 0){
-                   for (i <- (groesse - laenge+1) to groesse) {
-                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte - i).getGesetzt) == true) {
+                if (startZelle.getSpalte - laenge < 0) {
+                  for (i <- (groesse - laenge + 1) to groesse) {
+                    if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte - i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+
+                  }
+                  if (((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge + 1).getGesetzt) == true)) {
                     return false
                   } else {
-                    okay = true
+
+                    return okay
+
                   }
-
-                }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge+1).getGesetzt) == true)) {
-                  return false
                 } else {
+                  for (i <- (groesse - laenge) to groesse) {
+                    if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte - i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
 
-                  return okay
-
-                }
-                 }else{
-                for (i <- (groesse - laenge) to groesse) {
-                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte - i).getGesetzt) == true) {
+                  }
+                  if (((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge).getGesetzt) == true)) {
                     return false
                   } else {
-                    okay = true
+
+                    return okay
+
                   }
-
                 }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge).getGesetzt) == true)) {
-                  return false
-                } else {
-
-                  return okay
-
-                }
-                 }
             }
           case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe = letzte Reihe
             richtung match {
@@ -678,40 +676,40 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
                 }
 
               case 3 => // Schiff geht links
-              //ueberpruefen ob links anstoe�t
-              if (0 == (startZelle.getSpalte - laenge + 1)) { //ueberpruefen ob links anstoe�t
-                for(i <- 0 to (startZelle.getSpalte+1)){
-                 
-                  if((zellen(startZelle.getReihe-1)(i).getGesetzt)==true){
-                    return false
-                  }else{
-                    okay = true
+                //ueberpruefen ob links anstoe�t
+                if (0 == (startZelle.getSpalte - laenge + 1)) { //ueberpruefen ob links anstoe�t
+                  for (i <- 0 to (startZelle.getSpalte + 1)) {
+
+                    if ((zellen(startZelle.getReihe - 1)(i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
                   }
-                }
-                if((zellen(startZelle.getReihe)(startZelle.getSpalte+1).getGesetzt)==true){
-                  return false
-                }else{
-                  return okay
-                }
-              }else{//stoe�t nicht links an
-                for(i <- (startZelle.getSpalte-laenge) to (startZelle.getSpalte+1)){
-                  if((zellen(startZelle.getReihe-1)(i).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe)(startZelle.getSpalte + 1).getGesetzt) == true) {
                     return false
-                  }else{
-                    okay = true
-                  }
-                }
-                if((zellen(startZelle.getReihe)(startZelle.getSpalte-1).getGesetzt)==true){
-                  return false
-                }else{
-                  if((zellen(startZelle.getReihe)(startZelle.getSpalte+1).getGesetzt)==true){
-                    return false
-                  }else{
+                  } else {
                     return okay
                   }
+                } else { //stoe�t nicht links an
+                  for (i <- (startZelle.getSpalte - laenge) to (startZelle.getSpalte + 1)) {
+                    if ((zellen(startZelle.getReihe - 1)(i).getGesetzt) == true) {
+                      return false
+                    } else {
+                      okay = true
+                    }
+                  }
+                  if ((zellen(startZelle.getReihe)(startZelle.getSpalte - 1).getGesetzt) == true) {
+                    return false
+                  } else {
+                    if ((zellen(startZelle.getReihe)(startZelle.getSpalte + 1).getGesetzt) == true) {
+                      return false
+                    } else {
+                      return okay
+                    }
+                  }
+
                 }
-                
-              }
             }
         }
       case _ => // Reihe != erste Reihe & Reihe != letzte Reihe
@@ -720,80 +718,80 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
             richtung match {
               case 0 => //Schiff geht nach oben
                 //ueberpruefen ob oben anstoe�t
-                if(0 == (startZelle.getReihe-laenge+1)){
-                  for(i <- 0 to (startZelle.getReihe+1)){
-                    if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                if (0 == (startZelle.getReihe - laenge + 1)) {
+                  for (i <- 0 to (startZelle.getReihe + 1)) {
+                    if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
                     }
                   }
-                  if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt) == true){
+                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
+                  } else {
                     return okay
                   }
-                }else{//stoe�t nicht oben an
-                  for(i <- (startZelle.getReihe-laenge) to (startZelle.getReihe+1)){
-                    if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                } else { //stoe�t nicht oben an
+                  for (i <- (startZelle.getReihe - laenge) to (startZelle.getReihe + 1)) {
+                    if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
                     }
                   }
-                  if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
-                    if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                  } else {
+                    if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte).getGesetzt) == true) {
                       return false
-                      
-                    }else{
+
+                    } else {
                       return okay
                     }
                   }
-                  
+
                 }
 
               case 1 => // Schiff geht nach unten
-              //ueberpruefen ob unten anstoe�t
-                if( groesse == (startZelle.getReihe+laenge-1)){
-                  for(i <- (startZelle.getReihe-1) to groesse){
-                    if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                //ueberpruefen ob unten anstoe�t
+                if (groesse == (startZelle.getReihe + laenge - 1)) {
+                  for (i <- (startZelle.getReihe - 1) to groesse) {
+                    if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
                     }
                   }
-                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
+                  } else {
                     return okay
                   }
-                }else{//stoe�t nicht unten an
-                  for(i <- (startZelle.getReihe-1) to (startZelle.getReihe+laenge)){
-                    if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                } else { //stoe�t nicht unten an
+                  for (i <- (startZelle.getReihe - 1) to (startZelle.getReihe + laenge)) {
+                    if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
                     }
                   }
-                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
-                    if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                  } else {
+                    if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       return okay
                     }
                   }
                 }
 
               case 2 => //Schiff geht nach rechts
-                 for (i <- 0 to (startZelle.getSpalte + laenge)) {
-                  if ((zellen(startZelle.getReihe-1)(i).getGesetzt) == true) {
+                for (i <- 0 to (startZelle.getSpalte + laenge)) {
+                  if ((zellen(startZelle.getReihe - 1)(i).getGesetzt) == true) {
                     return false
                   } else {
-                    if ((zellen(startZelle.getReihe+1)(i).getGesetzt) == true) {
+                    if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
                       return false
                     } else {
                       okay = true
@@ -801,82 +799,82 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
                   }
                 }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte+laenge).getGesetzt) == true)) {
+                if (((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge).getGesetzt) == true)) {
                   return false
                 } else {
 
                   return okay
 
                 }
-                
+
             }
           case `groesse` => //Spalte = letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
             richtung match {
               case 0 => //Schiff geht nach oben
-              // ueberpruefen ob oben anstoe�t
-                if(0 == (startZelle.getReihe-laenge+1)){
-                  for(i <- 0 to (startZelle.getReihe+1)){
-                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                // ueberpruefen ob oben anstoe�t
+                if (0 == (startZelle.getReihe - laenge + 1)) {
+                  for (i <- 0 to (startZelle.getReihe + 1)) {
+                    if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
                     }
                   }
-                  if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt) == true){
+                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
+                  } else {
                     return okay
                   }
-                }else{//stoe�t nicht oben an
-                  for(i <- (startZelle.getReihe-laenge) to (startZelle.getReihe+1)){
-                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                } else { //stoe�t nicht oben an
+                  for (i <- (startZelle.getReihe - laenge) to (startZelle.getReihe + 1)) {
+                    if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
                     }
                   }
-                  if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
-                    if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                  } else {
+                    if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte).getGesetzt) == true) {
                       return false
-                      
-                    }else{
+
+                    } else {
                       return okay
                     }
                   }
-                  
+
                 }
 
               case 1 => // Schiff geht nach unten
-              //ueberpruefen ob unten anstoe�t
-                 if( groesse == (startZelle.getReihe+laenge-1)){
-                  for(i <- (startZelle.getReihe-1) to groesse){
-                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                //ueberpruefen ob unten anstoe�t
+                if (groesse == (startZelle.getReihe + laenge - 1)) {
+                  for (i <- (startZelle.getReihe - 1) to groesse) {
+                    if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
                     }
                   }
-                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
+                  } else {
                     return okay
                   }
-                }else{//stoe�t nicht unten an
-                  for(i <- (startZelle.getReihe-1) to (startZelle.getReihe+laenge)){
-                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                } else { //stoe�t nicht unten an
+                  for (i <- (startZelle.getReihe - 1) to (startZelle.getReihe + laenge)) {
+                    if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
                     }
                   }
-                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
-                    if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                  } else {
+                    if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       return okay
                     }
                   }
@@ -884,10 +882,10 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
               case 3 => //Schiff geht nach links
                 for (i <- (groesse - laenge) to groesse) {
-                  if ((zellen(startZelle.getReihe-1)(i).getGesetzt) == true) {
+                  if ((zellen(startZelle.getReihe - 1)(i).getGesetzt) == true) {
                     return false
                   } else {
-                    if ((zellen(startZelle.getReihe+1)(i).getGesetzt) == true) {
+                    if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
                       return false
                     } else {
                       okay = true
@@ -895,200 +893,200 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
                   }
                 }
-                if (((zellen(startZelle.getReihe)(startZelle.getSpalte-laenge).getGesetzt) == true)) {
+                if (((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge).getGesetzt) == true)) {
                   return false
                 } else {
 
                   return okay
 
                 }
-                
+
             }
           case _ => //Spalte != erste Spalte & Spalte != letzte Spalte & Reihe != erste Reihe & Reihe != letzte Reihe
             richtung match {
               case 0 => // Schiff geht nach oben
-              //ueberpruefen ob oben anstoe�t
-                if(0 == (startZelle.getReihe-laenge+1)){
-                  for(i <- 0 to (startZelle.getReihe+1)){
-                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                //ueberpruefen ob oben anstoe�t
+                if (0 == (startZelle.getReihe - laenge + 1)) {
+                  for (i <- 0 to (startZelle.getReihe + 1)) {
+                    if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
-                      if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                      if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                         return false
-                      }else{
+                      } else {
                         okay = true
                       }
                     }
                   }
-                  if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
+                  } else {
                     return okay
                   }
-                  
-                }else{//stoe�t nicht oben an
-                  for(i <- (startZelle.getReihe-laenge) to (startZelle.getReihe+1)){
-                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+
+                } else { //stoe�t nicht oben an
+                  for (i <- (startZelle.getReihe - laenge) to (startZelle.getReihe + 1)) {
+                    if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
-                      if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                      if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                         return false
-                      }else{
+                      } else {
                         okay = true
                       }
                     }
                   }
-                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
-                    if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                  } else {
+                    if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       return okay
-                    
+
                     }
                   }
                 }
 
               case 1 => // SChiff geht nach unten
-              //ueberpruefen ob unten anstoe�t
-                if(groesse == (startZelle.getReihe+laenge-1)){
-                  for(i <- (startZelle.getReihe-1) to groesse){
-                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+                //ueberpruefen ob unten anstoe�t
+                if (groesse == (startZelle.getReihe + laenge - 1)) {
+                  for (i <- (startZelle.getReihe - 1) to groesse) {
+                    if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
-                      if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                      if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                         return false
-                      }else{
+                      } else {
                         okay = true
                       }
                     }
                   }
-                  
-                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+
+                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
+                  } else {
                     return okay
                   }
-                  
-                }else{//stoe�t nicht unten an
-                  for(i <- (startZelle.getReihe-1) to (startZelle.getReihe+laenge)){
-                    if((zellen(i)(startZelle.getSpalte-1).getGesetzt)==true){
+
+                } else { //stoe�t nicht unten an
+                  for (i <- (startZelle.getReihe - 1) to (startZelle.getReihe + laenge)) {
+                    if ((zellen(i)(startZelle.getSpalte - 1).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
-                      if((zellen(i)(startZelle.getSpalte+1).getGesetzt)==true){
+                      if ((zellen(i)(startZelle.getSpalte + 1).getGesetzt) == true) {
                         return false
-                      }else{
+                      } else {
                         okay = true
                       }
                     }
                   }
-                  if((zellen(startZelle.getReihe-1)(startZelle.getSpalte).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe - 1)(startZelle.getSpalte).getGesetzt) == true) {
                     return false
-                  }else{
-                    if((zellen(startZelle.getReihe+1)(startZelle.getSpalte).getGesetzt)==true){
+                  } else {
+                    if ((zellen(startZelle.getReihe + 1)(startZelle.getSpalte).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       return okay
                     }
                   }
                 }
 
               case 2 => // Schiff geht nach rechts
-              //ueberpruefen ob rechts anstoe�t
-                if(groesse ==(startZelle.getSpalte+laenge-1)){
-                  for(i <- (startZelle.getSpalte-1) to groesse){
-                    if((zellen(startZelle.getReihe-1)(i).getGesetzt)==true){
+                //ueberpruefen ob rechts anstoe�t
+                if (groesse == (startZelle.getSpalte + laenge - 1)) {
+                  for (i <- (startZelle.getSpalte - 1) to groesse) {
+                    if ((zellen(startZelle.getReihe - 1)(i).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
-                      if((zellen(startZelle.getReihe+1)(i).getGesetzt)==true){
+                      if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
                         return false
-                      }else{
+                      } else {
                         okay = true
                       }
                     }
                   }
-                  if((zellen(startZelle.getReihe)(startZelle.getSpalte-1).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe)(startZelle.getSpalte - 1).getGesetzt) == true) {
                     return false
-                  }else{
+                  } else {
                     return okay
-                    
+
                   }
-                }else{//stoe�t nicht rechts an
-                  for(i <- (startZelle.getSpalte-1) to (startZelle.getSpalte+laenge)){
-                    if((zellen(startZelle.getReihe-1)(i).getGesetzt)==true){
+                } else { //stoe�t nicht rechts an
+                  for (i <- (startZelle.getSpalte - 1) to (startZelle.getSpalte + laenge)) {
+                    if ((zellen(startZelle.getReihe - 1)(i).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
-                      if((zellen(startZelle.getReihe+1)(i).getGesetzt)==true){
+                      if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
                         return false
-                      }else{
+                      } else {
                         okay = true
                       }
                     }
                   }
-                  if((zellen(startZelle.getReihe)(startZelle.getSpalte-1).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe)(startZelle.getSpalte - 1).getGesetzt) == true) {
                     return false
-                  }else{
+                  } else {
                     okay = true
-                    if((zellen(startZelle.getReihe)(startZelle.getSpalte+laenge).getGesetzt)==true){
+                    if ((zellen(startZelle.getReihe)(startZelle.getSpalte + laenge).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       return okay
                     }
-                    
+
                   }
                 }
 
               case 3 => // Schiff geht links
-              //ueberpruefen ob links anstoe�t
-                if(0 ==(startZelle.getSpalte-laenge+1)){
-                  for(i <- 0 to (startZelle.getSpalte+1)){
-                    if((zellen(startZelle.getReihe-1)(i).getGesetzt)==true){
+                //ueberpruefen ob links anstoe�t
+                if (0 == (startZelle.getSpalte - laenge + 1)) {
+                  for (i <- 0 to (startZelle.getSpalte + 1)) {
+                    if ((zellen(startZelle.getReihe - 1)(i).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
-                      if((zellen(startZelle.getReihe+1)(i).getGesetzt)==true){
+                      if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
                         return false
-                      }else{
+                      } else {
                         okay = true
                       }
                     }
                   }
-                  if((zellen(startZelle.getReihe)(startZelle.getSpalte+1).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe)(startZelle.getSpalte + 1).getGesetzt) == true) {
                     return false
-                  }else{
+                  } else {
                     return okay
-                    
+
                   }
-                }else{//stoe�t nicht links an
-                  for(i <- (startZelle.getSpalte-laenge) to (startZelle.getSpalte+1)){
-                    if((zellen(startZelle.getReihe-1)(i).getGesetzt)==true){
+                } else { //stoe�t nicht links an
+                  for (i <- (startZelle.getSpalte - laenge) to (startZelle.getSpalte + 1)) {
+                    if ((zellen(startZelle.getReihe - 1)(i).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       okay = true
-                      if((zellen(startZelle.getReihe+1)(i).getGesetzt)==true){
+                      if ((zellen(startZelle.getReihe + 1)(i).getGesetzt) == true) {
                         return false
-                      }else{
+                      } else {
                         okay = true
                       }
                     }
                   }
-                  if((zellen(startZelle.getReihe)(startZelle.getSpalte+1).getGesetzt)==true){
+                  if ((zellen(startZelle.getReihe)(startZelle.getSpalte + 1).getGesetzt) == true) {
                     return false
-                  }else{
+                  } else {
                     okay = true
-                    if((zellen(startZelle.getReihe)(startZelle.getSpalte-laenge).getGesetzt)==true){
+                    if ((zellen(startZelle.getReihe)(startZelle.getSpalte - laenge).getGesetzt) == true) {
                       return false
-                    }else{
+                    } else {
                       return okay
                     }
-                    
+
                   }
                 }
             }
@@ -1097,6 +1095,5 @@ class Schiff(var laenge: Int, var startZelle: Zelle, var zellen: Array[Array[Zel
 
     return false
   }
-
 
 }

@@ -69,18 +69,7 @@ object ChatIn {
 //  var reiheString =""
   var spalte = 0
   var spalteString = ""
-//  def hit: NodeSeq = {
-//    reiheString = S.attr("reihe") openOr "Reihe gibts nicht"
-//    reihe = reiheString.toInt
-//    spalteString = S.attr("spalte") openOr "Spalte gibts nicht"
-//    spalte = spalteString.toInt
-//    hitSchiff(reihe, spalte)
-//    JOptionPane.showMessageDialog(null,
-//                                              "Reihe: "+ reihe + " Spalte: " + spalte,
-//                                              "Eine Nachricht",                                       
-//                                              JOptionPane.WARNING_MESSAGE);
-//    <br/>
-//  }
+
     def hit =  SHtml.onSubmit(s => {
             JOptionPane.showMessageDialog(null,
                                               "Reihe: "+ S.attr("reihe") + " Spalte: " + spalte,

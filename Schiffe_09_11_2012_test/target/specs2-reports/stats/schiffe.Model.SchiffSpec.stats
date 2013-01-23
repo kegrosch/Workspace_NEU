@@ -40,3 +40,15 @@
 <schiffe.Model.SchiffSpec-stats timestamp="1357637441597"><stats expectations="96" successes="95" examples="96" failures="1" time="14"></stats></schiffe.Model.SchiffSpec-stats>
 <schiffe.Model.SchiffSpec-stats timestamp="1357637502645"><stats expectations="96" examples="96" successes="96" time="20"><trend><stats failures="-1" successes="1" time="20"></stats></trend></stats></schiffe.Model.SchiffSpec-stats>
 <schiffe.Model.SchiffSpec-stats timestamp="1357637515066"><stats expectations="96" examples="96" successes="96" time="18"></stats></schiffe.Model.SchiffSpec-stats>
+<schiffe.Model.SchiffSpec-results timestamp="1358977506858"><result location="schiffe.Model.SchiffSpec (SchiffSpec.scala:54)" id="1855720217"><stats expectations="1" examples="1" failures="1" time="182"></stats></result>
+</schiffe.Model.SchiffSpec-results>
+<schiffe.Model.SchiffSpec-stats timestamp="1358977506891"><stats expectations="96" successes="95" examples="96" failures="1" time="75"><trend><stats failures="1" successes="-1" time="75"></stats></trend></stats></schiffe.Model.SchiffSpec-stats>
+<schiffe.Model.SchiffSpec-results timestamp="1358977517516"><result location="schiffe.Model.SchiffSpec (SchiffSpec.scala:54)" id="1855720217"><stats expectations="1" examples="1" failures="1" time="18"></stats></result>
+</schiffe.Model.SchiffSpec-results>
+<schiffe.Model.SchiffSpec-stats timestamp="1358977517554"><stats expectations="96" successes="95" examples="96" failures="1" time="25"></stats></schiffe.Model.SchiffSpec-stats>
+<schiffe.Model.SchiffSpec-stats timestamp="1358977538278"><stats expectations="96" examples="96" successes="96" time="14"><trend><stats failures="-1" successes="1" time="14"></stats></trend></stats></schiffe.Model.SchiffSpec-stats>
+<schiffe.Model.SchiffSpec-stats timestamp="1358977608362"><stats expectations="96" examples="96" successes="96" time="17"></stats></schiffe.Model.SchiffSpec-stats>
+<schiffe.Model.SchiffSpec-results timestamp="1358977620373"><result location="schiffe.Model.SchiffSpec (SchiffSpec.scala:54)" id="1855720217"><stats expectations="1" examples="1" failures="1" time="25"></stats></result>
+</schiffe.Model.SchiffSpec-results>
+<schiffe.Model.SchiffSpec-stats timestamp="1358977620405"><stats expectations="96" successes="95" examples="96" failures="1" time="17"><trend><stats failures="1" successes="-1" time="17"></stats></trend></stats></schiffe.Model.SchiffSpec-stats>
+<schiffe.Model.SchiffSpec-stats timestamp="1358977628655"><stats expectations="96" examples="96" successes="96" time="17"><trend><stats failures="-1" successes="1" time="17"></stats></trend></stats></schiffe.Model.SchiffSpec-stats>
