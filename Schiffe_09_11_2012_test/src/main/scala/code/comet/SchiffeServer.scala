@@ -49,6 +49,23 @@ object SchiffeServer extends LiftActor with ListenerManager {
 def hit(reihe: Int, spalte:Int){
 
     Schiffe.pccontroller.hit(reihe, spalte)
+    pcHit
+  }
+    def pcHit = {
+    var pcHit = false
+    while (pcHit == false) {
+
+      var startReihe = scala.util.Random.nextInt(Schiffe.controller.feld.zellen.length) + 1
+      var startSpalte = scala.util.Random.nextInt(Schiffe.controller.feld.zellen.length) + 1
+      if (Schiffe.controller.feld.zellen(startReihe - 1)(startSpalte - 1).getGetroffen == false) {
+        Schiffe.controller.hit(startReihe, startSpalte)
+        pcHit = true
+
+      } else {
+        pcHit = false
+      }
+
+    }
   }
 def setSize(groesse: Int){
     Schiffe.controller.setSize(groesse); Schiffe.pccontroller.setSize(groesse)
