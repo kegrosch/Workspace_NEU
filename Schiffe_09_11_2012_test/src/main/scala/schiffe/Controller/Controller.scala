@@ -12,16 +12,7 @@ case class SchiffGesetzt(laenge:Int) extends Event
 case class FeldResize(newSize:Int) extends Event
 class Controller (var feld: Feld) extends Publisher{
   
-//  def available(row: Int, col: Int) = feld.available(row, col)
-//  def zelle(row: Int, col: Int) = feld.zelle(row, col)
-//  def createRandom={
-//    feld = feld.createRandom(grid.size)
-//    notifyObservers
-//  }
-//  def parseFromString(s:String) = {
-//    feld = feld.parseFromString(s)
-//    notifyObservers
-//  }
+
   var statusText="Bitte setzen Sie Schiffe"
   var feldGesetzt = false
   var zaehler =0

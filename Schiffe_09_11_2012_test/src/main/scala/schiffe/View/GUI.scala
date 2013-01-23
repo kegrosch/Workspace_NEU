@@ -27,7 +27,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   listenTo(controller, pccontroller, schiffsleiste)
   var cells = new SpielerPanel(controller, groesse, schiffsleiste, computercells)
     var computercells = new PCPanel(pccontroller, groesse, controller)
-//computercells.pcSchiffeSetzen(groesse)
+computercells.pcSchiffeSetzen(groesse)
   title = "Schiffe Versenken"
 
 //  def spielfeldPc = new PCPanel(pccontroller, groesse)
@@ -52,6 +52,8 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
     action = Action("Spiel neu Starten") {
       controller.reset
       pccontroller.reset
+      computercells.pcSchiffeSetzen(groesse)
+
       statusline.text = controller.statusText
 //      computercells.pcSchiffeSetzen(pccontroller.feld.zellen.length)
     }
@@ -62,13 +64,15 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
         controller.setStatusText("Spielfeld ist schon 2 Zellen gross")
       } else {
 
-        if(controller.getFeldGesetzt()==false && pccontroller.getFeldGesetzt==false){
+        if(controller.getFeldGesetzt()==false){
         groesse = 2
         controller.reset
         pccontroller.reset
 
 
+
         newSize(2)
+        computercells.pcSchiffeSetzen(2)
          }
         else 
           controller.setStatusText("Die Schiffe sind schon gesetzt. Keine Groessenaenderung moeglich")
@@ -85,12 +89,15 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
 
        controller.setStatusText("Spielfeld ist schon 5 Zellen gross")
       } else {
-        if(controller.getFeldGesetzt()==false && pccontroller.getFeldGesetzt==false){
+        if(controller.getFeldGesetzt()==false){
+          
+
        groesse = 5
         controller.reset
         pccontroller.reset
 
       newSize(5)
+       computercells.pcSchiffeSetzen(5)
         }else 
           controller.setStatusText( "Die Schiffe sind schon gesetzt. Keine Groessenaenderung moeglich")
       }
@@ -104,14 +111,16 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
       if (groesse == 10) {
         controller.setStatusText( "Spielfeld ist schon 10 Zellen gross")
       } else {
-        if (controller.getFeldGesetzt() == false && pccontroller.getFeldGesetzt==false) {
+        if (controller.getFeldGesetzt() == false ) {
           //                       controller.setSize(10); pccontroller.setSize(10)
+
 
           groesse = 10
           controller.reset
         pccontroller.reset
 
           newSize(10)
+          computercells.pcSchiffeSetzen(10)
           //          redraw
         } else
           controller.setStatusText( "Sie haben die Schiffe schon gesetzt")
@@ -174,26 +183,7 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   }
 
   def endGame = {
-//    println("JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
-//    pccontroller.solve
-//    controller.solve
-//    setSchiffleiste(groesse)
-//    cells = new SpielerPanel(controller, groesse, schiffsleiste)
-//    cells.setAlleButtonSize(groesse)
-//    computercells = new PCPanel(pccontroller, groesse, controller)
-//    computercells.setAlleButtonSize(groesse)
-//    contents = new BorderPanel {
-//      add(funktionsleiste, BorderPanel.Position.North)
-//      add(new FlowPanel { //ueberschrift fuer die beiden Spielfelder
-//        contents += titelUser
-//        contents += titelpc
-//      }, BorderPanel.Position.South)
-//      add(cells, BorderPanel.Position.West)
-//      add(endGamePanel, BorderPanel.Position.Center)
-//      add(computercells, BorderPanel.Position.East)
-//      repaint
-//      redraw
-//  }
+
      if(controller.feld.spielFertig == true){
       schiffsleiste = setSchiffleiste(groesse)
 //      cells = new SpielerPanel(controller, groesse, schiffsleiste)
@@ -246,13 +236,6 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
     cells.setAlleButtonSize(newSize)
     computercells = new PCPanel(pccontroller, newSize, controller)
     computercells.setAlleButtonSize(newSize)
-//    computercells.pcSchiffeSetzen(newSize)
-//    pcSchiffeSetzen(newSize)
-//    pcSchiffeSetzen(newSize)
-//    computercells.redraw
-    //cells.createButtons
-
-    //
 
     contents = new BorderPanel {
       add(funktionsleiste, BorderPanel.Position.North)
@@ -270,25 +253,8 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
   }
 
   def redraw = {
-//    controller.setSize(groesse)
-//    pccontroller.setSize(groesse)
-    //    var anzahl = controller.feld.zellen.length
-    //    for(i <- 0 to (anzahl-1)){
-    //      for(j <- 0 to (anzahl-1)){
-    //        println("reihe: " + i)
-    //        println("spalte: "+ j)
-    //        spielfeldUser.setBackground(spielfeldUser.buttons(i)(j),i,j)
-    //      }
-    //    }
-    // cells.contents.clear()
+   
 
-//    if(controller.getFeldGesetzt()==true){
-////      println("JKJKJJDHDHDJMDJFJFFJJFFJJ")
-//    schiffsleiste.schiffleiste.contents.clear()
-//    schiffsleiste.schiffleiste
-//    schiffsleiste = schiffsleiste
-//    }else{
-//      println("IIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
     if(controller.feld.spielFertig == true){
       schiffsleiste = setSchiffleiste(groesse)
       controller.setFeldGesetzt(false)
@@ -307,6 +273,8 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
        }
     }else{
       if(pccontroller.feld.spielFertig == true){
+        
+        
         schiffsleiste = setSchiffleiste(groesse)
 //        cells = new SpielerPanel(controller, groesse, schiffsleiste)
 //        computercells = new PCPanel(pccontroller, groesse, controller)
@@ -321,28 +289,13 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
       add(computercells, BorderPanel.Position.East)
          }
       }else{
+        
         schiffsleiste = setSchiffleiste(groesse)
         cells = new SpielerPanel(controller, groesse, schiffsleiste, computercells)
         computercells = new PCPanel(pccontroller, groesse, controller)
       }
     }
-    
-//    schiffsleiste.schiffleiste.contents.foreach(n => visible_=(true))
-//    }
-//    foreach[schiffsleiste.schiffleiste](visible_=(true))
 
-//    pcSchiffeSetzen(groesse)
-//    pcSchiffeSetzen(groesse)
-    //    computercells.repaint()
-    //    spielfeldUser.redraw(controller.feld.zellen.length)
-    //    spielfeldPc.redraw(pccontroller.feld.zellen.length)
-    //    spielfeldUserButtons.repaint()
-    //    spielfeldPcButtons.repaint()
-    //    
-    //    
-    //    
-    //    
-    //    statusline.text = controller.statusText
         repaint()
   }
   
@@ -356,64 +309,6 @@ class GUI(controller: Controller, pccontroller: Controller) extends Frame {
     pccontroller.setSize(newSize)
   }
 
-  //  var zellen = controller.feld.zellen
-  //  
-  //  var aktionsleiste = new FlowPanel()
-  //  var spielfelder = new FlowPanel()
-  //  var spielfeldUser = new GridPanel(spielGroesse, spielGroesse)
-  //  var spielfeldPc = new GridPanel(spielGroesse, spielGroesse)
-  //  
-  //  def gridPanel = new GridPanel(spielGroesse, spielGroesse) {
-  //    border = LineBorder(java.awt.Color.BLACK, 2)
-  //    background = java.awt.Color.BLACK
-  //    for (outerRow <- 0 until spielGroesse; outerColumn <- 0 until spielGroesse) {
-  //      contents += new GridPanel(spielGroesse, spielGroesse) {
-  //        border = LineBorder(java.awt.Color.BLACK, 2)
-  //        for (innerRow <- 0 until spielGroesse; innerColumn <- 0 until spielGroesse) {
-  //          val x = outerRow * spielGroesse + innerRow
-  //          val y = outerColumn * spielGroesse + innerColumn
-  //          val cellPanel = new CellPanel(x, y, controller)
-  //          cells(x)(y) = cellPanel
-  //          contents += cellPanel
-  //          listenTo(cellPanel)
-  //        }
-  //      }
-  //    }
-  //  }
-  //  
-  //  
-  //  def top = new MainFrame{
-  //    
-  //    aktionsleiste.contents += aktionsleisteButtons
-  //    spielfeld(spielfeldUser)
-  //    spielfeld(spielfeldPc)
-  //  
-  //    spielfelder.contents += spielfeldUser
-  //    spielfelder.contents += spielfeldPc
-  //  
-  //    var hauptfenster = new BorderPanel(){
-  //    	
-  //    }
-  //    
-  //    contents = spielfelder
-  //  }
-  //    
-  //  
-  //    
-  //  def aktionsleisteButtons = {
-  //    new Button("Spiel neu Starten")
-  //    new Button("Spielgroesse 2")
-  //    new Button("Spielgroesse 5")
-  //    new Button("Spielgroesse 10")
-  //    
-  //  }
-  //  def spielfeld(panel: GridPanel) = {
-  //      for(i <- 1 to (spielGroesse)){
-  //        for(j <- 1 to (spielGroesse)){
-  //    panel.contents += new Button(i + " , " + j)
-  //        }
-  //      }
-  //
-  //    }
+
 
 }

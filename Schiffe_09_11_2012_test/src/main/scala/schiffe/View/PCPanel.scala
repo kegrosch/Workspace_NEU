@@ -97,47 +97,7 @@ class PCPanel(pccontroller: Controller, size: Int, controller: Controller) exten
     createButtons
 
   }
-  //def spielfeld(size: Int, spielSize: Int) = new GridPanel(spielSize, spielSize){
-  //  
-  //  background = java.awt.Color.BLACK
-  //  for(i <- 0 to (spielSize-1)){
-  //    for(j <- 0 to (spielSize-1)){
-  //      buttons(i)(j) = new Button{
-  //        background = InitialfarbeComputer
-  //        preferredSize_=(new Dimension(60,60))
-  //            reactions += {
-  //      case CellChanged =>
-  //        
-  //
-  //        setBackground
-  //
-  //      case ButtonClicked(buttons) =>
-  //
-  //        pccontroller.hit(i+1,j+1)
-  //
-  //    }
-  //    listenTo(pccontroller)
-  //
-  //  }
-  //      
-  //        contents += buttons(i)(j)
-  //      
-  //    }
-  //  }  
-  //    repaint
-  //  }
-  //def setSize(newSize: Int) ={
-  //  spielSize = newSize
-  //  spielfeld(newSize, spielSize)
-  //  
-  //  
-  //}
-  //def redraw ={
-  ////  spielSize = newSize
-  //  spielfeld(spielSize, spielSize).repaint()
-  //  
-  //  
-  //}
+
   def pcSchiffeSetzen(size: Int) = {
 //    println("dddddddddd")
     size match {
@@ -146,7 +106,7 @@ class PCPanel(pccontroller: Controller, size: Int, controller: Controller) exten
       case 5 => pccontroller.setcomputerschiff5
       case 10 => pccontroller.setcomputerschiff10
       
-      publish(new CellChanged)
+//      publish(new CellChanged)
     }
   }
   def setBackground = {
@@ -177,53 +137,5 @@ class PCPanel(pccontroller: Controller, size: Int, controller: Controller) exten
 
   }
 
-  //def setBackground = {
-  //    while (alleButtons.length != controller.feld.zellen.length) {
-  //      setAlleButtonSize(controller.feld.zellen.length)
-  //    }
-  //    //    println("BUTTONS: " + alleButtons.length)
-  //    for (k <- 0 to (alleButtons.length - 1)) {
-  //      for (l <- 0 to (alleButtons.length - 1)) {
-  //        //        println("K: " + k)
-  //        //        println("L: "+ l)
-  //        if (getZelle(k, l).getGesetzt == true) {
-  //          if (getZelle(k, l).getGetroffen == true) {
-  //            alleButtons(k)(l).background = java.awt.Color.RED
-  //          } else {
-  //            alleButtons(k)(l).background = java.awt.Color.GREEN
-  //          }
-  //        } else {
-  //          if (getZelle(k, l).getGetroffen == true) {
-  //            alleButtons(k)(l).background = java.awt.Color.BLACK
-  //          } else {
-  //            alleButtons(k)(l).background = java.awt.Color.GRAY
-  //          }
-  //
-  //        }
-  //      }
-  //    }
-  //
-  //  }
-  //val cellButton = new Button {
-  //  preferredSize_=(new Dimension(60,60))
-  //  opaque=true
-  //  background = if (myCell.getGesetzt & myCell.getGetroffen) Schiffgetroffen
-  //  else {
-  //    if(!myCell.getGesetzt & myCell.getGetroffen)  SchiffNichtgetroffen
-  //     else InitialfarbeComputer
-  //    
-  //  }
-  //}
-  // contents += cellButton
-  //  listenTo(cellButton)
-  // 
-  // def redraw = {
-  // 
-  //    
-  //    repaint
-  //  }
-  // def setBackground(p: Panel) = p.background = if (myCell.getGetroffen && !myCell.getGesetzt) SchiffNichtgetroffen
-  //  else if (myCell.getGetroffen && myCell.getGesetzt) Schiffgetroffen
-  //  else InitialfarbeComputer
-
+ 
 }
