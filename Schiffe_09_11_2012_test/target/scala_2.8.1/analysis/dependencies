@@ -1,5 +1,5 @@
 #Source Dependencies
-#Thu Jan 24 09:31:48 CET 2013
+#Thu Jan 24 19:44:14 CET 2013
 src\\main\\scala\\code\\snippet\\ChatIn.scala=
 src\\main\\scala\\schiffe\\Model\\Schiff.scala=src\\main\\scala\\schiffe\\Controller\\Controller.scala
 src\\main\\scala\\schiffe\\View\\SpielerPanel.scala=src\\main\\scala\\schiffe\\View\\GUI.scala

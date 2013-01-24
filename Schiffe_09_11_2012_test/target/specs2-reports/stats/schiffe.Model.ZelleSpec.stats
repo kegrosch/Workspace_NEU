@@ -27,3 +27,15 @@
 <schiffe.Model.ZelleSpec-stats timestamp="1358977608475"><stats expectations="6" examples="6" successes="6" time="10"></stats></schiffe.Model.ZelleSpec-stats>
 <schiffe.Model.ZelleSpec-stats timestamp="1358977620511"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
 <schiffe.Model.ZelleSpec-stats timestamp="1358977628751"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1359051802845"><stats successes="6" examples="6" expectations="6"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1359051818516"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1359051828357"><stats expectations="6" examples="6" successes="6" time="1"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-results timestamp="1359051843355"><result location="schiffe.Model.ZelleSpec (ZelleSpec.scala:14)" id="-1662716686"><stats expectations="1" examples="1" failures="1" time="5"></stats></result>
+</schiffe.Model.ZelleSpec-results>
+<schiffe.Model.ZelleSpec-stats timestamp="1359051843363"><stats expectations="6" successes="5" examples="6" failures="1" time="8"><trend><stats failures="1" successes="-1" time="8"></stats></trend></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1359051852816"><stats expectations="6" examples="6" successes="6" time="1"><trend><stats failures="-1" successes="1" time="1"></stats></trend></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1359051860235"><stats expectations="6" examples="6" successes="6" time="8"></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-results timestamp="1359052852309"><result location="schiffe.Model.ZelleSpec (ZelleSpec.scala:18)" id="-1662727133"><stats expectations="1" examples="1" failures="1" time="3"></stats></result>
+</schiffe.Model.ZelleSpec-results>
+<schiffe.Model.ZelleSpec-stats timestamp="1359052852317"><stats expectations="6" successes="5" examples="6" failures="1" time="2"><trend><stats failures="1" successes="-1" time="2"></stats></trend></stats></schiffe.Model.ZelleSpec-stats>
+<schiffe.Model.ZelleSpec-stats timestamp="1359052858528"><stats expectations="6" examples="6" successes="6" time="3"><trend><stats failures="-1" successes="1" time="3"></stats></trend></stats></schiffe.Model.ZelleSpec-stats>

@@ -15,23 +15,24 @@ class Controller(var feld: Feld) extends Publisher {
   var statusText = "Bitte setzen Sie Schiffe"
   var feldGesetzt = false
   var zaehler = 0
+  
+  def setFeldGesetzt(gesetzt: Boolean) = { this.feldGesetzt = gesetzt }
+  def setStatusText(text: String) { this.statusText = text }
+  def getSize: Int = { return feld.size.toInt }
+  def spielfertig: Boolean = { if (feld.spielFertig == true) { true } else { false } }
+  def solve = { feld = feld.solve; statusText = "Spiel beendet"; publish(new CellChanged) }
+  def updateFeld(feld: Feld) { this.feld = feld }
+  def cell(row: Int, col: Int) = feld.cell(row, col)
+
   def getFeldGesetzt(): Boolean = {
     if ((getSize == 10 && zaehler == 30) | (getSize == 5 && zaehler == 9) | (getSize == 2 && zaehler == 2) | feldGesetzt == true) {
       feldGesetzt == true
-      return feldGesetzt
+      feldGesetzt
     } else {
-      return false
+      false
     }
-
-  }
-  def setFeldGesetzt(gesetzt: Boolean) = {
-    this.feldGesetzt = gesetzt
   }
 
-  def setStatusText(text: String) {
-    this.statusText = text
-
-  }
   def reset = {
     feld = feld.reset
     feldGesetzt = false
@@ -42,18 +43,10 @@ class Controller(var feld: Feld) extends Publisher {
     zaehler = 0
     statusText = "Spiel zurueckgesetzt"
     publish(new FeldResize(getSize))
-    //    notifyObservers
   }
 
-  def solve = {
-    feld = feld.solve
-    //    notifyObservers
-    statusText = "Spiel beendet"
-    publish(new CellChanged)
-  }
   def hit(reihe: Int, spalte: Int): Boolean = {
     println("REIHE: " + reihe + " Spalte: " + spalte)
-    //    publish(CellChanged)
     if (feld.hit(reihe - 1, spalte - 1)) {
       publish(new CellChanged)
       statusText = "Getroffen"
@@ -63,7 +56,6 @@ class Controller(var feld: Feld) extends Publisher {
       statusText = "Nicht getroffen"
       return false
     }
-    //    notifyObservers
   }
 
   def setSize(newSize: Int) = {
@@ -81,17 +73,7 @@ class Controller(var feld: Feld) extends Publisher {
 
     //    notifyObservers
   }
-  def getSize: Int = { return feld.size.toInt }
 
-  def spielfertig: Boolean = {
-    if (feld.spielFertig == true) {
-      //      publish(SpielFertig)
-      return true
-    } else {
-      return false
-    }
-    //    notifyObservers
-  }
   def set(laenge: Int, row: Int, col: Int, richtung: Int, groesse: Int): Boolean = {
     var startZelle = feld.zellen(row - 1)(col - 1)
     var schiff = new Schiff(laenge, startZelle, feld.zellen)
@@ -110,12 +92,6 @@ class Controller(var feld: Feld) extends Publisher {
 
     //    println("Schiff gesetzt")
   }
-
-  def updateFeld(feld: Feld) {
-    this.feld = feld
-  }
-
-  def cell(row: Int, col: Int) = feld.cell(row, col)
 
   def setcomputerschiff2 = {
     while (getFeldGesetzt == false) {

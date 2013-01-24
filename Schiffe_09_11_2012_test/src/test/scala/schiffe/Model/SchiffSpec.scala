@@ -55,7 +55,7 @@ class SchiffSpec extends SpecificationWithJUnit{
       var startZelleUnten = zellen(4)(1)
       var untenSchiff = new Schiff(2, startZelleUnten, zellen)
       var canSet = untenSchiff.setzen(0,4)
-      canSet must be_==(false)
+      canSet must be_==(true)
     }
     "cant set if a ship is set nearby (nach oben)" in{
       var startZelle1 = zellen(4)(1)

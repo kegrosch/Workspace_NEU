@@ -21,7 +21,6 @@ class Tui(var controller: Controller, pccontroller: Controller) extends Reactor 
     println(controller.feld.toString())
     println("DAS SPIELFELD DES COMPUTERS:")
     println(pccontroller.feld.pcToString)
-
   }
 
   var size = controller.feld.zellen.length

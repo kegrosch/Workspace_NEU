@@ -1,5 +1,5 @@
 #Source Hashes
-#Thu Jan 24 09:31:48 CET 2013
+#Thu Jan 24 19:44:14 CET 2013
 src\\main\\scala\\code\\snippet\\ChatIn.scala=20f41ca451fc2c5831dad916557e8f2879f1bef8
 src\\main\\scala\\schiffe\\Model\\Schiff.scala=eb71b0a70e9379fe2360c9e449be60ff8070807e
 src\\main\\scala\\schiffe\\View\\SpielerPanel.scala=8d34cb104d43d7078cd62520daca5f13515bbabd
@@ -18,7 +18,7 @@ src\\main\\scala\\code\\snippet\\Feld.scala=7b7f9856582e8fc4a5758a815b7b8b5f0505
 src\\main\\scala\\code\\snippet\\SchiffSetzen.scala=1e1255059f9e4a8193f9fadbaa525342ed5a3d86
 src\\main\\scala\\code\\lib\\DependencyFactory.scala=e5d94ad2d69afe24876734d3cc8549a5f3a7c7fd
 src\\main\\scala\\bootstrap\\liftweb\\Boot.scala=b3c19592692dfc0cd4f24523b9c7e17a8ddeb0eb
-src\\main\\scala\\schiffe\\View\\GUI.scala=0f40f52528a2a77874e517c058dd14ccdbf6a6d0
+src\\main\\scala\\schiffe\\View\\GUI.scala=3bd2993e4e1b7318d46295e5728e38c9593ec4ab
 src\\main\\scala\\schiffe\\View\\PCPanel.scala=1c3ef1786b5f99c690591abec5a5f9128e83e6d2
 src\\main\\scala\\schiffe\\Test.scala=b2858972b5c7bbfd16503eacff3a186a7c2e37a3
 src\\main\\scala\\code\\comet\\Chat.scala=debd85415cbc92097e032ea52ec15790746d4456
