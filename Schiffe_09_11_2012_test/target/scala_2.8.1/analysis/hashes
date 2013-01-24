@@ -1,25 +1,21 @@
 #Source Hashes
-#Wed Jan 23 22:33:12 CET 2013
-src\\main\\scala\\code\\comet\\StatusLine.scala=7089db117357ba35237c1ded5cfc3bf6aafbc022
-src\\main\\scala\\code\\snippet\\ChatIn.scala=4d9101e5eafc412a0bff1b71c0582c082eacb388
-src\\main\\scala\\schiffe\\Model\\Schiff.scala=d407e77ae702e4d67de904aed300115504ae673b
+#Thu Jan 24 09:31:48 CET 2013
+src\\main\\scala\\code\\snippet\\ChatIn.scala=20f41ca451fc2c5831dad916557e8f2879f1bef8
+src\\main\\scala\\schiffe\\Model\\Schiff.scala=eb71b0a70e9379fe2360c9e449be60ff8070807e
 src\\main\\scala\\schiffe\\View\\SpielerPanel.scala=8d34cb104d43d7078cd62520daca5f13515bbabd
 src\\main\\scala\\code\\comet\\FeldRenderer.scala=b6b290d2895905ad9d0b7aeceaae634df97e1685
-src\\main\\scala\\code\\snippet\\CommandLine.scala=89ad5eae4ae79acf1b7dcd6c0f3e6b09d14b995c
-src\\main\\scala\\code\\snippet\\ZelleSnippet.scala=60d05427b54ad84bd02342701c02efb477556d40
-src\\main\\scala\\code\\snippet\\Hit.scala=0ef4e7f0d37197504b56894e0dcc714f5b0c5237
+src\\main\\scala\\code\\snippet\\ZelleSnippet.scala=13bd6688783914f9139ce8c3deef6a5d0a24528d
+src\\main\\scala\\code\\snippet\\Hit.scala=fb8bcb186377fccb97c74a52d52d13ced4e97e61
 src\\main\\scala\\schiffe\\Model\\Zelle.scala=dc451fdf5d219dcbfc425c04ddaa2d40450e5031
 src\\main\\scala\\schiffe\\util\\Feld.scala=28a057ddb05679104d6415b40832a1d0c9055a08
-src\\main\\scala\\code\\snippet\\HighlightButtonSnippet.scala=fc571518d81e9e9c854fd55afa1e9b621551135f
 src\\main\\scala\\schiffe\\View\\SchiffPanel.scala=5ac763465ccef0d65a2822bd5e1f0640ce922b65
-src\\main\\scala\\schiffe\\Schiffe.scala=37ff48197d5857c134df6af45c885b1145b19618
-src\\main\\scala\\code\\snippet\\HelloWorld.scala=de230f51dc065543636a40e9d2d204f30f1bc04d
+src\\main\\scala\\schiffe\\Schiffe.scala=16efe18539a438469f7350310c791b2b7982e938
 src\\main\\scala\\code\\snippet\\Funktionsleiste.scala=90825c5499da5c5d75c113fc921c1467c30c7dd7
 src\\main\\scala\\code\\snippet\\SchiffAuswahl.scala=dcf6e67a8b97a8d95a76f38dbf196a97b409ff13
-src\\main\\scala\\schiffe\\Controller\\Controller.scala=b861f41a9e397db17ccd9586c305ee860b81f763
-src\\main\\scala\\schiffe\\Model\\Feld.scala=a6f2856111f26837387e3dbc063be9074580d76f
+src\\main\\scala\\schiffe\\Controller\\Controller.scala=03689857b0c3886361097906fe945af80c4a9717
+src\\main\\scala\\schiffe\\Model\\Feld.scala=8d6376cc38aaf0425a2101a3008cba0fe2ea5350
 src\\main\\scala\\code\\snippet\\Feld.scala=7b7f9856582e8fc4a5758a815b7b8b5f0505f8ed
-src\\main\\scala\\code\\snippet\\SchiffSetzen.scala=dc2452b480e13380555414b2c1c3394dbd61c85d
+src\\main\\scala\\code\\snippet\\SchiffSetzen.scala=1e1255059f9e4a8193f9fadbaa525342ed5a3d86
 src\\main\\scala\\code\\lib\\DependencyFactory.scala=e5d94ad2d69afe24876734d3cc8549a5f3a7c7fd
 src\\main\\scala\\bootstrap\\liftweb\\Boot.scala=b3c19592692dfc0cd4f24523b9c7e17a8ddeb0eb
 src\\main\\scala\\schiffe\\View\\GUI.scala=0f40f52528a2a77874e517c058dd14ccdbf6a6d0
